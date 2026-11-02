@@ -1,0 +1,21 @@
+<p>These results build on mathlib's existing ideal, norm, localization and class-group
+interfaces; this library does not redefine them.</p>
+<ul><li><strong>Norm detects strict ideal inclusion and equality.</strong> In an infinite
+commutative Dedekind domain with finite quotients, <code>I &lt; J</code> and <code>I ≠ ⊥</code>
+imply <code>J.absNorm &lt; I.absNorm</code>. If <code>I ≤ J</code> and their absolute norms agree,
+then <code>I = J</code>, even for the zero ideal. Neither result requires a finite-free
+presentation over <code>ℤ</code>. See <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/3c83ef9dc8a8b80115c1ab66150b90b33083a3d4/DedekindIdealArithmetic/Ideal/AbsNorm.lean#L29">strict norm comparison</a>
+and <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/3c83ef9dc8a8b80115c1ab66150b90b33083a3d4/DedekindIdealArithmetic/Ideal/AbsNorm.lean#L42">equality</a>.</li><li><strong>A supplied prime-norm element yields a principal prime.</strong> In an infinite
+Dedekind domain finite free over <code>ℤ</code>, a natural prime <code>p</code> and a supplied
+<code>α</code> with <code>(Algebra.norm ℤ α).natAbs = p</code> give a principal prime above
+<code>(p)</code>. This is conditional existence, not a search for <code>α</code>, a class-number
+computation or a claim that every prime has a witness. See
+<a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/3c83ef9dc8a8b80115c1ab66150b90b33083a3d4/DedekindIdealArithmetic/Ideal/PrincipalPrime.lean#L27">principal-prime extraction</a>.</li><li><strong>Localization can kill the class group and give a PID/UFD.</strong> For Dedekind
+domains <code>A</code> and <code>B</code> (possibly in different universes), an <code>A</code>-algebra <code>B</code>
+torsion-free over <code>A</code>, and an actual <code>IsLocalization M B</code>, extension
+<code>Cl(A) → Cl(B)</code> is <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/3c83ef9dc8a8b80115c1ab66150b90b33083a3d4/DedekindIdealArithmetic/ClassGroup/Localization.lean#L37">surjective</a>
+without a generator hypothesis. If every source class is an integral power
+of a supplied <code>g</code> and <code>g</code> extends to one, the library supplies the
+<a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/3c83ef9dc8a8b80115c1ab66150b90b33083a3d4/DedekindIdealArithmetic/ClassGroup/Localization.lean#L59">PID criterion</a>
+and <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/3c83ef9dc8a8b80115c1ab66150b90b33083a3d4/DedekindIdealArithmetic/ClassGroup/Localization.lean#L81">UFD consequence</a>.
+No class-group computation, injectivity or basic-open cover is asserted.</li></ul>

@@ -1,0 +1,123 @@
+<p><a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/Topology/Tube.lean">Tube predicates</a> are defined for arbitrary topological spaces: a tube-closed set is the closure of a retrocompact open subset, and a tube-open set has tube-closed complement. The API provides witness and complement characterizations, ordinary closedness and openness, and empty-set and whole-space cases. Tube-closed sets are stable under finite unions, and tube-open sets under finite intersections, including empty families.</p>
+<ul><li><strong>Maximal-generization reflection.</strong> In any topological space where every point
+has a unique maximal generization as an original point,
+<a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/Topology/MaximalGenerization.lean"><code>MaximalGenerizationSpace X h</code></a>
+carries the projection-final topology, not the inherited subtype topology.
+Its quotient unit has singleton-closure fibres; the target is T₁ and canonically
+homeomorphic to <code>T1Quotient X</code>, preserving the unit. Maps to every T₁ target
+in an independent universe factor uniquely. Continuous maps between such spaces
+induce maps by projecting after mapping, with identity, composition and
+naturality laws. No global T₀, compactness, coherence or nonemptiness is required.</li><li><strong>Universal T₁ quotient.</strong> For every topological space <code>X</code>,
+<a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/Topology/T1Quotient.lean"><code>T1Quotient X</code></a> is the quotient
+by the infimum of all setoids with closed equivalence classes. Its unit is
+a continuous quotient map, universal for maps to every T₁ space, with source
+and target in independent universes. Induced continuous maps preserve identities
+and composition. The unit is a homeomorphism when <code>X</code> is T₁; for an R₀ input,
+the construction agrees homeomorphically with Mathlib's <code>SeparationQuotient</code>.</li><li><strong>Prime spectrum and compact opens.</strong> For a bounded distributive lattice <code>A</code>,
+<a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/PrimeSpectrum.lean"><code>PrimeIdealSpectrum</code></a> consists of prime
+<strong>order ideals</strong>. The opens <code>D(I)</code> are primes <em>not containing</em> the ideal <code>I</code>;
+every open arises this way, and <code>D(I)</code> is compact (quasi-compact, not
+necessarily Hausdorff) exactly when <code>I</code> is principal. Specialization is
+inclusion of prime ideals. The trivial lattice is permitted and has an empty
+spectrum. See the <a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/docs/Guide.md#prime-spectra-and-the-open-set-convention">spectrum guide</a>.</li><li><strong>Spectral Stone duality.</strong> Bounded lattice homomorphisms induce contravariant
+spectral maps; compact opens recover the lattice, and points of a spectral
+space are recovered from its compact-open lattice. The natural equivalence is
+<a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/Equivalence.lean"><code>SpectralStoneDuality.stoneDuality : BddDistLatᵒᵖ ≌ SpectralCat</code></a>.
+Its space-side reconstruction uses sobriety; it does not assert a duality for
+arbitrary spaces. See <a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/docs/Guide.md#maps-reconstruction-and-naturality">maps and reconstruction</a>.</li><li><strong>Finite compact-open reconstruction.</strong> At each finite set of compact opens,
+realized membership patterns form a finite spectral space with its Sierpiński
+product-subtype topology. Restriction maps are continuous and surjective.
+Evaluation into compatible families induces the topology when compact opens
+form a basis. It is injective when compact opens form a basis and the space
+is <code>T₀</code>. It is surjective when compact opens form a basis and the space is
+compact, quasi-separated and quasi-sober; this does not require <code>T₀</code>.
+Thus <a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/FiniteCoordinates.lean"><code>spaceHomeomorph</code></a> identifies
+any spectral space with its compatible finite patterns. The compatible-family
+cone is limiting for any topological space, and the point-evaluation cone is
+limiting for spectral spaces; see <a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/FiniteCoordinates/Limits.lean">finite-coordinate limits</a>
+and the <a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/docs/Guide.md#finite-compact-open-coordinates">finite-coordinate guide</a>.</li><li><strong>Thin-lattice finite coproducts.</strong> In the order category of a distributive
+lattice with bottom, finite joins are universal coproducts without requiring
+a top element. In any lattice with bottom, a finite coproduct is disjoint
+exactly when summands at distinct indices have meet bottom. Such disjoint
+coproducts stay disjoint after base change in the distributive case; every
+finite coproduct's injections generate a covering sieve for the extensive
+topology. This does
+not assert that every finite coproduct is disjoint or that the category is
+<code>FinitaryExtensive</code>. See <a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/CategoryTheory/Lattice/Extensive.lean">thin lattices</a>.</li><li><strong>Finite preservation and lattice maps.</strong> A functor between the order
+categories of bounded lattices preserves finite limits and finite colimits
+exactly when its object map is a bounded lattice homomorphism. The two maps
+recover each other; no distributivity or shared carrier universe is needed.
+Empty diagrams detect top and bottom, while binary discrete diagrams detect
+meets and joins. See <a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/CategoryTheory/Lattice/Preserves.lean">preservation</a>.</li><li><strong>Soberification.</strong> For any topological space, the topology on its nonempty
+irreducible closed subsets yields a <code>T₀</code> quasi-sober space. The unit sends
+a point to its singleton closure; continuous maps into <code>T₀</code> quasi-sober
+spaces extend uniquely, giving a left adjoint to their inclusion in <code>TopCat</code>.
+No separation, compactness or spectrality is required of the input. This
+general-topology reflection is separate from the spectral-space
+reconstruction in Stone duality. See <a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/Topology/Soberification.lean">topology</a>
+and <a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/Topology/Category/Soberification.lean">adjunction</a>.</li><li><strong>Finite quasi-sobriety.</strong> Every finite irreducible subset of any topological
+space contains a generic point of its closure. In particular, every finite
+topological space is quasi-sober, including the empty space and spaces that
+are not <code>T₀</code>; sobriety additionally requires <code>T₀</code>. See
+<a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/Topology/Finite.lean">finite topology</a>.</li><li><strong>Cofinite quasi-sobriety.</strong> <code>CofiniteTopology.quasiSober_iff_finite X</code>
+characterizes quasi-sobriety by <code>Finite X</code>, without a nonemptiness
+hypothesis: empty and finite cofinite spaces are sober, whereas an infinite
+cofinite space is <code>T₁</code> but not quasi-sober. See <a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/Topology/Cofinite.lean">cofinite topology</a>.</li><li><strong>Closed points among generizations.</strong> In any <code>T₀</code> space, the original point
+is the unique closed point of its generization subspace <code>nhdsKer {x}</code>:
+<a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/Topology/NhdsKer.lean"><code>isClosed_singleton_nhdsKer_iff</code></a>
+characterizes every closed singleton in that subspace. No sobriety or
+spectrality is needed. See <a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/docs/Guide.md#closed-generizations">closed generizations</a>.</li><li><strong>Generic-point removal.</strong> In an Alexandrov space, select any set of points
+each with no other generizations (including indistinguishable ones). The
+discrete boundary labelled by strict specialization incidences maps to a sum
+of independent generic-point forks and to the complementary subspace; together
+these form a four-map pushout in <code>TopCat</code>. Openness and continuity on the
+original space are detected on the forks and complement, and compatible
+continuous maps glue uniquely. Neither a finite-space representation nor a
+ring- or scheme-level pushout is asserted. See
+<a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/Topology/GenericPointRemoval.lean">generic-point removal</a>.</li><li><strong>Closed-subspace strict specializations.</strong> If all ambient specializations of
+a selected point lie in a subspace and the selected points there have no
+other generizations, the ambient strict indices agree with the subspace
+strict-incidence indices, preserving both endpoints. Closed subspaces give
+the containment condition. Finite containing subspaces bound the ambient
+indices without a selected-point assumption; an Alexandrov subspace makes
+the selected points relatively open. No <code>T₀</code> assumption is needed. See
+<a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/Topology/SubspaceStrictSpecializations.lean">subspace strict specializations</a>.</li><li><strong>Limits and cylinder bases.</strong> Small cofiltered diagrams of spectral spaces
+with <strong>spectral transition maps</strong> have spectral limits and spectral
+projections. Compact-open inverse-image cylinders form a basis for a supplied
+<code>IsLimit</code> cone or the chosen limit. The separate limit-nonemptiness theorem
+additionally assumes every stage nonempty; the basis results do not.
+See <a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/Limits.lean">limits</a> and the
+<a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/docs/CompactOpenBasis.md">cylinder-basis supplement</a>.</li><li><strong>Maps of cofiltered spectral limits.</strong> Given a natural transformation of
+small cofiltered diagrams with spectral source and target stages, spectral
+source transitions, spectral component maps, and arbitrary supplied <code>IsLimit</code>
+cones, the induced map is spectral when target transitions are spectral
+(<code>isSpectralMap_isLimit_map</code>), surjective when each component is surjective
+(<code>surjective_isLimit_map</code>), and closed when each component is a closed map
+(<code>isClosedMap_isLimit_map</code>). Surjectivity and closedness do not require spectral
+target transitions; no result assumes nonempty stages or Hausdorff spaces.
+If the spectral transition maps themselves are surjective or closed, respectively,
+each projection of a supplied limiting cone is surjective
+(<code>surjective_isLimit_projection</code>) or closed (<code>isClosedMap_isLimit_projection</code>).
+The closed-projection result does not require surjective transitions.
+See <a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/LimitMaps.lean">limit maps</a>.</li><li><strong>Subspaces and descent.</strong> A compact open of <em>any</em> subspace of a prespectral
+space lifts to an ambient compact open; closedness is unnecessary. A map to
+that subspace is spectral when its composite with the inclusion is spectral.
+For an actual limiting cone, compact-open/merely-open cylinder containment
+descends over an <code>Over</code> witness. Finite, possibly empty, labelled families
+descend coherently, including whole-stage covers. These results do not require
+surjective arrows or inhabited stages, and do not construct sheaves or their
+gluing. See <a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/Subspace.lean">subspaces</a>,
+<a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/docs/LimitCylinderDescent.md">single-cylinder descent</a> and
+<a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/docs/FiniteCylinderDescent.md">finite-cylinder descent</a>.</li><li><strong>Compact locally closed subspaces.</strong> Inducing spectral maps into prespectral
+quasi-separated spaces preserve quasi-separatedness without injectivity.
+A compact locally closed subset is retrocompact, and its ordinary subtype
+is prespectral, compact and quasi-separated, even when the ambient space is
+not compact. These conclusions do not assert sobriety. See
+<a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/Topology/LocallyClosed.lean">locally closed topology</a>.</li><li><strong>Constructibly closed spectral subspaces.</strong> A constructibly closed subset of
+a spectral space is spectral in the original subspace topology and includes
+spectrally into the ambient space or any containing subspace. Arbitrary
+compact-open intersections, including cofinal compact-open families, and
+generization subspaces <code>nhdsKer {x}</code> are instances. The members of a cofinal
+family need not all be open. See
+<a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDuality/Topology/ConstructibleSubspace.lean">constructibly closed subspaces</a>
+and <a href="https://github.com/FormalFrontier/spectral-stone-duality/blob/582201dc239a72f6a5b395a65f54e8a7d55ec9fa/SpectralStoneDualityExamples/ConstructibleSubspace.lean">examples</a>.</li></ul>

@@ -1,0 +1,586 @@
+<ul><li><strong>Factorization uniqueness from a regular crossed resultant.</strong> Over any commutative
+ring, let <code>G,G&#x27;</code> have degree at most <code>m</code> and <code>H,H&#x27;</code> degree at most <code>n</code>, with
+<code>G.coeff m = G&#x27;.coeff m</code> and <code>H.coeff n = H&#x27;.coeff n</code>. If <code>G * H = G&#x27; * H&#x27;</code>
+and <code>Polynomial.resultant G&#x27; H m n</code> is regular, then <code>G = G&#x27;</code> and <code>H = H&#x27;</code>, by
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/ResultantFactorization.lean"><code>Polynomial.eq_and_eq_of_mul_eq_mul_of_isRegular_resultant</code></a>.
+Neither monicity nor positive nominal degrees are required, and the ring may have
+zero divisors.</li><li><strong>Non-unital rings of additive units.</strong> For a non-unital, non-associative semiring
+<code>R</code>, the existing <code>AddUnits R</code> inherits multiplication and forms a non-unital,
+non-associative ring. Associativity and commutativity are inherited when present.
+For every non-unital, non-associative ring <code>S</code>, value inclusion induces
+<code>(S →ₙ+* AddUnits R) ≃ (S →ₙ+* R)</code>, with a unique factorization through the
+additive units. See <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/AddUnits.lean"><code>AddUnits</code></a>.</li><li><strong>Nonconstant coefficients of polynomial units.</strong> Over any commutative semiring
+<code>R</code>, every coefficient at a nonzero exponent of a unit in <code>MvPolynomial σ R</code>
+is additively invertible, by
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/UnitCoefficients.lean"><code>MvPolynomial.isAddUnit_coeff_of_isUnit</code></a>.
+The variable type is arbitrary, including empty and infinite types.</li><li><strong>Polynomial units over commutative semirings.</strong> For any commutative semiring
+<code>R</code> and arbitrary variable type <code>σ</code>, a polynomial in <code>MvPolynomial σ R</code> is a
+unit if and only if its constant coefficient is a unit and its coefficient at
+every nonzero exponent is both nilpotent and additively invertible, by
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/UnitCriterion.lean"><code>MvPolynomial.isUnit_iff_coeff_isNilpotent_isAddUnit</code></a>.
+The coefficient and variable types have independent universes; empty variable
+types and the zero semiring are included. The lemma
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/UnitCriterion.lean"><code>MvPolynomial.isUnit_coeff_zero_and_isNilpotent_isAddUnit_iff</code></a>
+identifies the coefficient conditions over a commutative ring with those in
+Mathlib's <code>MvPolynomial.isUnit_iff</code>. The sufficiency direction remains available as
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/UnitSufficiency.lean"><code>MvPolynomial.isUnit_of_coeff_isNilpotent_isAddUnit</code></a>.</li><li><strong>Prime coefficient extensions over commutative semirings.</strong> For a commutative
+semiring <code>R</code>, any variable type <code>σ</code> and ideal <code>I</code>, primality of <code>I</code> together
+with <code>∀ a b : R, a ∈ I → a + b ∈ I → b ∈ I</code> implies primality of
+<code>I.map MvPolynomial.C</code>,
+by <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/CoefficientIdealPrime.lean"><code>MvPolynomial.isPrime_map_C_of_subtractive</code></a>.
+For nonempty <code>σ</code>, these conditions are also necessary, by
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/CoefficientIdealPrime.lean"><code>MvPolynomial.isPrime_map_C_iff</code></a>.</li><li><strong>Maximal coefficient extensions over commutative semirings.</strong> For a commutative
+semiring <code>R</code>, any variable type <code>σ</code> and ideal <code>I</code>,
+<code>(I.map MvPolynomial.C).IsMaximal ↔ I.IsMaximal ∧ IsEmpty σ</code>, by
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/CoefficientIdealMaximal.lean"><code>MvPolynomial.isMaximal_map_C_iff</code></a>.
+With nonempty <code>σ</code>, no coefficient extension is maximal. For proper <code>I</code>,
+the constant-coefficient preimage is a strict intermediate ideal.</li><li><strong>Finite coefficient-product equations determine whole products.</strong> For independent
+commutative semirings <code>C</code> and <code>R</code>, an arbitrary homomorphism <code>φ : C →+* R</code>,
+nominal sizes <code>m,n</code>, seeds <code>g,h : Polynomial C</code> and arbitrary target coefficient
+point, <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/CoefficientProduct.lean"><code>MvPolynomial.eval₂Hom_coefficientProduct_eq_iff</code></a>
+identifies the finite evaluated equations with equality of the entire ordinary
+perturbed product to <code>T</code>. It assumes target-side bounds
+<code>(g.map φ).natDegree ≤ m</code>, <code>(h.map φ).natDegree ≤ n</code>, <code>T.natDegree ≤ m + n</code>, and
+<code>T.coeff (m + n) = (g.map φ).coeff m * (h.map φ).coeff n</code>. Zero sizes, mapped
+degree drops and trivial semirings are included; no source degree bound or
+injectivity of <code>φ</code> is required.</li><li><strong>Radicals of coefficient-ideal extensions.</strong> For any commutative ring <code>R</code>,
+arbitrary variable type <code>σ</code> and ideal <code>I : Ideal R</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/IdealExtension.lean"><code>MvPolynomial.radical_map_C</code></a>
+says that extending <code>I</code> along the constant-polynomial map commutes with radicals.
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/IdealExtension.lean"><code>MvPolynomial.mem_radical_map_C_iff</code></a>
+characterizes radical membership coefficientwise: a polynomial lies in the
+radical of the extended ideal exactly when every coefficient lies in <code>I.radical</code>.</li><li><strong>Scalar annihilators and non-zero-divisors.</strong> For any commutative semiring
+<code>R</code> and arbitrary variable type <code>σ</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Regularity.lean"><code>MvPolynomial.mem_nonZeroDivisors_iff</code></a>
+characterizes non-zero-divisors by the absence of a nonzero scalar in the
+original coefficient semiring annihilating every coefficient. No individual
+coefficient need be a non-zero-divisor.
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Regularity.lean"><code>MvPolynomial.eq_zero_of_mul_eq_zero_of_smul</code></a>
+shows that a polynomial with no nonzero scalar annihilator has no nonzero
+polynomial annihilator. The results allow empty or infinite variable types,
+independent universes and trivial coefficient semirings. The interpretation
+in terms of <code>IsRegular</code> is asserted only over commutative rings.</li><li><strong>The degree-zero homogeneous component.</strong> For any commutative semiring
+<code>R</code> and arbitrary variable type <code>σ</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/GradeZero.lean"><code>MvPolynomial.gradeZeroAlgEquiv</code></a>
+identifies <code>R</code> as an <code>R</code>-algebra with Mathlib's original degree-zero homogeneous
+component. Its forward map is the inherited coefficient algebra map, with
+ambient polynomial <code>C r</code>; its inverse is <code>constantCoeff</code>. The construction uses
+independent universes and commutes with coefficient homomorphisms in the
+ambient polynomial algebras, without finiteness or nontriviality hypotheses.</li><li><strong>Coefficient ideals over commutative semirings.</strong> For any commutative
+semiring <code>R</code>, ideal <code>I</code> and arbitrary variable type <code>σ</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/CoefficientIdeal.lean"><code>MvPolynomial.coeffsIn_eq_restrictScalars_map_C</code></a>
+identifies the extension <code>Ideal.map C I</code>, restricted to the canonical
+coefficient action, with Mathlib's coefficient submodule <code>coeffsIn σ I</code>.
+Polynomial membership is therefore coefficientwise membership, and
+contraction along <code>C</code> recovers <code>I</code>.
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/CoefficientIdeal.lean"><code>MvPolynomial.ker_map_eq_map_C</code></a>
+identifies the kernel of a coefficient map with the extension of its kernel.
+Coefficients, target coefficients and variables have independent universes;
+no ring, finiteness or nontriviality hypothesis is needed. The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/CoefficientIdeal.lean">natural-number example</a>
+separates <code>2 * X</code> from <code>X</code> for the proper extended ideal <code>(2)</code> and for
+coefficient reduction modulo two.</li><li><strong>Square witnesses for failure of subtractivity.</strong> Over any commutative
+semiring <code>R</code>, for <code>i : σ</code> and <code>a b : R</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/CoefficientIdealSubtractive.lean"><code>MvPolynomial.subtractiveWitness</code></a>
+is <code>C a + C b * X i + C (a + b) * X i ^ 2</code>, with linear coefficient <code>b</code>.
+Its square belongs to <code>I.map C</code> if <code>a ∈ I</code> and <code>a + b ∈ I</code>, while
+<code>b ∉ I</code> excludes the witness itself. Thus a radical (in particular prime)
+extension over nonempty variables forces subtractivity. Coefficient and
+variable universes are independent; no finiteness or nontriviality is needed.</li><li><strong>Powers of augmented coefficient ideals.</strong> For any commutative semiring
+<code>R</code>, ideal <code>I</code>, natural number <code>n</code>, arbitrary variable type <code>σ</code>, and polynomial
+<code>p</code>, <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/AugmentedIdealPowers.lean"><code>MvPolynomial.mem_pow_comap_constantCoeff_iff_coeff_mem_pow</code></a>
+characterizes membership in <code>(I.comap constantCoeff) ^ n</code>: the coefficient
+at each exponent <code>d</code> belongs to <code>I ^ (n - d.sum (fun _ k =&gt; k))</code>.
+Subtraction is truncated in <code>ℕ</code>, so degrees at least <code>n</code> impose no
+restriction, rather than vanishing. Coefficients and variables have
+independent universes; empty or infinite variables and trivial coefficient
+semirings are allowed. The bottom coefficient ideal recovers Mathlib's
+variable-ideal power criterion. The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/CoefficientVariableIdeal.lean">integer and boundary examples</a>
+apply the criterion to <code>2 * X ∈ (2, X)²</code>, contrast the constant <code>2</code>, and
+include the zeroth power and empty variables.</li><li><strong>Primary coefficient ideals.</strong> Over any commutative semiring <code>R</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Primary.lean"><code>MvPolynomial.isPrimary_map_C_of_subtractive</code></a>
+extends a primary ideal <code>I</code> satisfying <code>a ∈ I → a + b ∈ I → b ∈ I</code> to a
+primary coefficient ideal, for every variable type <code>σ</code>. When <code>σ</code> is nonempty,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Primary.lean"><code>MvPolynomial.isPrimary_map_C_iff_subtractive</code></a>
+proves that primaryness and this subtractivity condition are also necessary.
+For a commutative ring, subtractivity is automatic, and
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Primary.lean"><code>MvPolynomial.isPrimary_map_C_iff</code></a>
+gives the equivalence without any restriction on <code>σ</code>. Coefficients and
+variables have independent universes; empty variable types and the unit ideal
+are included, with no Noetherian or nontriviality hypothesis. The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/Primary.lean">integer example</a> extends the
+primary, nonradical ideal <code>(4)</code>.</li><li><strong>Supplied primary families and deletion irredundance.</strong> Over a commutative
+semiring <code>R</code>, for an ideal <code>I</code> and family <code>Q : ι → Ideal R</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/PrimaryDecomposition.lean"><code>MvPolynomial.primary_family_map_C_iff_of_subtractive</code></a>
+assumes <code>a ∈ Q i → a + b ∈ Q i → b ∈ Q i</code> for each component. For every variable
+type <code>σ</code>, it equates <code>I.map C = ⨅ i, (Q i).map C</code> with all mapped components
+primary to <code>I = ⨅ i, Q i</code> with all original components primary. For nonempty
+<code>σ</code>, <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/PrimaryDecomposition.lean"><code>MvPolynomial.primary_family_map_C_iff_subtractive</code></a>
+gives the exact equivalence with <code>I = ⨅ i, Q i</code> and componentwise primaryness
+and subtractivity, recovering the latter from the mapped primary family.
+The ring theorem
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/PrimaryDecomposition.lean"><code>MvPolynomial.primary_family_map_C_iff</code></a>
+specializes the first equivalence using automatic subtractivity, for every <code>σ</code>.
+The intersection itself need not be primary. Over any commutative semiring,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/PrimaryDecomposition.lean"><code>MvPolynomial.irredundant_iInf_map_C_iff</code></a>
+preserves and reflects the condition that each intersection of the other
+components is not contained in the omitted component, without subtractivity.
+Indices may form any sort; coefficient, variable and index universes are
+independent. Empty or infinite families are allowed, with no finiteness or
+Noetherian hypothesis. These statements give no existence, uniqueness or
+associated-prime claim. The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/PrimaryDecomposition.lean">integer model</a>
+uses the ring equivalence and deletion irredundance for <code>(12) = (4) ∩ (3)</code>.</li><li><strong>Nilpotent coefficients and irreducible polynomial spectra.</strong> For any
+commutative semiring <code>R</code> and arbitrary variable type <code>σ</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Nilpotent.lean"><code>MvPolynomial.isNilpotent_iff_coeff</code></a>
+characterizes nilpotent polynomials by nilpotence of every coefficient.
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/PrimeSpectrum.lean"><code>PrimeSpectrum.irreducibleSpace_mvPolynomial_iff</code></a>
+states that <code>PrimeSpectrum (MvPolynomial σ R)</code> is irreducible exactly when
+<code>PrimeSpectrum R</code> is irreducible. Coefficients and variables have independent
+universes; empty or infinite variables and trivial coefficients are allowed.</li><li><strong>Jacobson radicals of coefficient ideals.</strong> For any commutative ring <code>R</code>,
+ideal <code>I</code> and nonempty variable type <code>σ</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Jacobson.lean"><code>Ideal.jacobson_map_mvPolynomial_C</code></a>
+identifies <code>Ideal.jacobson (I.map C)</code> with <code>I.radical.map C</code>.
+In particular, the Jacobson radical of zero in <code>MvPolynomial σ R</code> is its
+nilradical. Coefficient and variable universes are independent; no
+Jacobson-ring, Noetherian, properness or nontriviality hypothesis is needed.
+The <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/Jacobson.lean">integer example</a> separates
+the extended ideal <code>(4)</code> from its proper Jacobson radical using <code>2 * X</code>.</li><li><strong>Integral elements over coefficient rings.</strong> For any commutative ring <code>R</code>
+and arbitrary variable type <code>σ</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/IntegralCoefficients.lean"><code>MvPolynomial.isIntegral_iff_coeff_isNilpotent</code></a>
+characterizes <code>IsIntegral R p</code> by nilpotence of every nonconstant coefficient.
+For reduced <code>R</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/IntegralCoefficients.lean"><code>MvPolynomial.isIntegral_iff_eq_C_coeff_zero</code></a>
+specializes this to <code>p = C (p.coeff 0)</code>.
+The coefficient and variable universes are independent; trivial coefficient
+rings and empty or infinite variable types are allowed. Over <code>ZMod 4</code>,
+<code>C 2 * X ()</code> is a nonconstant square-zero integral polynomial.</li><li><strong>Integral closure in arbitrarily many variables.</strong> For every integrally closed
+commutative domain <code>R</code> and arbitrary variable type <code>ι</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/IntegrallyClosed.lean"><code>MvPolynomial.isIntegrallyClosed</code></a>
+makes the ordinary polynomial ring <code>MvPolynomial ι R</code> integrally closed.
+The coefficient and variable universes are independent, and the variables may
+be empty or infinite. No Noetherian or unique-factorization hypothesis is
+imposed on <code>R</code>.</li><li><strong>Flatness of commutative-ring variable renaming.</strong> For every commutative
+ring <code>R</code> and arbitrary <code>f : σ → τ</code>, with coefficient and variable types in
+independent universes,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameFlatness.lean"><code>MvPolynomial.rename_flat_iff</code></a>
+characterizes flatness of the full ring homomorphism
+<code>MvPolynomial.rename (R := R) f</code> by injectivity of <code>f</code> or subsingleton
+coefficients. The scalar action is induced by this original polynomial-ring
+map, not just by <code>R</code> or by its image. Injective maps give free polynomial
+extensions after complementary variables are separated; a collision kills
+the regular difference of two distinct variables. The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Regularity.lean">regularity API</a> works over every
+commutative ring, including the zero ring. The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/RenameFlatnessModels.lean">independent models</a>
+and <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTypeTests/RenameFlatness.lean">criterion applications</a>
+include a proper inclusion over the integers, a collision over the nonreduced
+ring <code>ZMod 4</code>, and the same collision over <code>ZMod 1</code>.
+The same module also gives
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameFlatness.lean"><code>MvPolynomial.comap_rename_surjective_iff</code></a>
+for commutative semirings and
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameFlatness.lean"><code>MvPolynomial.rename_faithfullyFlat_iff</code></a>
+for commutative rings: each uses the same injectivity-or-subsingleton condition
+for the original full polynomial map. Their criterion applications include
+the strict inclusion over <code>ℤ</code>, prime-spectrum surjectivity over the non-ring
+semiring <code>ℕ</code>, an empty source, and a collision over the zero ring.</li><li><strong>Canonical unique-variable degree.</strong> For any commutative semiring <code>R</code>,
+unique variable type <code>σ</code> (<code>[Unique σ]</code>), and <code>p : MvPolynomial σ R</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/UniqueAlgEquiv.lean"><code>MvPolynomial.natDegree_uniqueAlgEquiv</code></a>
+identifies <code>Polynomial.natDegree (MvPolynomial.uniqueAlgEquiv R σ p)</code>
+with <code>p.totalDegree</code>. The coefficient and variable universes are independent.
+No nonzero-polynomial or nontrivial-coefficient premise is needed:
+both natural-number degrees assign zero to the zero polynomial.</li><li><strong>Injectivity and surjectivity of variable renaming.</strong> For any commutative
+semiring <code>R</code> and any map <code>f : σ → τ</code>, with the coefficient, source-variable
+and target-variable types in independent universes, the canonical renaming
+map from the full polynomial semiring <code>MvPolynomial σ R</code> to the full
+polynomial semiring <code>MvPolynomial τ R</code> is injective exactly when <code>f</code> is
+injective or <code>R</code> is subsingleton
+(<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Rename.lean"><code>MvPolynomial.injective_rename_iff</code></a>),
+and is surjective exactly when <code>f</code> is surjective or <code>R</code> is subsingleton
+(<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Rename.lean"><code>MvPolynomial.surjective_rename_iff</code></a>).</li><li><strong>Formal smoothness of variable renaming.</strong> Over any commutative ring <code>R</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameFormalSmoothness.lean"><code>MvPolynomial.rename_formallySmooth_iff_injective</code></a>
+characterizes formal smoothness of the full source polynomial-ring
+homomorphism by injectivity of that homomorphism. Equivalently,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameFormalSmoothness.lean"><code>MvPolynomial.rename_formallySmooth_iff</code></a>
+says that the variable map is injective or the coefficients are subsingleton.
+The scalar action is induced by the original renaming, not just by <code>R</code>.
+The coefficient and variable types have independent universes, with no
+finiteness or nontriviality hypotheses. Complementary variables give the
+polynomial-extension direction; a square-zero lifting obstruction detects
+collisions over nontrivial coefficients.</li><li><strong>Smoothness of variable renaming.</strong> Over any commutative ring <code>R</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameSmooth.lean"><code>MvPolynomial.rename_smooth_iff</code></a>
+says that the canonical homomorphism on full polynomial rings is smooth
+exactly when the variable map is injective with finite complement, or <code>R</code>
+is subsingleton. This is stock <code>RingHom.Smooth</code>, including finite
+presentation, for the source-polynomial action induced by renaming.
+Coefficients and both variable types have independent universes; no
+finiteness or nontriviality hypothesis is imposed on them.
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameSmooth.lean"><code>MvPolynomial.rename_smooth_iff_flat_and_finiteType</code></a>
+compares smoothness with flatness and finite type for these renamings.
+Five concrete settings in the same file distinguish the collision/flatness
+obstruction from the infinite-complement/finite-type obstruction and exhibit
+the zero-ring exception. A derived application uses the comparison to extract
+flatness and finite type from an independent one-variable extension over <code>ℤ</code>.</li><li><strong>Formal unramifiedness of variable renaming.</strong> Over any commutative ring
+<code>R</code>, <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameUnramified.lean"><code>MvPolynomial.formallyUnramified_rename_iff_surjective</code></a>
+says that <code>MvPolynomial.rename f</code>, as a homomorphism from the full source
+polynomial ring, is formally unramified exactly when it is surjective:
+equivalently, when <code>f</code> is surjective or <code>R</code> is subsingleton. The coefficient
+and variable types may lie in independent universes, and neither variable
+type must be finite or inhabited. The <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameUnramified.lean">private boundary models</a>
+include a collision of variables over the integers, an omitted variable over
+the integers, and an omitted variable over <code>ZMod 1</code>. The collision uses
+<code>MvPolynomial.formallyUnramified_rename_iff_moduleFinite</code>, with the full source
+polynomial ring acting by multiplication by the renamed polynomial.</li><li><strong>Integrality of polynomial variable renaming.</strong>
+Over any commutative ring <code>R</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameIntegral.lean"><code>MvPolynomial.isIntegral_rename_iff</code></a>
+states that renaming between the full polynomial rings is integral exactly
+when the variable map is surjective or the coefficient ring is subsingleton.
+See the <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/README.md#integrality-of-polynomial-variable-renaming">integrality section</a>
+for the precise map, generality and applications.</li><li><strong>Algebraicity of polynomial variable renaming.</strong>
+Over any commutative ring <code>R</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameAlgebraic.lean"><code>MvPolynomial.isAlgebraic_rename_iff</code></a>
+states that the full target polynomial ring is algebraic over the full source
+via the specified renaming exactly when the coefficients are nontrivial and
+the variable map is surjective or noninjective. A collision gives a nonzero
+constant annihilator, even when a target variable is missed; zero coefficients
+give no such polynomial, even for identity renaming. This is weak algebraicity,
+not integrality or module finiteness. The coefficient and both variable types
+have independent universes, with no additional ring or finiteness hypotheses.
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameAlgebraic.lean">Criterion applications</a>
+are colocated with the public result. The independent
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameAlgebraic.lean">positive models</a>
+and <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameAlgebraic.lean">negative models</a>
+use stock Mathlib directly for algebraicity. The shifted-projection models over
+the integers and <code>ZMod 4</code> use the existing integrality criterion for their
+missing-variable nonintegrality proofs:
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameIntegral.lean"><code>MvPolynomial.isIntegral_X_rename_iff</code></a>.</li><li><strong>Finite presentation of commutative-ring variable renaming.</strong>
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameFinitePresentation.lean"><code>MvPolynomial.finitePresentation_rename_iff</code></a>
+states the relative finite-presentation criterion: subsingleton coefficients,
+or finitely many missed target variables together with finitely many source
+collision participants. Both collision endpoints are counted. See the
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/README.md#relative-finite-presentation-of-variable-renaming">finite-presentation section</a>
+for the coefficient-ring boundary and infinite-variable examples.</li><li><strong>Zero-variable presentations and semiring renaming.</strong>
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/FinitePresentation.lean"><code>Algebra.FinitePresentation.of_surjective_algebraMap</code></a>
+gives a zero-variable presentation for a surjective scalar map from a
+commutative semiring to any semiring, with finitely generated ideal kernel.
+For commutative-semiring coefficients with subsingleton additive units,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameFinitePresentationSemiring.lean">renaming reflects zero</a>
+and every surjective variable map is finitely presented over its full source
+polynomial semiring. No cancellation, order, or finiteness assumption is needed.
+This is Mathlib's ideal-kernel convention, not congruence-based semiring
+finite presentation; a bottom ideal kernel need not imply injectivity.</li><li><strong>Variable renaming has an exact relative finite-type criterion.</strong>
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameFiniteType.lean"><code>MvPolynomial.finiteType_rename_iff</code></a>
+characterizes finite generation of the target polynomial algebra over the
+source polynomial semiring: the coefficients are subsingleton or the set of
+missed target variables is finite. See the
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/README.md#relative-finite-type-of-variable-renaming">relative finite-type section</a>
+for the algebra structure, generality and infinite-variable applications.</li><li><strong>Variable renaming has an exact relative essentially finite-type criterion.</strong>
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameEssentialFiniteType.lean"><code>MvPolynomial.essFiniteType_rename_iff</code></a>
+characterizes <code>RingHom.EssFiniteType</code> of renaming for arbitrary <code>f : σ → τ</code>
+over a commutative ring <code>R</code>, with independent coefficient and variable
+universes: <code>R</code> is subsingleton or <code>Set.Finite ((Set.range f)ᶜ)</code>. Scalars are
+<code>MvPolynomial σ R</code>, acting on <code>MvPolynomial τ R</code> by <code>p • q = rename f p * q</code>.
+Essential finite type is distinct from finite type, but their criteria
+coincide for these maps. The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameEssentialFiniteType.lean">worked applications</a>
+contrast successor renaming over <code>ℤ</code> (only <code>0</code> is missed), <code>Empty → ℕ</code>
+with subsingleton coefficients (infinitely many missed variables), and
+even-index renaming over <code>ℤ</code>, which is not essentially of finite type.</li><li><strong>Module finiteness of variable renaming has a sharper criterion.</strong> For any
+commutative semiring <code>R</code> and any map <code>f : σ → τ</code>, with all three types in
+independent universes,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameModuleFinite.lean"><code>MvPolynomial.moduleFinite_rename_iff</code></a>
+states that the full target polynomial semiring is a finite module over the
+full source polynomial semiring under <code>p • q = MvPolynomial.rename f p * q</code>
+exactly when <code>f</code> is surjective or <code>R</code> is subsingleton. This is stronger than
+finite type: over nontrivial coefficients, <code>Nat.succ : ℕ → ℕ</code> misses only
+<code>0</code>, so its renaming is of finite type but is not module-finite. These are
+source-polynomial scalars, not coefficient-<code>R</code> scalars. See the
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameModuleFinite.lean">applications beside the criterion</a>,
+including nonreduced and noncancellative coefficients and independent universe lifts.</li><li><strong>Quasi-finiteness of commutative-ring variable renaming.</strong> For any
+commutative ring <code>R</code> and arbitrary <code>f : σ → τ</code>, with all three types in
+independent universes,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameQuasiFinite.lean"><code>MvPolynomial.rename_quasiFinite_iff</code></a>
+states that the original full polynomial-ring map is quasi-finite exactly
+when <code>f</code> is surjective or <code>R</code> is subsingleton. It uses Mathlib's
+residue-field-fiber convention, without a <code>FiniteType</code> hypothesis, and
+the full source-polynomial action. Module finiteness supplies the positive
+direction; an omitted target variable gives a surjective evaluation onto
+<code>R[X]</code>, reducing the converse to Mathlib's polynomial local obstruction. The
+comparison <code>MvPolynomial.rename_quasiFinite_iff_finite</code> identifies
+quasi-finiteness with finiteness of that same ring homomorphism. The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameQuasiFinite.lean">boundary applications</a>
+contrast an omitted variable and a noninjective surjection over <code>ℤ</code>, and
+include the same omitted-variable map over <code>ZMod 1</code>. In the collision case,
+a nonzero source polynomial annihilates every target polynomial under the
+full renaming-induced action.</li><li><strong>Finite coefficient aggregation has an exact injectivity criterion.</strong> For
+types <code>α</code>, <code>β</code> and <code>M</code> in independent universes, an additive commutative
+monoid <code>M</code>, and any index map <code>f : α → β</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/FiniteSupport.lean"><code>Finsupp.mapDomain_injective_iff</code></a>
+characterizes injectivity of <code>Finsupp.mapDomain f : (α →₀ M) → (β →₀ M)</code>:
+it holds exactly when <code>f</code> is injective <strong>or</strong> <code>M</code> is subsingleton. The map
+adds coefficients whose indices have the same image; cancellation, a ring
+structure and nontrivial coefficients are not required. The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/FiniteSupport.lean">applications</a> contrast the
+identity and a constant index map with natural-number coefficients.</li><li><strong>Joint degree-and-support profiles recover bivariate coefficients only for trivial coefficients.</strong>
+For any additive commutative monoid <code>M</code> in an arbitrary universe,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/FiniteSupport.lean"><code>Finsupp.mapDomain_degree_support_hasLeftInverse_iff</code></a>
+proves that pushing coefficients along
+<code>d ↦ (d.degree, d.support.card)</code>, for <code>d : Fin 2 →₀ ℕ</code>, admits a total left
+inverse exactly when <code>M</code> is subsingleton. The profile groups coefficients
+jointly by total degree and the number of variables with positive exponent.
+The decoder may be <strong>any total function</strong>: no additive, multiplicative or
+linear structure is required. The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/FiniteSupport.lean">applications</a> exclude every
+decoder over <code>ℕ</code> and obtain recovery over the zero ring <code>ZMod 1</code>.</li><li><strong>Variable-renaming kernels have an exact presentation and finite-generation criterion.</strong>
+For any commutative ring <code>R</code> and any map <code>f : σ → τ</code>, with all three types in
+independent universes,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameKernel.lean"><code>MvPolynomial.ker_rename_eq_span_X_sub_X</code></a>
+identifies the kernel of <code>MvPolynomial.rename (R := R) f</code> with the ideal
+generated by <code>X i - X j</code> for pairs satisfying <code>f i = f j</code>. Moreover,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/RenameKernel.lean"><code>MvPolynomial.ker_rename_fg_iff</code></a>
+says that this ideal is finitely generated exactly when <code>R</code> is subsingleton
+or the set <code>{i : σ | ∃ j : σ, i ≠ j ∧ f i = f j}</code> is finite. This counts
+<strong>both endpoints</strong> of every collision, not just chosen representatives;
+finiteness of individual fibres is not enough. Finite generation is as an
+ideal of the <strong>source polynomial ring</strong> <code>MvPolynomial σ R</code>, not as an
+<code>R</code>-module. No surjectivity or finite-variable hypothesis is required. See
+the <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/RenameKernelCriterion.lean">applications</a>.</li><li><strong>Fraction-ring renaming is surjective, equivalently integral, exactly when
+it covers all variables.</strong>
+For any integral domain <code>R</code> (<code>[CommRing R] [IsDomain R]</code>) and injective
+<code>ρ : τ → σ</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/FractionRingFiniteVariables.lean"><code>MvPolynomial.surjective_fractionRing_map_rename_iff</code></a>
+characterizes surjectivity of the induced fraction-ring map by
+<code>Function.Surjective ρ</code>. Its source <code>L</code> and target <code>K</code> may be any
+commutative-ring fraction-ring realizations with their <code>Algebra</code> and
+<code>IsFractionRing</code> instances, without <code>Field</code> instances. The five universes
+of <code>R</code>, <code>τ</code>, <code>σ</code>, <code>L</code> and <code>K</code> are independent. For this same map,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/FractionRingFiniteVariables.lean"><code>MvPolynomial.isIntegral_fractionRing_map_rename_iff</code></a>
+characterizes integrality by the same condition <code>Function.Surjective ρ</code>.
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/FractionRingFiniteVariables.lean"><code>MvPolynomial.surjective_fractionRing_map_finset_iff</code></a>
+and
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/FractionRingFiniteVariables.lean"><code>MvPolynomial.isIntegral_fractionRing_map_finset_iff</code></a>
+specialize these criteria to a finite-variable stage <code>S : Finset σ</code>: the
+stage map is surjective, equivalently integral, exactly when
+<code>∀ i : σ, i ∈ S</code>, with no finiteness hypothesis on the ambient variable
+type. The variable-image criterion identifies the image of <code>X i</code> in the
+range exactly when <code>i ∈ Set.range ρ</code>. When <code>i ∉ Set.range ρ</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/FractionRingFiniteVariables.lean"><code>MvPolynomial.not_isIntegralElem_fractionRing_map_rename_X</code></a>
+shows that the localized variable <code>X i</code> in <code>K</code> is not integral over the
+image of the fraction-ring map. Thus every finite stage in infinitely
+many variables is neither surjective nor integral, although each finite
+family of fractions has a common finite stage. See the
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/docs/API.md#multivariatepolynomialsfractionringfinitevariables">API guide</a>.</li><li><strong>Omitted variables are algebraically independent over the source fraction ring.</strong>
+For a commutative domain <code>R</code>, an injective map <code>ρ : τ → σ</code>, and arbitrary
+commutative-ring fraction rings <code>L</code> of <code>MvPolynomial τ R</code> and <code>K</code> of
+<code>MvPolynomial σ R</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/FractionRingAlgebraicIndependence.lean"><code>MvPolynomial.algebraicIndependent_fractionRing_map_rename_compl</code></a>
+proves that the images of <code>X i</code> in <code>K</code>, indexed by
+<code>{i : σ // i ∉ Set.range ρ}</code>, are algebraically independent over <code>L</code>.
+The <code>L</code>-algebra structure on <code>K</code> must be induced by the same canonical
+fraction-ring map of <code>MvPolynomial.rename ρ</code>, not an arbitrary scalar action.
+The five universes of <code>R</code>, <code>τ</code>, <code>σ</code>, <code>L</code> and <code>K</code> are independent;
+no <code>Field</code> instances or finite index types are required.</li><li><strong>Omitted variables form a transcendence basis over the source fraction ring.</strong>
+In the same five-universe commutative-domain setting and under the full
+canonical fraction-renaming scalar action,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/FractionRingTranscendenceBasis.lean"><code>MvPolynomial.isAlgebraic_adjoin_fractionRing_map_rename_compl</code></a>
+proves that <code>K</code> is algebraic over the <code>L</code>-subalgebra generated by the
+complementary localized variables, and
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/FractionRingTranscendenceBasis.lean"><code>MvPolynomial.isTranscendenceBasis_fractionRing_map_rename_compl</code></a>
+identifies that family as a transcendence basis over <code>L</code>. Under the same
+hypotheses,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/FractionRingTranscendenceBasis.lean"><code>MvPolynomial.isFractionRing_adjoin_fractionRing_map_rename_compl</code></a>
+makes <code>K</code> the fraction ring of that generated <code>L</code>-subalgebra, for its canonical
+inclusion into <code>K</code>. The adjoin is over
+the source <strong>fraction ring</strong>, not the coefficient ring. Neither fraction-ring
+realization needs a <code>Field</code> instance, and neither variable type need be finite.
+The <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/FractionRingTranscendenceBasis.lean">direct-import examples</a>
+include the nonempty complement of <code>Unit → Bool</code>, <code>() ↦ false</code>, over <code>ℤ</code>,
+as well as arbitrary fraction-ring realizations.</li><li><strong>Zeros are closed points of polynomial quotients.</strong> For any ideal <code>I</code> in
+<code>MvPolynomial σ K</code> with <code>K</code> algebraically closed and <code>σ</code> finite, the
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/QuotientClosedPoints.lean">canonical point-set equivalence</a>
+identifies <code>MvPolynomial.zeroLocus K I</code> with closed points of the spectrum
+of <code>MvPolynomial σ K ⧸ I</code>. The forward prime is the kernel of descended
+evaluation; polynomial membership and inverse coordinates have explicit
+laws. The field and variables may inhabit different universes, and <code>I</code> may
+be the unit ideal or define a nonreduced quotient. This point-set result
+itself does not assert a topological or sheaf equivalence.</li><li><strong>The image of evaluating one polynomial at two points.</strong>
+Over any commutative ring <code>R</code>, for assignments <code>a b : σ → R</code> with independent
+coefficient and variable universes,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/EvaluationIdeal.lean"><code>MvPolynomial.mem_range_eval_prod_iff</code></a>
+characterizes value pairs <code>(r, s) : R × R</code> of one common polynomial by
+<code>r - s ∈ Ideal.span (Set.range (fun i =&gt; a i - b i))</code>, without a
+finite-variable, field or comaximality assumption. The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/EvaluationIdealImage.lean">examples</a>
+contrast same-parity pairs at the one-variable integer points <code>0</code> and <code>2</code>
+with all pairs at the two-variable points <code>(0, 0)</code> and <code>(2, 3)</code> despite
+nonunit coordinate differences, and include empty-variable diagonal and
+zero-ring boundaries.</li><li><strong>Finite simultaneous polynomial evaluation has an exact surjectivity criterion.</strong>
+For any commutative ring <code>R</code>, arbitrary variable type <code>σ</code>, finite point-index
+type <code>ι</code> and family <code>a : ι → σ → R</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/EvaluationIdeal.lean"><code>MvPolynomial.surjective_eval_family_iff</code></a>
+states that <code>p ↦ (i ↦ MvPolynomial.eval (a i) p)</code> is surjective exactly when
+the coordinate differences <code>a i s - a j s</code>, for all <code>s : σ</code>, generate the
+unit ideal for every pair of distinct indices <code>i ≠ j</code>. The three types have
+independent universes. Empty families, empty or infinite variable types,
+repeated points and the zero ring are included; no field hypothesis is needed.</li><li><strong>Evaluation-kernel powers are detected by translated coefficients.</strong> For any
+commutative semiring <code>R</code> and point <code>a : σ → AddUnits R</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/EvaluationIdeal.lean"><code>MvPolynomial.mem_pow_ker_eval_addUnits_iff</code></a>
+characterizes membership in every <code>n</code>th evaluation-kernel power by vanishing
+of all coefficients of total degree <code>&lt; n</code> after the translation <code>p(X + a)</code>.
+Over a commutative ring,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/EvaluationIdeal.lean"><code>MvPolynomial.mem_pow_ker_eval_iff</code></a>
+allows arbitrary points <code>a : σ → R</code>. Both results allow arbitrary variable
+types, independent coefficient/variable universes, and every <code>n : ℕ</code>, including zero.</li><li><strong>Separated polynomial point quotients are square-zero extensions.</strong> Over
+any commutative ring, including the zero ring, and any index type, the
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/PointSquareZeroPresentation.lean">generator-prescribed forward map</a>
+from the quotient by coordinate squares and point relations is bijective
+when differences of distinct evaluation points are units. The resulting
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/PointSquareZeroQuotient.lean">polynomial-algebra equivalence</a>
+has forward coordinate laws and an inverse law on the evaluation summands;
+no mixed-product relations are added to the defining ideal. See the
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/docs/API.md">API guide</a> for the two modules and their boundary examples.</li><li><strong>Subset-weight-one valuations have full rational residue fields.</strong> For any
+field, any variable type and subset containing a chosen pivot, the
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/WeightOneValuation.lean">weight-one construction</a>
+identifies the multivariate function field birationally with a univariate
+rational function field over the field of unweighted variables and pivot
+ratios. Minimum subset weight gives a surjective rank-one discrete valuation;
+its pivot is a uniformizer, and its entire residue field is the rational
+function field in those unweighted variables and ratios. The equal-order
+fraction law computes residues from initial coefficients. For the empty
+subset, the separate trivial valuation has no discrete-valuation claim.</li><li><strong>Hilbert basis theorem for left-Noetherian rings.</strong>
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Noetherian.lean"><code>Polynomial.isNoetherianRing_of_isNoetherianRing</code></a>
+proves <code>IsNoetherianRing (Polynomial R)</code> for any <code>R : Type u</code> with
+<code>[Ring R]</code> and <code>[IsNoetherianRing R]</code>. The polynomial variable is central;
+coefficient commutativity, nontriviality and absence of zero divisors are
+not required. On commutative rings,
+<code>Polynomial.isNoetherianRing_of_isNoetherianRing_eq_isNoetherianRing</code>
+identifies this proof with Mathlib's <code>Polynomial.isNoetherianRing</code>.
+For any finite type <code>σ : Type v</code>, the named theorem
+<code>AddMonoidAlgebra.isNoetherianRing_finsupp</code> proves left Noetherianity of
+<code>AddMonoidAlgebra R (σ →₀ ℕ)</code>, with independently polymorphic universes.
+It permits zero and noncommutative coefficient rings. For commutative rings,
+this is definitionally <code>MvPolynomial σ R</code>.
+Here <code>IsNoetherianRing R</code> means <code>IsNoetherian R R</code> for the canonical left
+self-action. It does not assume <code>IsNoetherian R (Polynomial R)</code>: that
+coefficient-module property is false for every nontrivial coefficient ring.
+The <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/Noetherian.lean">examples</a> include the
+noncommutative 16-element ring <code>Matrix (Fin 2) (Fin 2) (ZMod 2)</code>, whose
+polynomial ring is infinite but left-Noetherian, the zero ring <code>ZMod 1</code>,
+and <code>ZMod 4</code> with its nonzero nilpotent <code>2</code>.</li><li><strong>Noetherian polynomial-ring criteria.</strong> The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Noetherian.lean">Noetherian module</a> proves the
+coefficient-and-variable characterization over arbitrary commutative rings:
+<code>MvPolynomial σ R</code> is Noetherian for its self-action exactly when <code>R</code> is
+Noetherian and either
+<code>σ</code> is finite or <code>R</code> is the zero ring. For nontrivial commutative semirings,
+Noetherianity of the polynomial semiring forces <code>σ</code> to be finite; no
+semiring Hilbert-basis sufficiency is asserted. The nontrivial-ring form
+removes the zero-ring alternative without imposing a domain hypothesis.
+The coefficient and variable universes are independent. The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/Noetherian.lean">examples</a> distinguish empty,
+finite and infinite variables over the integers, <code>ZMod 6</code>, and <code>ZMod 1</code>.</li><li><strong>Artinian polynomial-semiring criteria.</strong> For any <code>R : Type u</code> with
+<code>[Semiring R]</code>, including noncommutative coefficients,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Artinian.lean"><code>Polynomial.isArtinianRing_iff</code></a>
+proves <code>IsArtinianRing (Polynomial R) ↔ Subsingleton R</code>.
+For arbitrary variable types <code>σ : Type u</code> and coefficients <code>R : Type v</code>
+with <code>[CommSemiring R]</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Artinian.lean"><code>MvPolynomial.isArtinianRing_iff</code></a>
+proves <code>IsArtinianRing (MvPolynomial σ R) ↔ IsArtinianRing R ∧ (IsEmpty σ ∨ Subsingleton R)</code>. Both use polynomial multiplication on the
+canonical left self-module, not the coefficient <code>R</code>-module action.
+All universes are arbitrary; the multivariate universes are independent.
+No ring or finite-variable hypothesis is imposed. Empty multivariate
+variables recover coefficient Artinianity; trivial coefficients make every
+polynomial zero. The <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/PolynomialArtinianClient.lean">univariate applications</a>
+include the usual non-ring semiring <code>ℝ≥0</code>, the noncommutative 16-element
+matrix ring over <code>ZMod 2</code>, and the zero ring <code>ZMod 1</code>.</li><li><strong>Univariate coefficient-module Noetherianity and Artinianity each characterize trivial coefficients.</strong>
+For any <code>R : Type u</code> with <code>[Semiring R]</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Noetherian.lean"><code>Polynomial.isNoetherian_iff</code></a> and
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Artinian.lean"><code>Polynomial.isArtinian_iff</code></a> give
+<code>IsNoetherian R (Polynomial R) ↔ Subsingleton R</code> and
+<code>IsArtinian R (Polynomial R) ↔ Subsingleton R</code>, respectively.
+Both use the canonical left coefficient action
+<code>r • p = Polynomial.C r * p</code>, not polynomial multiplication as a self-module.
+The universe is arbitrary; no commutativity, ring, domain or field hypothesis
+is required. The <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/PolynomialCoefficientModules.lean">coefficient-module examples</a>
+distinguish these properties from coefficient self-Noetherianity and
+self-Artinianity, even for the infinite non-ring semiring <code>ℝ≥0</code> with finitely
+many ideals.</li><li><strong>Radical coefficient-ideal extensions are characterized by subtractivity.</strong>
+For any commutative semiring <code>R</code>, ideal <code>I</code>, and nonempty variable type <code>σ</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/CoefficientIdealSubtractive.lean"><code>MvPolynomial.isRadical_map_C_iff</code></a>
+says that <code>I.map C</code> is radical exactly when <code>I</code> is radical and satisfies
+<code>a ∈ I → a + b ∈ I → b ∈ I</code>. The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/CoefficientIdealSubtractive.lean">sufficiency theorem</a>
+also allows empty variable types. The coefficient and variable universes are
+independent; no properness, ring, domain, reducedness or finiteness hypothesis
+is needed. The <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/CoefficientIdealSubtractive.lean">examples</a>
+include the proper nonzero kernel of reduction <code>ℕ →+* ZMod 2</code> and the
+original prime-extension and radical-extension necessity applications.</li><li><strong>Coefficient-and-variable ideals have an exact finite-generation criterion.</strong>
+For any commutative semiring <code>R</code>, coefficient ideal <code>I</code>, and variable subset <code>S</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/IdealOfVars.lean"><code>MvPolynomial.ideal_map_C_sup_span_X_image_fg_iff</code></a>
+characterizes finite generation of <code>Ideal.map C I ⊔ Ideal.span (X &#x27;&#x27; S)</code>:
+<code>I</code> must be finitely generated, and either <code>S</code> is finite or <code>I</code> is the unit ideal.
+The coefficient and variable universes are independent; no ring, domain,
+subtractivity or finite-ambient-variable hypothesis is required. The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/CoefficientVariableIdeal.lean">examples</a> include
+a proper nonsubtractive ideal over <code>ℕ</code>, coefficient zero divisors, and the
+zero-ring boundary.</li><li><strong>The variable ideal is not finitely generated.</strong> For a nontrivial
+commutative semiring and infinitely many variables,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/IdealOfVars.lean"><code>MvPolynomial.idealOfVars_not_fg</code></a>
+proves non-finite generation. A finite union of polynomial supports misses
+some variable; evaluation separating that variable gives a contradiction.
+Mathlib supplies the complementary <em>finite</em>-variable ideal theorem. This
+library does not prove the motivating complete short exact sequence.</li><li><strong>Antichain coefficients of monomial ideals.</strong> For any commutative semiring
+<code>R</code>, arbitrary variable type <code>σ</code> and antichain <code>S : Set (σ →₀ ℕ)</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/MonomialIdeal.lean"><code>MvPolynomial.monomialIdealCoeffMap</code></a>
+restricts coefficients from the stock ideal generated by the monic monomials
+with exponents in <code>S</code> to <code>S →₀ R</code>. It is surjective and semilinear over
+<code>constantCoeff</code>, for the full polynomial-semiring action on the ideal and
+the coefficient action on the target. Its coordinate and monomial laws give
+the original coefficients and the corresponding single functions.
+Coefficients and variables have independent universes; empty or infinite
+antichains and variable types, and trivial coefficients, are allowed. The
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomialsTests/MonomialIdealGenerators.lean">coordinate-axes example</a>
+records the three exponents of <code>(xy, xz, yz)</code> over <code>ℂ</code>, their antichain and
+monomial presentation, and the ideal's nonzeroness and properness.
+For <strong>finite</strong> <code>S</code> and <strong>nontrivial</strong> <code>R</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/MonomialIdeal.lean"><code>MvPolynomial.spanFinrank_ideal_span_monomial</code></a>
+proves that the ideal's minimum number of polynomial generators is <code>S.ncard</code>.
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/MonomialIdeal.lean"><code>MvPolynomial.card_le_card_of_span_eq_ideal_span_monomial</code></a>
+bounds every finite generating set, not only sets of monomials. This is
+generation over the full polynomial semiring, not coefficient-module dimension.
+The coordinate-axes example consequently has minimum number of generators three.</li><li><strong>Variable classes form the augmentation cotangent basis.</strong> For any
+<code>(σ : Type u)</code> and <code>(R : Type v) [CommRing R]</code>,
+<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Cotangent.lean"><code>MvPolynomial.idealOfVarsCotangentBasis</code></a>
+is a <code>σ</code>-indexed <code>R</code>-basis of the stock variable-ideal cotangent <code>I/I²</code>.
+Its vectors are the classes of <code>X i</code>, with inherited coefficient action
+<code>r • [p] = [C r * p]</code>. The <code>_apply</code> and <code>_repr_X</code> lemmas characterize those
+vectors, and <code>idealOfVarsCotangentBasis_repr_toCotangent</code> computes each
+coordinate as <code>(x : MvPolynomial σ R).coeff (Finsupp.single i 1)</code> for any
+representative <code>x</code> in the variable ideal. Quadratic and higher terms do not
+contribute. The variable and coefficient universes are independent; empty
+or infinite variable types, zero rings and nilpotent coefficients are allowed.
+This is an indexed basis, not a numerical rank assertion over the zero ring.</li><li><strong>Degree-controlled finite interpolation.</strong> Over any commutative ring <code>R</code>,
+let <code>s : Finset ι</code> select points <code>a : ι → σ → R</code>. If, for every distinct
+<code>i, j ∈ s</code>, the coordinate differences <code>a i x - a j x</code> span the unit ideal,
+then any prescribed values <code>v : ι → R</code> are attained on <code>s</code> by a polynomial
+of total degree at most <code>s.card - 1</code>
+(<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/Interpolation.lean"><code>MvPolynomial.exists_eval_eq_totalDegree_le_of_pairwise_span_eq_top</code></a>).
+Both the variable type and ambient label type may be infinite; no field or
+domain hypothesis is needed. The theorem asserts existence, not uniqueness.</li><li><strong>Comparison with Lagrange interpolation.</strong> Over a field, for a unique
+variable type, a polynomial taking prescribed values at distinct nodes and
+having total degree strictly below the number of nodes maps to Mathlib's
+Lagrange interpolant under the canonical single-variable equivalence
+(<a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/MultivariatePolynomials/LagrangeComparison.lean"><code>MvPolynomial.uniqueAlgEquiv_eq_interpolate_of_eval_eq</code></a>).
+The univariate degree bound follows from the total-degree bound. On a
+nonempty selection, the bound <code>s.card - 1</code> also suffices, so the comparison
+applies to any bounded witness supplied by the commutative-ring existence
+theorem. Zero agrees with the empty interpolant separately; an arbitrary
+degree-zero witness need not do so.</li></ul>
+<p>The <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/docs/Results.md">full results guide</a> also covers simultaneous finite-fraction
+origins and their preimage dimension bounds, polynomial Zariski topology,
+valuation naturality, evaluation kernels, coefficient-module Noetherianity and
+Artinianity, polynomial self-Artinianity, and the substitution, degree, division
+and lifting interfaces, with all their hypotheses and boundary cases.
+Its <a href="https://github.com/FormalFrontier/multivariate-polynomials/blob/616945c1c06d1655887100fe8a40e06a4a4a6d76/docs/Results.md#fraction-origins-and-traces-in-use">fraction examples</a>
+explain how to use the common finite stage and why whole stage fields do not
+provide the subsemiring dimension bound.</p>

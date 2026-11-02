@@ -1,0 +1,152 @@
+<p>The following interfaces are implemented in this library. See the <a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/docs/Guide.md">reader guide</a>
+and the linked module documentation for statements, examples, proof ideas and Mathlib dependencies.</p>
+<ul><li><strong>All ideals of products and standard filters</strong>
+(<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/RingTheory/Ideal/PiFilter.lean">module</a>). For a dependent family
+<code>K : ι → Type v</code> of division semirings, <code>Ideal.piOrderIsoFilter K</code> identifies
+<code>Ideal (Π i, K i)</code> with the order dual of <code>Filter ι</code>; in particular it applies
+to semifields. Its characteristic law is
+<code>{i | f i = 0} ∈ I.piFilter K ↔ f ∈ I</code>. Both constructors already work for
+semirings, but division is used to recover every ideal. The improper filter
+gives the whole ideal, a principal filter gives functions vanishing on its
+generating set, and the cofinite filter gives finite support. The API includes
+germ kernels, singly generated ideals, and compatibility with Mathlib's finite
+coordinate-ideal classification. Index and factor universes are independent;
+empty products are included without a nontrivial-product assumption.
+(<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimesTest/RingTheory/Ideal/PiFilter.lean">examples</a>).</li><li><strong>Prime ideals of arbitrary products of semifields</strong>
+(<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/RingTheory/Ideal/PrimePiUltrafilter.lean">module</a>). For any dependent
+family <code>K : ι → Type v</code> of semifields, <code>PrimeSpectrum.piEquivUltrafilter K</code>
+identifies every prime ideal of <code>Π i, K i</code> with an ultrafilter on <code>ι</code>.
+A function belongs to the ideal for <code>U</code> exactly when <code>{i | f i = 0} ∈ U</code>.
+Already for <strong>division-semiring</strong> fibres, <code>Ultrafilter.piIdeal_isMaximal</code> makes
+every such ultrafilter zero-set ideal maximal, via the ideal/filter order isomorphism.
+The index universe is independent of <code>v</code>, and no additive cancellation, ring,
+finite-index or nonempty-index hypothesis is imposed. The forward ideal construction
+works already for semiring factors, with evaluation-kernel and constant-family
+germ-kernel bridges. Finite products have uniquely labelled coordinate kernels;
+the cofinite ultrafilter gives non-coordinate primes on infinite index types.
+The <a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/RingTheory/Spectrum/Prime/PiUltrafilter.lean">topological extension</a>
+<code>PrimeSpectrum.piHomeomorphUltrafilter K</code> retains this exact equivalence as a
+homeomorphism for the Zariski and existing Stone topologies. Its basis pullback
+laws use the nonzero locus and the function one on a subset and zero off it.
+Coordinate primes are dense, even when non-coordinate primes occur; the topology
+is not in general discrete. For an arbitrary index map <code>g : κ → ι</code> and fibrewise
+semifield homomorphisms <code>φ j : K (g j) →+* L j</code>, spectral pullback along the stock
+product homomorphism corresponds to <code>Ultrafilter.map g</code>. The API includes the
+inverse square, index precomposition and same-index family-map specializations;
+the index and fibre universes are independent, with no injectivity or finiteness assumption.</li><li><strong>Residue fields of dependent products of fields</strong>
+(<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/RingTheory/Ideal/ResidueFieldPiUltrafilter.lean">module</a>). For a
+dependent family <code>K : ι → Type v</code> of fields and <code>U : Ultrafilter ι</code>,
+<code>Ultrafilter.residueFieldProductEquiv K U</code> canonically identifies
+<code>(U.piIdeal K).ResidueField</code> with the existing <code>(U : Filter ι).Product K</code>.
+This is a ring equivalence over the section ring <code>R = Π i, K i</code>: for <strong>every
+section</strong> <code>r</code>, it sends <code>algebraMap R (U.piIdeal K).ResidueField r</code> to the
+reduced-product class of <code>r</code>. The API includes the inverse equation, uniqueness
+from this property and its equality-of-homomorphisms form. Fibrewise field
+homomorphisms give a commuting square with <code>Ideal.ResidueField.map</code> and
+<code>Filter.Product.mapRingHom</code>. Index and fibre universes are independent; no
+common characteristic, finite-index or nonempty-index hypothesis, or global
+field instance on the Product, is required. The
+<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimesTest/ResidueFieldPiUltrafilter.lean">examples</a> check the principal
+coordinate kernel and a dependent <code>ZMod 2</code>/<code>ZMod 3</code> family with distinct residue
+characteristics and opposite-characteristic nonzero controls.</li><li><strong>Minimal primes of finite products</strong>
+(<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/RingTheory/Ideal/MinimalPrimePi.lean">module</a>). For commutative
+semirings <code>R i</code> and a finite index type, <code>Ideal.mem_minimalPrimes_pi_iff</code>
+identifies minimal primes over any ideal of the product with unique labelled coordinate
+minimal primes. <code>Ideal.minimalPrimesPiEquiv</code> gives the corresponding equivalence
+with the dependent sum of the minimal primes over <code>Ideal.piOrderIso I i</code>.
+Its inverse is evaluation comap, with forward/comap and evaluation-image laws.
+The transport theorem <code>Ideal.comap_eval_mem_minimalPrimes_iff</code> works even for
+infinite index types; it does not classify all primes of an infinite product.
+No nonempty-index, nontrivial-factor, proper-base-ideal or ring assumptions
+are needed. Equal factors retain distinct coordinate labels.</li><li><strong>Minimality detected by localization</strong> (<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/RingTheory/Ideal/MinimalPrimeLocalization.lean">module</a>).
+For commutative semirings <code>R</code>, <code>A</code> with <code>[Algebra R A]</code>, a prime ideal <code>q</code>
+and <code>[IsLocalization.AtPrime A q]</code>, any ideal <code>I</code> satisfies
+<code>(I.map (algebraMap R A)).radical = q.map (algebraMap R A)</code> iff <code>q ∈ I.minimalPrimes</code>.
+No separate <code>I ≤ q</code> is needed. Mathlib supplies the implication from minimality.</li><li><strong>Multipliers outside a minimal prime</strong> (<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/RingTheory/Ideal/MinimalPrimeMultipliers.lean">module</a>).
+For ideals <code>I</code>, <code>q</code> in a commutative semiring, <code>q ∈ I.minimalPrimes</code> and <code>x ∈ q</code>
+imply <code>∃ s ∉ q, s * x ∈ I.radical</code>. Over the zero ideal, the product is nilpotent.</li><li><strong>Ideal contraction and positive powers in the image</strong>
+(<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/RingTheory/Ideal/PositivePowerRange.lean">ideals</a>,
+<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/RingTheory/Spectrum/Prime/PositivePowerRange.lean">prime spectra</a>).
+For a homomorphism from a semiring <code>R</code> to a commutative semiring <code>S</code>, suppose
+every <code>x : S</code> has some positive power in <code>Set.range f</code>. Then
+<code>I.comap f ≤ J.comap f ↔ I ≤ J</code> for arbitrary <code>I</code> and radical <code>J</code>.
+For every target ideal <code>I</code>,
+<code>Ideal.radical_map_comap_of_pos_pow_mem_range</code> also gives
+<code>(Ideal.map f (Ideal.comap f I)).radical = I.radical</code>.
+The map may have any type with <code>FunLike</code> and <code>RingHomClass</code> instances, in an
+independent universe. No surjectivity, uniform exponent or radicality of <code>I</code>
+is assumed. For commutative semirings on both sides and a bundled homomorphism,
+<code>PrimeSpectrum.isEmbedding_comap_of_pos_pow_mem_range</code> proves that the existing
+<code>PrimeSpectrum.comap f</code> is a topological embedding, with independent source and
+target universes. Its image need not be closed or the whole spectrum.</li><li><strong>Dimension under field extension.</strong> For fields <code>K</code> and <code>L</code>, a given
+<code>[Algebra K L]</code>, and a commutative <code>K</code>-algebra <code>A</code> with
+<code>[Algebra.FiniteType K A]</code>, the
+<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/RingTheory/KrullDimension/FieldExtension.lean">field-extension leaf</a>
+proves <code>Algebra.ringKrullDim_tensorProduct_of_finiteType</code>:
+<code>ringKrullDim (A ⊗[K] L) = ringKrullDim A</code>. All three types may lie in
+independent universes. The extension need not be algebraic, and <code>A</code> need not
+be a domain, reduced or nontrivial. Dimension takes values in <code>WithBot ℕ∞</code>;
+the zero algebra has dimension <code>⊥</code>.</li><li><strong>Dimension under integral maps</strong> (<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/RingTheory/KrullDimension/Integral.lean">module</a>).
+For integral maps <code>f : R →+* S</code> of commutative rings, target Krull dimension is
+at most source dimension, with equality if <code>f</code> is injective. Without injectivity,
+<code>ringKrullDim S = ringKrullDim (R ⧸ RingHom.ker f)</code>. A faithful integral algebra
+has equal source and target dimensions using its given algebra structure.
+Dimensions lie in <code>WithBot ℕ∞</code>, including zero rings and infinite dimension.</li><li><strong>When a prime localization is a field</strong> (<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/RingTheory/Localization/AtPrime.lean">module</a>).
+For commutative semirings <code>R</code>, <code>A</code> with their given <code>R</code>-algebra structure,
+any prime <code>q</code> and <code>[IsLocalization.AtPrime A q]</code> satisfy
+<code>IsField A ↔ q ∈ minimalPrimes R ∧ IsReduced A</code>.
+Reducedness of <code>R</code> gives the reduced-base corollary: arbitrary localization
+preserves reducedness. For semirings <code>IsField</code> includes semifields.</li><li><strong>Principal prime witnesses and contraction</strong> (<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/Principal.lean">module</a>).
+In a commutative semiring, a proper principal ideal avoids at least one of two
+relatively prime (<code>IsRelPrime</code>) elements.
+In a commutative semiring with unique factorization, every nonunit, including
+zero, belongs to a principal prime ideal with this disjunctive avoidance.
+No normalization or nonzero assumption is needed. Contraction from any semiring
+gives a prime two-sided source ideal, not necessarily a principal ideal.</li><li><strong>Minimal primes of a principal ideal</strong> (<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/Principal.lean">module</a>).
+For <code>[CommSemiring R]</code>, <code>[UniqueFactorizationMonoid R]</code>, the caller's
+<code>[NormalizationMonoid R]</code> and <code>f ≠ 0</code>, the minimal primes over <code>(f)</code> are exactly
+the principal ideals generated by normalized irreducible factor values.
+Their factor equivalence sends <code>p</code> to <code>span {p}</code>; multiplicities do not add primes.</li><li><strong>Irreducible components of a principal zero locus</strong> (<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/IrreducibleComponents.lean">module</a>).
+Under those same semiring, factorization, normalization and nonzero hypotheses,
+the factor values are equivalent to the <strong>order-dual subtype</strong> of irreducible
+components of the subspace <code>V((f))</code> in <code>PrimeSpectrum R</code>. This is an <code>Equiv</code>,
+not an order-equivalence or homeomorphism, and does not classify arbitrary ideals.</li><li><strong>Associated primes of a principal quotient</strong> (<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/AssociatedPrincipal.lean">module</a>).
+For every <code>f</code> in a commutative ring with unique factorization,
+<code>associatedPrimes R (R ⧸ Ideal.span {f}) = (Ideal.span {f}).minimalPrimes</code>,
+using base-ring <code>R</code> scalars. No normalization, nonzero or Noetherian hypothesis
+is needed; the zero ring is included.</li><li><strong>Scalar restriction and quotient points</strong> (<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/AssociatedRestrictScalars.lean">scalar restriction</a>,
+<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/AssociatedPrincipal.lean">quotients</a>). Colon ideals of arbitrary
+submodules contract under compatible algebra/module towers with commutative
+source and semiring target. Associated primes of a compatible module contract
+along algebra maps of commutative semirings and reflect along surjective ones.
+For every principal quotient
+of a commutative ring with unique factorization, quotient-spectrum associated
+points and exact singleton-annihilator criteria correspond by ideal comap to
+minimal primes over the generator.</li><li><strong>Height of a principal prime</strong> (<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/RingTheory/Ideal/PrincipalPrimeHeight.lean">module</a>).
+In a commutative ring with <code>[WfDvdMonoid R]</code> and <code>Prime p</code>, <code>span {p}</code> has height
+at most one. Its height is one if <code>p ∈ nonZeroDivisors R</code>, in particular in a domain.
+This uses well-founded strict divisibility, not a Noetherian or UFM assumption,
+and concerns prime generators, not arbitrary principal ideals.</li><li><strong>Descending prime chains at finite initial height</strong>
+(<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/Order/FiniteHeightChain.lean">order</a>, <a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/RingTheory/Ideal/FiniteHeightChain.lean">prime chains</a>).
+In a preorder, finite ambient height of <code>x</code> makes the strict order on <code>Set.Iic x</code>
+well-founded. An antitone spectrum sequence over a commutative semiring with
+finite initial ambient height stabilizes. So does an antitone ideal sequence
+over a commutative ring when <strong>every term is prime</strong> and the initial ideal has
+<code>Ideal.FiniteHeight</code>. One common index gives both tail constancy and the
+<strong>all-index</strong> ideal infimum; no global dimension or chain-condition hypothesis
+is added. Spectrum height is not height in the full lattice of ideals.</li><li><strong>Zero-dimensional Zariski spectra</strong> (<a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/RingTheory/Spectrum/Prime/ZeroDimensional.lean">module</a>).
+For any commutative semiring, T₁ and Hausdorffness of <code>PrimeSpectrum R</code> are each
+equivalent to <code>Ring.KrullDimLE 0 R</code>, including the empty spectrum; under this
+bound all basic opens are clopen. Mathlib supplies total separation and total
+disconnectedness from the Hausdorff spectrum. For a <strong>reduced, nontrivial
+commutative ring</strong>, this bound and preconnectedness of its spectrum imply <code>IsField R</code>.</li></ul>
+<h4>Topological dimension on open covers</h4>
+<p>The <a href="https://github.com/FormalFrontier/minimal-primes/blob/db21a0ac3837cb8678c7a1eb5f06cec7c278e1df/MinimalPrimes/Topology/KrullDimension/OpenCover.lean">open-cover leaf</a> proves
+<code>topologicalKrullDim_eq_iSup_of_isOpenEmbedding_cover</code>: the dimension of a space is
+the supremum of the dimensions of any jointly surjective family of open-embedding
+charts, with independent universes for the space, index type and chart domains.
+Its open-subspace form, <code>topologicalKrullDim_eq_iSup_of_isOpen_cover</code>, applies to
+any family of open sets whose union is the whole space, with their induced topologies.
+Both equalities use <code>WithBot ℕ∞</code>, including bottom for an empty-index cover of the
+empty space and infinite or unbounded dimensions. No separation, sobriety,
+Noetherianity, quasi-compactness, finiteness or nonemptiness assumption is needed.</p>

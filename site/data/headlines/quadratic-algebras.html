@@ -1,0 +1,140 @@
+<p>The results below extend mathlib's quadratic-algebra, polynomial, localization
+and number-field infrastructure. They provide changes of presentation,
+integral-closure tests and explicit arithmetic examples; the imported
+infrastructure is not a new contribution of this library. The
+<a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/API.md">API reference</a> gives the historical native signatures and a
+guide to the newer real-closed declarations; the <a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/README.md">binding guide</a>
+also describes the later complex quotient interface and module imports.</p>
+<h4>Presentations, scalar extension and integral closure</h4>
+<p>The library connects mathlib's coordinate model <code>QuadraticAlgebra R a b</code> with
+the polynomial quotient <code>AdjoinRoot (X ^ 2 - C b * X - C a)</code>. It also proves
+that scalar extension commutes with quadratic algebras and canonically
+identifies their total fraction rings with base change to <code>FractionRing R</code>.
+These results allow zero divisors and the zero ring: a total fraction ring is
+not being asserted to be a field. The library also proves
+the squarefree denominator lemma for arbitrary fraction fields of unique
+factorization domains: if <code>f</code> is squarefree and <code>x² f</code> lies in the base ring,
+then <code>x</code> is already in the base ring. It also shows
+that the trace and norm of an integral quadratic element over the fraction
+field of an integrally closed ring belong to the base ring, without assuming
+that the quadratic algebra is a domain. Combining these ingredients, it proves
+that a quadratic algebra with squarefree radicand over a unique factorization
+domain is integrally closed in its total quotient ring when <code>2</code> is invertible,
+even if the quadratic algebra has zero divisors. Conversely, for a domain
+quadratic algebra, a nonzero nonunit square divisor of the radicand gives an
+explicit integral fraction outside the quadratic algebra; in particular, a
+domain quadratic algebra over a unique factorization domain is not integrally
+closed when its
+radicand is not squarefree. Together, these results give the exact criterion:
+a domain quadratic algebra over a unique factorization domain, with <code>2</code>
+invertible, is integrally closed if and only if its radicand is squarefree.</p>
+<p>Here <code>IsIntegrallyClosed</code> uses Mathlib's total quotient ring, not necessarily a
+fraction field. The forward theorem applies, for example, to <code>A = ℚ</code>, <code>f = 1</code>,
+where the quadratic algebra is isomorphic to <code>ℚ × ℚ</code>. The reverse obstruction
+and the if-and-only-if criterion retain their quadratic-domain hypothesis.
+For <code>A = ℚ</code>, <code>f = 0</code>, the dual numbers have only units as regular elements,
+so they are integrally closed in this total-quotient sense although <code>0</code> is not
+squarefree. Thus the converse cannot simply drop the domain hypothesis.</p>
+<p>Over the integers, where <code>2</code> is not invertible, the library separately proves
+that a quadratic algebra with squarefree radicand is integrally closed when
+the radicand is congruent to <code>2</code> or <code>3</code> modulo <code>4</code>; this congruence also yields
+the required domain property. This integer result does not assume that two is
+invertible in the integers.</p>
+<p>Key interfaces are the <a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/API.md#qa-equiv-adjoin-root">polynomial-quotient equivalence</a>,
+<a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/QuadraticAlgebras/FractionRing.lean">scalar-extension and total-fraction-ring maps</a>,
+<a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/API.md#qa-ufd-squarefree-criterion">UFD squarefree criterion</a>
+and <a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/API.md#qa-integer-integral-closure">separate integer criterion</a>.</p>
+<h4>Chosen coordinates for quadratic algebras</h4>
+<p>Over a field <code>R</code> with <code>[IsRealClosed R]</code>, irreducibility of
+<code>QuadraticAlgebra.definingPolynomial a b</code> supplies a nonzero <code>d</code> with
+<code>d² = -QuadraticAlgebra.discr a b</code>; see the
+<a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/API.md#qa-real-closed-witness">real-closed witness</a>. Separately, over
+any field with <code>[NeZero (2 : R)]</code>, a <em>supplied</em> <code>d ≠ 0</code> satisfying this
+square identity gives a <a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/API.md#qa-chosen-coordinates">chosen equivalence</a>
+from <code>QuadraticAlgebra R a b</code> to <code>QuadraticAlgebra R (-1) 0</code>. Its generator
+maps to <code>(d / 2) • omega + algebraMap R _ (b / 2)</code>; replacing <code>d</code> with <code>-d</code>
+conjugates that image, without selecting a preferred sign or requiring
+irreducibility of the supplied-witness equivalence. The
+<a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/API.md#qa-chosen-quotient">quotient version</a> additionally assumes <code>p</code>
+is monic with <code>p.natDegree = 2</code>, and evaluates <em>every</em> polynomial class
+<code>AdjoinRoot.mk p g</code> at the image of the chosen root. These conditional chosen
+coordinates are distinct from the earlier canonical quotient bridge over
+arbitrary commutative rings; they do not choose a sign or provide an
+arbitrary-degree quotient equivalence.</p>
+<h4>Algebraic closure over a real-closed field</h4>
+<p>For any field <code>R</code> with <code>[IsRealClosed R]</code>, the canonical quadratic field
+<code>QuadraticAlgebra R (-1) 0</code> is algebraically closed. No order or nonsquare
+witness is supplied by the caller: semireality proves the field witness
+<code>Fact (¬ IsSquare (-1 : R))</code>. Every element of this quadratic field has a
+square root, and a finite normal closure with the Galois correspondence and
+Sylow's theorem rules out any further finite extension. Consequently every
+irreducible <code>p : R[X]</code> satisfies <code>p.natDegree ≤ 2</code>.</p>
+<p>The independent <a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/QuadraticAlgebrasTest/RealClosedModel.lean">real model</a> proves
+<code>IsRealClosed ℝ</code> without importing the closure result. It exhibits irreducible
+<code>X² + 1</code> at the bound and reducible <code>X² - 1</code> and <code>X⁴ - 1</code> as boundaries.
+The <a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/QuadraticAlgebrasTest/RealClosedClosure.lean">dependent clients</a> exercise
+the square-root and cubic-root results and compare the general degree bound
+with Mathlib's real-only bound. See the
+<a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/API.md#qa-real-closed-closure">closure API</a>.</p>
+<h4>Irreducible polynomial quotients</h4>
+<p>For an arbitrary real-closed field <code>R</code>, each irreducible <code>p : R[X]</code> with
+<code>1 &lt; p.natDegree</code> has an <code>R</code>-algebra equivalence from <code>AdjoinRoot p</code> to
+<code>QuadraticAlgebra R (-1) 0</code>; no monicity or discriminant witness is required.
+Over any base field, the chosen-root constructor for an irreducible quadratic
+specifies the image of the adjoined root and evaluates every polynomial class
+at it. The witness-free constructor chooses
+such a root without identifying the maps arising from different choices.
+The <a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/QuadraticAlgebrasTest/RealClosedModel.lean">independent real model</a> supplies
+irreducible quadratic and reducible boundaries; the
+<a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/QuadraticAlgebrasTest/RealClosedAdjoinRoot.lean">quotient clients</a> also exercise
+a nonmonic scalar multiple and both signs of the quadratic generator.</p>
+<h4>Complex coordinates and real polynomial quotients</h4>
+<p>The <a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/QuadraticAlgebras/RealComplexAdjoinRoot.lean">complex coordinate equivalence</a>
+identifies <code>QuadraticAlgebra ℝ (-1) 0</code> with <code>ℂ</code> as real algebras, sending
+<code>omega</code> to <code>Complex.I</code> and exposing both coordinate formulas. For an
+irreducible <code>p : ℝ[X]</code> of degree two and any specified complex root <code>z</code>, the
+same module identifies <code>AdjoinRoot p</code> with <code>ℂ</code> by evaluation at <code>z</code>: the
+image of <code>AdjoinRoot.mk p g</code> is <code>g.eval₂ (algebraMap ℝ ℂ) z</code> for every <code>g</code>.
+For any irreducible nonlinear real polynomial it also provides a witness-free
+equivalence using a selected complex root, without choosing a sign or
+requiring monicity, a discriminant witness, or a root from the caller. The
+<a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/QuadraticAlgebrasTest/RealComplexAdjoinRoot.lean">Gaussian clients</a> exercise
+both <code>±Complex.I</code>, a nonmonic scalar multiple, arbitrary quotient classes and
+the variable class in the ideal quotient. This is an algebraic presentation;
+it does not supply maximality, scheme residue fields or topology.</p>
+<h4>Diagonal quadratics</h4>
+<p>The library also defines the finitely supported
+diagonal multivariate quadratic <code>MvPolynomial.sumSMulXSq c</code>. Over any field
+of characteristic different from two, this polynomial is squarefree when at
+least two coefficients are nonzero and irreducible when at least three are
+nonzero. A binary diagonal quadratic <code>aXᵢ² + bXⱼ²</code> is also irreducible when
+<code>i ≠ j</code>, <code>a ≠ 0</code>, and <code>-b/a</code> is not a square. The declarations work over
+arbitrary variable types and do not assume an algebraic closure or classify
+quadratic forms. Coefficient, derivative and homogeneity lemmas need only a
+commutative coefficient ring; the field and <code>NeZero (2 : k)</code> assumptions belong
+to the irreducibility and squarefreeness results.</p>
+<p>See the <a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/API.md#qa-diagonal-sum">diagonal construction</a>,
+<a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/API.md#qa-diagonal-squarefree">squarefreeness theorem</a>,
+<a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/API.md#qa-diagonal-irreducible">three-coefficient irreducibility theorem</a>
+and <a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/API.md#qa-binary-diagonal-irreducible">binary nonsquare criterion</a>.</p>
+<h4>The order and number field generated by a square root of minus five</h4>
+<p>A domain quadratic algebra
+over a Dedekind domain is also shown to be Dedekind whenever it is integrally
+closed, using its finite-module and integral structures. Finally, the library
+proves that the integer quadratic algebra <code>QuadraticAlgebra ℤ (-5) 0</code> is not
+a unique factorization monoid: the embedded integer <code>2</code> is irreducible by the
+norm form <code>x² + 5y²</code>, but is not prime because
+<code>(1 + ω) * (1 - ω) = 6</code>.
+The fraction field of this order is also exposed as a number field, with a
+canonical identification of the order with its ring of integers. Its standard
+integral basis has discriminant <code>-20</code>; the field has degree two and one complex
+place. The resulting explicit Minkowski estimate shows that every ideal class
+has a representative of absolute norm at most two. This does not yet classify
+those ideals by itself. Reduction to <code>ZMod 2</code> defines the unique ideal of
+absolute norm two; this ideal is nonprincipal, while an ideal of absolute norm
+one is the unit ideal. Consequently every ideal class is either trivial or the
+class of this distinguished ideal, and the class number is two.
+These results are independent of the organization of any motivating source.</p>
+<p>Entry points include <a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/API.md#qa-minus-five-not-ufd">failure of unique factorization</a>,
+the <a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/API.md#qa-minus-five-ring-of-integers">ring-of-integers identification</a>
+and the <a href="https://github.com/FormalFrontier/quadratic-algebras/blob/a36cd9d5b5f3d7df11258ccdb4806b854b6d5031/docs/API.md#qa-minus-five-class-number">class-number-two theorem</a>.</p>

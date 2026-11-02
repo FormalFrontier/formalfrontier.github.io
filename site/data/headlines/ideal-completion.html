@@ -1,0 +1,32 @@
+<ul><li><strong>Principal embedding.</strong> <a href="https://github.com/FormalFrontier/ideal-completion/blob/7fb1aca4010f4ce3e847954d03bf732963e6be02/IdealCompletion/OrderIdeal.lean#L29"><code>Order.Ideal.principalHom</code></a>
+sends <code>a</code> to its principal ideal as a bounded lattice homomorphism;
+<a href="https://github.com/FormalFrontier/ideal-completion/blob/7fb1aca4010f4ce3e847954d03bf732963e6be02/IdealCompletion/OrderIdeal.lean#L47"><code>principalHom_injective</code></a> shows it is
+injective. Its operation laws are available through the bundled homomorphism.</li><li><strong>Frame and arbitrary suprema.</strong> The
+<a href="https://github.com/FormalFrontier/ideal-completion/blob/7fb1aca4010f4ce3e847954d03bf732963e6be02/IdealCompletion/OrderIdeal.lean#L96"><code>Order.Frame</code> instance</a> makes the ideal
+completion a complete Heyting algebra. The
+<a href="https://github.com/FormalFrontier/ideal-completion/blob/7fb1aca4010f4ce3e847954d03bf732963e6be02/IdealCompletion/OrderIdeal.lean#L77"><code>mem_sSup_iff</code> theorem</a> characterizes
+<code>x ∈ sSup S</code> by a finite set of elements, each in some ideal of the <em>arbitrary</em>
+family <code>S</code>, whose join is <strong>at least</strong> <code>x</code>. This includes the empty-family and
+bottom cases; it is not restricted to directed families.</li><li><strong>Compact generation.</strong> Every principal ideal is
+<a href="https://github.com/FormalFrontier/ideal-completion/blob/7fb1aca4010f4ce3e847954d03bf732963e6be02/IdealCompletion/OrderIdeal.lean#L116">compact</a>, and
+<a href="https://github.com/FormalFrontier/ideal-completion/blob/7fb1aca4010f4ce3e847954d03bf732963e6be02/IdealCompletion/OrderIdeal.lean#L141"><code>isCompactElement_iff_eq_principal</code></a>
+identifies <strong>all</strong> compact ideals as principal. The
+<a href="https://github.com/FormalFrontier/ideal-completion/blob/7fb1aca4010f4ce3e847954d03bf732963e6be02/IdealCompletion/OrderIdeal.lean#L168"><code>IsCompactlyGenerated</code> instance</a>
+expresses every ideal as a supremum of compact ideals. Compactness here is
+order-theoretic, not finiteness of the ideal's underlying set.</li><li><strong>Prime ideals and Boolean-valued maps.</strong> For <code>[Lattice A]</code> and
+<code>[BoundedOrder A]</code>,
+<a href="https://github.com/FormalFrontier/ideal-completion/blob/7fb1aca4010f4ce3e847954d03bf732963e6be02/IdealCompletion/PrimeIdeal.lean"><code>Order.Ideal.primeEquivBoolHom</code></a>
+identifies prime order ideals with bounded lattice homomorphisms <code>A → Bool</code>.
+The characteristic map sends precisely the ideal to <code>false</code>; conversely
+<a href="https://github.com/FormalFrontier/ideal-completion/blob/7fb1aca4010f4ce3e847954d03bf732963e6be02/IdealCompletion/PrimeIdeal.lean"><code>BoundedLatticeHom.falseIdeal</code></a>
+is its prime false fiber. Every such map is surjective. This includes the
+one-element lattice, for which both sides of the equivalence are empty.</li></ul>
+<p>These constructions and proofs build on mathlib's existing ideal, lattice and
+compactness infrastructure. They do not establish prime-ideal existence,
+spectra, Stone duality, a universal extension property, or generic partial-order
+completion.</p>
+<p>The <a href="https://github.com/FormalFrontier/ideal-completion/blob/7fb1aca4010f4ce3e847954d03bf732963e6be02/docs/API.md">generated API reference</a> is bound to an earlier seven-declaration
+ideal-completion revision and does <strong>not</strong> cover the new prime-ideal module or
+the current aggregate import. See the <a href="https://github.com/FormalFrontier/ideal-completion/blob/7fb1aca4010f4ce3e847954d03bf732963e6be02/docs/PrimeIdeals.md">prime-ideal API guide</a>
+for the new declarations, and <a href="https://github.com/FormalFrontier/ideal-completion/blob/7fb1aca4010f4ce3e847954d03bf732963e6be02/docs/README.md">reference scope and generation</a>
+for the historical native signatures and exact source binding.</p>

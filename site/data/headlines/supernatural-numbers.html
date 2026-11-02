@@ -1,0 +1,46 @@
+<ul><li><strong>Arithmetic with arbitrary prime exponents.</strong> A supernatural number has an
+<code>ℕ∞</code> exponent at every prime, without a finite-support restriction.
+Multiplication adds exponents and divisibility is pointwise order; the
+complete-lattice bottom is one. Infinite <code>iProd</code> uses suprema of exponent
+sums over finite subfamilies of a <code>Type</code>-indexed family, whereas <code>iSup</code> and
+<code>iInf</code> accept arbitrary <code>Sort</code> indices. The positive-natural <code>ofPNat</code> and
+explicit all-natural <code>ofNat</code> preserve multiplication and reflect
+divisibility; <code>ofNat 0 = ⊤</code> and neither map installs a numeral coercion.
+<a href="https://github.com/FormalFrontier/supernatural-numbers/blob/6b3cd7604fb5092d0eefd480492045f171a8e01f/SupernaturalNumbers/NatEmbedding.lean#L129"><code>iSup_ofNat_dvd_iff</code></a>
+characterizes the supernatural least common multiple of a <code>Sort</code>-indexed
+natural-number family, including empty-family and zero cases. See
+<a href="https://github.com/FormalFrontier/supernatural-numbers/blob/6b3cd7604fb5092d0eefd480492045f171a8e01f/SupernaturalNumbers/Basic.lean">Basic</a> and
+<a href="https://github.com/FormalFrontier/supernatural-numbers/blob/6b3cd7604fb5092d0eefd480492045f171a8e01f/SupernaturalNumbers/NatEmbedding.lean">NatEmbedding</a>.</li><li><strong>The closed-subgroup index tower law.</strong> The supernatural
+<a href="https://github.com/FormalFrontier/supernatural-numbers/blob/6b3cd7604fb5092d0eefd480492045f171a8e01f/SupernaturalNumbers/Order.lean#L34"><code>profiniteOrder</code></a> and
+<a href="https://github.com/FormalFrontier/supernatural-numbers/blob/6b3cd7604fb5092d0eefd480492045f171a8e01f/SupernaturalNumbers/Order.lean#L43"><code>profiniteIndex</code></a> use finite quotients
+of a profinite group. For closed subgroups <code>N ≤ H</code> of the <strong>same</strong> ambient
+profinite group,
+<a href="https://github.com/FormalFrontier/supernatural-numbers/blob/6b3cd7604fb5092d0eefd480492045f171a8e01f/SupernaturalNumbers/Tower.lean#L306"><code>profiniteIndex_tower</code></a> proves
+<code>[G : N] = [G : H] * [H : N]</code>, taking the relative index in <code>H</code> via
+<code>closedSubgroupWithin H N hNH</code>. Normality is not required, but closedness
+and the common profinite ambient group are.</li><li><strong>Torsion and character orders.</strong> For an additive abelian group <code>A</code> with
+<code>IsAddTorsion A</code>,
+<a href="https://github.com/FormalFrontier/supernatural-numbers/blob/6b3cd7604fb5092d0eefd480492045f171a8e01f/SupernaturalNumbers/Characters.lean#L355"><code>characterEquivProfiniteCharacter</code></a>
+identifies its rational-circle-valued characters with the additive group
+underlying its profinite character group; the
+<a href="https://github.com/FormalFrontier/supernatural-numbers/blob/6b3cd7604fb5092d0eefd480492045f171a8e01f/SupernaturalNumbers/Characters.lean#L404"><code>torsionOrder_eq_profiniteOrder_character</code></a>
+theorem equates their supernatural orders. The topology-free wrapper gives
+<code>A</code> the discrete topology; the lower-level Pontryagin interface requires
+explicit topological assumptions. These noncomputable constructions make
+no nontorsion or general Pontryagin-duality claim.</li></ul>
+<p>Mathlib supplies prime-factorization, finite/profinite-group and Pontryagin
+infrastructure; this library supplies the supernatural arithmetic and bridges.
+The released <code>groupTheory</code> library supplies the canonical rational-circle
+inclusions and finite-order preimages through
+<code>GroupTheory.Topology.RationalCircle</code>, following their original formalization
+in this library. Publicly importing <code>SupernaturalNumbers</code> also exposes these
+declarations. Use <code>AddCircle.rationalToReal</code>, <code>AddCircle.rationalToCircle</code>,
+<code>AddCircle.exists_rational_preimage_of_isOfFinAddOrder</code> and
+<code>Circle.exists_rational_preimage_of_isOfFinOrder</code> in new code. The seven former
+<code>Supernatural</code> names in <code>Characters</code> remain deprecated aliases from
+October 7, 2026, retained for at least three months. Group Theory's
+open-kernel comparison for compact groups is distinct from this library's
+discrete torsion-group character equivalence.
+See the <a href="https://github.com/FormalFrontier/supernatural-numbers/blob/6b3cd7604fb5092d0eefd480492045f171a8e01f/docs/API.md">API reference</a> and
+<a href="https://github.com/FormalFrontier/supernatural-numbers/blob/6b3cd7604fb5092d0eefd480492045f171a8e01f/SupernaturalNumbersTests/ReleaseClients.lean">checked finite and infinite examples</a>,
+as well as <a href="https://github.com/FormalFrontier/supernatural-numbers/blob/6b3cd7604fb5092d0eefd480492045f171a8e01f/SupernaturalNumbersTests/RationalCircle.lean">rational-circle clients</a>.</p>

@@ -1,0 +1,78 @@
+<p>These results use Mathlib. The quasiregular-ideal predicate and unit characterization
+come from pinned <code>general-linear-groups</code>; the stable-range consequences are proved
+here. The <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/docs/GUIDE.md#headline-results">guide</a> retains detailed statements,
+coordinate formulas, compatibility names and client inventories.</p>
+<ul><li><strong><a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/Basic.lean">Bass conditions</a>.</strong> For arbitrary possibly noncommutative rings: right-unimodular
+rows, <code>(S_n)</code>, least stable index, monotonicity, ring-equivalence invariance and
+<a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/Quotient.lean">surjective descent/quasiregular quotients</a>.
+<a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/Local.lean">Nontrivial local rings</a> have least stable range one.</li><li><strong>Local interfaces.</strong> <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/Local.lean">Division semirings</a> are local with
+zero nonunits submonoid; the maximal-ideal additive comparison requires a
+commutative local semiring.
+For rings, locality is equivalent to Jacobson-radical maximality among all left
+ideals. In local rings the radical is the nonunits and contains every proper
+left ideal; these statements do not assume two-sidedness of the left ideals.</li><li><strong>Preservation.</strong> <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/Product.lean">Products</a> preserve every <code>(S_n)</code>.
+<a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/Semisimple.lean">Semisimple rings and semisimple radical quotients</a>
+satisfy <code>(S₁)</code> without radical nilpotence. <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/Matrix.lean">Finite matrix rings</a>,
+<a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/Corner.lean">idempotent corners</a> and <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/Opposite.lean">opposites</a>
+preserve <code>(S₁)</code>; matrix reflection needs nonempty indices, corners neither
+centrality nor fullness. <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/Semilocal.lean">Commutative semilocal rings</a>
+satisfy <code>(S₁)</code> assuming only finite maximal spectrum, including the zero ring.</li><li><strong><a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/CategoryTheory/EndRetract.lean">Retract endomorphisms</a>.</strong>
+In any preadditive category, <code>i : X ⟶ Z</code>, <code>p : Z ⟶ X</code> and <code>i ≫ p = 𝟙 X</code>
+transfer <code>Bass.StableRangeCondition (End Z) 1</code> to
+<code>Bass.StableRangeCondition (End X) 1</code> for the original canonical endomorphism
+rings. Object and morphism universes are independent; no complementary object,
+finite-length or nonzero hypothesis is needed.</li><li><strong><a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/CategoryTheory/FiniteLocalEnd.lean">Finite biproduct endomorphisms</a>.</strong>
+In any preadditive category, a displayed finite biproduct of objects with local
+endomorphism rings, and every displayed retract of that biproduct, have canonical
+endomorphism rings satisfying <code>(S₁)</code>. Only that biproduct and, for the retract,
+its supplied retraction are required, with independent index universe; empty
+families and the zero biproduct are included. No vanishing of morphisms between
+summands is assumed.</li><li><strong>Regularity and cancellation.</strong> <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/Regular.lean"><code>(S₁)</code></a> implies direct
+finiteness, is equivalent to unit-valued pair shortening, and under von Neumann
+regularity is equivalent to unit-regularity.
+<a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/CategoryTheory/Cancellation.lean">Biproduct cancellation</a> in any
+preadditive category needs <code>(S₁)</code> for the canonical <code>End(X)</code> and only the two
+displayed biproducts. The remaining objects are unrestricted; local End is
+sufficient, and neither global sums nor commutativity is assumed.
+<a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/Cancellation.lean">Module cancellation</a> is a specialization,
+with independent carrier universes and no finiteness or projectivity;
+regular right modules use the opposite ring. <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/DivisionRing.lean">Division-ring vector-space endomorphisms</a>
+have inner inverses; finite dimension gives automorphic inner inverses and
+unit-regular finite matrix rings, including empty indices.</li><li><strong>Ranks and blocks.</strong> <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/DivisionRingRank.lean">Division-ring row rank</a>
+has rectangular bounds, reindexing, realization and repeated-block laws;
+normalized empty square rank is zero. <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/RepeatedBlock.lean">Repeated-block homomorphisms</a>
+work over <code>NonAssocSemiring</code> coefficients, injectively for nonempty block families.</li><li><strong>Commutative dimension bounds.</strong> <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/Commutative.lean">Regularity</a> is
+equivalent to reducedness and dimension at most zero; all modules over such
+regular rings are flat.
+<a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/CommutativeStableRange.lean">Dimension at most zero gives <code>(S₁)</code></a>
+without reducedness or nontriviality; commutative regular rings are unit-regular.
+<a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/BassDimension.lean">Noetherian dimension at most <code>d</code> gives <code>(S_(d+1))</code></a>,
+with no infinite-residue-fields premise.</li><li><strong>Specified splittings.</strong> <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/Module/SplitSurjective.lean">A supplied linear right inverse of a linear map <code>f</code></a>
+gives <code>ker f × N ≃ₗ[R] M</code> over a semiring, for an additive commutative group <code>M</code>
+and additive commutative monoid <code>N</code>, in independent universes. The prescribed
+complementary endomorphism <code>id - g.comp f</code> has range exactly <code>ker f</code>.
+<a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/Module/SplitSurjectiveRank.lean">Complementary-range ranks</a> over a
+division ring satisfy <code>finrank K (range (id - g.comp f)) = finrank K M - finrank K N</code>
+assuming only that <code>M</code> is finite-dimensional. A family with given equivalences
+<code>N b ≃ₗ[K] F</code> has this rank equal to <code>finrank K M - finrank K F</code> at every <code>b</code>,
+without a nonempty base or a finite-dimensionality assumption on <code>F</code>.
+<a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/RowKernel.lean">Right-unimodular
+coefficient rows</a> split over <code>Rᵐᵒᵖ</code> for any ring, including empty
+rows and the zero ring. Splitting alone does not give freeness.</li><li><strong>Completion and IBN.</strong> <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/RightRowCompletion.lean">Right-unimodularity and free right kernels</a>
+characterize two-sided rectangular completion, preserving a supplied inverse
+column. For successor-length rows, <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/SquareRightRowCompletionCriterion.lean">square completion</a>
+needs IBN only to infer kernel size; supplied matching coordinates and the
+converse need no IBN. The <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/CountableEndomorphism.lean">countable endomorphism example</a>
+separates rectangular from square completion for nontrivial underlying modules,
+even for a unary row.</li><li><strong>Commutative cancellation.</strong> Under <code>(S_s)</code>, right-unimodular rows of length at
+least <code>s + 1</code> have free kernels. <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/FiniteFree.lean">Finite-free cancellation</a> uses an
+explicit <code>P × R^m ≃ R^(n+m)</code> and <code>s ≤ n</code>, without prior freeness of <code>P</code>;
+<a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/RowCompletion.lean">completion</a> preserves the literal first row.
+Both allow zero rings; dimension-bound variants require Noetherianity.
+<a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/RowCompletionTwo.lean">Two-entry completion</a> retains supplied Bézout
+coefficients over commutative rings, with explicit scalar kernel coordinates.</li><li><strong>Elementary matrices and determinants.</strong> For commutative rings satisfying <code>(S₁)</code>,
+<a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/ElementaryGeneration.lean">elementary diagonalization</a> works in all
+finite ranks, including zero. <a href="https://github.com/FormalFrontier/stable-range/blob/a78ced2ddff23ca1897ca9643121afa2be48c3d8/StableRange/DeterminantGeneration.lean">Determinant generation</a>
+identifies invertible determinant-one matrices with elementary matrices, the stable
+elementary subgroup with the determinant kernel, and its quotient with units,
+without locality, nontriviality or positive-rank hypotheses.</li></ul>

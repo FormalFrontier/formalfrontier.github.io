@@ -1,0 +1,145 @@
+<p>The valuation results below are proved in this library, using the dependencies credited
+in the <a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/README.md#references">references</a>. The generic Henselian-pair estimates come from
+Adic Modules, positive-power comparison and polynomial-root inverse-image criteria
+from Group Theory, and the generic-point space from Spectral Stone Duality; their
+valuation applications are developed here.</p>
+<ul><li><strong>Polynomial root-value bounds and inverse images</strong>
+(<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/ValuationIntegers/Valuation/PolynomialValueBounds.lean">module</a>,
+<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/docs/Guide.md#polynomial-root-values-and-multiplicative-images">details</a>).
+Let <code>D,E</code> be possibly noncommutative semirings, <code>f : D →+* E</code>, and
+<code>ν : E →*₀ Γ</code> satisfy the max-addition inequality, with <code>Γ</code> a linearly ordered
+commutative monoid with zero. For an <code>eval₂ f</code> root, source-supported coefficient
+values bounded by the nonzero mapped leading (respectively constant) value give
+<code>ν x ≤ 1</code> (respectively <code>1 ≤ ν x</code>). With coefficient values at most one, leading
+(respectively constant) value one gives the same bound, even if <code>0 = 1</code> in <code>Γ</code>;
+both give <code>ν x = 1</code>. No injectivity, coefficient commutation or nonzero root is assumed.
+Separately, <a href="https://github.com/FormalFrontier/group-theory/blob/5b7fccf66358d844869aaefd320f5768f6306cd3/GroupTheory/Algebra/Polynomial/Units.lean">Group Theory’s generic criteria</a>
+show that any multiplication-only map <code>μ : E → T</code> to an arbitrary monoid sends
+a root to a left-invertible element if the mapped constant has a supplied left
+inverse; the root image is a unit iff it is right-regular. A left inverse alone
+is not a unit in general. Raw unit-constant roots have left inverses over semirings
+(hypotheses that force a ring structure); genuinely nonring evaluations are possible
+for the generic mapped theorem.</li><li><strong>Finitely many distinct polynomial-root values</strong>
+(<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/ValuationIntegers/Valuation/PolynomialValues.lean">module</a>,
+<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/docs/Guide.md#polynomial-root-values-and-multiplicative-images">details</a>).
+Under the same valuation-like semiring hypotheses, one source-supported coefficient
+of nonzero image value bounds the number of distinct root values, including zero,
+by the number of positive-degree supported coefficients of nonzero value, hence by
+<code>p.natDegree</code>. If <code>A</code> is the nonempty set of all such active coefficient indices,
+the nonzero root values number at most <code>A.card - 1</code>; add the zero-value occurrence
+for the total bound. Finiteness for nonzero polynomials over a division semiring
+also includes collapsed value targets. These count values, not roots or multiplicities.</li><li><strong>Restriction, equivalence and canonical extensions</strong>
+(<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/docs/Guide.md#restriction-equivalence-and-canonical-extensions">details and modules</a>).
+On a division ring, valuations into independent linearly ordered commutative monoids with zero
+are equivalent iff their strict unit cuts agree, or iff their zero fibers and closed
+unit cuts agree. For a map of arbitrary rings whose range contains a positive power
+of every target element, restriction is injective for a fixed value monoid and
+reflects equivalence for different value monoids, without injectivity or surjectivity
+of the ring map. Purely inseparable field-algebra domains specialize this result.
+For fields <code>F,E</code>, if every <code>x : E</code> has a positive power in the scalar image of <code>F</code>,
+each valuation subring of <code>F</code> has a unique extension to <code>E</code>: its integral closure.
+Membership is integrality, or scalar membership after any specified positive power;
+purely inseparable field extensions supply the power witnesses.</li><li><strong>Scalar-trivial values and valuation-separated linear independence</strong>
+(<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/docs/Guide.md#scalar-values-and-linear-independence">details and modules</a>).
+In a ring algebra over a commutative ring, a valuation into a linearly ordered commutative
+monoid with zero that is trivial on nonzero scalars takes integral elements to zero
+or one. Over a field, scalar values at most one give the same conclusion for
+algebraic elements; a nonzero polynomial with all supported coefficients of value
+one suffices locally. For a field <code>F</code>, ring <code>F</code>-algebra <code>A</code> and valuation <code>v</code>, a
+family with nonzero values in pairwise distinct scalar-weighted value classes is
+linearly independent. In particular, <code>v x ≠ 0</code> and separation of <code>(v x)^n</code> from
+every nonzero scalar value for <code>0 &lt; n &lt; d</code> make the first <code>d</code> powers independent;
+if <code>A</code> is finite over <code>F</code>, then <code>d ≤ Module.finrank F A</code>. No domain on <code>A</code> or
+group structure on the value monoid is needed.</li><li><strong>Absolute values and rank-at-most-one realizations</strong>
+(<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/docs/AbsoluteValues.md">generic layer</a>,
+<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/docs/Guide.md#rank-dimension-and-real-absolute-values">rank and topology details</a>).
+Nonarchimedean real absolute values on nontrivial rings and zero-reflecting
+<code>NNReal</code>-valued valuations on rings convert in both directions with round-trip laws.
+Pullbacks and rational restriction are included. Unit bounds for division semirings
+and bounded-range criteria for real absolute values are also provided.
+On a division ring, rank-at-most-one valuation data (with a linearly ordered
+commutative value group with zero) give a real absolute value
+reflecting the preorder and unit ball, with an ultrametric uniform equivalence
+<code>WithVal v ≃ᵤ WithAbs v.absoluteValue</code>. Trivial valuations are included; rank one
+gives nontriviality and, on valued fields, Mathlib's <code>Valued.toNormedField</code> norm.</li><li><strong>Scalar and binomial valuation formulas</strong>
+(<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/docs/Guide.md#scalar-and-binomial-estimates">details and modules</a>).
+Multiplication-preserving, nonnegative nonarchimedean maps on a nonassociative ring
+satisfy natural prime-power formulas at a prime <code>p</code> with <code>f p &lt; f 1</code>, retaining
+the factor <code>f 1</code>. The target needs <code>MulOneClass</code>, natural powers with <code>NatPowAssoc</code>,
+zero, a linear order and two-sided positive-multiplication monotonicity, not
+preservation of zero or one by the map. For valuations on arbitrary rings into
+linearly ordered commutative monoids with zero, prime-binomial and prime-power upper bounds
+hold without integrality or cancellation. If <code>p</code> is prime, <code>v p &lt; 1</code> and both
+<code>v (x-1)^(p-1), v (z-1)^(p-1) &lt; v p</code>, then
+<code>v (x^m-z^m) = v m * v (x-z)</code> for all natural <code>m</code>; for units it holds for all
+integer powers as well. No commutation is needed, and zero distances are included.
+Natural powers with <code>v m = 1</code> preserve distances in the strict unit ball about one.</li><li><strong>Rank, dimension, normalization and bounded modules</strong>
+(<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/docs/Guide.md#rank-dimension-and-real-absolute-values">details and modules</a>).
+For a field valuation into a linearly ordered commutative group with zero and a
+commutative local integer presentation <code>hv : val.Integers O</code>,
+rank at most one gives positive-power divisibility <code>y ∣ x^n</code> for maximal-ideal <code>x</code>
+and nonzero <code>y</code>, and <code>Ring.KrullDimLE 1 O</code>. Conversely that dimension bound gives
+rank-at-most-one data. Rank concerns the restricted value group; dimension zero and
+trivial valuations are included. Surjective valuations on any ring into a common
+linearly ordered commutative group with zero with cyclic units are equivalent iff equal.
+Integer presentations and DVR valuations have comparison laws. A bounded submodule
+of a finite-dimensional normed space over complete <code>K</code> is finitely generated over
+commutative Noetherian <code>R</code> with compatible actions whose image contains <code>K</code>'s closed
+unit ball. For a finite-dimensional normed <code>K</code>-algebra that is a normed ring,
+<code>v.HasExtension w</code>, Noetherian base integers, a <code>v</code>-integral base norm unit ball
+and norm-at-most-one <code>w</code>-integers give finite extension-integer modules.</li><li><strong>Valuative topologies, Cauchy filters and completions</strong>
+(<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/docs/Guide.md#valuative-topologies-and-cauchy-filters">topology and Cauchy details</a>,
+<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/docs/Guide.md#completions-and-residue-transport">completion details</a>).
+Here value groups are arbitrary linearly ordered commutative groups with zero.
+Powers tend to zero iff <code>x &lt;ᵥ 1</code> in rank-at-most-one valuative rings; on division
+rings, the identity homeomorphism recognizes equivalence of two such valuations.
+Supplied integer-valued uniformities have integer-threshold Cauchy, limit and
+completeness criteria. In any valuative additive uniformity on a ring, Cauchy
+filters have bounded compatible valuation values and either converge to a fixed
+center or stabilize at a positive difference value. A supplied valued ring is
+complete iff its inherited integer subring is complete, at arbitrary rank.
+A compatible field valuation extends to its given uniform completion with the same
+value group and induces its topology. A dense exactly value-preserving ring homomorphism
+from a valued field to a complete separated valued ring identifies that ring with the completion.
+Dense <code>HasExtension</code> field algebra maps induce dense integer maps and bijective
+residue maps, also for different value groups; integer surjectivity is not asserted.</li><li><strong>Finite intersections, approximation and spectra</strong>
+(<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/docs/Guide.md#intersections-and-spectra">details and modules</a>).
+Arbitrary families of valuations on a field into a common linearly ordered
+commutative group with zero have intersection integers and full residue maps.
+Finite pointwise rank-at-most-one families have denominator, localization and
+fraction-field results, residue surjectivity at each selected nontrivial place,
+dimension at most one and finite spectra whose opens are empty or contain zero.
+Every maximal ideal is contracted for nonempty finite families, even without rank
+assumptions. Finite pairwise inequivalent rank-one families have weak approximation
+at positive restricted-value radii, residue-product surjectivity and a spectrum
+homeomorphism with <code>Topology.WithGenericPoint</code>. Diagonal uniformizers additionally
+require discreteness; repeated or trivial places need the separate boundaries below.</li><li><strong>Laurent-series integers and approximation</strong>
+(<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/docs/Guide.md#laurent-series-and-approximation">details and modules</a>).
+Over a field <code>K</code>, maximal-ideal powers in the standard Laurent-series valuation
+subring are detected by vanishing coefficients at natural indices below the power;
+units are exactly those with nonzero zeroth coefficient, and maximal-ideal elements
+exactly those with zero zeroth coefficient. The residue field is <code>K</code>, with reduction
+given by that coefficient. Laurent series over a type
+with zero have finite support below every integer cutoff; over a semiring a Laurent
+polynomial matches those coefficients, and over a field these polynomials are dense.</li><li><strong>Henselian roots with sharp valuation precision</strong>
+(<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/docs/Guide.md#henselian-roots-and-power-neighborhoods">details and modules</a>).
+For a field valuation into a linearly ordered commutative group with zero whose integers
+<code>O</code> are Henselian at their maximal ideal <code>𝔪</code>, <code>v(f(a)) &lt; v(f′(a))²</code> for <code>f : O[X]</code>,
+<code>a : O</code>, gives a root with exact error identity, derivative-value stability and uniqueness
+in the strict derivative ball. For natural <code>s</code>, the conditions <code>f(a) ∈ 𝔪^(2*s+1)</code> and
+<code>f′(a) ∉ 𝔪^(s+1)</code> give correction in <code>𝔪^(s+1)</code>. Applied to powers,
+<code>v(a-1) &lt; v(m : K)²</code> gives <code>b^m = a</code>, <code>v b = 1</code> and exact correction value;
+nonzero exponent casts give open power ranges in <code>Kˣ</code>. No completeness, rank,
+discreteness, monicity or unit-derivative assumption is required.</li><li><strong>Bernoulli integrality and complete denominators</strong>
+(<a href="https://github.com/FormalFrontier/valuation-integers/blob/db743a475a4dcdfaddc13b561788267cd8237e72/docs/Guide.md#bernoulli-numbers-and-discrete-roots">details and modules</a>).
+For every integer <code>n</code> and positive natural <code>k</code>, <code>n^k*(n^k-1)*B_k/k</code> is integral
+over <code>ℤ</code>, including <code>B₁ = -1/2</code>. For the divided Bernoulli number
+<code>B_(2*k)/(2*k)</code> with positive natural <code>k</code>, selected primes <code>p</code> satisfying
+<code>p-1 ∣ 2*k</code> give additive <code>p</code>-adic valuation <code>-1-padicValNat p (2*k)</code> and
+reduced-denominator exponent <code>1+padicValNat p (2*k)</code>. The complete-denominator
+API gives zero factorization coordinates otherwise and expresses that same
+reduced denominator as a finite prime product. The product formula also includes
+<code>k = 0</code>, when the denominator and product are one. A separate rational-integrality
+criterion bounds prime denominator support.
+For an integer-valued valuation on any ring, an element with a <code>q^n</code>-th root
+at every depth, for natural <code>q &gt; 1</code>, has value zero or one; compatible roots are not required.</li></ul>

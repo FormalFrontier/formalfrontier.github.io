@@ -1,0 +1,327 @@
+<p>These are reusable algebraic APIs, not claims of source-specific correspondence
+or complete book coverage. Selected-ring and evaluation results below concern
+<strong>naturally graded commutative rings</strong> unless another base is stated. Old and new
+degree-zero coefficients mean the <strong>entire actual components</strong>, not a smaller
+chosen coefficient ring.</p>
+<ul><li><strong>Quotients and localizations.</strong> For commutative rings,
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/Quotient.lean">homogeneous-ideal quotients</a> inherit the image grading
+for additive-monoid degrees with decidable equality. <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/Localization.lean">Full localization</a>
+at homogeneous denominators uses an additive commutative <strong>group</strong> of degrees;
+its degree-zero component is equivalent to equal-degree homogeneous fractions.
+Both allow zero rings without a domain assumption; localization also permits
+zero-divisor denominators.</li><li><strong>Localization maps and reducedness.</strong> The <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/docs/degree-multiplying-homogeneous-localization.md">degree-multiplying map</a>
+uses natural gradings, an ordinary unital ring homomorphism, explicit degree
+compatibility and mapped denominators. Even factor zero requires its degree
+witness; source charts may be arbitrary, but restriction factors are homogeneous.
+Separately, <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/HomogeneousLocalizationReduced.lean">homogeneous localization preserves reducedness</a>
+for a <strong>reduced commutative ring</strong>, additive commutative <strong>monoid</strong> degrees with
+decidable equality and any denominator submonoid. Neither interface requires
+a domain, regular denominators or nontriviality; the map needs no positive factor.</li><li><strong>Finiteness and primes.</strong> In a naturally graded commutative ring,
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FiniteType.lean">finite type over old degree zero</a> is equivalent to
+finite generation of the irrelevant ideal; <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/Noetherian.lean">Noetherianity</a>
+is equivalent to that finite generation plus Noetherian degree zero.
+For an <strong>integer</strong>-graded commutative ring with a positive-degree homogeneous
+unit, <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/HomogeneousPrime.lean">homogeneous primes</a> correspond to
+degree-zero primes by contraction and <strong>radical</strong> extension.</li><li><strong>Finite Rees modules and stable filtrations.</strong> For any ideal <code>I</code> in a commutative
+ring <code>R</code> and any <code>R</code>-module <code>M</code>, with independent universes, an
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/ReesModule.lean"><code>I</code>-filtration with finitely generated Rees module</a>
+is stable: <code>I • F.N n = F.N (n + 1)</code> for all sufficiently large <code>n</code>.
+Neither <code>I</code>, the stages, nor <code>M</code> need be finitely generated. Conversely,
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/ReesModule/FiniteGeneration.lean">stability from a given degree and finite generation through that degree</a>
+suffice for finite generation of the Rees module; no finiteness of later stages
+is needed. Both directions use the natural-number filtration and polynomial
+Rees-module constructions.</li><li><strong>Integer-filtered associated gradeds and Rees actions.</strong> Over a commutative ring <code>R</code>,
+for an antitone family of submodules of an <code>R</code>-module <code>M</code>,
+<code>F.N : ℤ → Submodule R M</code> with <code>I • F.N n ≤ F.N (n + 1)</code>, the
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded.lean">integer associated graded</a> is the
+direct sum of <code>F.N n</code> modulo the next stage inside it. It retains the original
+componentwise <code>R</code>-module structure and has a surjective coefficientwise
+representative map, with next-stage kernel and a first-isomorphism comparison.
+No finiteness, exhaustivity, separatedness, lower bound or normalization at
+degree zero is required. The <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/ReesAlgebra/Grading.lean">Rees grading</a>
+gives the polynomial Rees algebra its degree grading and its coefficient-ideal
+quotient the image grading. On the same associated-graded carrier, the
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/ReesAction.lean">canonical representation</a>
+constructs an action of <code>C = reesAlgebra I ⧸ I.map (algebraMap R (reesAlgebra I))</code>.
+Constants act by the original <code>R</code>-action, and <code>I</code> annihilates the carrier.
+For <code>q : ℕ</code>, <code>a ∈ I ^ q</code> and <code>m ∈ F.N n</code>, the class of <code>aX^q</code> sends the
+class of <code>m</code> to the class of <code>a • m</code> in degree <code>n + q</code>.</li><li><strong>Shifted Rees projections.</strong> For every integer cutoff <code>k</code>, the
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/ReesProjection.lean">natural tail</a> of an
+integer filtration has stages <code>F.N (k + q)</code>. Its polynomial Rees submodule
+maps semilinearly to the full associated graded along <code>B → C</code>, by summing the
+homogeneous classes of its coefficients. The kernel is the next tail pulled
+back to this source, not generally the coefficient-ideal multiple. Its range
+consists exactly of elements whose components below <code>k</code> vanish. If all lower
+pieces vanish, a finite tail over <code>B</code> gives a finite associated graded over <code>C</code>,
+without ideal finiteness, Noetherianity, completeness or normalization. In
+particular, an exhaustive integer filtration on a finite original module has
+finite associated graded over <code>C</code> if, at one common threshold <code>c</code>, it is stable
+at and above <code>c</code> and its stages at and below <code>c</code> are finitely generated.</li><li><strong>Ideal-adic associated graded comparison.</strong> For any ideal <code>I</code> and module <code>M</code>, the
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/AdicComparison.lean">canonical integer-adic associated graded</a>
+is linearly equivalent over the quotient Rees algebra to
+<code>Ideal.AssociatedGradedModule I M</code>, with both original scalar actions retained.
+The map sends homogeneous representatives to polynomial singleton classes;
+coefficients recover the inverse components, and negative components vanish.
+No finiteness, completeness or separatedness assumption is needed. In the regular
+specialization, composition with <code>(Ideal.AssociatedGradedModule.regularEquiv I).symm</code>
+identifies it with the quotient Rees algebra and sends the degree-zero unit to <code>1</code>.</li><li><strong>Maps of quotient Rees modules.</strong> For every ideal <code>I</code> of a commutative ring
+<code>R</code>, an original-<code>R</code>-linear map between arbitrary, independently universed
+modules induces a <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/ReesModule/Map.lean">quotient-Rees-linear map</a>
+between their <code>Ideal.AssociatedGradedModule</code> modules. It applies the polynomial
+module map to each Rees representative, preserves singleton degrees, and
+commutes with each coefficient map via the ordinary quotient by
+<code>I ^ (q + 1) • ⊤</code>. Identities and composition are preserved, without finiteness
+or completeness assumptions.</li><li><strong>Naturality of the ideal-adic comparison.</strong> Every original-<code>R</code>-linear map
+<code>f : M →ₗ[R] N</code> induces the <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/AdicMap.lean">canonical integer-adic map</a>
+<code>Ideal.adicAssociatedGradedHom I f</code>, linear over the existing quotient Rees
+algebra, with representative, component, identity and composition laws.
+The <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/AdicComparisonNaturality.lean">comparison and its inverse are natural</a>
+for this map and the independently defined quotient Rees map: both forward
+routes send <code>[m]</code> in degree <code>q : ℕ</code> to the old polynomial singleton class
+of <code>f m</code> in degree <code>q</code>. The original scalar actions and independent module
+universes are retained, with no finiteness, completeness, separatedness or
+nontriviality assumption.</li><li><strong>Residue-linear integer graded pieces.</strong> For the same arbitrary ideal-compatible
+integer filtration, the <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/Pieces.lean">original pieces</a>
+carry named <code>R ⧸ I</code>-module structures compatible with their original <code>R</code> actions.
+Insertion and projection are residue-linear for the whole associated graded's
+existing residue action, with the same functions, representative formulas and
+finite reconstruction. Piece modules and towers are activated locally rather
+than registered globally. No residue action on the stages or ambient stage
+quotients, finiteness or degree-zero normalization is required.</li><li><strong>Maps of integer-filtered associated gradeds.</strong> An original-<code>R</code>-linear map
+preserving every stage of two integer filtrations induces a
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/Map.lean">canonical quotient-Rees-linear map</a>.
+It sends each homogeneous representative to its image, preserves the original
+<code>R</code> action, and respects identities and composition. For stage-preserving maps
+<code>f, g : M →ₗ[R] N</code> with filtrations <code>F</code> and <code>H</code>, their induced maps agree exactly
+when <code>f m - g m ∈ H.N (n + 1)</code> for every <code>n : ℤ</code> and <code>m ∈ F.N n</code>
+(<code>map_eq_iff</code>). An induced map vanishes exactly when <code>f m ∈ H.N (n + 1)</code> for
+all such representatives (<code>map_eq_zero_iff</code>), without requiring the original
+map to vanish. It is injective exactly when, for every <code>n : ℤ</code> and
+<code>x ∈ F.N n</code>, membership <code>f x ∈ H.N (n + 1)</code> implies <code>x ∈ F.N (n + 1)</code>.
+It is surjective exactly when <code>H.N n ≤ (F.N n).map f ⊔ H.N (n + 1)</code> for every
+integer <code>n</code>. Thus stagewise pullback equality <code>F.N n = (H.N n).comap f</code> gives
+injectivity, and stagewise image equality <code>(F.N n).map f = H.N n</code> gives
+surjectivity, without ambient injectivity or surjectivity of <code>f</code> or normalization
+at degree zero. A module equivalence carrying
+each filtration stage onto the corresponding stage induces a quotient-Rees-linear
+equivalence, compatibly with inverses, identities and composition. The modules have
+independent universes; no finiteness, exhaustivity, separatedness or lower bound is
+required.</li><li><strong>Integer translations.</strong> For every integer <code>d</code>,
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/Shift.lean">translation of an integer filtration</a>
+has stage <code>(F.shift d).N n = F.N (n + d)</code>. Its graded-piece equivalence
+preserves representatives, and <code>shiftEquiv</code> identifies the whole associated
+gradeds linearly over the canonical quotient Rees algebra, taking degree <code>n</code>
+to degree <code>n + d</code>. Representative, inclusion, component and residue-scalar
+formulas accompany zero, composition and inverse identities using the
+canonical filtration comparisons. Translation commutes with maps induced by
+stage-preserving <code>R</code>-linear maps, both on the whole associated graded and on each
+graded piece. It also commutes with pullback and image filtrations. The induced
+equivalence between the quotients by inclusion ranges commutes with the
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/SubquotientShift.lean">subquotient equivalence</a>.
+No additional hypotheses are needed.</li><li><strong>Pullbacks and images of integer filtrations.</strong> Pullback and image along an
+original-<code>R</code>-linear map have the submodule inverse images and direct images as
+their integer stages. They preserve ideal compatibility, respect identities
+and composition, and satisfy the stagewise image–preimage universal property.
+The existing canonical associated-graded map is injective from the pullback
+and surjective onto the image, without ambient injectivity or surjectivity.
+No degree-zero normalization, finiteness, exhaustivity, separation, completeness
+or degree bound is imposed.</li><li><strong>Binary products of integer filtrations.</strong> For any ideal <code>I</code> of a commutative
+ring <code>R</code> and ideal-compatible integer filtrations <code>F</code>, <code>H</code> on independently
+universed <code>R</code>-modules <code>M</code>, <code>N</code>, the product has stages <code>(F.N n).prod (H.N n)</code>
+on the original <code>M × N</code>. Its <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/Prod.lean">associated graded comparison</a>
+is linear over <code>C = reesAlgebra I ⧸ I.map (algebraMap R (reesAlgebra I))</code>
+for the canonical actions, with forward map given by the two projections and
+inverse given by the sum of the two inclusions. No degree-zero normalization,
+finiteness, exhaustivity, separatedness, completeness or degree bound is required.</li><li><strong>Dependent direct sums of integer filtrations.</strong> For an arbitrary family of
+ideal-compatible integer filtrations over a commutative ring, the componentwise
+filtration on the <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/DirectSum.lean">dependent direct sum</a>
+has associated graded canonically equivalent to the direct sum of the associated
+gradeds, linearly over the quotient Rees algebra. Coordinates are the filtered
+component maps; the inverse is assembled from the filtered summand inclusions.
+Homogeneous representatives retain their summand and absolute integer degree,
+naturally under stage-preserving linear maps. The scalar, index and module
+universes are independent. No finite index set, common lower degree bound,
+finiteness, exhaustivity, separatedness or completeness is required.</li><li><strong>Exactness of integer associated graded maps.</strong> For compatible original
+linear maps <code>f : M →ₗ[R] N</code> and <code>g : N →ₗ[R] P</code>, the image of the first
+canonical quotient-Rees-linear associated graded map equals the kernel of the
+second exactly when, for every integer <code>n</code> and <code>y ∈ H.N n</code>, membership
+<code>g y ∈ K.N (n + 1)</code> is equivalent to
+<code>y ∈ (F.N n).map f ⊔ H.N (n + 1)</code>. The ambient composite need not vanish.
+An ambient exact pair with strict stage images induces an exact pair, without
+ambient injectivity or surjectivity. The three module universes are independent;
+no finiteness, exhaustivity, separatedness, completeness or degree bound is needed.</li><li><strong>Induced submodules and filtered quotients.</strong> For any submodule <code>S</code>, the
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/Subquotient.lean">subquotient equivalence</a>
+identifies the associated graded of <code>F.image S.mkQ</code> with the quotient of
+<code>F.AssociatedGraded</code> by the range of the canonical map from
+<code>(F.comap S.subtype).AssociatedGraded</code>, linearly over the quotient Rees algebra.
+The submodule filtration is induced, not intrinsic ideal-adic. Representative
+formulas and the quotient universal property apply in all integer degrees,
+with no finiteness, normalization, separation or completeness hypotheses.</li><li><strong>Naturality of associated graded subquotients.</strong> For ideal-compatible integer
+filtrations <code>F</code>, <code>H</code> on independently universed modules over a commutative ring
+<code>R</code>, a stage-preserving <code>R</code>-linear map <code>f</code> with <code>f(S) ≤ T</code> commutes with the
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/SubquotientNaturality.lean">induced-submodule and quotient maps</a>.
+The subquotient equivalences intertwine the quotient-by-range map induced by
+the ambient associated graded map with the associated graded original quotient
+map, over the canonical quotient Rees actions. No strictness, ambient
+injectivity or surjectivity, finiteness or degree bound is required.</li><li><strong>Nested induced quotients.</strong> For submodules <code>S ≤ T</code> of an integer-filtered
+module, the <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/NestedQuotient.lean">nested quotient comparison</a>
+identifies the filtration induced on <code>T.map S.mkQ</code> with the image of the
+filtration induced on <code>T</code>. The third isomorphism carries every iterated image
+stage onto the direct image stage. On whole associated gradeds, the subquotient
+equivalence for <code>S</code> carries the second graded range onto the induced quotient
+range; quotienting twice then agrees with quotienting directly by the <code>T</code>
+range, via the third isomorphisms over the original ring and the canonical
+quotient Rees algebra. No finiteness, normalization, exhaustivity, separatedness,
+completeness or splitting is required.</li><li><strong>Ideal-power quotients and coefficient multiplication.</strong> For any ideal <code>I</code> of a
+commutative ring <code>R</code> and every natural degree <code>q</code>, the
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/ReesAlgebra/QuotientPieces.lean">quotient of <code>I ^ q</code> by its ideal multiple</a>
+has an <code>R ⧸ I</code>-linear comparison <code>quotientMonomialEquivCoefficients</code> with the
+degree-<code>q</code> component of the coefficient-ideal quotient of the Rees algebra.
+Residue scalars are inherited on the same component with its original <code>R</code>-action;
+restricting the comparison to <code>R</code> recovers <code>quotientMonomialEquiv</code>, with the
+same forward and inverse functions. The denominator is exactly the next ideal
+power, viewed inside <code>I ^ q</code>. On these same quotient modules,
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/ReesAlgebra/PowerQuotientMultiplication.lean">coefficient multiplication</a>
+<code>powerQuotientMul</code> is bilinear over <code>R ⧸ I</code>; <code>powerQuotientMul_mk</code> sends <code>[a]</code>
+and <code>[b]</code> to <code>[a * b]</code> in degree <code>q + r</code>. Multiplication is commutative and
+associative under the degree-sum identifications,
+with the class of <code>1</code> in degree zero as a two-sided unit. The quotient monomial
+maps preserve this multiplication and send that class of <code>1</code> to the quotient
+Rees unit. No finiteness, Noetherianity, nontriviality or positive-degree
+assumption is needed.</li><li><strong>The algebra of ideal-power quotients.</strong> The
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/ReesAlgebra/PowerQuotientAlgebra.lean">direct sum of the ideal-power quotients</a>
+is an <code>R ⧸ I</code>-algebra canonically equivalent to the coefficient-ideal quotient
+of the Rees algebra. It retains componentwise addition and the original <code>R</code> and
+<code>R ⧸ I</code> actions. Its unit is the degree-zero class of <code>1</code>, and homogeneous
+multiplication is <code>powerQuotientMul</code>. The equivalence sends each homogeneous
+insertion to its quotient monomial; its inverse decomposes arbitrary elements
+into coefficient classes. No finiteness or nontriviality assumption is needed.</li><li><strong>Ideal-power quotients acting on integer associated gradeds.</strong> The
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/PowerQuotientAction.lean">ideal-power quotient action</a>
+restricts the existing quotient-Rees action along
+<code>powerQuotientSumAlgEquiv I : D ≃ₐ[R ⧸ I] C</code>, in the direction <code>D → C</code>,
+where <code>D = reesAlgebra.powerQuotientSum I</code>. Use
+<code>powerQuotientSum_of_mk_smul_single</code> to send <code>[a]</code> in degree <code>q</code> and <code>[m]</code>
+in degree <code>n</code> to <code>[a • m]</code> in degree <code>n + q</code>. The original <code>R</code>, <code>R ⧸ I</code>
+and <code>C</code> actions are unchanged, and both coefficient actions form scalar towers
+with the <code>D</code>-action. Quotient-Rees-linear maps and equivalences between
+associated gradeds restrict to <code>D</code> using Mathlib's <code>restrictScalars</code>
+constructors, with unchanged forward and inverse functions. No additional
+filtration hypotheses are required.</li><li><strong>Weighted generation of integer filtrations.</strong> For a separated, antitone
+integer-indexed filtration satisfying <code>I • F n ≤ F (n + 1)</code> over an
+<code>I</code>-adically <strong>precomplete</strong> commutative coefficient ring,
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredModule/WeightedSpan.lean">finite degree-weighted lifts generating the successive quotients</a>
+generate every stage with coefficients in <code>I ^ ((n - d i).toNat)</code>.
+Ring, module and finite indexing type have independent universes; the family
+may be empty and the degrees may be negative. The
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredModule/Finiteness.lean">finiteness consequences</a> keep
+their extra hypotheses separate: eventual stability needs none, finiteness
+of the original module needs exhaustivity, and finite generation of every
+stage needs <code>I.FG</code>. The equality and ambient finiteness require neither
+<code>I.FG</code> nor a Hausdorff coefficient ring. This independently generalizes the
+filtered lifting ingredient underlying Fujiwara--Kato, <em>Foundations of Rigid
+Geometry I</em>, Proposition 0.7.5.2; it is not the full proposition or a full
+associated-graded construction.</li><li><strong>Finite integer associated gradeds and weighted generators.</strong> For the
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/FilteredAssociatedGraded/FiniteGeneration.lean">canonical quotient-Rees action</a>,
+finiteness of the whole integer associated graded is equivalent to finite
+homogeneous original-module lifts generating every successive quotient with
+ideal-power weights. This algebraic equivalence needs no completeness,
+separation, exhaustivity or finiteness of the ideal. Over an ideal-adically
+precomplete coefficient ring, separation gives exact weighted descriptions
+in every integer degree and eventual stability. Exhaustivity additionally
+gives finiteness of the original module; <code>I.FG</code> instead gives finite generation
+of every stage, without exhaustivity. Degree-zero normalization and a lower
+grading bound are not required, and the generator family may be empty.</li><li><strong>Associated graded modules from the first quotient.</strong> For any ideal <code>I</code> in a
+commutative ring <code>R</code> and any <code>R</code>-module <code>M</code>, with independent universes,
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/ReesModule.lean">the Rees-quotient associated graded module</a> <code>G</code>
+is finite over <code>C = B / IB</code>, where <code>B = reesAlgebra I</code>, whenever
+<code>Q = M / IM</code> is finite over <code>R / I</code>. The canonical map <code>C ⊗[R/I] Q → G</code> is
+surjective, <strong>not generally an isomorphism</strong>. More generally, for a subideal
+<code>K ≤ I</code> with <code>IⁿM = KⁿM + Iⁿ⁺¹M</code> for <strong>every</strong> natural <code>n</code>, the canonical
+<code>reesAlgebra K ⊗[R] Q → G</code> is surjective without a finiteness hypothesis,
+and <code>Q</code> finite over <code>R / I</code> makes <code>G</code> finite over <code>reesAlgebra K</code>, with <strong>no
+finite-generation assumption on K</strong>. If <code>Q</code> is Noetherian over <code>R</code> and <code>K</code> is finitely
+generated, then <code>G</code> is Noetherian over <code>C</code>. None of these results requires
+finiteness of the original <code>M</code>, Noetherianity of <code>R</code>, or finite generation of <code>I</code>.</li><li><strong>Quotient Rees augmentation.</strong> For any ideal <code>I</code> of a commutative ring <code>R</code>,
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/ReesAlgebra/Augmentation.lean">constant coefficient</a> induces an
+<code>R/I</code>-algebra homomorphism from <code>C = reesAlgebra I / I·reesAlgebra I</code> to <code>R/I</code>.
+The composite <code>C → R/I → C</code> is the degree-zero projection, and the image of
+<code>R/I → C</code> is exactly the degree-zero component. No finiteness or nontriviality
+assumption is needed; this does not identify the whole ring <code>C</code> with <code>R/I</code>.</li><li><strong>The regular associated graded module.</strong> For any ideal <code>I</code> of a commutative ring
+<code>R</code>, the <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/AssociatedGradedRegular.lean">regular associated graded module</a>
+<code>Ideal.AssociatedGradedModule I R</code> is canonically free of rank one over
+<code>C = reesAlgebra I / I·reesAlgebra I</code>. The equivalence <code>regularEquiv</code> sends
+<code>c</code> to <code>c • regularUnit</code>, where the generator is the degree-zero unit class.
+Rees-representative and every-coefficient formulas, unique scalar expressions,
+and linear-map extensionality expose this comparison without unfolding its
+quotients. No finiteness, completeness, separatedness or nontriviality is assumed.</li><li><strong>Symmetric algebras and first order.</strong> <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/SymmetricAlgebra.lean">Basis-free grading and graded maps</a>
+are functorial for arbitrary modules over a commutative <strong>semiring</strong>; only
+polynomial coordinates need a basis. Over a commutative <strong>ring</strong>, for any
+module <code>M</code>, the <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/SymmetricAlgebraSquareZero.lean">augmentation-square quotient and conormal</a>
+give <code>SymmetricAlgebra R M ⧸ augmentationIdeal² ≃ₐ[R] TrivSqZeroExt R M</code> and
+<code>augmentationIdeal.Cotangent ≃ₗ[R] M</code>, without freeness, projectivity or finiteness.
+Generator formulas, ideal transport and both whole-map naturalities use
+<code>open scoped TrivSqZeroExt</code> and the released <code>coherent-modules</code> kernel
+equivalence. The quotient's image cotangent ideal corresponds to
+<code>TrivSqZeroExt.kerIdeal</code>, not the original augmentation ideal; no scheme or sheaf comparison.</li><li><strong>Prime multiplicity.</strong> A <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/PrimeMultiplicity.lean">multiplicative valuation</a>
+measures a prime element in a commutative domain with well-founded divisibility;
+extension to localization requires non-zero-divisor denominators. Its
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/HomogeneousPrimeMultiplicity.lean">homogeneous restriction</a> uses
+additive commutative monoid degrees. The <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/GradedRings/MvPolynomialAway.lean">polynomial applications</a>
+work over a <strong>field</strong>, with arbitrary variables; irreducibility at denominator
+order one uses a positive-degree homogeneous prime polynomial.</li><li><strong>Whole selected rings, including index zero.</strong> The <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/docs/Veronese.md">Veronese ring</a>
+is the external sum of <strong>whole</strong> old components in multiples of <code>n</code>, with a
+native grading for every natural <code>n</code>. Its <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/docs/VeroneseZero.md">actual zero ring</a>
+is equivalent to old degree zero at every index; whole-ring inclusion is
+injective for <code>n &gt; 0</code>, but need not be at zero. At zero, old-zero copies occupy
+separate external summands: each factors as a power of the new degree-one variable
+with its arbitrary coefficient in the entire new zero ring. Polynomial
+evaluation is surjective, hence that external sum is finite type over its new
+zero ring, without old-ring finite type, field, domain or nontriviality.
+No polynomial equivalence or source index-zero convention is asserted.</li><li><strong>Evaluation and homogeneous lifts.</strong> <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/docs/WeightedEvaluation.md">Weighted evaluation</a>
+at chosen homogeneous elements of arbitrary natural weights, <strong>including zero</strong>,
+preserves degrees, is a native graded map and commutes with actual components.
+Only lifting <strong>every</strong> homogeneous target element requires the chosen family
+to generate over old degree zero. The <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/docs/HomogeneousLifts.md">degree-one specialization</a>
+uses all of <code>𝒮 1</code> and exactly <code>Algebra.adjoin (𝒮 0) (𝒮 1 : Set S) = ⊤</code>,
+including degree-zero targets. No finite-variable, domain, field or
+nontriviality assumption is needed.</li><li><strong>Degree-one generation: all versus finite.</strong> Under that old degree-one
+generation hypothesis, <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/docs/VeroneseDegreeOne.md">every positive selected index</a>
+is generated by <strong>all</strong> new degree one over its entire actual new zero ring,
+without finite generation. A finite <strong>positive-weight</strong> homogeneous generating
+family over old zero instead gives a <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/docs/FiniteVeronese.md">finite new degree-one family</a>
+at <code>D = Finsupp.weightedBlockSize w</code>; native old-zero finite type gives <strong>some</strong>
+positive index. These need no field, domain, nontriviality, equal weights or
+Noetherianity; the finite-family conclusions are not all-index claims.</li><li><strong>Positive-weight blocks and monomial adjoin.</strong> For finite indices and strictly
+positive natural weights, <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/docs/WeightedBlocks.md">exponent decomposition</a>
+recovers a whole finitely supported natural exponent vector of weight <code>k * D</code>
+as <strong>exactly <code>k</code></strong> weight-<code>D</code> blocks, with positive, not necessarily minimal
+<code>D = max 1 (Fintype.card ι) * ∏ i, w i</code>. Over any commutative <strong>semiring</strong>,
+<a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/docs/WeightedBlockAdjoin.md">monomial-adjoin membership</a> puts weight-<code>k * D</code>
+polynomials in the coefficient subalgebra generated by coefficient-one
+weight-<code>D</code> monomials, including arbitrary coefficients and <code>k = 0</code>.
+Neither result alone gives polynomial factorization or whole-ring generation.</li><li><strong>Selected weighted-polynomial components.</strong> For finite variables, arbitrary
+natural weights <strong>including zero</strong>, any commutative <strong>semiring</strong>, and each
+prescribed <code>n &gt; 0</code>, <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/docs/WeightedVeroneseGenerators.md">one finite homogeneous family</a>
+generates <strong>all</strong> polynomial degrees divisible by <code>n</code> over the entire
+coefficient semiring—not whole selected-ring finite type or degree-one generation.</li><li><strong>Finite type at each positive index.</strong> Finite homogeneous generators of
+arbitrary natural weights over entire old zero, or native old-zero finite
+type, make <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/docs/VeroneseFiniteType.md">every prescribed positive whole selected ring</a>
+finite type over its <strong>entire actual new zero ring</strong>. No domain, nontriviality,
+field, Noetherianity, positive or equal weights are required. This is distinct
+from index-zero finite type and from degree-one generation at every index.</li><li><strong>Finite inclusion and whole-ring residue modules.</strong> Under old-zero finite
+type, the <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/docs/VeroneseFinite.md">inclusion at each <code>n &gt; 0</code></a> makes the <strong>old ring</strong>
+finite over the whole external selected ring via the actual <code>inclusion.toAlgebra</code>.
+For <code>n &gt; 0</code>, <code>r &lt; n</code>, the <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/docs/VeroneseResidue.md">residue projection</a> is linear
+for that same action and has exactly the elements supported in residue <code>r</code>
+as its range. Ambient module finiteness makes this image finite; old-zero
+finite type suffices. The <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/docs/VeroneseResidueModule.md">shifted sum</a>
+<code>⨁ k, 𝒮 (n * k + r)</code> has whole selected-ring convolution; coefficient evaluation
+is linear and injective for <code>n &gt; 0</code> and <strong>any</strong> <code>r</code>, and identifies the projection
+range when also <code>r &lt; n</code>. Ambient finiteness, or full old-zero finite type,
+transports under those positive reduced-index bounds. No individual-fiber
+whole-ring action, arbitrary-submodule finiteness or zero-index bijection follows.</li><li><strong>Coherent high tails.</strong> <a href="https://github.com/FormalFrontier/graded-rings/blob/5fcac0d906362254295d8316581626c3b99ee248/docs/CoherentTailVeronese.md">Tail equivalence</a> requires
+<code>N &gt; 0</code>, an actual zero-ring equivalence, additive equivalences in <strong>all</strong>
+degrees at least <code>N</code>, and coefficient/high-product compatibility. For <code>N ≤ n</code>
+it identifies the <strong>entire</strong> selected rings with native degree-preserving
+inverse maps; for <code>n &gt; 0</code>, <code>selected_zero</code> is the exact coefficient square.
+No maps across missing original low degrees or Proj/scheme equivalence follow.</li></ul>

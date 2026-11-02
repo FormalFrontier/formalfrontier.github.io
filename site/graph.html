@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Dependency graph · Formal Frontier</title>
+  <meta name="description" content="Dependencies between the Formal Frontier Lean libraries.">
+  <meta property="og:title" content="Dependency graph · Formal Frontier">
+  <meta property="og:description" content="Dependencies between the Formal Frontier Lean libraries.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="module" src="assets/graph.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap wide">
+      <a class="brand" href="./"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="6" fill="var(--text-primary)"/><path d="M7 17V7h8M7 12h6" fill="none" stroke="var(--surface)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17" cy="16" r="2" fill="var(--series-1)"/></svg><span>Formal Frontier</span></a>
+      <nav class="nav" aria-label="Pages">
+        <a href="index.html">Overview</a>
+        <a href="graph.html" aria-current="page"><span class="nav-long">Dependency graph</span><span class="nav-short">Graph</span></a>
+        <a href="highlights.html">Highlights</a>
+        <a href="libraries.html">Libraries</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
+    </div>
+  </header>
+  <main class="wrap wide">
+    <div class="page-head">
+      <h1>Dependency graph</h1>
+      <p>Each library and the Formal Frontier libraries it depends on directly, as pinned in its latest release. Foundations are at the top; each library sits below everything it builds on. Select a library to trace what it uses and what uses it.</p>
+    </div>
+    <div class="graph-layout">
+      <div>
+        <div class="graph-legend" aria-hidden="true">
+          <span class="legend-item"><span class="legend-swatch dep"></span>Depends on (all levels)</span>
+          <span class="legend-item"><span class="legend-swatch use"></span>Used by (all levels)</span>
+          <span class="legend-item" id="legend-both"><span class="legend-swatch both"></span>Both, through earlier pinned releases</span>
+          <span class="legend-item"><span class="legend-line"></span>Depends on a library drawn below it</span>
+        </div>
+        <div class="card graph-card" id="graph"></div>
+        <details class="table-view">
+          <summary>Table view</summary>
+          <div class="table-scroll" id="graph-table"></div>
+        </details>
+      </div>
+      <aside class="card panel" id="panel" aria-live="polite"></aside>
+    </div>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap wide">
+      <span>Data from the public GitHub repositories of <a href="https://github.com/FormalFrontier">FormalFrontier</a>, updated daily. Last update: <span data-updated>…</span>.</span>
+      <a href="https://github.com/FormalFrontier/formalfrontier.github.io">Source of this site</a>
+    </div>
+  </footer>
+</body>
+</html>

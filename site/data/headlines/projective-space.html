@@ -1,0 +1,50 @@
+<ul><li>Inverse degree-preserving graded ring maps give whole-scheme <code>Proj</code>
+isomorphisms through <code>ProjectiveSpace.projIsoOfInverseGradedRingHom</code> and
+homeomorphisms and closed-point equivalences through
+<code>ProjectiveSpace.projectiveSpectrumHomeomorphOfInverseGradedRingHom</code> and
+<code>ProjectiveSpace.projClosedPointsEquivOfInverseGradedRingHom</code>.
+Scheme transport uses one universe for underlying rings; point transport
+permits independent ring universes. See the
+<a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/ProjectiveSpace/GradedProjIso.lean">module</a> and
+<a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/ProjectiveSpaceTest/PointClient.lean">point client</a>.</li><li>Compatible graded tails with equivalent degree-zero rings and high-degree
+pieces induce an isomorphism of <strong>entire projective schemes</strong>
+<code>E.projIso n hNn hn</code> for <code>N ≤ n</code> and <code>0 &lt; n</code>, with both forward and inverse
+equalities over the actual degree-zero base. No graded map on the omitted
+low-degree original components, finite generation, domain, reducedness or
+<code>Nontrivial</code> is needed. The algebraic <code>TailEquiv</code> is provided by the official
+Graded Rings dependency; this library proves the geometric transfer. See
+<a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/docs/CoherentTailProj.md">the coherent-tail guide</a>,
+<a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/ProjectiveSpace/CoherentTailProj.lean">module</a> and
+<a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/ProjectiveSpaceTest/CoherentTailProjClient.lean">client</a>.</li><li>Every positive selected-component Veronese has a whole-scheme isomorphism
+<code>AlgebraicGeometry.Proj.Veronese.schemeIso</code>, compatible with the degree-zero
+coefficient map; its charts accommodate zero divisors and nilpotents.
+Selected-component ring algebra comes from Graded Rings. See
+<a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/docs/Veronese.md">the Veronese guide</a>,
+<a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/ProjectiveSpace/Veronese.lean">module</a> and
+<a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/ProjectiveSpaceTest/VeroneseClient.lean">client</a>.</li><li>A positive degree-scaled ring hom constructs a projective scheme arrow on
+the <strong>actual open complement</strong> of its image-irrelevant zero locus, with
+coefficient naturality and arbitrary-element ordinary point-prime
+contraction. The generic arrow is not asserted to extend to all of <code>Proj</code>.
+See the <a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/docs/DegreeScaledMap.md">degree-scaled guide</a>,
+<a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/docs/DegreeScaledMapPoint.md">point-prime guide</a> and
+<a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/ProjectiveSpaceTest/DegreeScaledMapPointClient.lean">direct client</a>.</li><li>Positive-degree homogeneous basic opens form a basis on arbitrary graded
+<code>Proj</code>, including the zero ring; the positive-degree projective radical
+criterion identifies vanishing with membership in an <strong>ordinary</strong> radical.
+The latter needs a positive-degree homogeneous element, not a field or
+Noetherianity. See the <a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/ProjectiveSpace/BasicOpenBasis.lean">basis module</a>,
+<a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/ProjectiveSpace/ProjectiveNullstellensatz.lean">radical module</a> and
+<a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/ProjectiveSpaceTest/GeometryClient.lean">geometry client</a>.</li><li>The <code>Proj</code> of a naturally graded <strong>Noetherian commutative ring</strong> is a
+Noetherian scheme. In particular, total-degree polynomial <code>Proj</code> over any
+Noetherian commutative ring with <strong>finite coordinates</strong> is Noetherian,
+including empty coordinate types and the zero ring. Mathlib then gives
+Noetherianity of its underlying topological space; every subset is compact.
+See the <a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/ProjectiveSpace/Noetherian.lean">module</a> and
+<a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/ProjectiveSpaceTest/NoetherianClient.lean">client</a>.</li><li>Finite-dimensional projective space is <strong>geometrically integral over every
+commutative ring</strong>: <code>polynomialProjToSpec_fin_geometricallyIntegral</code> applies
+to <code>Fin (n + 1)</code>, and <code>polynomialProjToSpec_geometricallyIntegral_of_finite</code>
+to any finite nonempty coordinate type. No domain, Noetherian or
+nontrivial-base hypothesis is needed. The finite restriction belongs to the
+polynomial-chart API; empty coordinates are excluded because projective
+space over a field would be empty. See the
+<a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/ProjectiveSpace/GeometricallyIntegral.lean">module</a> and the
+<a href="https://github.com/FormalFrontier/projective-space/blob/e9d6d913dd457b781b181ecde79a094d578a91c3/ProjectiveSpaceTest/GeometricallyIntegralClient.lean">projective-line client</a>.</li></ul>

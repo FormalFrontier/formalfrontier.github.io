@@ -1,0 +1,38 @@
+<ul><li><strong>Pseudo-nullity and short exact sequences.</strong> Over any commutative ring,
+<a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/PseudoIsomorphism/Basic.lean#L30"><code>Module.IsPseudoNull</code></a>
+says a module's support avoids primes of height at most one; equivalently,
+<a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/PseudoIsomorphism/Basic.lean#L34">each such localization vanishes</a>.
+Submodules, quotients and extensions preserve pseudo-nullity, and in a short
+exact sequence the middle term is pseudo-null exactly when both endpoints
+are (<a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/PseudoIsomorphism/Basic.lean#L75">exact-sequence criterion</a>).
+The predicate needs no finite-generation, Noetherianity or domain hypothesis.</li><li><strong>Directional map calculus.</strong> A <em>specified</em> linear map has pseudo-null kernel
+and cokernel exactly when it is <a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/PseudoIsomorphism/LinearMap.lean#L67">bijective after localization</a>
+at every prime of height at most one. Identity and bijective maps qualify;
+<a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/PseudoIsomorphism/LinearMap.lean#L106">composition</a> preserves
+the predicate, with independent scalar and module universes. This gives no
+unrestricted reverse arrow or symmetric relation.</li><li><strong>Completed group algebra.</strong> For a commutative coefficient ring <code>R</code> and a
+profinite group <code>G</code>, <a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/CompletedGroupAlgebra/Basic.lean#L60"><code>CompletedGroupAlgebra R G</code></a>
+is the finite-quotient group-algebra limit in <code>RingCat</code>, so <code>G</code> need not be
+commutative. Its <a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/CompletedGroupAlgebra/Basic.lean#L65">coordinate projections</a>
+are compatible and detect equality; the <a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/CompletedGroupAlgebra/Basic.lean#L98">canonical ring map</a>
+from <code>R[G]</code> has a <a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/CompletedGroupAlgebra/Basic.lean#L103">coordinate formula</a>.
+No injectivity or density of this map is asserted.</li><li><strong>Coefficientwise topology and separation.</strong> For any finite index type,
+even an empty one, <a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/CompletedGroupAlgebra/Topology.lean#L59">coefficient extraction is a homeomorphism</a>
+with a finite product; this part needs no group structure. The completed
+topology is induced by finite-quotient projections: a map into the completion
+is <a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/CompletedGroupAlgebra/Topology.lean#L224">continuous iff each coordinate is</a>.
+Hausdorff coefficients give <a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/CompletedGroupAlgebra/Separation.lean#L33">finite-level</a>
+and <a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/CompletedGroupAlgebra/Separation.lean#L40">completed</a>
+Hausdorff spaces. Multiplicative/topological-ring results retain their group
+and ring-continuity hypotheses.</li><li><strong>Compact-route completeness.</strong> <a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/CompletedGroupAlgebra/Compactness.lean#L72">Finite-index coefficient spaces</a>
+are compact over compact coefficients <em>without</em> a Hausdorff or topological-ring
+assumption. <a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/CompletedGroupAlgebra/Completeness.lean#L64">Finite-level completeness</a>
+for canonical additive-group uniformity additionally needs a topological ring.
+<a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/CompletedGroupAlgebra/Compactness.lean#L176">Completed compactness</a>
+and <a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/IwasawaModules/CompletedGroupAlgebra/Completeness.lean#L100">completed completeness</a>
+by this route need compact <strong>and Hausdorff</strong> topological-ring coefficients;
+merely complete coefficients are not covered.</li></ul>
+<p>These noncomputable constructions also include the zero coefficient ring.
+Compact-module structure, <code>Z_p[[Gamma]]</code> comparisons, Iwasawa structure and
+invariants, growth, adjoints and full source coverage remain outside this library.
+The <a href="https://github.com/FormalFrontier/iwasawa-modules/blob/887cda20848672843f36721b3de5776982ff1d1f/docs/API.md">native API reference</a> gives signatures and further declarations.</p>

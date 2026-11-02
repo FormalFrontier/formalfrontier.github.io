@@ -1,0 +1,117 @@
+<ul><li><strong>Restriction and indexed gluing.</strong> For <code>X Y : RingedSpace.{u, u}</code>,
+<a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/Restriction.lean"><code>RingedSpace.isPullback_restrictInf</code></a> identifies
+the literal intersection of two opens with the pullback of their full
+restrictions. Compatible morphisms on any <code>J : Type u</code>-indexed open cover
+glue uniquely to a full morphism <code>X ⟶ Y</code>, also when <code>J</code> and <code>X</code> are empty;
+<a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/OpenCover.lean"><code>OpenCover.existsUnique_gluing_of_intersection</code></a>
+accepts literal-intersection compatibility.
+To compare morphisms glued on different covers, the
+<a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/docs/open-cover-comparison.md">cross-cover guide</a> applies the existing
+restriction, gluing and full-morphism extensionality equations.</li><li><strong>Inverse-image factorization.</strong> For <code>Y : RingedSpace.{u, u}</code> and a continuous
+map <code>g : T ⟶ Y.carrier</code>, <code>T : TopCat.{u}</code>,
+<a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/InverseImage.lean"><code>RingedSpace.inverseImage</code></a> has literal
+carrier <code>T</code> and mathlib's inverse-image ring sheaf. Every full <code>f : X ⟶ Y</code>
+factors through it by <a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/InverseImage.lean"><code>toInverseImage_ofInverseImage</code></a>;
+this is <em>not</em> a categorical ringed-space fiber product.</li><li><strong>Continuous-function spaces.</strong> A topological commutative ring <code>R</code> gives a
+<a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/ContinuousFunctions.lean"><code>ContinuousFunctions.ringedSpace</code></a>
+with stalk evaluation and full maps induced by continuous maps; open
+embeddings give <a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/ContinuousFunctions/OpenImmersion.lean">ringed-space open immersions</a>.
+For a T1 topological field <code>K</code> with a topological division-ring structure,
+its stalks are local and the maps and open immersions are locally ringed.
+See the <a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/docs/continuous-functions.md">continuous-functions guide</a>.</li><li><strong>Finite-regularity scalar functions.</strong> For a charted space over a nontrivially
+normed field, <a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/FiniteRegularityFunctions.lean"><code>FiniteRegularityFunctions.sheaf</code></a>
+gives chosen-chart <code>C^r</code> scalar sections for <code>r : ℕ</code> and local stalks without
+an <code>IsManifold</code> or nonempty-carrier assumption. Smooth sections weaken to
+finite order; order zero is naturally isomorphic to the existing continuous
+scalar sheaf, including compatible stalk evaluation. Finite-<code>C^r</code> maps
+<a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/FiniteRegularityFunctions/Maps.lean">pull sections back</a> and induce
+locally ringed-space morphisms compatible with identity, composition and
+both endpoint sheaf comparisons. For an open subtype with its induced charts,
+inclusion is an <a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/FiniteRegularityFunctions/OpenImmersion.lean">open immersion</a>
+of locally ringed spaces; the restriction comparison satisfies both whole-arrow
+factorization equations. On a finite-order manifold with the self model
+<code>𝓘(𝕜, E)</code>, <a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/FiniteRegularityFunctions/LocalBall.lean"><code>localBall</code></a>
+restricts the chosen chart near any point to a diffeomorphism onto an entire
+positive-radius ball in the normed model space. Its locally ringed-space
+isomorphism identifies the restricted ambient scalar-function space with
+the ball's scalar-function space. See the
+<a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/docs/finite-regularity-functions.md">finite-regularity guide</a>.</li><li><strong>Indexed chart balls and smooth scalar functions.</strong> For any regularity
+<code>n : ℕ∞ω</code>, a self-model manifold has chart coordinates on a neighborhood
+diffeomorphic to an <strong>entire</strong> positive-radius model ball, with no dimension
+or completeness assumption. At smooth regularity <code>∞</code>, the restricted ambient
+canonical smooth scalar locally ringed space is isomorphic to the canonical
+one on that ball; its whole arrows and full-composite germ and section
+evaluations are explicit. See the <a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/docs/chart-local-ball.md">chart-ball guide</a>.</li><li><strong>Recovering smooth maps from scalar-preserving morphisms.</strong> For canonical
+smooth scalar presheaves on charted spaces over a nontrivially normed field,
+preservation of global field constants is equivalent to preservation on every
+open. The evaluation law
+identifies pullbacks of arbitrary sections with precomposition, without
+dimensionality or completeness requirements. For arbitrary canonical charted
+targets, scalar-preserving full morphisms with the same base map coincide;
+a separately supplied smoothness proof identifies the full induced morphism.
+If the target is an open subset of a finite-dimensional normed space over a
+complete field, smoothness of the base map follows; no dimensionality or
+manifold-regularity assumption is imposed on the source. For real scalars,
+preservation of constants follows from uniqueness of real ring endomorphisms;
+for complex scalars it is an explicit hypothesis. The scalar field and space
+carriers share a universe; source model universes are independent. See
+<a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/ChartedSpace/SmoothScalarReconstruction.lean"><code>SmoothScalarReconstruction</code></a>.</li><li><strong>Holomorphic scalar sections.</strong> On open and nested-open subtypes of the
+finite-dimensional complex normed spaces, complex differentiability into
+complete complex normed spaces is equivalent to complex smoothness. For
+scalar-valued functions, the canonical smooth scalar sheaf accepts
+<a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/ChartedSpace/HolomorphicSections.lean">them directly as sections</a>,
+with pointwise evaluation, restriction,
+and sheaf and locally ringed-space maps that precompose representatives on
+inverse-image opens.
+The chartwise version assumes a smooth manifold structure; it does not
+upgrade a merely holomorphic atlas or identify arbitrary structure sheaves.
+The scalar-sheaf API retains Mathlib's common-universe restriction.</li><li><strong>Finite-dimensional complex atlas regularity.</strong> On a given charted space over a
+boundaryless complex model with finite-dimensional coordinates, differentiability
+of every ordered chart transition in model coordinates on its exact transition
+domain implies analytic manifold regularity at <code>ω</code>, hence complex smoothness at
+<code>∞</code>. An order-one manifold structure also gives analytic regularity; neither
+construction replaces the original atlas. The hypotheses concern transitions,
+not an arbitrary structure sheaf. Apply
+<code>isManifold_omega_of_differentiableOn_chartTransitions</code> explicitly to the existing
+charts; importing the module does not install a global upgrade instance.
+See <a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/Complex/AtlasRegularity.lean">complex atlas regularity</a>.</li><li><strong>Mixed-compatible atlases.</strong> For two specified atlases on
+one topological space, membership of every ordered mixed chart transition in
+a structure groupoid gives both atlases' own regularity and equality of their
+maximal atlases, without assuming either is already regular. For mixed <code>C^n</code>
+transitions, the point-preserving comparison is a <code>C^n</code> diffeomorphism to a
+typed <code>ULift</code> copy retaining the entire second atlas. See
+<a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/ChartedSpace/CompatibleAtlases.lean"><code>CompatibleAtlases</code></a>.</li><li><strong>Compatible-atlas smooth scalar sheaves.</strong> Two specified smooth-compatible
+atlases on the same topology give an identity-base isomorphism between their
+canonical smooth scalar locally ringed spaces. The complete forward and inverse
+maps are smooth precomposition; their section-ring equivalences preserve
+values and scalar constants on every open, commute with restriction, and
+preserve germ evaluation. No dimension, completeness or separation hypothesis
+is needed. This compares canonical sheaves, not an arbitrary structure sheaf.
+See <a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/ChartedSpace/CompatibleAtlasSheaf.lean"><code>CompatibleAtlasSheaf</code></a>.</li><li><strong>Change of coefficient sheaves.</strong> A full natural map of commutative-ring
+presheaves induces a tensor-presheaf/restriction-of-scalars adjunction;
+with the required site sheafification witnesses, a full map of ring sheaves
+gives the <a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/RingedSpaces/Modules/SheafChangeOfRings.lean">sheafified adjunction</a>.
+Right-factor tensor extension is naturally isomorphic to left-factor
+extension. See <a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/docs/module-change-of-rings.md">scalar extension</a> and
+<a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/docs/change-of-rings-symmetry.md">right-factor symmetry</a>.</li><li><strong>Continuous inverse images of modules.</strong> Neighborhood-colimit module
+presheaf inverse image and its genuine sheafification have bundled linear
+Hom adjunctions to the corresponding native pushforwards, with whole
+additive-sheaf comparisons; the additive comparison alone does not provide
+coefficient transport. See the <a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/docs/presheaf-inverse-image-hom.md">presheaf</a>
+and <a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/docs/sheaf-inverse-image.md">sheaf</a> guides.</li><li><strong>Full-morphism module functors.</strong> For any full <code>f : X ⟶ Y</code>, the original
+ring-sheaf structure map defines module pushforward; explicit sheafified
+right-tensor pullback is its left adjoint, with a comparison to native
+pullback. Composition and identity comparisons and the push–pull mate of
+<strong>any commutative square</strong> satisfy horizontal and vertical pasting laws;
+no general invertibility of that mate is claimed. See the
+<a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/docs/ringed-space-pushforward.md">pushforward</a>,
+<a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/docs/ringed-space-pullback.md">pullback</a>,
+<a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/docs/ringed-module-coherence-base-change.md">coherence</a> and
+<a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/docs/ringed-module-base-change-pasting.md">pasting</a> guides.</li><li><strong>Constant closed-point morphisms.</strong> For a commutative local ring <code>R</code>, any
+ring map from <code>R</code> to global sections of a ringed space constructs a full
+morphism with constant closed-point base. For same-universe commutative
+<code>R, S</code>, <code>[Nontrivial S]</code>, and a map <code>alpha : R →+* S</code> sending an element
+of <code>IsLocalRing.maximalIdeal R</code> to a unit, this morphism <code>Spec S ⟶ Spec R</code>
+differs from <strong>every</strong> affine-induced full morphism. Neither construction
+asserts a scheme morphism. See the <a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/docs/closed-point-hom.md">constructor</a>
+and <a href="https://github.com/FormalFrontier/ringed-spaces/blob/052015f070ef0b3e42c724eb9a8f9a1a1b916682/docs/closed-point-nonaffine.md">non-affineness</a> guides.</li></ul>
