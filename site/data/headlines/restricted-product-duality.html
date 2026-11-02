@@ -1,42 +1,47 @@
-<ul><li><strong>Compact containment and finite factorization.</strong> Every compact subset of a
+<ul><li><strong>Evaluation with a compact open subgroup.</strong> For a Hausdorff abelian topological
+group with a compact open subgroup, canonical Circle-valued compact-open
+evaluation is surjective and open on the entire bidual. Evaluation identifies
+the compact subgroup homeomorphically with the open annihilator of the
+restriction kernel. No countability or metrizability hypothesis is required.
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/PontryaginDual/CompactOpen.lean">Evaluation</a></li><li><strong>Compact containment and finite factorization.</strong> Every compact subset of a
 <strong>T1 restricted product</strong> lies in one finite-exceptional stage, for arbitrary
 distinguished subsets and index type; only the original restricted product,
 not the factors, must be T1. The open-distinguished-subset theorem instead
 needs openness, not T1. Continuous maps from compact spaces to a T1 singleton
 cofinite product factor by ordinary finite coordinate restriction. No compact
 stages or countable exhaustion are asserted.
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/CompactStage.lean">Containment</a>,
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/FiniteStage.lean">factorization</a>.</li><li><strong>Ordinary singleton stages and coordinatewise path components.</strong> Restriction
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/CompactStage.lean">Containment</a>,
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/FiniteStage.lean">factorization</a>.</li><li><strong>Ordinary singleton stages and coordinatewise path components.</strong> Restriction
 identifies a singleton principal stage on any free set with its ordinary Pi
 product; the inverse inserts the chosen points elsewhere. Finite insertions
 embed and detect continuity out of the singleton cofinite product.
 Its stock path-component quotient is canonically equivalent <strong>as a set</strong> to
 the cofinite product of the factor path-component quotients, with finite
 inverse reconstruction; no separation or connected-component assertion.
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/PrincipalStage.lean">Stages</a>,
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/PathComponents.lean">path components</a>.</li><li><strong>Factorwise connectivity and quotient maps.</strong> For a given family <code>b i</code>,
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/PrincipalStage.lean">Stages</a>,
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/PathComponents.lean">path components</a>.</li><li><strong>Factorwise connectivity and quotient maps.</strong> For a given family <code>b i</code>,
 <code>PointProduct b</code> is path connected iff every factor is path connected, and
 locally path connected iff every factor is locally path connected (no path
 connectedness is needed for the latter); forward instances are provided.
 Raw coordinate evaluation and the <strong>whole</strong> insertion map from the
 topological sum <code>Σ s : Finset ι, ∀ j : s, X j</code> are quotient maps. Individual
 finite insertions are embeddings, not generally surjective.
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/Connectivity.lean">Connectivity</a>.</li><li><strong>Finite-stage colimit.</strong> For given points <code>b i</code>, the original singleton
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/Connectivity.lean">Connectivity</a>.</li><li><strong>Finite-stage colimit.</strong> For given points <code>b i</code>, the original singleton
 cofinite restricted product is the colimit in <code>TopCat</code> of its ordinary finite
 Pi products under insertion of the given points. Compatible continuous stage
 maps descend uniquely, with computation on every finite insertion. The direct
 continuous-map API allows an independent, unbased observer universe; categorical
 cocones belong to the fixed <code>TopCat</code> universe of the diagram. No separation or
 nonempty-index assumption is needed.
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/FiniteStageColimit.lean">Colimit and descent</a>.</li><li><strong>Positive homotopy groups have finite support.</strong> For a <strong>T1 original
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/FiniteStageColimit.lean">Colimit and descent</a>.</li><li><strong>Positive homotopy groups have finite support.</strong> For a <strong>T1 original
 singleton cofinite restricted product</strong>, coordinate evaluation gives a
 multiplicative equivalence with the bottom-subgroup restricted product of
 the factor homotopy groups, hence with
 <code>Multiplicative (DFinsupp (fun i ↦ Additive (HomotopyGroup N (R i) (b i))))</code>.
 The cube index <code>N</code> is arbitrary nonempty with decidable equality, not
 necessarily finite; no factor T1, CW/CGWH or classification assumption.
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/HomotopyGroups.lean">Comparison</a>,
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/HomotopyGroupsFiniteSupport.lean">DFinsupp composite</a>.</li><li><strong>Based maps and empty-dimensional naturality.</strong> The based-postcomposition
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/HomotopyGroups.lean">Comparison</a>,
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/HomotopyGroupsFiniteSupport.lean">DFinsupp composite</a>.</li><li><strong>Based maps and empty-dimensional naturality.</strong> The based-postcomposition
 API is provided by <a href="https://github.com/FormalFrontier/fundamental-groupoids">Fundamental Groupoids</a>
 and re-exported here. For arbitrary spaces, chosen points <code>x</code>, <code>y</code> and continuous
 <code>f</code> with <code>f x = y</code>, <code>HomotopyGroup.mapFun N f hf</code> acts on the generalized-loop
@@ -51,36 +56,36 @@ path-component comparison intertwines the two maps. Discrete Bool negation
 computes two distinct quotient/path classes,
 four comparison values and the off-basepoint square, not a nontrivial positive
 homotopy group.
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/HomotopyMaps.lean">Maps on homotopy quotients and zeroth naturality</a>.</li><li><strong>Based naturality and joint homotopies.</strong> Continuous coordinate maps preserving every
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/HomotopyMaps.lean">Maps on homotopy quotients and zeroth naturality</a>.</li><li><strong>Based naturality and joint homotopies.</strong> Continuous coordinate maps preserving every
 chosen point give both comparison squares. The path-component square needs
 no separation; the positive square requires T1 of <strong>both</strong> original products.
 Based postcomposition, its homomorphisms and coordinate <code>HomotopyRel</code>s
 assembling jointly need no T1; based-homotopic families induce equal maps.
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/HomotopyMaps.lean">Naturality</a>,
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/BasedHomotopy.lean">joint homotopies</a>.</li><li><strong>Based coordinate equivalences and contractions.</strong> Homeomorphisms carrying
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/HomotopyMaps.lean">Naturality</a>,
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/BasedHomotopy.lean">joint homotopies</a>.</li><li><strong>Based coordinate equivalences and contractions.</strong> Homeomorphisms carrying
 each <code>b i</code> to <code>c i</code> give product homeomorphisms. Based continuous <code>f i</code>, <code>g i</code>
 with both inverse homotopies relative to <code>{b i}</code>, <code>{c i}</code> give product
 homotopy equivalences. Chosen factor homotopies <code>id → const (b i)</code> fixing
 <code>b i</code> give a contraction and <code>ContractibleSpace</code>; mere unbased factor
 contractibility is not the input. None requires separation or finite index.
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/BasedHomeomorphisms.lean">Homeomorphisms</a>,
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/HomotopyEquivalences.lean">homotopy equivalences</a>,
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/Contractibility.lean">contractions</a>.</li><li><strong>Algebraic finite-support coordinates.</strong> At bottom submonoids, <code>MulOneClass</code>
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/BasedHomeomorphisms.lean">Homeomorphisms</a>,
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/HomotopyEquivalences.lean">homotopy equivalences</a>,
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/Contractibility.lean">contractions</a>.</li><li><strong>Algebraic finite-support coordinates.</strong> At bottom submonoids, <code>MulOneClass</code>
 factors give a multiplicative equivalence with <code>Multiplicative (DFinsupp (fun i ↦ Additive (G i)))</code>. Bundled evaluation and family maps use <code>Monoid</code>;
 bottom-subgroup products use <code>Group</code>. No topology or commutativity is needed;
 this is not a noncommutative categorical coproduct.
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/FiniteSupport.lean">Finite support</a>.</li><li><strong>Compact abelian character separation.</strong> For a compact Hausdorff abelian
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/FiniteSupport.lean">Finite support</a>.</li><li><strong>Compact abelian character separation.</strong> For a compact Hausdorff abelian
 topological group in any universe, every nonidentity element is detected by
 a continuous Circle-valued character. No additional countability, probability
 normalization or measurable-space input is required.
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/Analysis/HaarCharacter.lean">Character separation</a>.</li><li><strong>Compact Pontryagin biduality.</strong> For a compact Hausdorff commutative
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/Analysis/HaarCharacter.lean">Character separation</a>.</li><li><strong>Compact Pontryagin biduality.</strong> For a compact Hausdorff commutative
 topological group in any universe, the original evaluation map is a continuous
 multiplicative equivalence with its <strong>entire compact-open Pontryagin bidual</strong>.
 Its inverse reconstructs every character value of a bidual element. Evaluation
 and reconstruction commute with every continuous multiplicative morphism
 between such groups, with independent source and target universes.
 This does not assert biduality for arbitrary locally compact abelian groups.
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/PontryaginDual/Compact.lean">Compact biduality</a>.</li><li><strong>Conditional character reconstruction and duality.</strong> For commutative groups,
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/PontryaginDual/Compact.lean">Compact biduality</a>.</li><li><strong>Conditional character reconstruction and duality.</strong> For commutative groups,
 local circle bicharacters and orthogonality on both distinguished subgroups
 give a finite-product pairing. Joint local continuity and <strong>both</strong> subgroup
 families open give a jointly continuous pairing and continuous dual map;
@@ -93,11 +98,11 @@ additionally needs finite discrete character-domain <code>X i</code> and topolog
 representing <code>Y i</code>. Transposition requires finite discrete <code>Y i</code>, topological
 <code>X i</code>, left local perfectness and exact left annihilator; this is not general
 biduality or open mapping.
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/Pairing.lean">Pairing</a>,
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/TopologicalPairing.lean">continuity</a>,
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/CharacterReconstruction.lean">reconstruction</a>,
-<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/SymmetricDuality.lean">transpose</a>.</li><li><strong>Contravariant duality naturality.</strong> Adjoint continuous coordinate
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/Pairing.lean">Pairing</a>,
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/TopologicalPairing.lean">continuity</a>,
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/CharacterReconstruction.lean">reconstruction</a>,
+<a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/SymmetricDuality.lean">transpose</a>.</li><li><strong>Contravariant duality naturality.</strong> Adjoint continuous coordinate
 homomorphisms give the pairing/dual-map square with subgroup preservation
 only <strong>cofinitely</strong> (exceptional failures allowed). The equivalence square
 retains its stronger local-perfectness, exact-annihilator and finite-discrete
-assumptions. <a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e99061ef97cc1e0f78e86d5010f74b518f8f1c79/RestrictedProductDuality/Naturality.lean">Naturality</a>.</li></ul>
+assumptions. <a href="https://github.com/FormalFrontier/restricted-product-duality/blob/e431fc665377bdaf61565a42b844874dc6cc5eaa/RestrictedProductDuality/Naturality.lean">Naturality</a>.</li></ul>
