@@ -1,7 +1,7 @@
 name: Update and deploy
 
-# Collects the public data once a day, commits it to site/data and deploys the
-# site to GitHub Pages. Uses only the built-in token.
+# Collects the public data once a day at 04:17 UTC, commits it to site/data
+# and deploys the site to GitHub Pages. Uses only the built-in token.
 
 on:
   schedule:
