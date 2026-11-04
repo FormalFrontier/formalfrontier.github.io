@@ -1,48 +1,48 @@
 <ul><li><strong>First-order conormal maps.</strong> For an arbitrary extension <code>P → S</code> of
 commutative algebras over a commutative ring <code>K</code>, a <code>K</code>-algebra section of
-<code>P/I² → S</code> makes <a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/SmoothRegularity/Conormal.lean">the canonical conormal map</a>
+<code>P/I² → S</code> makes <a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/SmoothRegularity/Conormal.lean">the canonical conormal map</a>
 <code>I/I² → S ⊗[P] Ω[P⁄K]</code> injective. If <code>S</code> is formally étale over <code>K</code>, this
 map is an equivalence. Neither result assumes smoothness of <code>P</code> or a section
 into <code>P</code>. The equivalence's forward map is Mathlib's <code>cotangentComplex</code>,
 with an evaluation law on every kernel class.</li><li><strong>Cotangent spaces and differentials.</strong> For a local algebra over a
-commutative ring, <a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/SmoothRegularity/Conormal.lean">the residue-field equivalence</a>
+commutative ring, <a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/SmoothRegularity/Conormal.lean">the residue-field equivalence</a>
 identifies its cotangent space with the residue-field base change of Kähler
 differentials when the residue field is formally étale over the base; no
 residue section is needed. It agrees with the split-residue construction
 when a section is supplied. The latter requires only formal unramifiedness
 of the residue field, and also applies to a supplied residue-field algebra
 equivalence with the base. At a maximal ideal of a finite-type algebra over
-an algebraically closed field, <a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/SmoothRegularity/AlgClosed.lean#L48">the closed-point comparison</a>
+an algebraically closed field, <a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/SmoothRegularity/AlgClosed.lean#L48">the closed-point comparison</a>
 applies. Formal étaleness of the residue extension is not automatic.</li><li><strong>Presentation relations and local Jacobian criteria.</strong> A finite presentation
-admits a <a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/SmoothRegularity/CotangentRelations.lean#L35">linearly independent selection</a>
+admits a <a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/SmoothRegularity/CotangentRelations.lean#L35">linearly independent selection</a>
 of relations spanning its residue-field cotangent kernel at any prime over a
-commutative base; <a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/SmoothRegularity/CotangentDimension.lean">dimension and localization</a>
+commutative base; <a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/SmoothRegularity/CotangentDimension.lean">dimension and localization</a>
 provide related comparison tools. To infer formal smoothness of a local target,
-<a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/SmoothRegularity/RelationJacobian.lean#L33">the relation criterion</a> additionally
+<a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/SmoothRegularity/RelationJacobian.lean#L33">the relation criterion</a> additionally
 requires a formally smooth presenting algebra with finite free differentials,
 a finite family <em>generating the presentation kernel</em>, and independence of its
-residue-field cotangent images. The <a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/SmoothRegularity/QuotientRelationJacobian.lean#L32">quotient criterion</a>
+residue-field cotangent images. The <a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/SmoothRegularity/QuotientRelationJacobian.lean#L32">quotient criterion</a>
 derives generation only with a finite-dimensional <strong>domain quotient</strong> and the
-stated Krull-dimension comparison; it does not require the target to be a domain.</li><li><strong>Smooth implies regular.</strong> A <a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/SmoothRegularity/StandardSmooth.lean#L446">standard-smooth field-algebra</a>
-has regular prime localizations. The <a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/SmoothRegularity/SmoothAt.lean#L24">smooth-at-prime result</a>
+stated Krull-dimension comparison; it does not require the target to be a domain.</li><li><strong>Smooth implies regular.</strong> A <a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/SmoothRegularity/StandardSmooth.lean#L446">standard-smooth field-algebra</a>
+has regular prime localizations. The <a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/SmoothRegularity/SmoothAt.lean#L24">smooth-at-prime result</a>
 requires a finite-type algebra over a field, and the
-<a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/SmoothRegularity/SmoothLocus.lean#L25">smooth-locus result</a> requires a scheme
+<a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/SmoothRegularity/SmoothLocus.lean#L25">smooth-locus result</a> requires a scheme
 locally of finite type over a field; smooth points have regular local stalks.
-The general converse, regular implies smooth, is <strong>not</strong> proved here.</li><li><strong>Dedekind consequences.</strong> <a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/SmoothRegularity/Dedekind.lean">Smooth field-algebras are regular</a>,
-and a <a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/SmoothRegularity/Dedekind.lean#L36">regular domain of dimension at most one</a>
+The general converse, regular implies smooth, is <strong>not</strong> proved here.</li><li><strong>Dedekind consequences.</strong> <a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/SmoothRegularity/Dedekind.lean">Smooth field-algebras are regular</a>,
+and a <a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/SmoothRegularity/Dedekind.lean#L36">regular domain of dimension at most one</a>
 is Dedekind (including the zero-dimensional field case). Thus a smooth domain
 over a field with that dimension bound is Dedekind. For schemes, the
-<a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/SmoothRegularity/AffineDedekind.lean#L27">global-sections theorem</a> requires an
+<a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/SmoothRegularity/AffineDedekind.lean#L27">global-sections theorem</a> requires an
 <strong>integral, affine, smooth</strong> scheme over a field of topological dimension at
 most one; it does not assert the nonaffine, nonintegral or higher-dimensional
 cases.</li></ul>
-<p>The <a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/SmoothRegularity/Artinian.lean">Artinian criteria</a> state that a commutative
+<p>The <a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/SmoothRegularity/Artinian.lean">Artinian criteria</a> state that a commutative
 Artinian local ring is regular if and only if it is a field, and that a
 commutative Artinian ring is regular if and only if it is reduced, including
 the zero ring. The proofs use the dimension-zero and localization criteria
-from Mathlib. See the <a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/docs/Artinian.md">signature and boundary guide</a>.</p>
-<p>See the <a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/docs/API.md">generated API reference</a> for all fourteen Conormal
+from Mathlib. See the <a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/docs/Artinian.md">signature and boundary guide</a>.</p>
+<p>See the <a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/docs/API.md">generated API reference</a> for all fourteen Conormal
 signatures with their commutative-ring hypotheses, independent universes and
 canonical-map laws, alongside 22 older native display entries for other modules.
-The <a href="https://github.com/FormalFrontier/smooth-regularity/blob/5f20375ec1e02a500d85ced1c1dce530787a6fca/docs/README.md">documentation guide</a> distinguishes the source-header and
+The <a href="https://github.com/FormalFrontier/smooth-regularity/blob/8e054f1f528a37cf793e68d433db9dd568bead18/docs/README.md">documentation guide</a> distinguishes the source-header and
 native input bindings. The Artinian signatures are documented separately.</p>

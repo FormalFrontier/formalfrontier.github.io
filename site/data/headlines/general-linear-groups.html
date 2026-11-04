@@ -8,8 +8,8 @@ The strict <code>Fin n</code> predicate uses only <code>Zero</code>; its support
 Positive-power index <code>n</code> means <code>n + 1</code> factors, not an exact <code>n</code>th-power bound.
 The unitization and relative general linear constructions require
 <code>NonUnitalRing</code>.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/UpperTriangularNilpotent.lean">Upper-triangular nilpotence</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/NonUnitalNilpotent.lean">nonunital powers and strict triangularity</a>.</li><li><strong>Matrix ideal-power bounds and nilpotence.</strong> For a <code>Semiring R</code> and a left
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/UpperTriangularNilpotent.lean">Upper-triangular nilpotence</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/NonUnitalNilpotent.lean">nonunital powers and strict triangularity</a>.</li><li><strong>Matrix ideal-power bounds and nilpotence.</strong> For a <code>Semiring R</code> and a left
 ideal <code>I : Ideal R</code>, an ordered list <code>As</code> of square matrices with entries in
 <code>I</code> has <code>(As.prod) i j ∈ I ^ As.length</code>. The finite decidable index type has
 a universe independent of the coefficients. Repeated factors recover
@@ -23,10 +23,10 @@ uniform exponent. For a <code>CommSemiring R</code>, however, a finite
 square matrix with nilpotent entries is nilpotent: its finitely generated
 entry ideal is contained in the nilradical and is therefore nilpotent.
 This needs no Noetherian hypothesis and includes empty indices and zero semirings.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/MatrixNilpotentIdeal.lean">Ordered-product bound and nilpotence</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/MatrixNilpotentEntries.lean">nilpotent entries</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/tests/GeneralLinearGroupsTests/MatrixNilpotentIdeal.lean">nonzero dual-number diagonal</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/tests/GeneralLinearGroupsTests/MatrixNilpotentEntriesClient.lean">nonzero matrix over <code>ZMod 4</code></a>.</li><li><strong>Kronecker products of matrix units.</strong> Over any <code>Semiring</code>, the Kronecker
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/MatrixNilpotentIdeal.lean">Ordered-product bound and nilpotence</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/MatrixNilpotentEntries.lean">nilpotent entries</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/tests/GeneralLinearGroupsTests/MatrixNilpotentIdeal.lean">nonzero dual-number diagonal</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/tests/GeneralLinearGroupsTests/MatrixNilpotentEntriesClient.lean">nonzero matrix over <code>ZMod 4</code></a>.</li><li><strong>Kronecker products of matrix units.</strong> Over any <code>Semiring</code>, the Kronecker
 product of two unit matrices is a unit, for independently-universed finite
 decidable square indices, including empty indices and zero semirings. The
 ordered factorization <code>(A ⊗ₖ 1) * (1 ⊗ₖ B)</code>, for chosen input units with
@@ -36,24 +36,24 @@ over noncommutative coefficients. The rectangular mixed identity
 needs only a <code>NonAssocSemiring</code> and finite, decidable middle indices. Over
 commutative coefficients, the extracted unit agrees with mathlib's general
 linear Kronecker construction.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/KroneckerUnits.lean">Unit preservation</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/tests/GeneralLinearGroupsTests/KroneckerUnits.lean">operational examples</a>.</li><li><strong>Single-entry matrix corners.</strong> For a <code>Semiring R</code>, finite decidable indices
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/KroneckerUnits.lean">Unit preservation</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/tests/GeneralLinearGroupsTests/KroneckerUnits.lean">operational examples</a>.</li><li><strong>Single-entry matrix corners.</strong> For a <code>Semiring R</code>, finite decidable indices
 and a chosen index <code>i</code>, the corner of <code>Matrix ι ι R</code> at the diagonal matrix
 unit <code>single i i 1</code> is ring-equivalent to <code>R</code> by extracting the <code>(i,i)</code> entry;
 its inverse inserts a coefficient there. The corner identity is the matrix
 unit, which need not be the ambient matrix identity. The equivalence also
 covers noncommutative and zero semirings.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/MatrixCorner.lean">Corner equivalence</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/tests/GeneralLinearGroupsTests/MatrixCornerClient.lean">concrete clients</a>.</li><li><strong>Whitehead factorization and doubled lifting.</strong> Over any <code>Ring</code>, the
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/MatrixCorner.lean">Corner equivalence</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/tests/GeneralLinearGroupsTests/MatrixCornerClient.lean">concrete clients</a>.</li><li><strong>Whitehead factorization and doubled lifting.</strong> Over any <code>Ring</code>, the
 block diagonal <code>diag(g, g⁻¹)</code> of a unit is elementary. A surjective ring
 homomorphism lifts this <em>doubled</em> block as a unit; it need not lift the
 original same-rank unit. For separately finite block indices, explicitly
 supplied diagonal units also give rectangular upper-triangular units with
 ordered inverse block <code>-(A⁻¹ * B * D⁻¹)</code>.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/Whitehead.lean">Factorization</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/Whitehead.lean#L164">doubled lift</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/ElementaryWhitehead.lean#L117">elementary membership</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/docs/RectangularBlockUnits.md">rectangular guide</a>.</li><li><strong>Stable general linear and elementary groups.</strong> Initial-segment stabilization
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/Whitehead.lean">Factorization</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/Whitehead.lean#L164">doubled lift</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/ElementaryWhitehead.lean#L117">elementary membership</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/docs/RectangularBlockUnits.md">rectangular guide</a>.</li><li><strong>Stable general linear and elementary groups.</strong> Initial-segment stabilization
 defines a coherent system of finite general linear groups over any <code>Semiring</code>,
 whose noncommutative direct limit has finite representatives, an eventual
 equality criterion, compatible lifts and coefficient maps. Over any <code>Ring</code>, the
@@ -61,9 +61,9 @@ directed union of finite elementary images is the stable commutator subgroup;
 it is perfect in its own right and normal in stable general linear groups.
 Its quotient is canonically the abelianization, naturally under coefficient
 maps. No finite ambient elementary normality or commutativity hypothesis is needed.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/StableGeneralLinear.lean">Stable general linear group</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/StableElementary.lean">stable elementary group</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/tests/GeneralLinearGroupsTests/StableElementaryClient.lean">boundary and quotient clients</a>.</li><li><strong>Stable determinant.</strong> Over a commutative ring, finite determinants induce
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/StableGeneralLinear.lean">Stable general linear group</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/StableElementary.lean">stable elementary group</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/tests/GeneralLinearGroupsTests/StableElementaryClient.lean">boundary and quotient clients</a>.</li><li><strong>Stable determinant.</strong> Over a commutative ring, finite determinants induce
 homomorphisms on stable general linear groups, their elementary quotient and
 their abelianization. Rank-one units provide determinant sections; the
 elementary subgroup lies in the determinant kernel. The abelian elementary quotient
@@ -73,14 +73,14 @@ does not assert a product splitting of stable general linear groups.
 For commutative local rings, elementary matrices equal the determinant kernel,
 and the existing quotient determinant is an equivalence with the units.
 The rank-one map itself is defined over any semiring.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/StableDeterminant.lean">Determinant and rank-one maps</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/tests/GeneralLinearGroupsTests/StableDeterminantClient.lean">integer and boundary examples</a>.</li><li><strong>Zero-product elementary stabilization.</strong> For rectangular <code>A</code>, <code>B</code> over any
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/StableDeterminant.lean">Determinant and rank-one maps</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/tests/GeneralLinearGroupsTests/StableDeterminantClient.lean">integer and boundary examples</a>.</li><li><strong>Zero-product elementary stabilization.</strong> For rectangular <code>A</code>, <code>B</code> over any
 <code>Ring</code> with <code>B * A = 0</code>, the unit <code>1 + A * B</code> has inverse <code>1 - A * B</code>.
 Stabilizing by the identity on the other block gives exactly the ordered
 commutator of the upper shear of <code>A</code> and lower shear of <code>B</code>, hence an
 elementary unit. Both index types may be empty.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/ZeroProductStabilization.lean">Construction and factorization</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/tests/GeneralLinearGroupsTests/ZeroProductStabilizationClient.lean">integer and boundary examples</a>.</li><li><strong>Rectangular complement isomorphisms.</strong> In any preadditive category
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/ZeroProductStabilization.lean">Construction and factorization</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/tests/GeneralLinearGroupsTests/ZeroProductStabilizationClient.lean">integer and boundary examples</a>.</li><li><strong>Rectangular complement isomorphisms.</strong> In any preadditive category
 <code>C : Type u</code> with <code>Category.{v} C</code>, for arbitrary objects <code>X</code>, <code>Y</code> and
 morphisms <code>a : X ⟶ Y</code>, <code>b : Y ⟶ X</code>, the complements are simultaneously
 isomorphisms:
@@ -89,23 +89,23 @@ isomorphisms:
 <code>IsIso (𝟙 Y - b ≫ a)</code>. The universes <code>u</code>, <code>v</code> are independent; no
 finiteness, biproduct or nonzero-object hypothesis is imposed. The
 rectangular unit-switch inverse below is a finite-matrix specialization.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/RectangularIsomorphisms.lean">Criterion and inverse</a>.</li><li><strong>Rectangular unit switch.</strong> Over any <code>Ring</code>, for independently finite,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/RectangularIsomorphisms.lean">Criterion and inverse</a>.</li><li><strong>Rectangular unit switch.</strong> Over any <code>Ring</code>, for independently finite,
 decidable index types, a unit <code>g = 1 + A * B</code> determines a unit
 <code>h = 1 + B * A</code> with inverse <code>1 - B * g⁻¹ * A</code>. Its diagonal pair
 <code>diag(g, h⁻¹)</code> is the ordered product
 <code>U(A) L(B) U(-(g⁻¹ * A)) L(-(B * g))</code>, hence elementary.
 Empty blocks and the zero ring are allowed; <code>B * A = 0</code> recovers the
 zero-product stabilization commutator above.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/RectangularUnitSwitch.lean">Construction and factorization</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/tests/GeneralLinearGroupsTests/RectangularUnitSwitchClient.lean">integer and boundary examples</a>.</li><li><strong>Ring Schur reduction.</strong> For independently finite, decidable block indices
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/RectangularUnitSwitch.lean">Construction and factorization</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/tests/GeneralLinearGroupsTests/RectangularUnitSwitchClient.lean">integer and boundary examples</a>.</li><li><strong>Ring Schur reduction.</strong> For independently finite, decidable block indices
 over any <code>Ring</code>, an invertible northwest block <code>A</code> makes
 <code>[[A, B], [C, D]]</code> a unit exactly when the ordered residual
 <code>D - C * ⅟A * B</code> is a unit. Given a unit residual, the corresponding block
 unit has an explicit ordered inverse; homomorphisms killing the elementary
 subgroup see only the diagonal pivot and residual, with no condition on
 the target group. Empty blocks and the zero ring are included.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/SchurReduction.lean">Construction and criterion</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/tests/GeneralLinearGroupsTests/SchurReductionClient.lean">noncommutative and boundary clients</a>.</li><li><strong>Unit-pivot reduction and elementary diagonals.</strong> Over any <code>CommRing</code>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/SchurReduction.lean">Construction and criterion</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/tests/GeneralLinearGroupsTests/SchurReductionClient.lean">noncommutative and boundary clients</a>.</li><li><strong>Unit-pivot reduction and elementary diagonals.</strong> Over any <code>CommRing</code>,
 unit ordered leading minors permit two-sided elementary diagonalization;
 a product-one diagonal is elementary, and the unit-pivot, determinant-one
 criterion puts a finite GL unit in <code>E</code>. This is not a general <code>SL = E</code>
@@ -115,9 +115,9 @@ entry for every invertible matrix at every successor rank, the same
 two-sided reduction exists at every finite rank. The latter theorem is
 conditional on that all-rank pivot property; it does not assert an
 unconditional elementary generation theorem.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/docs/UnitPivotDiagonalization.md">Unit-pivot guide</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/UnitPivotInduction.lean">conditional pivot induction</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/docs/ElementaryDiagonal.md">diagonal guide</a>.</li><li><strong>Elementary generation over local rings.</strong> Every invertible finite matrix
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/docs/UnitPivotDiagonalization.md">Unit-pivot guide</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/UnitPivotInduction.lean">conditional pivot induction</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/docs/ElementaryDiagonal.md">diagonal guide</a>.</li><li><strong>Elementary generation over local rings.</strong> Every invertible finite matrix
 over a commutative local ring has elementary left and right factors reducing
 it to a diagonal of units, without a leading-minor hypothesis. At every
 finite rank, determinant one characterizes the elementary subgroup. The
@@ -125,25 +125,25 @@ stable elementary subgroup is the determinant kernel, and the elementary
 quotient is canonically the coefficient units via the existing determinant
 and rank-one section. Over a field, Mathlib transvection lists give an
 invertible diagonal factorization.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/LocalElementaryGeneration.lean">Local generation</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/tests/GeneralLinearGroupsTests/LocalElementaryGenerationClient.lean">nonfield and rank-boundary clients</a>.</li><li><strong>Elementary paths and SL neighborhoods.</strong> Over a topological ring,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/LocalElementaryGeneration.lean">Local generation</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/tests/GeneralLinearGroupsTests/LocalElementaryGenerationClient.lean">nonfield and rank-boundary clients</a>.</li><li><strong>Elementary paths and SL neighborhoods.</strong> Over a topological ring,
 elementary GL units vary continuously with coefficients, even when the
 coefficient ring is noncommutative. Path-connected coefficients make the
 elementary subgroup path connected. For commutative coefficients, an open
 scalar-unit locus makes its comap in Mathlib's special linear group open
 and closed; additionally path-connected coefficients identify it with the
 identity path component.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/docs/ElementaryPaths.md">Paths guide</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/docs/ElementaryNeighborhood.md">neighborhood guide</a>.</li><li><strong>Scalar unit reflection and canonical quasi-regular kernels.</strong> For
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/docs/ElementaryPaths.md">Paths guide</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/docs/ElementaryNeighborhood.md">neighborhood guide</a>.</li><li><strong>Scalar unit reflection and canonical quasi-regular kernels.</strong> For
 <code>f : R →+* S</code> from a possibly noncommutative ring to a semiring,
 <code>IsLocalHom f</code> (reflection of units) makes the canonical two-sided kernel
 <code>TwoSidedIdeal.ker f</code> quasi-regular, <strong>without surjectivity</strong>, by
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/QuasiregularQuotient.lean"><code>RingHom.isQuasiregular_ker</code></a>.
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/QuasiregularQuotient.lean"><code>RingHom.isQuasiregular_ker</code></a>.
 For a <strong>surjective</strong> such map, unit reflection is equivalent to kernel
 quasi-regularity by
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/QuasiregularQuotient.lean"><code>RingHom.isLocalHom_iff_isQuasiregular_ker</code></a>;
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/QuasiregularQuotient.lean"><code>RingHom.isLocalHom_iff_isQuasiregular_ker</code></a>;
 its reverse direction is also available through
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/QuasiregularQuotient.lean"><code>RingHom.isLocalHom_of_surjective_of_isQuasiregular_ker</code></a>.
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/QuasiregularQuotient.lean"><code>RingHom.isLocalHom_of_surjective_of_isQuasiregular_ker</code></a>.
 Mathlib supplies <code>IsUnit (f a) ↔ IsUnit a</code> via <code>isUnit_map_iff</code>; under
 surjectivity it also gives a surjective induced map on units. Source and
 target universes are independent; neither commutativity, local-ring
@@ -154,18 +154,18 @@ quasi-regularity of <em>every</em> ideal element additionally makes the quotient
 GL map surjective. The Jacobson radical is the greatest quasi-regular
 ideal, and pointwise nil ideals provide examples without a shared nilpotence
 exponent.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/CongruenceSubgroup.lean#L292">Kernel equivalence</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/QuasiregularQuotient.lean#L139">quotient lifting</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/QuasiregularIdeal.lean#L207">ideal characterization</a>.</li><li><strong>Trace modulo additive commutators.</strong> For a chosen index <code>p : n</code>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/CongruenceSubgroup.lean#L292">Kernel equivalence</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/QuasiregularQuotient.lean#L139">quotient lifting</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/QuasiregularIdeal.lean#L207">ideal characterization</a>.</li><li><strong>Trace modulo additive commutators.</strong> For a chosen index <code>p : n</code>,
 trace gives an additive equivalence from square matrices modulo additive
 commutators to the coefficient ring modulo additive commutators; its inverse
 inserts a scalar in the <code>p,p</code> corner. The forward map also works at empty
 rank. These are <em>additive groups</em>, not quotient rings or a <code>K₀</code> descent.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/MatrixTrace.lean">Equivalence and forward map</a>.
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/MatrixTrace.lean">Equivalence and forward map</a>.
 The following characteristic laws use weaker hypotheses:
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/AdditiveCommutator.lean">cyclic representatives and unit conjugation</a>
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/AdditiveCommutator.lean">cyclic representatives and unit conjugation</a>
 require <code>AddCommGroup</code> with <code>Mul</code>, respectively <code>Monoid</code>, without distributivity;
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/MatrixTrace.lean">raw block trace</a> requires only
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/MatrixTrace.lean">raw block trace</a> requires only
 <code>AddCommMonoid</code> and two independently-universed finite index types, without
 decidable equality or nonemptiness. The raw <code>Sum</code>-indexed block shape
 complements mathlib's dependent <code>trace_blockDiagonal&#x27;</code> formula.</li><li><strong>Finite elementary and relative structure.</strong> Off-diagonal elementary
@@ -174,18 +174,18 @@ rank at least three. A two-sided ideal defines the relative normal closure
 <em>inside <code>E</code></em>, not a claimed same-rank normal subgroup of ambient <code>GL</code>.
 Congruence units become relatively elementary after Whitehead doubling;
 stabilization preserves elementary, relative and congruence inclusions.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/ElementaryCommutator.lean#L80">Perfectness</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/RelativeElementary.lean#L98">relative subgroup</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/RelativeWhitehead.lean#L134">relative Whitehead</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/docs/README.md">guides</a>.</li><li><strong>A Steinberg presentation and universal maps.</strong> Over any <code>Ring</code>, for an
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/ElementaryCommutator.lean#L80">Perfectness</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/RelativeElementary.lean#L98">relative subgroup</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/RelativeWhitehead.lean#L134">relative Whitehead</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/docs/README.md">guides</a>.</li><li><strong>A Steinberg presentation and universal maps.</strong> Over any <code>Ring</code>, for an
 arbitrary index type, symbols satisfy precisely the additive, disjoint-root
 and ordered-composable-root relations, and compatible maps extend uniquely.
 Finite decidable indices additionally give a surjection onto <code>E</code>, not
 onto all of <code>GL</code>. The reverse relation has coefficient <code>-(b * a)</code>; no
 opposite-root, central-kernel or <code>K₂</code> theorem is claimed.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/Steinberg.lean#L121">Universal lift</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/Steinberg.lean#L206">onto-<code>E</code> map</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/docs/FiniteRankSteinberg.md">presentation guide</a>.</li><li><strong>Units over square-zero kernels.</strong> For a homomorphism from any <code>Ring</code> to
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/Steinberg.lean#L121">Universal lift</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/Steinberg.lean#L206">onto-<code>E</code> map</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/docs/FiniteRankSteinberg.md">presentation guide</a>.</li><li><strong>Units over square-zero kernels.</strong> For a homomorphism from any <code>Ring</code> to
 any <code>Semiring</code>, a square-zero kernel identifies the units mapping to <code>1</code>
 with the additive kernel, written multiplicatively. The coordinates are
 <code>u ↦ u - 1</code> and <code>x ↦ 1 + x</code>, with inverse unit <code>1 - x</code>. The hypothesis
@@ -194,8 +194,8 @@ surjectivity is needed. The scalar dual-number equivalence is a
 specialization with its explicit lift and readback preserved. This is the
 algebraic ingredient of Fesenko–Vostokov, Chapter I (5.4)(3), not a
 unit-lifting or valuation-layer quotient theorem.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/SquareZeroUnits.lean">Equivalence and coordinate API</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/DualNumberSquareZeroUnits.lean">dual-number comparison</a>.</li><li><strong>Principal-unit ideal layers on original-ring units.</strong> For left ideals
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/SquareZeroUnits.lean">Equivalence and coordinate API</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/DualNumberSquareZeroUnits.lean">dual-number comparison</a>.</li><li><strong>Principal-unit ideal layers on original-ring units.</strong> For left ideals
 <code>I, J</code> in any <code>Ring</code>, with <code>I ^ 2 ≤ J</code>, the stock stabilizer of <code>[1]</code> in
 the quotient left module <code>R / I</code> maps by <code>u ↦ [u - 1]</code> to the additive
 layer <code>I / (I ∩ J)</code>, written multiplicatively. Its kernel is exactly the
@@ -206,8 +206,8 @@ original ring. Neither ideal needs to be two-sided, and <code>J ≤ I</code> is 
 assumed. For two-sided <code>I</code>, the carrier agrees with the kernel of reduction
 on units. The nonzero-denominator model uses <code>(3)/(9)</code> in <code>ZMod 27</code>;
 the integer boundary explains the original-unit lifting hypothesis.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/PrincipalUnits.lean">Equivalence and characteristic laws</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/tests/GeneralLinearGroupsTests/PrincipalUnitsClient.lean">models and boundary</a>.
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/PrincipalUnits.lean">Equivalence and characteristic laws</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/tests/GeneralLinearGroupsTests/PrincipalUnitsClient.lean">models and boundary</a>.
 For a commutative domain <code>R</code>, a nonzero principal ideal
 <code>I = Ideal.span {π}</code> contained in <code>Ideal.jacobson ⊥</code>, and <code>n ≥ 1</code>,
 the original-ring unit stabilizer at <code>I ^ n</code>, modulo its exact coordinate
@@ -220,8 +220,8 @@ by <code>(ū⁻¹) ^ n</code>; the inverse at a fixed coefficient uses the old i
 with parameter multiplied by <code>ū ^ n</code>. Normality and surjectivity are
 conclusions, not assumptions; exponent zero instead gives multiplicative
 reduction.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/PrincipalUnits/Powers.lean">Coefficients and generator-change laws</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/tests/GeneralLinearGroupsTests/PrincipalUnitsPowersClient.lean">coefficient clients</a>.</li><li><strong>Principal-unit commutators and nilpotence.</strong> Over any <code>Ring R</code>, including
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/PrincipalUnits/Powers.lean">Coefficients and generator-change laws</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/tests/GeneralLinearGroupsTests/PrincipalUnitsPowersClient.lean">coefficient clients</a>.</li><li><strong>Principal-unit commutators and nilpotence.</strong> Over any <code>Ring R</code>, including
 noncommutative and zero rings, write <code>U(I)</code> for the stock <code>Rˣ</code>-stabilizer
 of <code>1</code> in the quotient left module <code>R ⧸ I</code>. For two-sided <code>I</code>, this is
 the kernel of reduction on units to the quotient ring. Arbitrary left ideals
@@ -234,7 +234,7 @@ If <code>I ^ N = ⊥</code>, then <code>U(I)</code> is nilpotent of class at mos
 This is not a nilpotence claim about the full unit group. Positive additive
 layers use the preceding ideal-layer and power-coordinate API, not an
 additive equivalence at exponent zero.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/PrincipalUnits/Filtration.lean">Commutator bounds and nilpotence</a>.</li><li><strong>Leading coordinates of principal-unit commutators.</strong> For any left ideal
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/PrincipalUnits/Filtration.lean">Commutator bounds and nilpotence</a>.</li><li><strong>Leading coordinates of principal-unit commutators.</strong> For any left ideal
 <code>I</code> in any <code>Ring R</code> and positive <code>a, b</code>, let <code>x = u - 1 ∈ I ^ a</code> and
 <code>y = v - 1 ∈ I ^ b</code> for original-ring units <code>u, v</code>. Then
 <code>[u, v] - 1 - (x * y - y * x) ∈ I ^ (a + b + min a b)</code>.
@@ -242,8 +242,8 @@ In particular, <code>[u, v] - 1</code> and <code>x * y - y * x</code> have the s
 in the quotient <strong>left module</strong> <code>R ⧸ I ^ (a + b + 1)</code>.
 No two-sidedness, commutativity or nilpotence is needed; the commutator
 is <code>u * v * u⁻¹ * v⁻¹</code>, with no degree-dependent sign.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/PrincipalUnits/Filtration.lean">Coordinate estimate and quotient equality</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/docs/README.md#principal-unit-commutator-coordinates">API guide</a>.</li><li><strong>Positive principal-unit layer pairings.</strong> For any left ideal <code>I</code> in any
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/PrincipalUnits/Filtration.lean">Coordinate estimate and quotient equality</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/docs/README.md#principal-unit-commutator-coordinates">API guide</a>.</li><li><strong>Positive principal-unit layer pairings.</strong> For any left ideal <code>I</code> in any
 <code>Ring R</code> and <code>a, b : ℕ+</code>, the bracket <code>xy - yx</code> descends to an
 <strong>integer-bilinear</strong> pairing of successive ideal layers in degrees
 <code>a</code>, <code>b</code> and <code>a + b</code>. The additive positive unit layers embed in these
@@ -252,8 +252,8 @@ represented by the ordered commutator of original-ring units. Both pairings
 are alternating, with ordinary negation under swapping and the canonical
 degree cast. No two-sidedness, Jacobson condition or symbol surjectivity
 is assumed, and no degree-zero additive layer is asserted.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/PrincipalUnits/Commutator.lean">Pairings and characteristic laws</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/docs/README.md#positive-principal-unit-layer-pairings">API guide</a>.</li><li><strong>Functorial symbols and Jacobson equivalences.</strong> A unital ring map
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/PrincipalUnits/Commutator.lean">Pairings and characteristic laws</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/docs/README.md#positive-principal-unit-layer-pairings">API guide</a>.</li><li><strong>Functorial symbols and Jacobson equivalences.</strong> A unital ring map
 carrying a left ideal <code>I</code> into <code>J</code> induces integer-linear maps on their
 positive ideal and unit layers, preserving symbols and both commutator
 pairings. The maps respect identities and composition, without injectivity,
@@ -264,9 +264,9 @@ requires the Jacobson condition on <strong>both</strong> source and target ideal
 Symbols are also surjective when every element of the left ideal is
 nilpotent, or when <code>I ^ N = ⊥</code>, including <code>N = 0, 1</code>; no two-sidedness
 or common exponent is assumed for the pointwise-nil result.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/PrincipalUnits/Naturality.lean">Forward maps and naturality</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/PrincipalUnits/LayerEquivalence.lean">Equivalences and nil lifting</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/docs/README.md#functorial-symbols-and-jacobson-equivalences">API guide</a>.</li><li><strong>Images of principal-unit subgroups.</strong> For a ring homomorphism
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/PrincipalUnits/Naturality.lean">Forward maps and naturality</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/PrincipalUnits/LayerEquivalence.lean">Equivalences and nil lifting</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/docs/README.md#functorial-symbols-and-jacobson-equivalences">API guide</a>.</li><li><strong>Images of principal-unit subgroups.</strong> For a ring homomorphism
 <code>f : R →+* S</code> with <code>Ring R</code> and <code>Ring S</code> in independent universes,
 and a left ideal <code>I ≤ Ideal.jacobson ⊥</code>, a unit <code>u : Sˣ</code> lies in the image
 under <code>Units.map f.toMonoidHom</code> of the original <code>R</code>-unit stabilizer of
@@ -275,7 +275,7 @@ under <code>Units.map f.toMonoidHom</code> of the original <code>R</code>-unit s
 This uses the set image of ideal elements, not the extended ideal
 <code>Ideal.map f I</code>. The map need not be injective, and neither ring needs
 to be commutative; no domain, local-ring or valuation hypothesis is needed.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/PrincipalUnits/Images.lean">Image membership criterion</a>.</li><li><strong>Finite exponential and logarithm coordinates.</strong> Over a possibly noncommutative
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/PrincipalUnits/Images.lean">Image membership criterion</a>.</li><li><strong>Finite exponential and logarithm coordinates.</strong> Over a possibly noncommutative
 or zero rational algebra, Mathlib's finite exponential, packaged as a unit,
 and a concrete logarithm give a plain equivalence between nilpotent elements
 and units <code>u</code> with nilpotent coordinate <code>u - 1</code>. This restricts to the elements
@@ -284,8 +284,8 @@ in the quotient left module <code>R ⧸ I</code>; neither two-sidedness nor a un
 nilpotence exponent is required. Addition and product laws require commuting
 inputs; integer multiples correspond to integer powers in the unit group.
 These are equivalences of types, not group equivalences.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/NilpotentExpLog.lean">Exponential units and logarithm</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/PrincipalUnits/ExpLog.lean">principal-unit restriction</a>.</li><li><strong>First-order dual-number kernels and conjugation.</strong> Over any <code>CommRing</code>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/NilpotentExpLog.lean">Exponential units and logarithm</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/PrincipalUnits/ExpLog.lean">principal-unit restriction</a>.</li><li><strong>First-order dual-number kernels and conjugation.</strong> Over any <code>CommRing</code>,
 the <em>multiplicative</em> reduction identity fibers of Mathlib's GL and SL groups
 and of scalar units identify with additive matrices, trace-zero matrices
 and scalars. The determinant corresponds to trace; arbitrary ring-hom
@@ -294,9 +294,9 @@ coefficient maps commute with these constructions without being implicitly
 even for nonconstant dual-number units; the SL-kernel action uses SL
 conjugators. First-order fiber groups are abelian, so their commutator is
 not the generally nonzero matrix Lie bracket.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/DualNumberKernels.lean#L145">Kernel equivalences</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/DualNumberKernels.lean#L316">determinant/trace</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/docs/DualNumberKernelAdjoint.md">adjoint guide</a>.</li><li><strong>Mixed dual-number GL and SL commutators.</strong> For finite matrices over a
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/DualNumberKernels.lean#L145">Kernel equivalences</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/DualNumberKernels.lean#L316">determinant/trace</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/docs/DualNumberKernelAdjoint.md">adjoint guide</a>.</li><li><strong>Mixed dual-number GL and SL commutators.</strong> For finite matrices over a
 <code>CommRing</code>, units over iterated dual numbers satisfy the ordered
 identity <code>[1 + εX, 1 + ηY] = 1 + εη(XY - YX)</code> with full outer-kernel
 readback. When <em>each input</em> is trace zero, special-linear factors
@@ -304,7 +304,7 @@ yield the analogous identity in Mathlib's SL group and trace-zero readback.
 The ε-factor reduces to the inner lift <code>liftGL X</code> (in SL, <code>liftSL X</code>), usually
 not <code>1</code>: this is not a bracket of two elements of the abelian first-order
 outer kernel, nor a global Lie- or scheme-tangent theorem.
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/DualNumberMixedCommutator.lean#L155">GL identity</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/GeneralLinearGroups/DualNumberMixedSLCommutator.lean#L93">SL identity</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/docs/DualNumberMixedCommutator.md">GL guide</a>,
-<a href="https://github.com/FormalFrontier/general-linear-groups/blob/17447965f2080297a50bdeb53ec1c4f25b60b4e9/docs/DualNumberMixedSLCommutator.md">SL guide</a>.</li></ul>
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/DualNumberMixedCommutator.lean#L155">GL identity</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/GeneralLinearGroups/DualNumberMixedSLCommutator.lean#L93">SL identity</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/docs/DualNumberMixedCommutator.md">GL guide</a>,
+<a href="https://github.com/FormalFrontier/general-linear-groups/blob/e8e520a04edadf3c2b75d66c8158e93427dca0c0/docs/DualNumberMixedSLCommutator.md">SL guide</a>.</li></ul>

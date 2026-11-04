@@ -2,13 +2,13 @@
 commutative groups. Write <code>C = AdicCompletion I R</code>, <code>H = AdicCompletion I M</code>
 and <code>P = C ⊗[R] M</code>, with its first-factor <code>C</code>-action. These results use
 Mathlib's raw inverse-limit completion, not a new construction of completion.
-The linked <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/docs/HeadlineResults.md">catalogue</a> contains the full statements,
+The linked <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/docs/HeadlineResults.md">catalogue</a> contains the full statements,
 further result families, examples and boundary cases.</p>
 <ul><li><strong>Finite cotangents of ideal powers.</strong> For any ideal <code>I</code>, finite generation of
 <code>I / I²</code> over <code>R / I</code> implies finite generation of <code>Iⁿ / I²ⁿ</code> over <code>R / Iⁿ</code>
 for every <code>n ≥ 0</code>, with the canonical quotient-ring action. No finite generation
 of <code>I</code> or Noetherianity of <code>R</code> is required.
-See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/Ideal/Cotangent.lean">cotangent modules</a>.</li><li><strong>Finite modules over complete APf bases.</strong> Suppose <code>I</code> has finite-submodule
+See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/Ideal/Cotangent.lean">cotangent modules</a>.</li><li><strong>Finite modules over complete APf bases.</strong> Suppose <code>I</code> has finite-submodule
 adic cofinality: the intrinsic filtration on each finitely generated submodule
 of each finite module is cofinal with the induced filtration. If original <code>R</code>
 is intrinsically <code>I</code>-adically complete, every finite original <code>R</code>-module <code>M</code>
@@ -17,7 +17,7 @@ bijective. More generally, such finite <code>M</code> is <code>I</code>-Hausdorf
 <code>I ≤ jac(ann_R M)</code>. No finite generation of <code>I</code>, original finite presentation,
 Noetherianity, flatness or prior module separation is required; ring and module
 universes are independent. See the
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/CompleteBase.lean">complete-base criteria</a>.</li><li><strong>Intrinsic completeness of arbitrary submodules over complete AP bases.</strong> Full
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/CompleteBase.lean">complete-base criteria</a>.</li><li><strong>Intrinsic completeness of arbitrary submodules over complete AP bases.</strong> Full
 submodule adic cofinality asks for the same intrinsic/induced filtration comparison
 for every submodule of each finite module, without finite generation of the
 submodule. Over an intrinsically <code>I</code>-adically complete original ring <code>R</code>, every
@@ -26,26 +26,26 @@ complete. No finite generation of <code>N</code> or <code>I</code>, Noetherianit
 flatness or additional Jacobson-radical assumption is required. The conclusion
 concerns the intrinsic ideal-power topology on <code>N</code>, separately from ambient
 closedness. See the
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/CompleteBase.lean">complete-base criteria</a>.</li><li><strong>Adically closed submodules with finite quotient.</strong> If <code>I</code> has finite-submodule
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/CompleteBase.lean">complete-base criteria</a>.</li><li><strong>Adically closed submodules with finite quotient.</strong> If <code>I</code> has finite-submodule
 adic cofinality and <code>M / N</code> is finite over original <code>R</code>, then
 <code>I ≤ jac(ann_R(M / N))</code> makes <code>N</code> closed in the canonical <code>I</code>-adic module topology
 of <code>M</code>. Neither ambient <code>M</code> nor <code>N</code> needs to be finite. No finite generation
 of <code>I</code>, Noetherianity, completeness or ambient separation is assumed; ring
 and module universes are independent. This is a closedness result, not an
 intrinsic-completeness assertion for <code>N</code>. See
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/Topology/Algebra/Module/AdicTopology.lean">module-adic topologies</a>.</li><li><strong>Noetherian raw completion.</strong> For any ideal <code>I</code>, <code>C</code> is Noetherian iff
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/Topology/Algebra/Module/AdicTopology.lean">module-adic topologies</a>.</li><li><strong>Noetherian raw completion.</strong> For any ideal <code>I</code>, <code>C</code> is Noetherian iff
 <code>R / I</code> is Noetherian and <code>I / I²</code> is finitely generated over <code>R / I</code>;
 equivalently, iff <code>R / I^n</code> is Noetherian for any chosen <code>n ≥ 2</code>.
 Neither <code>I.FG</code> nor Noetherianity of <code>R</code> is required.
-See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Cotangent.lean">cotangent criteria</a>.</li><li><strong>Completion of a Noetherian original module.</strong> For any ideal <code>I</code>, a
+See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Cotangent.lean">cotangent criteria</a>.</li><li><strong>Completion of a Noetherian original module.</strong> For any ideal <code>I</code>, a
 Noetherian original <code>R</code>-module <code>M</code> has raw completion <code>H</code> Noetherian over <code>C</code>
 with its canonical action. No Noetherianity of <code>R</code> or <code>R / I</code>, ideal finiteness,
 flatness, faithfulness, separation or completeness is assumed; the converse
-fails. See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/Noetherian.lean">Noetherian modules</a>.</li><li><strong>Faithful completed scalar action.</strong> For any ideal <code>I</code>, if original <code>M</code> is
+fails. See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/Noetherian.lean">Noetherian modules</a>.</li><li><strong>Faithful completed scalar action.</strong> For any ideal <code>I</code>, if original <code>M</code> is
 Noetherian over <code>R</code> and the original <code>R</code>-action is faithful, the canonical
 <code>C</code>-action on <code>H</code> is faithful by an automatic <code>FaithfulSMul</code> instance. Ring
 and module universes are independent; no ideal finiteness, separation or
-completeness is assumed. See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Annihilator.lean">faithful actions</a>.</li><li><strong>Annihilator of a completed Noetherian original module.</strong> For any ideal <code>I</code>
+completeness is assumed. See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Annihilator.lean">faithful actions</a>.</li><li><strong>Annihilator of a completed Noetherian original module.</strong> For any ideal <code>I</code>
 and Noetherian original <code>R</code>-module <code>M</code>, put <code>K = ann_R M</code> and let <code>q : R → R/K</code>
 be the quotient map. Then <code>ann_C H</code> is the kernel of the canonical map
 <code>C → AdicCompletion (I.map q) (R/K)</code>. No Noetherianity of <code>R</code> or <code>C</code>, ideal
@@ -54,7 +54,7 @@ The effective coefficient ring <code>C / ann_C H</code> is canonically isomorphi
 original-<code>R</code> algebra to <code>AdicCompletion (I.map q) (R/K)</code>. On every completed
 coefficient, the equivalence and its inverse commute with the quotient map.
 The annihilator need not be the ideal generated by <code>K</code> in <code>C</code>. See
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Annihilator.lean">annihilators</a>.</li><li><strong>Jacobson criteria under finite-submodule adic cofinality.</strong> If
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Annihilator.lean">annihilators</a>.</li><li><strong>Jacobson criteria under finite-submodule adic cofinality.</strong> If
 <code>I.HasFiniteSubmoduleAdicCofinality</code>, then <code>I ≤ jac(0)</code> iff every finite
 original <code>R</code>-module is intrinsically <code>I</code>-Hausdorff; equivalently every
 submodule of every such module is closed in its canonical ambient power
@@ -62,28 +62,28 @@ topology. The universal conditions quantify over modules in the ring's
 universe; finite-module representatives transport uses to independent
 universes with the original action. No ideal finiteness, Noetherianity or
 nontriviality is assumed. See
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/Topology/Algebra/Module/SeparationCriteria.lean">separation criteria</a>.</li><li><strong>Pointwise-cofinal submodule inclusions.</strong> For a submodule <code>K</code> of an original
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/Topology/Algebra/Module/SeparationCriteria.lean">separation criteria</a>.</li><li><strong>Pointwise-cofinal submodule inclusions.</strong> For a submodule <code>K</code> of an original
 <code>R</code>-module <code>N</code>, suppose that for each <code>n</code> some <code>m</code> satisfies
 <code>K ⊓ I^m N ≤ I^n K</code>, with both sides viewed inside <code>N</code>. Then completion of
 <code>K.subtype</code> is injective and <code>C</code>-linear. The source uses the intrinsic <code>I</code>-adic
 filtration on <code>K</code>. No finiteness or Noetherianity of the ring, ideal or modules,
 flatness, separation or completeness is assumed; ring and module universes
 are independent. See the
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/LinearMap.lean">cofinality criterion</a>.</li><li><strong>Intrinsic precompleteness of closed cofinal submodules.</strong> If the original
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/LinearMap.lean">cofinality criterion</a>.</li><li><strong>Intrinsic precompleteness of closed cofinal submodules.</strong> If the original
 <code>R</code>-module <code>M</code> is <code>I</code>-precomplete, <code>M / N</code> is <code>I</code>-Hausdorff, and the induced
 filtration on <code>N</code> is pointwise cofinal with its intrinsic one, then <code>N</code> is
 intrinsically <code>I</code>-precomplete. Ambient separation or completeness is not
 needed, and there is no finiteness or Noetherianity assumption on the ring,
 ideal or modules. The scalar action remains the original <code>R</code>-action. For a
 complete ambient module, existing separation inheritance gives completeness
-of <code>N</code>. See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Submodule.lean">submodules</a>.</li><li><strong>Injections into Noetherian original targets.</strong> For every ideal <code>I</code>, an
+of <code>N</code>. See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Submodule.lean">submodules</a>.</li><li><strong>Injections into Noetherian original targets.</strong> For every ideal <code>I</code>, an
 injective original linear map <code>f : M →ₗ[R] N</code> induces an injective canonical
 map on raw completions if <code>N</code> is Noetherian over original <code>R</code>. The ring,
 source and target universes are independent. No Noetherianity of <code>R</code>, finite
 generation of <code>I</code>, source finiteness, flatness, separation or completeness is
 assumed. Module Artin–Rees supplies the pointwise-cofinality bound for the
 original range, giving this application of the subtype criterion. See
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Exactness.lean">completion injectivity</a>.</li><li><strong>Completion of original images.</strong> For every ideal <code>I</code> and original linear
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Exactness.lean">completion injectivity</a>.</li><li><strong>Completion of original images.</strong> For every ideal <code>I</code> and original linear
 map <code>f : M →ₗ[R] N</code>, completion of the original range inclusion has the same
 <code>C</code>-submodule range as the completed map, without Noetherian hypotheses.
 If <code>K = f.range</code> satisfies the pointwise-cofinality bound above,
@@ -94,27 +94,27 @@ No finiteness or Noetherianity of the ring, ideal or modules, flatness,
 separation or completeness is assumed; all three universes are independent.
 For Noetherian original <code>N</code>, the original Noetherian-target equivalence agrees
 with this comparison for every proof of the bound. See the
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/LinearMap.lean">range comparison</a> and
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Exactness.lean">Noetherian-target application</a>.</li><li><strong>Middle exactness with a Noetherian original middle module.</strong> For any ideal
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/LinearMap.lean">range comparison</a> and
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Exactness.lean">Noetherian-target application</a>.</li><li><strong>Middle exactness with a Noetherian original middle module.</strong> For any ideal
 <code>I</code>, an original exact pair <code>M →ₗ[R] N →ₗ[R] P</code> remains middle exact under the
 canonical completed maps if <code>N</code> is Noetherian over original <code>R</code> and the original
 last map is surjective. The first source is arbitrary and the first map need
 not be injective. No ring Noetherianity, ideal finiteness, flatness, faithfulness,
 separation or completeness is assumed; all four universes are independent.
-See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Exactness.lean">completion exactness</a>.</li><li><strong>Middle exactness from two pointwise range bounds.</strong> For any ideal <code>I</code>, an
+See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Exactness.lean">completion exactness</a>.</li><li><strong>Middle exactness from two pointwise range bounds.</strong> For any ideal <code>I</code>, an
 original exact pair <code>M →ₗ[R] N →ₗ[R] P</code> remains middle exact under the canonical
 completed maps if, separately for each original range <code>K</code> in its ambient module
 <code>X</code>, every <code>n</code> admits some <code>m</code> with <code>K ⊓ I^m X ≤ I^n K</code>. The two bounds may
 have different witnesses. Neither map needs to be injective or surjective.
 No finiteness or Noetherianity of the ring, ideal or modules, flatness, separation
 or completeness is assumed; all four universes are independent. See
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Exactness.lean">completion exactness</a>.</li><li><strong>Middle exactness for Noetherian original pairs.</strong> For any ideal <code>I</code>, an
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Exactness.lean">completion exactness</a>.</li><li><strong>Middle exactness for Noetherian original pairs.</strong> For any ideal <code>I</code>, an
 original exact pair <code>M →ₗ[R] N →ₗ[R] P</code> remains middle exact under the canonical
 completed maps if both original <code>N</code> and <code>P</code> are Noetherian over original <code>R</code>.
 The last map need not be surjective, the first map need not be injective, and
 <code>M</code> is arbitrary. No ring Noetherianity, ideal finiteness, flatness, faithfulness,
 separation or completeness is assumed; all four universes are independent.
-See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Exactness.lean">completion exactness</a>.</li><li><strong>Completion of original kernels.</strong> For every ideal <code>I</code> and original linear
+See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Exactness.lean">completion exactness</a>.</li><li><strong>Completion of original kernels.</strong> For every ideal <code>I</code> and original linear
 map <code>g : N →ₗ[R] P</code> with both original modules Noetherian over original <code>R</code>,
 <code>AdicCompletion I (LinearMap.ker g) ≃ₗ[C] LinearMap.ker (AdicCompletion.map I g)</code>.
 The forward map is completion of the original kernel inclusion, using the
@@ -123,34 +123,34 @@ ring Noetherianity, ideal finiteness, flatness, faithfulness, separation or
 completeness is assumed; ring and module universes are independent. The
 inverse gives unique factorization of maps into the completed-map kernel
 and agrees with the split comparison on overlap. See
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Exactness.lean">kernel comparison</a>.</li><li><strong>Noetherian original module quotients.</strong> For any ideal and <code>n ≥ 2</code>, the
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Exactness.lean">kernel comparison</a>.</li><li><strong>Noetherian original module quotients.</strong> For any ideal and <code>n ≥ 2</code>, the
 original <code>M / IⁿM</code> is Noetherian over <code>R</code> iff <code>M / IM</code> is Noetherian over <code>R</code>
 and the image of <code>IM</code> in <code>M / I²M</code> is finitely generated over original <code>R</code>.
 Neither <code>R</code> nor <code>R / I</code> need be Noetherian. See the
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/LinearAlgebra/Quotient/Noetherian.lean">original-quotient criterion</a>.</li><li><strong>Noetherian completed modules.</strong> For any ideal and original module, <code>H</code> is
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/LinearAlgebra/Quotient/Noetherian.lean">original-quotient criterion</a>.</li><li><strong>Noetherian completed modules.</strong> For any ideal and original module, <code>H</code> is
 Noetherian over <code>C</code> iff the original <code>M / I²M</code> is Noetherian over <code>R</code>;
 equivalently, iff any chosen <code>M / IⁿM</code>, <code>n ≥ 2</code>, is Noetherian over <code>R / Iⁿ</code>
 with its canonical action. No Noetherian coefficient ring, finite generation,
 original completeness or separation is required. Noetherianity of the original
 associated graded module over the quotient Rees algebra also suffices.
-See the <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/Noetherian.lean">module criterion</a>.</li><li><strong>Module completion and stationary evaluation.</strong> If the image of <code>I M</code> in
+See the <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/Noetherian.lean">module criterion</a>.</li><li><strong>Module completion and stationary evaluation.</strong> If the image of <code>I M</code> in
 the original <code>M / I² M</code> is finitely generated over <code>R</code>, then <code>Iⁿ H = ker(evalₙ)</code>
 for every <code>n ≥ 0</code> and <code>H</code> is intrinsically <code>I</code>-adically complete for its original
 <code>R</code>-action, without assuming <code>I.FG</code>. These kernel and completeness conclusions
 also hold if <code>H</code> is Noetherian over <code>C</code>, without Noetherianity of <code>C</code>; see the
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/Noetherian.lean">module criterion</a>.
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/Noetherian.lean">module criterion</a>.
 More generally, if <code>Iⁿ H = ker(evalₙ)</code> for all <code>n</code>, restriction along <code>of I M</code>
 gives an <code>R</code>-linear Hom equivalence from maps <code>H →ₗ[R] N</code> to maps <code>M →ₗ[R] N</code>
 for every intrinsically <code>I</code>-adically complete target <code>N</code>, with inverse canonical
 extension; <code>N</code> needs no <code>C</code>-action. Both source hypotheses above, or finite
 generation of a positive power of <code>I</code>, supply these kernel identities.
-See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/LinearMap.lean">linear maps</a>.
+See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/LinearMap.lean">linear maps</a>.
 For any ideal and <code>n ≥ 0</code>, evaluation at <code>n</code> on <code>H</code> is injective iff
 <code>I^(n+1) M = I^n M</code>. Under this equality, <code>H ≃ₗ[R] M / I^n M</code>;
 equality of ideal powers gives the corresponding <code>R</code>-algebra equivalence for <code>C</code>.
-See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Kernel.lean">kernels</a>,
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Completeness.lean">completeness</a> and
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Stationary.lean">stationary evaluation</a>.</li><li><strong>Finite presentation and flatness.</strong> If <code>H</code> is flat over <code>C</code>, then <code>H</code> is
+See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Kernel.lean">kernels</a>,
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Completeness.lean">completeness</a> and
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Stationary.lean">stationary evaluation</a>.</li><li><strong>Finite presentation and flatness.</strong> If <code>H</code> is flat over <code>C</code>, then <code>H</code> is
 finitely presented iff any chosen positive original quotient <code>M / IⁿM</code>
 is finitely presented over <code>R / Iⁿ</code>; when this holds, <code>H</code> is finite projective
 and every original quotient is finitely presented. If <code>R / I</code> is Noetherian,
@@ -158,17 +158,17 @@ flat <code>H</code> is finitely presented iff it is finite over <code>C</code>, 
 without Noetherianity of <code>C</code>. Separately, if <code>C</code> is Noetherian,
 <code>H</code> is flat iff every positive original quotient is flat over <code>R / Iⁿ</code>;
 in particular, a flat original <code>M</code> has flat raw completion.
-See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/FinitePresentation.lean">finite presentation</a>
-and <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Flat/Noetherian.lean">raw flatness</a>.</li><li><strong>Tensor, exactness and Hom comparisons.</strong> If the original <code>M / IM</code> is
+See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/FinitePresentation.lean">finite presentation</a>
+and <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Flat/Noetherian.lean">raw flatness</a>.</li><li><strong>Tensor, exactness and Hom comparisons.</strong> If the original <code>M / IM</code> is
 finitely generated over <code>R</code>, then <code>H</code> is finite over <code>C</code> and <code>P → H</code> is onto.
 Projectivity of <strong><code>P</code> over <code>C</code></strong>, not merely of <code>H</code>, gives injectivity for every
 ideal; together these premises give an equivalence. Short exact sequences
 with flat original last module remain short exact after completion.
 The completed Hom identifies with the <code>C</code>-linear Hom between completions
 when the original source is finite projective, or is projective and <code>I.FG</code>;
-the target is arbitrary. See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/TensorProduct.lean">tensor</a>,
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Flat.lean">exactness</a> and
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Hom.lean">Hom</a>.
+the target is arbitrary. See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/TensorProduct.lean">tensor</a>,
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Flat.lean">exactness</a> and
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Hom.lean">Hom</a>.
 If every original-<code>R</code> power <code>IⁿH</code> is <code>ker(evalₙ)</code>, every <code>R</code>-linear
 <code>H → AdicCompletion I N</code> respects the canonical <code>C</code>-actions, for arbitrary <code>N</code>
 without intrinsic completeness of <code>N</code> or its raw completion. If original <code>M</code>
@@ -182,52 +182,52 @@ coefficient actions. Both comparisons commute with original representatives
 and every finite reduction, including precision zero. The index, ring and module
 universes are independent; empty products and zero rings are included, without
 finite-generation, Noetherianity, completeness or separatedness assumptions.
-See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/CoefficientProduct.lean">coefficient products</a>.</li><li><strong>Maps and changes of ideal.</strong> For every ideal and linear <code>f : M → N</code>,
+See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/CoefficientProduct.lean">coefficient products</a>.</li><li><strong>Maps and changes of ideal.</strong> For every ideal and linear <code>f : M → N</code>,
 completion of <code>f</code> is onto iff the original <code>M → N / IN</code> is onto.
 Mutual containment of powers gives an <code>R</code>-linear equivalence of completions,
 including at <code>I^k</code> and <code>I</code> for positive <code>k</code>. Completion at the product of a
 finite pairwise-comaximal family is <code>R</code>-linearly equivalent to the product
 of the completions. Arbitrary dependent products commute with completion
 if some given positive power of <code>I</code> is finitely generated.
-See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Surjectivity.lean">maps</a>,
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/ChangeIdeal.lean">cofinality</a>,
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/ChineseRemainderAlgebra.lean">CRT</a> and
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/Pi.lean">products</a>.
+See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Surjectivity.lean">maps</a>,
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/ChangeIdeal.lean">cofinality</a>,
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/ChineseRemainderAlgebra.lean">CRT</a> and
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/Pi.lean">products</a>.
 A ring map carrying one ideal into another induces a homomorphism between
 their completions. For an <code>R</code>-algebra, the completed coefficient map gives
 the named, non-global <code>AdicCompletion.extendedAlgebra</code>; existing coefficient
-algebras are unchanged. See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/AdicCompletion/RingHom.lean">completed ring maps</a>.</li><li><strong>Henselian lifting.</strong> Over a Henselian pair <code>(R,I)</code>, a finite square
+algebras are unchanged. See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/AdicCompletion/RingHom.lean">completed ring maps</a>.</li><li><strong>Henselian lifting.</strong> Over a Henselian pair <code>(R,I)</code>, a finite square
 polynomial system with unit Jacobian determinant at a root modulo <code>I</code>
 has a unique root in that residue class. Every specified <code>R</code>-algebra map
 from an étale algebra to <code>R/I</code> lifts uniquely to an <code>R</code>-algebra map to <code>R</code>.
-See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/MvPolynomial/Hensel.lean">Hensel lifting</a> and
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/RingTheory/HenselianEtale.lean">étale points</a>; determinant-
+See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/MvPolynomial/Hensel.lean">Hensel lifting</a> and
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/RingTheory/HenselianEtale.lean">étale points</a>; determinant-
 and resultant-square refinements and Henselian-pair criteria are in the
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/docs/HeadlineResults.md">expanded catalogue</a>.</li><li><strong>Action nilpotence and ideal powers.</strong> For a finitely generated ideal
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/docs/HeadlineResults.md">expanded catalogue</a>.</li><li><strong>Action nilpotence and ideal powers.</strong> For a finitely generated ideal
 of a commutative semiring acting on an additive commutative monoid module,
 some ideal power annihilates the whole module iff <code>I ≤ radical(ann M)</code>;
 the module need not be finitely generated. Over a Bézout commutative semiring,
 <code>x ∈ I^n</code> iff some <code>t ∈ I</code> satisfies <code>t^n ∣ x</code>, including <code>n = 0</code>.
-See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/BoundedIdealPowerTorsion.lean">torsion</a> and
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/RingTheory/Ideal/PowerCompression.lean">powers</a>.</li><li><strong>Maximal ideals in the adic topology.</strong> For any ideal <code>I</code> of a commutative
+See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/BoundedIdealPowerTorsion.lean">torsion</a> and
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/RingTheory/Ideal/PowerCompression.lean">powers</a>.</li><li><strong>Maximal ideals in the adic topology.</strong> For any ideal <code>I</code> of a commutative
 ring, a maximal ideal <code>m</code> is closed in the <code>I</code>-adic topology iff <code>I ≤ m</code>.
 Thus every maximal ideal is closed iff <code>I</code> lies in the Jacobson radical.
 No APf, finiteness, Noetherianity, completeness or separation is assumed;
 the global criterion includes the zero ring. See
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/Topology/Algebra/Ideal.lean">ideal topologies</a>.</li><li><strong>Compactness and valuation completeness.</strong> For a given compatible additive
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/Topology/Algebra/Ideal.lean">ideal topologies</a>.</li><li><strong>Compactness and valuation completeness.</strong> For a given compatible additive
 uniformity with <code>IsAdic I</code>, a ring is compact iff it is uniformly complete and all
 <code>R/I^n</code> are finite; under <code>I.FG</code>, finiteness of <code>R/I</code> suffices.
 For valuation integers, a nonzero generator with separated principal powers
 identifies adic completeness with completeness for the given valuation
-uniformity. See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/Topology/Algebra/AdicCompactness.lean">compactness</a>
-and <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/Valuation/Completeness.lean">valuation completeness</a>.</li></ul>
+uniformity. See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/Topology/Algebra/AdicCompactness.lean">compactness</a>
+and <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/Valuation/Completeness.lean">valuation completeness</a>.</li></ul>
 <ul><li><strong>Teichmüller and Witt structure.</strong> For prime <code>p</code>, a surjection from a
 kernel-adically complete ring to a perfect characteristic-<code>p</code> ring has a
 unique multiplicative zero-and-one section, whose image is the intersection
 of the <code>p^n</code>-power ranges. The reduced-residue perfection extension is
-described in <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/docs/Results.md#reduced-residue-teichmüller-image">results and models</a>.
+described in <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/docs/Results.md#reduced-residue-teichmüller-image">results and models</a>.
 Witt vectors form a domain iff the coefficient ring is a domain of
 characteristic <code>p</code>, and a DVR iff it is a perfect field of characteristic <code>p</code>.
-See <a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/RingTheory/Teichmuller.lean">Teichmüller maps</a>,
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/RingTheory/WittVector/Domain.lean">domains</a> and
-<a href="https://github.com/FormalFrontier/adic-modules/blob/03a7c2468faffbb38b270a3ccec5b2616e6bafdd/AdicModules/RingTheory/WittVector/DiscreteValuationRing.lean">DVRs</a>.</li></ul>
+See <a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/RingTheory/Teichmuller.lean">Teichmüller maps</a>,
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/RingTheory/WittVector/Domain.lean">domains</a> and
+<a href="https://github.com/FormalFrontier/adic-modules/blob/89ad0fca444184ff2807c9153c3e2e1a15e1b942/AdicModules/RingTheory/WittVector/DiscreteValuationRing.lean">DVRs</a>.</li></ul>
