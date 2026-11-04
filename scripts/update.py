@@ -405,7 +405,8 @@ def main() -> None:
     args = parser.parse_args()
 
     deliverables = collect(args.cache, args.offline)
-    today = dt.datetime.now(dt.timezone.utc).date()
+    now = dt.datetime.now(dt.timezone.utc)
+    today = now.date()
     history = daily_history(deliverables, today)
 
     dependents = defaultdict(list)
@@ -462,6 +463,7 @@ def main() -> None:
     out = args.out
     write_json(out / "dashboard.json", {
         "generated": today.isoformat(),
+        "updated": now.strftime("%Y-%m-%dT%H:%MZ"),
         "totals": totals,
         "history": history,
         "deliverables": rows,
@@ -469,6 +471,7 @@ def main() -> None:
     })
     write_json(out / "highlights.json", {
         "generated": today.isoformat(),
+        "updated": now.strftime("%Y-%m-%dT%H:%MZ"),
         "deliverables": [{
             "name": d["name"],
             "title": d["title"],

@@ -5,7 +5,7 @@ initTheme();
 
 const data = await loadJSON("data/dashboard.json");
 const { totals, history } = data;
-setUpdated(data.generated);
+setUpdated(data);
 
 const n = history.days.length;
 const weekAgo = Math.max(0, n - 8);

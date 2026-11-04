@@ -88,9 +88,11 @@ export function svg(tag, attrs = {}, ...children) {
   return node;
 }
 
-export function setUpdated(generated) {
+export function setUpdated(data) {
+  // data.updated is "YYYY-MM-DDTHH:MMZ"; older data has only the generated day.
+  const [day, time] = (data.updated ?? data.generated).split("T");
   for (const node of document.querySelectorAll("[data-updated]")) {
-    node.textContent = formatDay(generated);
+    node.textContent = time ? `${formatDay(day)}, ${time.replace("Z", "")} UTC` : formatDay(day);
   }
 }
 

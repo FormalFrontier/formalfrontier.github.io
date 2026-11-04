@@ -3,7 +3,7 @@ import { initTheme, loadJSON, el, formatInt, formatDay, setUpdated, sparkline } 
 initTheme();
 
 const data = await loadJSON("data/dashboard.json");
-setUpdated(data.generated);
+setUpdated(data);
 const start = data.history.days[0];
 const end = data.generated;
 const maxLines = Math.max(...data.deliverables.map((d) => d.lines), 1);

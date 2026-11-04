@@ -34,7 +34,7 @@ step and no third-party code.
 
 ## Updates
 
-The [workflow](.github/workflows/update.yml) runs daily at 04:17 UTC, on every
+The [workflow](.github/workflows/update.yml) runs every hour at :17 UTC, on every
 push to `main` and on demand. It refreshes `site/data`, commits any change and
 deploys `site/` to GitHub Pages.
 

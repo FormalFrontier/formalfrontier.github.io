@@ -1,11 +1,11 @@
 name: Update and deploy
 
-# Collects the public data once a day at 04:17 UTC, commits it to site/data
+# Collects the public data every hour at :17 UTC, commits it to site/data
 # and deploys the site to GitHub Pages. Uses only the built-in token.
 
 on:
   schedule:
-    - cron: "17 4 * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
   push:
     branches: [main]

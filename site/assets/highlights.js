@@ -3,7 +3,7 @@ import { initTheme, loadJSON, el, setUpdated } from "./common.js";
 initTheme();
 
 const data = await loadJSON("data/highlights.json");
-setUpdated(data.generated);
+setUpdated(data);
 
 const PREVIEW = 5;
 

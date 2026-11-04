@@ -3,7 +3,7 @@ import { initTheme, loadJSON, el, svg, formatInt, formatDay, setUpdated } from "
 initTheme();
 
 const data = await loadJSON("data/dashboard.json");
-setUpdated(data.generated);
+setUpdated(data);
 const { graph } = data;
 const libraries = new Map(data.deliverables.map((d) => [d.name, d]));
 
