@@ -1,9 +1,9 @@
-<ul><li><a href="https://github.com/FormalFrontier/sequence-growth/blob/c472750a1f13620a09303da8969e1b905c81ce31/SequenceGrowth/Data/Nat/DivisionGrowth.lean"><code>Nat.DivisionGrowth.affine_lower_bound</code></a>: if <code>0 &lt; s &lt; n</code> and
+<ul><li><a href="https://github.com/FormalFrontier/sequence-growth/blob/ccf81c7190cb1da914c71efaa20689c0e1d7ab62/SequenceGrowth/Data/Nat/DivisionGrowth.lean"><code>Nat.DivisionGrowth.affine_lower_bound</code></a>: if <code>0 &lt; s &lt; n</code> and
 <code>∀ m, n * (u m / s) ≤ u (m + 1)</code>, then for every <code>m : ℕ</code>, with
 <code>λ = (n : ℚ) / s</code> and <code>C = (n : ℚ) * ((s - 1 : ℕ) : ℚ) / ((n : ℚ) - s)</code>,
-<code>λ ^ m * ((u 0 : ℚ) - C) + C ≤ (u m : ℚ)</code>. There is <strong>no</strong> seed condition.</li><li><a href="https://github.com/FormalFrontier/sequence-growth/blob/c472750a1f13620a09303da8969e1b905c81ce31/SequenceGrowth/Data/Nat/DivisionGrowth.lean"><code>Nat.DivisionGrowth.eventually_dominates</code></a>: under the same recurrence,
+<code>λ ^ m * ((u 0 : ℚ) - C) + C ≤ (u m : ℚ)</code>. There is <strong>no</strong> seed condition.</li><li><a href="https://github.com/FormalFrontier/sequence-growth/blob/ccf81c7190cb1da914c71efaa20689c0e1d7ab62/SequenceGrowth/Data/Nat/DivisionGrowth.lean"><code>Nat.DivisionGrowth.eventually_dominates</code></a>: under the same recurrence,
 <code>0 &lt; s</code>, <code>0 &lt; b</code>, <code>s * b &lt; n</code>, and the sufficient natural seed
 <code>n * (s - 1) &lt; (n - s) * u 0</code>, for <strong>each</strong> <code>K : ℕ</code> there is <code>M : ℕ</code>
 such that <strong>every</strong> <code>m ≥ M</code> satisfies <code>K * b ^ m &lt; u m</code>.</li></ul>
-<p>The seed is sufficient, not necessary. See <a href="https://github.com/FormalFrontier/sequence-growth/blob/c472750a1f13620a09303da8969e1b905c81ce31/docs/DivisionGrowth.md">the mathematical guide</a>
+<p>The seed is sufficient, not necessary. See <a href="https://github.com/FormalFrontier/sequence-growth/blob/ccf81c7190cb1da914c71efaa20689c0e1d7ab62/docs/DivisionGrowth.md">the mathematical guide</a>
 for the precise Lean signatures, the rational shift, examples and boundary cases.</p>

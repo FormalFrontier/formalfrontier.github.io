@@ -1,19 +1,19 @@
 <p>The families below summarize the library. The
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md">complete catalogue</a> retains the detailed statements,
-qualifiers and source links; the <a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/Usage.md">usage guide</a> provides the
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md">complete catalogue</a> retains the detailed statements,
+qualifiers and source links; the <a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/Usage.md">usage guide</a> provides the
 module and declaration inventories.</p>
 <ul><li><strong>Single terms and augmentation.</strong> Over a nontrivial semiring and any monoid,
 <code>IsUnit (single m r) ↔ IsUnit r ∧ IsUnit m</code>; coefficient-unit reflection
 also allows the zero semiring. Over any semiring and an index type with
 only multiplication, a single term is left-regular iff its coefficient is
 left-regular and either the coefficients are subsingleton or its index is
-left-regular; the <a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/GroupRings/MonoidAlgebra/Regular.lean">right-hand criterion</a>
+left-regular; the <a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/GroupRings/MonoidAlgebra/Regular.lean">right-hand criterion</a>
 is analogous. Augmentation is the coefficient-sum ring
 homomorphism over any semiring. Over a ring its kernel is the <strong>left</strong> span
 of <code>single m 1 - 1</code>, with monoid or subgroup generating-set refinements.
 <code>MonoidAlgebra.augmentationKerBasis</code> is a basis over the coefficient ring
 <code>R</code>, <strong>not</strong> over <code>R[M]</code>, indexed by nonidentity monoid elements.
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md#single-terms-and-augmentation">Statements and modules</a>.</li><li><strong>Coefficient tests, centers and finite matrices.</strong> Over any possibly zero
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#single-terms-and-augmentation">Statements and modules</a>.</li><li><strong>Coefficient tests, centers and finite matrices.</strong> Over any possibly zero
 or noncommutative semiring, a group-algebra element is determined by one
 chosen coefficient after all right multiplications, and independently after
 all left multiplications. Centrality means central coefficients invariant
@@ -21,21 +21,21 @@ under conjugation; coefficients vanish on infinite conjugacy orbits.
 For any monoid, finite decidable matrix indices give the ring equivalence
 <code>MonoidAlgebra (Matrix n n R) M ≃+* Matrix n n (R[M])</code>, preserving both
 multiplication orders, including empty indices.
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md#coefficient-tests-and-finite-matrices">Precise statements</a>.</li><li><strong>Crossed maps and averaging.</strong> Over any ring and monoid, linear maps from
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#coefficient-tests-and-finite-matrices">Precise statements</a>.</li><li><strong>Crossed maps and averaging.</strong> Over any ring and monoid, linear maps from
 the full augmentation ideal to a given left <code>R[M]</code>-module correspond
 additively to normalized crossed maps
 <code>z(mn) = z(m) + single m 1 • z(n)</code> for its canonical action.
 For a finite group of unit order in the coefficient ring, every crossed map
 is principal, with negative inverse-order sum witness, natural for additive
-maps. See the <a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/GroupRings/MonoidAlgebra/AugmentationCrossedUniversal.lean">universal property</a>
-and <a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/GroupRings/MonoidAlgebra/AugmentationAveraging.lean">averaging</a>.</li><li><strong>Augmentation cotangents.</strong> For any unital ring and monoid, coefficient-linear
+maps. See the <a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/GroupRings/MonoidAlgebra/AugmentationCrossedUniversal.lean">universal property</a>
+and <a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/GroupRings/MonoidAlgebra/AugmentationAveraging.lean">averaging</a>.</li><li><strong>Augmentation cotangents.</strong> For any unital ring and monoid, coefficient-linear
 maps from <code>I/I²</code> to a left <code>R</code>-module <code>V</code> correspond <strong>as a set</strong> to
 <code>M →* Multiplicative V</code>. For a group,
 <code>I/I² ≃ₗ[R] R ⊗[ℤ] Additive (Abelianization G)</code>, where <code>I</code> is the augmentation
 ideal and <code>I²</code> its ordinary ideal square. Coefficient covariance is semilinear; monoid products split by projections
 and sums of inclusions. No commutativity or freeness is required.
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md#augmentation-cotangents">Statements</a> ·
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/AugmentationCotangent.md">cotangent guide</a>.</li><li><strong>Finite <code>p</code>-groups and fixed vectors.</strong> For prime <code>p</code>, any ring with
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#augmentation-cotangents">Statements</a> ·
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/AugmentationCotangent.md">cotangent guide</a>.</li><li><strong>Finite <code>p</code>-groups and fixed vectors.</strong> For prime <code>p</code>, any ring with
 <code>(p : R) = 0</code> and finite <code>p</code>-group <code>G</code>, the augmentation ideal has zero
 <code>Nat.card G</code>-th power. Every nontrivial unital <code>R[G]</code>-module has a nonzero
 canonical fixed vector; simplicity is equivalent to simplicity under
@@ -51,8 +51,8 @@ Under these same locally finite hypotheses, the Jacobson radical is the
 augmentation preimage of the coefficient radical. In particular, a single
 term is radical exactly when its coefficient is, and a zero coefficient
 radical gives the augmentation kernel. See the
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/Jacobson.md">radical guide</a> and
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md#finite-p-groups-and-fixed-vectors">statements and guides</a>.</li><li><strong>Given modules and scalar restriction.</strong> Over any semiring and monoid,
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/Jacobson.md">radical guide</a> and
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#finite-p-groups-and-fixed-vectors">statements and guides</a>.</li><li><strong>Given modules and scalar restriction.</strong> Over any semiring and monoid,
 canonical representations and an additive Hom/intertwiner correspondence
 retain the given carriers and coefficient actions. For finite groups of
 unit order in the coefficient semiring, coefficient projectivity implies
@@ -68,7 +68,7 @@ For finite <code>p</code>-groups over rings with prime <code>p = 0</code>, this 
 coefficient comparisons: semisimplicity requires coefficient semisimplicity
 <strong>and</strong> trivial group action. Fixed vectors detect injectivity of module
 maps; coinvariants detect surjectivity, without finite generation.
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md#given-modules-and-scalar-restriction">Statements and modules</a>.</li><li><strong>Finiteness of modules.</strong> For rings <code>S</code>, <code>A</code>, compatible scalar towers,
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#given-modules-and-scalar-restriction">Statements and modules</a>.</li><li><strong>Finiteness of modules.</strong> For rings <code>S</code>, <code>A</code>, compatible scalar towers,
 and a two-sided ideal <code>I</code>, a Noetherian <code>A</code>-module with uniformly nilpotent
 <code>I</code>-action is finite over <code>S</code> whenever <code>A ⧸ I</code> is finite over <code>S</code>; no
 surjective scalar map or nilpotence of <code>I</code> itself is needed. Separately,
@@ -79,16 +79,16 @@ A Noetherian <code>A</code>-semimodule also has a greatest <code>A</code>-submod
 finite over compatible scalars <code>S</code>, preserved by every <code>A</code>-linear
 endomorphism. For the regular module this is a two-sided ideal. Both
 scalar semirings may be noncommutative, and <code>S</code> need not be Noetherian.
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/GroupRings/RingTheory/Module/ScalarRestriction.lean">Greatest finite submodules</a> ·
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md#given-modules-and-scalar-restriction">other statements and hypotheses</a>.</li><li><strong>Subgroup ideals and coset bases.</strong> Over any ring, a subgroup's left
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/GroupRings/RingTheory/Module/ScalarRestriction.lean">Greatest finite submodules</a> ·
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#given-modules-and-scalar-restriction">other statements and hypotheses</a>.</li><li><strong>Subgroup ideals and coset bases.</strong> Over any ring, a subgroup's left
 difference ideal consists of elements whose coefficient sums vanish on
 <strong>left cosets</strong> <code>gH</code>. Over nontrivial rings these ideals reflect subgroup
 membership, inclusion, finite generation and normality via two-sidedness.
 Separately, over any semiring, <code>R[G]</code> has a <strong>left</strong> <code>R[H]</code>-basis indexed by
 <strong>right cosets</strong> <code>H * g</code>; finite index gives module finiteness.
 No normality is required for these coset constructions.
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md#subgroup-ideals-and-coset-bases">Statements</a> ·
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/SubgroupIdeals.md">subgroup guide</a>.</li><li><strong>Coefficient and index quotients.</strong> Over semirings, extension of any left
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#subgroup-ideals-and-coset-bases">Statements</a> ·
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/SubgroupIdeals.md">subgroup guide</a>.</li><li><strong>Coefficient and index quotients.</strong> Over semirings, extension of any left
 coefficient ideal is characterized coefficientwise. For any semiring
 homomorphism and monoid, coefficient change preserves and reflects zero
 kernel powers at each fixed exponent, including zero, without surjectivity.
@@ -99,27 +99,39 @@ kernel-subgroup difference ideal. For arbitrary maps the quotient is the
 composite's range subsemiring; surjective <code>f</code> gives <code>S[MonoidHom.mrange φ]</code>, and
 surjectivity of both gives <code>S[M]</code>. Normal-subgroup quotients and unchanged
 coefficient kernel/range quotients have full basis and factorization laws.
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md#coefficient-and-index-quotients">Statements and guides</a>.</li><li><strong>Commuting scalar actions and central idempotents.</strong> Commuting ring
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#coefficient-and-index-quotients">Statements and guides</a>.</li><li><strong>Commuting scalar actions and central idempotents.</strong> Commuting ring
 actions on a module remain commuting after quotienting both rings by
 annihilating ideals; two-sidedness is needed for quotient rings, not just
 their scalar actions. For any ring <code>A</code> and two-sided ideal <code>I</code>, the
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/GroupRings/RingTheory/Ideal/SquareQuotient.lean">first ideal-square quotient</a>
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/GroupRings/RingTheory/Ideal/SquareQuotient.lean">first ideal-square quotient</a>
 <code>I/I²</code> has commuting left and right <code>A ⧸ I</code>-actions. In any ring, an idempotent
 central modulo a nilpotent two-sided ideal <code>I</code> is central if <strong>both</strong>
 off-diagonal corner maps send <code>I</code> into <code>I²</code>; quotient centrality alone is
 insufficient.
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md#given-modules-and-scalar-restriction">Actions</a> ·
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md#chain-conditions-and-regularity">centrality criterion</a>.</li><li><strong>Central summands detected by characters.</strong> For a commutative ring <code>R</code>
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#given-modules-and-scalar-restriction">Actions</a> ·
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#chain-conditions-and-regularity">centrality criterion</a>.</li><li><strong>Central summands detected by characters.</strong> For a commutative ring <code>R</code>
 and an <code>R</code>-algebra <code>A</code> Artinian on both sides, every <code>χ : A →ₐ[R] R</code>
 is one on a central idempotent whose principal left ideal is finite over
 <code>R</code> with its inherited action. Zero and nonreduced base rings are allowed;
 the whole algebra need not be finite over <code>R</code>.
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md#central-summands-finite-over-the-base-ring">Statement and proof strategy</a>.</li><li><strong>Finite presentation.</strong> For any commutative ring <code>R</code> and finitely generated
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#central-summands-finite-over-the-base-ring">Statement and proof strategy</a>.</li><li><strong>Uniform binomial kernels.</strong> For any monoid homomorphism and any ring,
+its monoid-algebra kernel is the left span of equal-image unit-basis
+differences. If the source is finitely generated and commutative, one finite
+family of index pairs works over <strong>every</strong> coefficient ring. Neither the
+target monoid nor the coefficients need commute; no coefficient-Noetherian
+hypothesis is needed.
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#uniform-binomial-kernels">Statements and modules</a>.</li><li><strong>Finite type.</strong> For any commutative semiring <code>R</code> and any monoid <code>M</code>,
+<code>Algebra.FiniteType R (MonoidAlgebra R M)</code> is equivalent to
+<code>Monoid.FG M ∨ Subsingleton R</code>. Nontrivial coefficients give simply finite
+generation of <code>M</code>; neither commutativity nor cancellation of <code>M</code> is needed.
+The additive-monoid counterpart uses the same criterion.
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/GroupRings/MonoidAlgebra/FiniteType.lean">Module</a> ·
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#finite-type">statements and use</a>.</li><li><strong>Finite presentation.</strong> For any commutative ring <code>R</code> and finitely generated
 commutative monoid <code>M</code>, the canonical <code>R</code>-algebra <code>R[M]</code> is finitely presented.
 The additive-monoid version is also an instance. Coefficients need not be
 Noetherian, and exponents need not be cancellative or finite.
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/GroupRings/MonoidAlgebra/FinitePresentation.lean">Module</a> ·
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md#finite-presentation">statements and use</a>.</li><li><strong>Chain conditions and regularity.</strong> For any ring <code>R</code> and finitely generated
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/GroupRings/MonoidAlgebra/FinitePresentation.lean">Module</a> ·
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#finite-presentation">statements and use</a>.</li><li><strong>Chain conditions and regularity.</strong> For any ring <code>R</code> and finitely generated
 <strong>commutative</strong> monoid <code>M</code>, <code>R[M]</code> is left-Noetherian iff <code>R</code> is.
 For a commutative group <code>G</code>, the exact criterion is left-Noetherianity of <code>R</code>
 and <code>Subsingleton R ∨ Group.FG G</code>. A finite-index finitely generated
@@ -140,7 +152,7 @@ Over any ring, infinite-order elements of cancellative monoids give regular
 monic basis differences, forcing torsion in left-Artinian monoid algebras
 with nontrivial coefficients. For any ring <code>R</code> and either a left-cancellative
 or a right-cancellative monoid <code>G</code>,
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/GroupRings/MonoidAlgebra/Artinian.lean"><code>MonoidAlgebra.isArtinianRing_iff_of_isLeftCancelMul</code> and
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/GroupRings/MonoidAlgebra/Artinian.lean"><code>MonoidAlgebra.isArtinianRing_iff_of_isLeftCancelMul</code> and
 <code>MonoidAlgebra.isArtinianRing_iff</code></a>
 give that <code>R[G]</code> is left-Artinian iff <code>R</code> is left-Artinian and
 <code>Subsingleton R ∨ Finite G</code>. The corresponding <code>finite_of_isArtinianRing</code>
@@ -156,16 +168,16 @@ universes are independent, and no commutativity or right-Artinian hypothesis
 is imposed.
 Separately, <code>LaurentPolynomial R</code> is left-Artinian iff <code>R</code> is subsingleton,
 even for noncommutative or zero rings.
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md#chain-conditions-and-regularity">Statements and modules</a>.</li><li><strong>Laurent coordinates.</strong> Supplied coordinates <code>G ≃+ (σ →₀ ℤ)</code> identify an
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#chain-conditions-and-regularity">Statements and modules</a>.</li><li><strong>Laurent coordinates.</strong> Supplied coordinates <code>G ≃+ (σ →₀ ℤ)</code> identify an
 additive commutative group's algebra over a commutative semiring with
 <code>MvLaurentPolynomial σ A</code>. Free abelian groups have canonical coordinates,
 with arbitrary, empty or infinite variable types.
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md#laurent-coordinates">Statements and module</a>.</li><li><strong>Characters and right convolution.</strong> Character evaluations on an additive
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#laurent-coordinates">Statements and module</a>.</li><li><strong>Characters and right convolution.</strong> Character evaluations on an additive
 commutative group <code>G</code> are linearly independent over any field <code>K</code>, even for
 infinite groups without enough roots. For finite <code>G</code>, enough roots of unity
 of exponent <code>Monoid.exponent (Multiplicative G)</code> give a character basis;
 with <code>[Fintype G]</code> they give diagonalization and rank for right convolution,
 whose entry is <code>f (-sigma + tau)</code> and eigenvalue is <code>∑ x, f x * psi x</code> with
 <strong>positive</strong> sign. The eigenvector law needs no enough-roots assumption.
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/HeadlineResults.md#characters-and-right-convolution">Statements</a> ·
-<a href="https://github.com/FormalFrontier/group-rings/blob/22c0d956f714ae6cb8b9609df9740a79b187aacb/docs/FiniteAbelianRightConvolution.md">Fourier guide</a>.</li></ul>
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/HeadlineResults.md#characters-and-right-convolution">Statements</a> ·
+<a href="https://github.com/FormalFrontier/group-rings/blob/9a54cfdd922de4980accd7091f2e66d2973af6e9/docs/FiniteAbelianRightConvolution.md">Fourier guide</a>.</li></ul>

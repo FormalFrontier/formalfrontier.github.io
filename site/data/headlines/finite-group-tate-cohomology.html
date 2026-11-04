@@ -1,24 +1,24 @@
 <ul><li><strong>Natural norms.</strong> For a commutative scalar ring and finite group, the
-<a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/96ce4463091aca577e548c1fb9b13042aa673d2f/FiniteGroupTateCohomology/Norm.lean#L29">norm from coinvariants to invariants</a>
+<a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/70dfce5f7a8c78fb0137c0b799c88d483e7a003a/FiniteGroupTateCohomology/Norm.lean#L29">norm from coinvariants to invariants</a>
 is natural in the coefficient representation. For a finite normal subgroup
 of an arbitrary ambient group, the
-<a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/96ce4463091aca577e548c1fb9b13042aa673d2f/FiniteGroupTateCohomology/Norm.lean#L102">residual-quotient-equivariant norm</a>
+<a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/70dfce5f7a8c78fb0137c0b799c88d483e7a003a/FiniteGroupTateCohomology/Norm.lean#L102">residual-quotient-equivariant norm</a>
 is natural as well; the ambient group need not be finite or commutative.
 This module permits independent scalar, group and coefficient universes.</li><li><strong>Exceptional degrees.</strong> The
-<a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/96ce4463091aca577e548c1fb9b13042aa673d2f/FiniteGroupTateCohomology/Basic.lean#L285">exact norm sequence</a>
+<a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/70dfce5f7a8c78fb0137c0b799c88d483e7a003a/FiniteGroupTateCohomology/Basic.lean#L285">exact norm sequence</a>
 <code>Tate⁻¹ → M_G → M^G → Tate⁰</code> identifies degrees −1 and 0 naturally with
 the norm's kernel and cokernel. Both
-<a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/96ce4463091aca577e548c1fb9b13042aa673d2f/FiniteGroupTateCohomology/Basic.lean#L352">natural isomorphisms</a>
-(including their <a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/96ce4463091aca577e548c1fb9b13042aa673d2f/FiniteGroupTateCohomology/Basic.lean#L452">component identities</a>)
+<a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/70dfce5f7a8c78fb0137c0b799c88d483e7a003a/FiniteGroupTateCohomology/Basic.lean#L352">natural isomorphisms</a>
+(including their <a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/70dfce5f7a8c78fb0137c0b799c88d483e7a003a/FiniteGroupTateCohomology/Basic.lean#L452">component identities</a>)
 are shipped, not proposed; this layer inherits the same-universe boundary
 of the pinned Tate-complex API.</li><li><strong>Fixed-element coefficient functors.</strong> For an element <code>g</code> of a finite
-commutative group, the <a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/96ce4463091aca577e548c1fb9b13042aa673d2f/FiniteGroupTateCohomology/CyclicModelFunctor.lean#L127">even</a>
-and <a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/96ce4463091aca577e548c1fb9b13042aa673d2f/FiniteGroupTateCohomology/CyclicModelFunctor.lean#L133">odd</a>
+commutative group, the <a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/70dfce5f7a8c78fb0137c0b799c88d483e7a003a/FiniteGroupTateCohomology/CyclicModelFunctor.lean#L127">even</a>
+and <a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/70dfce5f7a8c78fb0137c0b799c88d483e7a003a/FiniteGroupTateCohomology/CyclicModelFunctor.lean#L133">odd</a>
 alternating <code>N</code>/<code>g−1</code> homology models are functorial in coefficients.
 This construction does not require <code>g</code> to generate the group.</li><li><strong>Objectwise additive period two.</strong> With a chosen element satisfying
 <code>∀ x, x ∈ Subgroup.zpowers g</code>, the
-<a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/96ce4463091aca577e548c1fb9b13042aa673d2f/FiniteGroupTateCohomology/CyclicPeriodicity.lean#L197">all-integer Tate comparisons</a>
-give <a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/96ce4463091aca577e548c1fb9b13042aa673d2f/FiniteGroupTateCohomology/CyclicPeriodicity.lean#L305">period-two isomorphisms</a>.
-<a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/96ce4463091aca577e548c1fb9b13042aa673d2f/FiniteGroupTateCohomology/CyclicPeriodicity.lean#L262">Same-parity comparisons</a>
+<a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/70dfce5f7a8c78fb0137c0b799c88d483e7a003a/FiniteGroupTateCohomology/CyclicPeriodicity.lean#L197">all-integer Tate comparisons</a>
+give <a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/70dfce5f7a8c78fb0137c0b799c88d483e7a003a/FiniteGroupTateCohomology/CyclicPeriodicity.lean#L305">period-two isomorphisms</a>.
+<a href="https://github.com/FormalFrontier/finite-group-tate-cohomology/blob/70dfce5f7a8c78fb0137c0b799c88d483e7a003a/FiniteGroupTateCohomology/CyclicPeriodicity.lean#L262">Same-parity comparisons</a>
 have identity, inverse and telescoping laws; these Tate comparisons are
 <strong>objectwise</strong>, not claimed natural in the coefficient representation.</li></ul>

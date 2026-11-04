@@ -1,22 +1,22 @@
-<ul><li><a href="https://github.com/FormalFrontier/simplicial-rings/blob/034080a407653019c0d24662ab9c540380397178/SimplicialRings/CentralPolynomialSimplex.lean"><code>PolyRing R n</code></a> has <code>n</code> central
+<ul><li><a href="https://github.com/FormalFrontier/simplicial-rings/blob/728785746bd0ddcca62c91cf3f50507ec71107ce/SimplicialRings/CentralPolynomialSimplex.lean"><code>PolyRing R n</code></a> has <code>n</code> central
 indeterminates over any <code>Ring R</code>; homogeneous
-<a href="https://github.com/FormalFrontier/simplicial-rings/blob/034080a407653019c0d24662ab9c540380397178/SimplicialRings/CentralPolynomialSimplex.lean"><code>coordinate</code></a> values sum to one.
-<a href="https://github.com/FormalFrontier/simplicial-rings/blob/034080a407653019c0d24662ab9c540380397178/SimplicialRings/CentralPolynomialSimplex.lean"><code>substitute</code></a> evaluates free
+<a href="https://github.com/FormalFrontier/simplicial-rings/blob/728785746bd0ddcca62c91cf3f50507ec71107ce/SimplicialRings/CentralPolynomialSimplex.lean"><code>coordinate</code></a> values sum to one.
+<a href="https://github.com/FormalFrontier/simplicial-rings/blob/728785746bd0ddcca62c91cf3f50507ec71107ce/SimplicialRings/CentralPolynomialSimplex.lean"><code>substitute</code></a> evaluates free
 generators at <strong>whole-target-center</strong> elements (a sufficient, not necessarily
-minimal, condition); <a href="https://github.com/FormalFrontier/simplicial-rings/blob/034080a407653019c0d24662ab9c540380397178/SimplicialRings/CentralPolynomialSimplex.lean"><code>hom_ext</code></a>
-determines ring maps by coefficients and generators.</li><li><a href="https://github.com/FormalFrontier/simplicial-rings/blob/034080a407653019c0d24662ab9c540380397178/SimplicialRings/CentralPolynomialSimplex.lean"><code>simplexFunctor</code></a> sends a ring
+minimal, condition); <a href="https://github.com/FormalFrontier/simplicial-rings/blob/728785746bd0ddcca62c91cf3f50507ec71107ce/SimplicialRings/CentralPolynomialSimplex.lean"><code>hom_ext</code></a>
+determines ring maps by coefficients and generators.</li><li><a href="https://github.com/FormalFrontier/simplicial-rings/blob/728785746bd0ddcca62c91cf3f50507ec71107ce/SimplicialRings/CentralPolynomialSimplex.lean"><code>simplexFunctor</code></a> sends a ring
 to an actual simplicial ring, with contravariant
-<a href="https://github.com/FormalFrontier/simplicial-rings/blob/034080a407653019c0d24662ab9c540380397178/SimplicialRings/CentralPolynomialSimplex.lean"><code>ordinalMap</code></a> for every ordinal
+<a href="https://github.com/FormalFrontier/simplicial-rings/blob/728785746bd0ddcca62c91cf3f50507ec71107ce/SimplicialRings/CentralPolynomialSimplex.lean"><code>ordinalMap</code></a> for every ordinal
 arrow, including empty fibres. Polynomial
-<a href="https://github.com/FormalFrontier/simplicial-rings/blob/034080a407653019c0d24662ab9c540380397178/SimplicialRings/CentralPolynomialSimplex.lean"><code>constantInclusion</code></a> followed
-by <a href="https://github.com/FormalFrontier/simplicial-rings/blob/034080a407653019c0d24662ab9c540380397178/SimplicialRings/CentralPolynomialSimplex.lean"><code>evalAtZero</code></a> is strictly
-the identity on the unextended simplex; both maps are coefficient-natural.</li><li><a href="https://github.com/FormalFrontier/simplicial-rings/blob/034080a407653019c0d24662ab9c540380397178/SimplicialRings/CentralPolynomialSimplex/Homotopy.lean"><code>contraction</code></a> is a
+<a href="https://github.com/FormalFrontier/simplicial-rings/blob/728785746bd0ddcca62c91cf3f50507ec71107ce/SimplicialRings/CentralPolynomialSimplex.lean"><code>constantInclusion</code></a> followed
+by <a href="https://github.com/FormalFrontier/simplicial-rings/blob/728785746bd0ddcca62c91cf3f50507ec71107ce/SimplicialRings/CentralPolynomialSimplex.lean"><code>evalAtZero</code></a> is strictly
+the identity on the unextended simplex; both maps are coefficient-natural.</li><li><a href="https://github.com/FormalFrontier/simplicial-rings/blob/728785746bd0ddcca62c91cf3f50507ec71107ce/SimplicialRings/CentralPolynomialSimplex/Homotopy.lean"><code>contraction</code></a> is a
 native seven-identity <code>SimplicialObject.Homotopy</code> from evaluation-then-inclusion
 to the identity on the polynomially extended simplex. Its first face is the
 <strong>identity</strong> endpoint and its last face is <strong>evaluation-then-inclusion</strong>;
-<a href="https://github.com/FormalFrontier/simplicial-rings/blob/034080a407653019c0d24662ab9c540380397178/SimplicialRings/CentralPolynomialSimplex/Homotopy.lean"><code>homotopyMap_natural</code></a>
+<a href="https://github.com/FormalFrontier/simplicial-rings/blob/728785746bd0ddcca62c91cf3f50507ec71107ce/SimplicialRings/CentralPolynomialSimplex/Homotopy.lean"><code>homotopyMap_natural</code></a>
 handles every unital coefficient map. Whiskering along a supplied covariant
 functor uses mathlib's existing <code>Homotopy.whiskerRight</code>, not a new wrapper here.</li></ul>
-<p>See the <a href="https://github.com/FormalFrontier/simplicial-rings/blob/034080a407653019c0d24662ab9c540380397178/docs/CentralPolynomialSimplex.md">simplex guide</a> and
-<a href="https://github.com/FormalFrontier/simplicial-rings/blob/034080a407653019c0d24662ab9c540380397178/docs/CentralPolynomialSimplexHomotopy.md">homotopy guide</a> for the precise
+<p>See the <a href="https://github.com/FormalFrontier/simplicial-rings/blob/728785746bd0ddcca62c91cf3f50507ec71107ce/docs/CentralPolynomialSimplex.md">simplex guide</a> and
+<a href="https://github.com/FormalFrontier/simplicial-rings/blob/728785746bd0ddcca62c91cf3f50507ec71107ce/docs/CentralPolynomialSimplexHomotopy.md">homotopy guide</a> for the precise
 coordinate, degree, face, degeneracy and universe conventions.</p>

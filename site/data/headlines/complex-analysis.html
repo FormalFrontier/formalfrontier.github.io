@@ -1,33 +1,33 @@
 <ul><li><strong>Finite-dimensional differentiability implies analyticity</strong>
-(<a href="https://github.com/FormalFrontier/complex-analysis/blob/ec0323f84c5bf2e6639f4a4a02955264baa94e6a/ComplexAnalysis/Analysis/Complex/FiniteDimensional.lean"><code>DifferentiableOn.analyticOnNhd_of_finiteDimensional</code></a>).
+(<a href="https://github.com/FormalFrontier/complex-analysis/blob/c22c803e257c294edf0528a584b66e2735316717/ComplexAnalysis/Analysis/Complex/FiniteDimensional.lean"><code>DifferentiableOn.analyticOnNhd_of_finiteDimensional</code></a>).
 A complex Fréchet-differentiable map on an open subset of a finite-dimensional
 complex normed space is analytic near every point of that set, when its target
 is a complete complex normed space; dimension zero is included.</li><li><strong>Differentiability–analyticity equivalence</strong>
-(<a href="https://github.com/FormalFrontier/complex-analysis/blob/ec0323f84c5bf2e6639f4a4a02955264baa94e6a/ComplexAnalysis/Analysis/Complex/FiniteDimensional.lean"><code>analyticOnNhd_iff_differentiableOn_of_finiteDimensional</code></a>).
+(<a href="https://github.com/FormalFrontier/complex-analysis/blob/c22c803e257c294edf0528a584b66e2735316717/ComplexAnalysis/Analysis/Complex/FiniteDimensional.lean"><code>analyticOnNhd_iff_differentiableOn_of_finiteDimensional</code></a>).
 On such an open set, analyticity near every point is equivalent to complex
 Fréchet differentiability, under the same source and target hypotheses.</li><li><strong>Polydisc Cauchy formula</strong>
-(<a href="https://github.com/FormalFrontier/complex-analysis/blob/ec0323f84c5bf2e6639f4a4a02955264baa94e6a/ComplexAnalysis/Analysis/Complex/TorusCauchy.lean"><code>DifferentiableOn.torusIntegral_cauchy</code></a>).
+(<a href="https://github.com/FormalFrontier/complex-analysis/blob/c22c803e257c294edf0528a584b66e2735316717/ComplexAnalysis/Analysis/Complex/TorusCauchy.lean"><code>DifferentiableOn.torusIntegral_cauchy</code></a>).
 A complex-differentiable map on a positive-radius closed coordinate polydisc,
 valued in a complete complex normed space, agrees at interior points with
 its normalized torus boundary integral.</li><li><strong>Polynomial boundary degree counts interior roots</strong>
-(<a href="https://github.com/FormalFrontier/complex-analysis/blob/ec0323f84c5bf2e6639f4a4a02955264baa94e6a/ComplexAnalysis/Analysis/Complex/PolynomialBoundary.lean"><code>Polynomial.degree_normalizedCircleMap</code></a>).
+(<a href="https://github.com/FormalFrontier/complex-analysis/blob/c22c803e257c294edf0528a584b66e2735316717/ComplexAnalysis/Analysis/Complex/PolynomialBoundary.lean"><code>Polynomial.degree_normalizedCircleMap</code></a>).
 A complex polynomial with no zeros on the unit circle gives an unbased continuous
 circle self-map by normalizing its values. Its degree equals the number of roots
 strictly inside the unit disk, counted with multiset multiplicity. Nonmonic
 polynomials, repeated roots and nonzero constants of arbitrary phase are included.</li><li><strong>Exterior polynomial root-scaling homotopy</strong>
-(<a href="https://github.com/FormalFrontier/complex-analysis/blob/ec0323f84c5bf2e6639f4a4a02955264baa94e6a/ComplexAnalysis/Analysis/Complex/PolynomialExterior.lean"><code>Polynomial.normalizedCircleMapScaleRootsHomotopy</code></a>).
+(<a href="https://github.com/FormalFrontier/complex-analysis/blob/c22c803e257c294edf0528a584b66e2735316717/ComplexAnalysis/Analysis/Complex/PolynomialExterior.lean"><code>Polynomial.normalizedCircleMapScaleRootsHomotopy</code></a>).
 If <code>p.eval w ≠ 0</code> whenever <code>1 ≤ ‖w‖</code>, root scaling over the real unit interval
 joins the normalized leading monomial to the canonical normalized boundary map.
 Its characteristic value is <code>normalize ((p.scaleRoots (t : ℂ)).eval z)</code>.
 The leading coefficient's arbitrary phase is retained; the corresponding degree
 statement is <code>Circle.degree (p.normalizedCircleMap _) = (p.natDegree : ℤ)</code>.</li><li><strong>Compact scalar-kernel operators</strong>
-(<a href="https://github.com/FormalFrontier/complex-analysis/blob/ec0323f84c5bf2e6639f4a4a02955264baa94e6a/ComplexAnalysis/MeasureTheory/Integral/Kernel.lean"><code>ContinuousMap.kernelOperator</code></a>).
+(<a href="https://github.com/FormalFrontier/complex-analysis/blob/c22c803e257c294edf0528a584b66e2735316717/ComplexAnalysis/MeasureTheory/Integral/Kernel.lean"><code>ContinuousMap.kernelOperator</code></a>).
 A continuous scalar kernel on <code>X × Y</code>, with compact <code>Y</code> and a finite Borel
 measure, gives a compact complex-linear map from <code>L²(Y, μ)</code> to <code>C(X, ℂ)</code>.
 The parameter space <code>X</code> is arbitrary; compactness of <code>X</code> is needed only for
 the sup-norm bound. The construction uses a generic transpose of an
 operator-norm-continuous field, compact whenever its normed target is proper.</li><li><strong>Detecting finite eigenspaces of compact positive squares</strong>
-(<a href="https://github.com/FormalFrontier/complex-analysis/blob/ec0323f84c5bf2e6639f4a4a02955264baa94e6a/ComplexAnalysis/Analysis/InnerProductSpace/CompactOperator.lean"><code>ContinuousLinearMap.exists_eigenvector_comp_adjoint_detected</code></a>).
+(<a href="https://github.com/FormalFrontier/complex-analysis/blob/c22c803e257c294edf0528a584b66e2735316717/ComplexAnalysis/Analysis/InnerProductSpace/CompactOperator.lean"><code>ContinuousLinearMap.exists_eigenvector_comp_adjoint_detected</code></a>).
 On an arbitrary complete real or complex Hilbert space, compact <code>T</code> and
 continuous linear <code>B</code> with <code>B.comp T ≠ 0</code> give a nonzero eigenvalue of
 <code>T.comp T.adjoint</code> whose finite-dimensional eigenspace contains a vector

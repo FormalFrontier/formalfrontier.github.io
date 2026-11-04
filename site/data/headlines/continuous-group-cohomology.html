@@ -2,16 +2,16 @@
 <code>k</code> equipped with a topology. The group, discreteness and action-continuity
 hypotheses are specified separately below; foundations come from Mathlib.</p>
 <h4>Finite-quotient descent, torsion and the topological colimit</h4>
-<p>See <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/ContinuousGroupCohomology/CompactDiscreteTorsion.lean"><code>CompactDiscreteTorsion</code></a>
-and <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/ContinuousGroupCohomology/FiniteStageColimit.lean"><code>FiniteStageColimit</code></a> for these APIs.</p>
+<p>See <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/ContinuousGroupCohomology/CompactDiscreteTorsion.lean"><code>CompactDiscreteTorsion</code></a>
+and <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/ContinuousGroupCohomology/FiniteStageColimit.lean"><code>FiniteStageColimit</code></a> for these APIs.</p>
 <p>For a compact topological group <code>G</code> and discrete <code>X : TopRep k G</code> over a
 ring with a supplied topology, the homogeneous cochain complex is the colimit
 of its open-normal finite-quotient cochain complexes, with coefficients in
 <code>X^U</code> at a stage <code>U</code>. This is a colimit in complexes of topological modules
 and separately in every degree. Joint continuity of the action is not needed.
-The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/ContinuousGroupCohomology/OpenNormalDiagram.lean">quotient-stage diagram</a>
+The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/ContinuousGroupCohomology/OpenNormalDiagram.lean">quotient-stage diagram</a>
 and inflation cocone also have coefficient naturality without compactness or
-discreteness assumptions. The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/examples/FiniteStageColimitNative.lean">integer sign example</a>
+discreteness assumptions. The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/examples/FiniteStageColimitNative.lean">integer sign example</a>
 uses a nonconstant cochain and checks the descendant equation, uniqueness of
 its lift at a chosen stage, and compatibility with every refinement.</p>
 <p>Separately, for a compact topological group <code>G</code> and discrete
@@ -30,7 +30,7 @@ cochain construction still uses joint continuity.</p>
 <h4>Additivity in coefficient maps in every degree</h4>
 <p>For <code>[Ring k] [TopologicalSpace k]</code>, topological groups <code>H</code> and <code>G</code>, and a
 continuous homomorphism <code>φ : H →ₜ* G</code>, the
-<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/ContinuousGroupCohomology/ContinuousCohomologyFunctor.lean">coefficient-map API</a>
+<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/ContinuousGroupCohomology/ContinuousCohomologyFunctor.lean">coefficient-map API</a>
 proves additivity and preservation of zero in the coefficient morphism in
 <strong>every natural degree, including zero</strong>. For a fixed acting group,
 <code>ContinuousCohomology.coefficientFunctor n</code> is an additive functor on topological
@@ -40,31 +40,31 @@ fixed-group functor with invariants; its forward and inverse components are
 the canonical <code>ContinuousCohomology.zeroIso</code> maps. The same ring with its supplied
 topology suffices: neither commutativity nor continuity of the ring operations,
 compactness of the groups nor discreteness of the coefficients is required.
-The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/CGCExamples/CoefficientAdditivity.lean">integer model</a> uses the one-element
+The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/CGCExamples/CoefficientAdditivity.lean">integer model</a> uses the one-element
 group <code>PUnit</code> acting trivially on <code>ℤ</code>: the sum of two identity coefficient
 morphisms doubles every class in every degree. Its degree-zero calculation uses
 <code>zeroNatIso</code> naturality to send the class with invariant value <code>1</code> to a nonzero
 class with invariant value <code>2</code>.</p>
 <h4>Positive coinduced cohomology after closed restriction</h4>
 <p>For compact topological groups and discrete coefficients,
-<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/ContinuousGroupCohomology/CoinducedAcyclic.lean">diagonal insertion</a>
+<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/ContinuousGroupCohomology/CoinducedAcyclic.lean">diagonal insertion</a>
 gives a map on the recursively iterated coinduced homogeneous cochains with an
 explicit evaluation law. This insertion contracts the cochain complex in every
 positive degree, so continuous cohomology with coinduced discrete coefficients
 vanishes there. Degree-zero vanishing is false even for the two-element group
 acting trivially on nonzero integers (see the
-<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/CGCExamples/CoinducedAcyclic.lean">two-element-group client</a>).
-The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/ContinuousGroupCohomology/ContinuousCohomologyFunctor.lean">coefficient functor</a>
+<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/CGCExamples/CoinducedAcyclic.lean">two-element-group client</a>).
+The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/ContinuousGroupCohomology/ContinuousCohomologyFunctor.lean">coefficient functor</a>
 for a fixed acting group and degree uses Mathlib's continuous-cohomology maps;
 its object and morphism laws transport positive vanishing across coefficient
 isomorphisms in the same group. For compact Hausdorff totally disconnected
-<code>G</code>, the <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/ContinuousGroupCohomology/ProfiniteCoinducedAcyclic.lean">closed-subgroup positive-vanishing theorem</a>
+<code>G</code>, the <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/ContinuousGroupCohomology/ProfiniteCoinducedAcyclic.lean">closed-subgroup positive-vanishing theorem</a>
 then applies to every closed <code>H</code>, and also to restrictions of representations
 isomorphic to <code>TopRep.coind₁ B</code>. The restricted representation is <code>H</code>-coinduced
 from all of <code>C(G ⧸ H, B)</code> with its generally nontrivial pointwise <code>H</code>-action.
 Only discrete <code>B</code> is needed; neither openness or normality of <code>H</code> nor joint
 continuity of the coefficient action is required. The finite signed
-<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/CGCExamples/CoinducedRestriction.lean"><code>S₃</code> clients</a> instantiate positive
+<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/CGCExamples/CoinducedRestriction.lean"><code>S₃</code> clients</a> instantiate positive
 vanishing at a nonnormal subgroup, not at a closed nonopen subgroup. These
 are strictly positive-degree conclusions, corresponding to the closed-subgroup
 clause of Neukirch–Schmidt–Wingberg, I §3, Proposition 1.3.7; they do not
@@ -72,7 +72,7 @@ assert degree-zero vanishing or all-integer Tate acyclicity.</p>
 <h4>Normal-quotient coinduction</h4>
 <p>For <code>[Ring k] [TopologicalSpace k]</code>, a compact topological group <code>G</code>, any
 normal subgroup <code>N</code> and a discrete, jointly continuous <code>B : TopRep k G</code>, the
-<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/ContinuousGroupCohomology/CoinducedInvariants.lean">normal-quotient coinduction equivalence</a>
+<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/ContinuousGroupCohomology/CoinducedInvariants.lean">normal-quotient coinduction equivalence</a>
 identifies <code>TopRep.quotientInvariants N (TopRep.coind₁ B)</code> with
 <code>TopRep.coind₁ (TopRep.of (ContRepresentation.trivial k (G ⧸ N) B))</code>
 as representations of <code>G ⧸ N</code>. This is universe-polymorphic and requires no
@@ -80,13 +80,13 @@ closedness or openness of <code>N</code>, Hausdorff condition or choice of secti
 forward and inverse maps satisfy <code>(P f)(mk N t) = B.ρ t⁻¹ (f t)</code> and
 <code>(J F)(t) = B.ρ t (F (mk N t))</code>. The right-hand coefficient is the <strong>whole</strong>
 <code>B</code>, not <code>B^N</code>, and has trivial quotient action. The
-<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/CGCExamples/CoinducedInvariants.lean">sign-product and full-group clients</a>
+<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/CGCExamples/CoinducedInvariants.lean">sign-product and full-group clients</a>
 exhibit <code>B^N = 0</code> with nonzero <code>B</code>, a quotient function moved by the residual
 quotient action, and an invariant function whose value at the identity is
 moved by <code>N</code>.</p>
 <h4>Degreewise exactness under coefficient embeddings</h4>
 <p>For any topological group <code>G</code> and <code>A B C : TopRep.{max v w} k G</code>,
-<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/ContinuousGroupCohomology/CochainExactness.lean"><code>cochainsMap_exact_of_isEmbedding</code></a>
+<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/ContinuousGroupCohomology/CochainExactness.lean"><code>cochainsMap_exact_of_isEmbedding</code></a>
 proves that an exact underlying coefficient row <code>A → B → C</code> whose first map is a
 topological embedding induces an exact row of homogeneous invariant cochains in
 every natural degree. No local compactness, coefficient discreteness or extra
@@ -96,7 +96,7 @@ exactness, not topological strictness or an exactness assertion on cohomology.
 The separate cochain-surjectivity theorem still assumes locally compact <code>G</code>,
 a discrete target and jointly continuous source coefficients.</p>
 <h4>Algebraic connecting maps, naturality and initial invariants</h4>
-<p>The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/docs/CohomologyExactSequence.md">algebraic connecting-map guide</a> describes
+<p>The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/docs/CohomologyExactSequence.md">algebraic connecting-map guide</a> describes
 a connecting <code>k</code>-linear map in each natural degree and proves the three
 recurring exactness assertions for the underlying modules of continuous cohomology.
 They use locally compact <code>G</code>, discrete <code>B</code> and <code>C</code>, jointly continuous action
@@ -110,7 +110,7 @@ whose forward arrow is the existing connector, for every natural <code>n</code>,
 zero. They do not establish continuity of this new map. For the integer sign action on
 <code>ℤ --×2→ ℤ → ZMod 2</code>, the quotient invariant <code>1</code> has a nonzero connecting
 class; its lack of an invariant integer lift is independently verified.
-The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/CGCExamples/ConnectingIsomorphism.lean">coinduced two-point row</a>
+The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/CGCExamples/ConnectingIsomorphism.lean">coinduced two-point row</a>
 embeds trivial integers as constant functions and projects to signed integers
 by subtracting the values at the two units. Its middle cohomology vanishes in
 degrees one and two; the existing exactness statements show that its degree-one
@@ -123,37 +123,37 @@ connector is not mono; for the distinct group <code>ℤˣ</code>, the middle sig
 coefficient <code>B</code> has <code>H⁰(G,B) = 0</code> but its degree-zero connector is not epi.
 In that second row, the final coefficient <code>C</code> is the zero representation on <code>PUnit</code>.</p>
 <p>Under the same short-exact-row and topological hypotheses, the
-<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/ContinuousGroupCohomology/InitialInvariantsExactSequence.lean">initial-invariants module</a>
+<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/ContinuousGroupCohomology/InitialInvariantsExactSequence.lean">initial-invariants module</a>
 proves exactness of the underlying-module segment
 <code>0 → Aᴳ → Bᴳ → Cᴳ → H¹(G,A) → H¹(G,B) → H¹(G,C)</code> at its five internal positions.
 It uses Mathlib's invariant functor and natural degree-zero isomorphism and the
 existing algebraic connector. The coefficient-level lemmas
 <code>TopRep.mapInvariants_injective</code> and <code>TopRep.exact_mapInvariants</code> have weaker
 hypotheses. Their earlier <code>ContinuousCohomology</code> names remain deprecated aliases. The
-<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/CGCExamples/InitialInvariantsExactSequence.lean">example</a> checks a nonzero
+<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/CGCExamples/InitialInvariantsExactSequence.lean">example</a> checks a nonzero
 displayed invariant inclusion and a nonsplit sign-action boundary. Its
 coefficient-level obstruction and existing nonzero connector are independent
 of the segment theorem. Neither surjectivity at <code>H¹(G,C)</code> nor continuity
 of the connector is claimed.</p>
 <p>For a ring with a supplied topology and any monoid,
-<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/ContinuousGroupCohomology/TopRepMonomorphisms.lean"><code>TopRep.mono_iff_injective</code></a>
+<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/ContinuousGroupCohomology/TopRepMonomorphisms.lean"><code>TopRep.mono_iff_injective</code></a>
 characterizes monomorphisms by injectivity, with independent ring, monoid and
 carrier universes. The action operators are individually continuous; no jointly
 continuous action or topology on the monoid is assumed. For topological groups,
 <code>ContinuousCohomology.map_zero_mono</code> preserves monicity under any continuous
 group homomorphism, and the existing <code>coefficientFunctor 0</code> preserves
 monomorphisms. No group-map surjectivity or all-degree preservation is asserted.
-The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/ContinuousGroupCohomologyExamples/CoefficientMonicity.lean">integer-doubling example</a>
+The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/ContinuousGroupCohomologyExamples/CoefficientMonicity.lean">integer-doubling example</a>
 uses a nonsurjective map of the two-element group and nonzero degree-zero classes.</p>
-<p>The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/ContinuousGroupCohomology/ConnectingNaturality.lean">coefficient-naturality theorem</a>
+<p>The <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/ContinuousGroupCohomology/ConnectingNaturality.lean">coefficient-naturality theorem</a>
 proves that, for two short exact coefficient sequences over the
 same locally compact <code>G</code>, with the preceding discreteness and joint-continuity
 hypotheses in each row, commuting coefficient maps <code>(α, β, γ)</code>
 give <code>δ ≫ Hⁿ⁺¹(α) = Hⁿ(γ) ≫ δ′</code> for every natural degree. This is an equality
 of underlying-module maps, not continuity of <code>δ</code>, change-of-group naturality,
 or a topological delta-functor. The
-<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/CGCExamples/ConnectingNaturality.lean">nonidentity sign-sequence client</a>
+<a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/CGCExamples/ConnectingNaturality.lean">nonidentity sign-sequence client</a>
 independently verifies the coefficient squares and a nonzero boundary, then
 applies the naturality theorem.</p>
-<p>See <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/61e5e2616b257834b7d65a0050318f0d261bc790/docs/Results.md">Results and use</a> for the other constructions, full
+<p>See <a href="https://github.com/FormalFrontier/continuous-group-cohomology/blob/4434e3f215302e5c9ac4214c27646d0d21884169/docs/Results.md">Results and use</a> for the other constructions, full
 module boundaries, conventions and client map.</p>

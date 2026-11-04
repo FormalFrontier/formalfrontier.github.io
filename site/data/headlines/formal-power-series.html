@@ -10,8 +10,8 @@ including inverse factors and the empty family.</p>
 <p>This is neither reconstruction nor injectivity: constant units and, under
 <code>[CharP R p]</code>, <code>p</code>-th powers lie in the kernel; even normalized nonidentity
 units can do so. No formal logarithm, lambda/Witt structure, splitting extension
-or Adams operation is asserted. See the <a href="https://github.com/FormalFrontier/formal-power-series/blob/d8d03bb6d7fdaf6cbb753a45df6c0dde8bb94b96/RESULTS.md#weighted-unit-derivative">full formulas and limitations</a>
-and <a href="https://github.com/FormalFrontier/formal-power-series/blob/d8d03bb6d7fdaf6cbb753a45df6c0dde8bb94b96/FormalPowerSeries/UnitLogDerivative.lean">source</a>.</p>
+or Adams operation is asserted. See the <a href="https://github.com/FormalFrontier/formal-power-series/blob/29bdab8c1f57472100a579c97a589effaea11987/RESULTS.md#weighted-unit-derivative">full formulas and limitations</a>
+and <a href="https://github.com/FormalFrontier/formal-power-series/blob/29bdab8c1f57472100a579c97a589effaea11987/FormalPowerSeries/UnitLogDerivative.lean">source</a>.</p>
 <h4>Rational Artin–Hasse exponential</h4>
 <p>The rational formal construction is defined for every natural <code>p</code> and has
 constant and linear coefficients one. For <code>2 ≤ p</code> (composite <code>p</code> allowed), it is
@@ -23,10 +23,10 @@ when <code>k ≤ N</code>. This is coefficientwise, not an infinite-product or a
 convergence assertion. Prime <code>p</code> also gives coefficient p-integrality
 (multiplicative p-adic valuation at most one), by an independent
 Dieudonné–Dwork proof using p-adic divided powers, <strong>not</strong> the Euler identity.
-The rational core does not import p-adic theory. See <a href="https://github.com/FormalFrontier/formal-power-series/blob/d8d03bb6d7fdaf6cbb753a45df6c0dde8bb94b96/RESULTS.md#rational-artinhasse-exponential">details and examples</a>,
-the <a href="https://github.com/FormalFrontier/formal-power-series/blob/d8d03bb6d7fdaf6cbb753a45df6c0dde8bb94b96/FormalPowerSeries/ArtinHasse.lean">rational core</a>,
-<a href="https://github.com/FormalFrontier/formal-power-series/blob/d8d03bb6d7fdaf6cbb753a45df6c0dde8bb94b96/FormalPowerSeries/ArtinHasseEulerProduct.lean">Euler product</a> and
-<a href="https://github.com/FormalFrontier/formal-power-series/blob/d8d03bb6d7fdaf6cbb753a45df6c0dde8bb94b96/FormalPowerSeries/ArtinHasse/Padic.lean">separate p-adic module</a>.</p>
+The rational core does not import p-adic theory. See <a href="https://github.com/FormalFrontier/formal-power-series/blob/29bdab8c1f57472100a579c97a589effaea11987/RESULTS.md#rational-artinhasse-exponential">details and examples</a>,
+the <a href="https://github.com/FormalFrontier/formal-power-series/blob/29bdab8c1f57472100a579c97a589effaea11987/FormalPowerSeries/ArtinHasse.lean">rational core</a>,
+<a href="https://github.com/FormalFrontier/formal-power-series/blob/29bdab8c1f57472100a579c97a589effaea11987/FormalPowerSeries/ArtinHasseEulerProduct.lean">Euler product</a> and
+<a href="https://github.com/FormalFrontier/formal-power-series/blob/29bdab8c1f57472100a579c97a589effaea11987/FormalPowerSeries/ArtinHasse/Padic.lean">separate p-adic module</a>.</p>
 <h4>Ideal-adically restricted multivariate series</h4>
 <p>For any family <code>q : ∀ i, C →+* Q i</code> of homomorphisms between commutative
 semirings, <code>MvPowerSeries.polynomialReductionSubalgebra σ q</code> consists of
@@ -73,12 +73,12 @@ independently of the polynomial-completion comparison. Identity, composition,
 polynomial and scalar laws hold, and <code>MvPolynomial.adicCompletionEquiv</code>
 commutes with these maps in both directions on all elements. No completeness,
 separation, finite generation or finite-variable hypothesis is required.
-See the <a href="https://github.com/FormalFrontier/formal-power-series/blob/d8d03bb6d7fdaf6cbb753a45df6c0dde8bb94b96/API.md#coefficient-change-arbitrary-variable-maps-and-naturality">map API</a>.</li><li><strong>Linear extension.</strong> Under <code>[IsAdicComplete I R]</code>, every polynomial
+See the <a href="https://github.com/FormalFrontier/formal-power-series/blob/29bdab8c1f57472100a579c97a589effaea11987/API.md#coefficient-change-arbitrary-variable-maps-and-naturality">map API</a>.</li><li><strong>Linear extension.</strong> Under <code>[IsAdicComplete I R]</code>, every polynomial
 <code>R</code>-linear endomorphism extends to an <code>R</code>-linear restricted-series operator
 with finite-level equations. Uniqueness needs <strong>both</strong> agreement on
 polynomials and preservation of <strong>every</strong> coefficientwise reduction kernel;
 no ring-homomorphism extension or intrinsic restricted-ring completeness is
-asserted. See the <a href="https://github.com/FormalFrontier/formal-power-series/blob/d8d03bb6d7fdaf6cbb753a45df6c0dde8bb94b96/FormalPowerSeries/MvPowerSeries/IdealAdicRestricted/LinearExtension/README.md">extension guide</a>.</li><li><strong>Content, leading terms and division.</strong> Separated prevaluation rings give
+asserted. See the <a href="https://github.com/FormalFrontier/formal-power-series/blob/29bdab8c1f57472100a579c97a589effaea11987/FormalPowerSeries/MvPowerSeries/IdealAdicRestricted/LinearExtension/README.md">extension guide</a>.</li><li><strong>Content, leading terms and division.</strong> Separated prevaluation rings give
 selected-coefficient content factorization. Over a valuation domain separated
 for the principal ideal of a parameter in its maximal ideal, intrinsic
 leading terms are polynomials over the actual ring <code>R</code>. Any two supplied
@@ -98,13 +98,13 @@ pair consisting of a restricted unit <code>u</code> and a monic first-variable p
 <code>G</code> of exact degree <code>d</code> with <code>polynomialRestrictedFinFirst _ n G = u * f</code>.
 Actual-coefficient primitivity follows; uniqueness even allows competing
 multipliers not assumed units. <strong><code>n = 0</code> and <code>d = 0</code> are included</strong>. See the
-<a href="https://github.com/FormalFrontier/formal-power-series/blob/d8d03bb6d7fdaf6cbb753a45df6c0dde8bb94b96/FormalPowerSeries/MvPowerSeries/IdealAdicRestricted/FirstVariablePreparation/README.md">preparation guide</a>.</li><li><strong>Generic cofinal support.</strong> For any <code>R</code>-module, <code>I ≤ J</code>, <code>1 ≤ N</code> and
+<a href="https://github.com/FormalFrontier/formal-power-series/blob/29bdab8c1f57472100a579c97a589effaea11987/FormalPowerSeries/MvPowerSeries/IdealAdicRestricted/FirstVariablePreparation/README.md">preparation guide</a>.</li><li><strong>Generic cofinal support.</strong> For any <code>R</code>-module, <code>I ≤ J</code>, <code>1 ≤ N</code> and
 <code>J ^ N ≤ I</code> equate separation, precompleteness and completeness for the two
 filtrations; this separately importable result needs no restricted series.</li></ul>
-<p>See the <a href="https://github.com/FormalFrontier/formal-power-series/blob/d8d03bb6d7fdaf6cbb753a45df6c0dde8bb94b96/RESULTS.md#ideal-adically-restricted-multivariate-series">complete restricted-series results and limitations</a>
-and <a href="https://github.com/FormalFrontier/formal-power-series/blob/d8d03bb6d7fdaf6cbb753a45df6c0dde8bb94b96/FormalPowerSeries/MvPowerSeries/IdealAdicRestricted/README.md">module guide</a>.
+<p>See the <a href="https://github.com/FormalFrontier/formal-power-series/blob/29bdab8c1f57472100a579c97a589effaea11987/RESULTS.md#ideal-adically-restricted-multivariate-series">complete restricted-series results and limitations</a>
+and <a href="https://github.com/FormalFrontier/formal-power-series/blob/29bdab8c1f57472100a579c97a589effaea11987/FormalPowerSeries/MvPowerSeries/IdealAdicRestricted/README.md">module guide</a>.
 These results do not assert norm/radius or variable-adic restrictions, general
 base change, standard-basis existence, or source coverage.</p>
 <p>For completed-coefficient maps, choose one of these direct imports; paths are
 relative to <code>FormalPowerSeries.MvPowerSeries.IdealAdicRestricted</code>.</p>
-<div class="table-wrap"><table><thead><tr><th>Module</th><th>Use</th></tr></thead><tbody><tr><td><a href="https://github.com/FormalFrontier/formal-power-series/blob/d8d03bb6d7fdaf6cbb753a45df6c0dde8bb94b96/FormalPowerSeries/MvPowerSeries/IdealAdicRestricted/CompletionMap.lean"><code>CompletionMap</code></a></td><td>Canonical map between polynomial completions, quotient squares and completed-scalar compatibility</td></tr><tr><td><a href="https://github.com/FormalFrontier/formal-power-series/blob/d8d03bb6d7fdaf6cbb753a45df6c0dde8bb94b96/FormalPowerSeries/MvPowerSeries/IdealAdicRestricted/CompletedRename.lean"><code>CompletedRename</code></a></td><td>Arbitrary variable maps on series over completed coefficients, including infinite fibers</td></tr><tr><td><a href="https://github.com/FormalFrontier/formal-power-series/blob/d8d03bb6d7fdaf6cbb753a45df6c0dde8bb94b96/FormalPowerSeries/MvPowerSeries/IdealAdicRestricted/Naturality.lean"><code>Naturality</code></a></td><td>Coefficient change, joint maps, functoriality and forward/inverse naturality of the completion comparison</td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>Module</th><th>Use</th></tr></thead><tbody><tr><td><a href="https://github.com/FormalFrontier/formal-power-series/blob/29bdab8c1f57472100a579c97a589effaea11987/FormalPowerSeries/MvPowerSeries/IdealAdicRestricted/CompletionMap.lean"><code>CompletionMap</code></a></td><td>Canonical map between polynomial completions, quotient squares and completed-scalar compatibility</td></tr><tr><td><a href="https://github.com/FormalFrontier/formal-power-series/blob/29bdab8c1f57472100a579c97a589effaea11987/FormalPowerSeries/MvPowerSeries/IdealAdicRestricted/CompletedRename.lean"><code>CompletedRename</code></a></td><td>Arbitrary variable maps on series over completed coefficients, including infinite fibers</td></tr><tr><td><a href="https://github.com/FormalFrontier/formal-power-series/blob/29bdab8c1f57472100a579c97a589effaea11987/FormalPowerSeries/MvPowerSeries/IdealAdicRestricted/Naturality.lean"><code>Naturality</code></a></td><td>Coefficient change, joint maps, functoriality and forward/inverse naturality of the completion comparison</td></tr></tbody></table></div>

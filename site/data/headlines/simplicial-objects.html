@@ -1,6 +1,6 @@
 <ul><li><strong>Integral all-simplex chain coordinates</strong>
-(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/ChainCoordinates.lean"><code>chainGroupIsoFinsupp</code></a>,
-<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/ChainComplexCoordinates.lean"><code>chainComplexIsoFinsupp</code></a>).
+(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/ChainCoordinates.lean"><code>chainGroupIsoFinsupp</code></a>,
+<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/ChainComplexCoordinates.lean"><code>chainComplexIsoFinsupp</code></a>).
 For any ring <code>R</code>, <code>AlgebraicTopology.finsuppChainComplexFunctor R</code> gives the
 ordinary-Finsupp alternating-face chain complex, with independent ring and
 simplex universes. Over <code>ℤ</code>, <code>chainComplexIsoFinsupp</code> is a natural isomorphism
@@ -12,25 +12,25 @@ original maps on every chain, not merely on generators. The two summand laws
 still compute lifted integers and unit basis chains. Naturality holds for
 every simplicial map and every chain; pushforwards add coefficients of
 coincident images, without finite-fiber or injectivity assumptions.
-In every degree the <a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/ChainBoundaryCoordinates.lean">boundary coordinates</a>
+In every degree the <a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/ChainBoundaryCoordinates.lean">boundary coordinates</a>
 are the signed sum of face pushforwards. This comparison concerns all simplices,
 not normalized chains or homology. The
-<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjectsTest/ChainCoordinates.lean">standard-point chain</a> is nonzero;
-the <a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjectsTest/ChainBoundaryCoordinates.lean">identity edge of <code>Δ[1]</code></a>
+<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjectsTest/ChainCoordinates.lean">standard-point chain</a> is nonzero;
+the <a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjectsTest/ChainBoundaryCoordinates.lean">identity edge of <code>Δ[1]</code></a>
 has boundary <code>[v₁] - [v₀]</code>, nonzero as a chain, not as a homology class.</li><li><strong>Augmented left décalage and its canonical extra degeneracy</strong>
-(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/LeftDecalage.lean"><code>LeftDecalage</code></a>).
+(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/LeftDecalage.lean"><code>LeftDecalage</code></a>).
 For every simplicial object in any category, <code>P(X)ₙ = Xₙ₊₁</code> augments to <code>X₀</code>,
 with <code>ε₀ = X.δ 1</code>, not in general the ordinary projection <code>X.δ 0</code>.
 No terminal/zero objects, additivity or limits are required. Functoriality and
 naturality are explicit; Mathlib supplies the section and combinatorial homotopy.</li><li><strong>Finite-fiber transfers and coefficient comparison</strong>
-(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/FiniteFiberTransfer.lean"><code>FiniteFiberTransfer</code></a>).
+(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/FiniteFiberTransfer.lean"><code>FiniteFiberTransfer</code></a>).
 In a preadditive category with simplex-indexed coproducts, equifibered simplicial
 maps with finite vertex fibers admit reverse-composing transfers. No fixed sheet
 number is needed. A constant vertex-fiber cardinality <code>d</code> gives pushforward
 after transfer equal to <code>d • id</code> on chains and, with homology, in every degree.
 Additive functors preserving those coproducts commute with transfer; no exactness
 or homology preservation is assumed. Pullback and coefficient laws are included.</li><li><strong>Normalized descent and change of coefficient category</strong>
-(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/Normalization.lean"><code>Normalization</code></a>).
+(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/Normalization.lean"><code>Normalization</code></a>).
 Morphisms between split simplicial objects in a preadditive category descend
 without preserving chosen nondegenerate summands. For preadditive coefficient
 categories with <code>HasCoproducts.{w}</code>, additive functors preserving exactly
@@ -38,9 +38,9 @@ categories with <code>HasCoproducts.{w}</code>, additive functors preserving exa
 compatibly with projection, section, transfers and natural transformations.
 All five category/simplex universes are independent; no exactness or Abelian
 assumption is needed. These are distinct from the integral tensor presentation.</li><li><strong>Integral tensor chains, simplicial maps and homotopies</strong>
-(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/TensorCoefficients.lean"><code>TensorCoefficients</code></a>,
-<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/TensorMaps.lean"><code>TensorMaps</code></a>,
-<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/TensorHomotopies.lean"><code>TensorHomotopies</code></a>).
+(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/TensorCoefficients.lean"><code>TensorCoefficients</code></a>,
+<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/TensorMaps.lean"><code>TensorMaps</code></a>,
+<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/TensorHomotopies.lean"><code>TensorHomotopies</code></a>).
 For every abelian group <code>A</code> and simplicial set <code>S</code>, the independently defined
 alternating tensor boundary gives a complex naturally isomorphic to normalized
 chains with lifted coefficients. Coefficient, simplex and padding universes are
@@ -50,11 +50,11 @@ Combinatorial or cylinder homotopies give chain homotopies and equal homology ma
 two-sided simplicial homotopy inverses and extra-degenerate augmentations give
 quasi-isomorphisms. For normalized chains the coefficient category need only be
 preadditive with coproducts and homology; augmentation targets need not be terminal.
-<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/TensorCokernels.lean">Cokernel comparison</a> applies to all arrows;
+<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/TensorCokernels.lean">Cokernel comparison</a> applies to all arrows;
 its nonzero omitted-vertex example concerns chain cokernels, not homology.</li><li><strong>Additive and exact change of abelian coefficients</strong>
-(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/TensorCoefficientMaps.lean"><code>TensorCoefficientMaps</code></a>,
-<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/TensorCoefficientFunctor.lean"><code>TensorCoefficientFunctor</code></a>,
-<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/TensorCoefficientSequences.lean"><code>TensorCoefficientSequences</code></a>).
+(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/TensorCoefficientMaps.lean"><code>TensorCoefficientMaps</code></a>,
+<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/TensorCoefficientFunctor.lean"><code>TensorCoefficientFunctor</code></a>,
+<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/TensorCoefficientSequences.lean"><code>TensorCoefficientSequences</code></a>).
 Arbitrary additive maps act by <code>id ⊗ g</code>, naturally in both variables, on the
 original tensor carriers and boundary. The coefficient-curried functor is
 additive and preserves finite limits and colimits. Any exact coefficient pair
@@ -62,39 +62,39 @@ stays exact degreewise; injective and surjective endpoints give chain Mono/Epi
 and short exactness. Universes remain independent with common balanced padding;
 no coefficient flatness or endpoint assumption is added to middle exactness.
 This is exactness of a chain-valued functor, not exactness after homology.</li><li><strong>Degree-zero homology, components and path components</strong>
-(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/TensorHomologyZero.lean"><code>TensorHomologyZero</code></a>,
-<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/SingularHomologyZero.lean"><code>SingularHomologyZero</code></a>).
+(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/TensorHomologyZero.lean"><code>TensorHomologyZero</code></a>,
+<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/SingularHomologyZero.lean"><code>SingularHomologyZero</code></a>).
 For every abelian <code>A</code> and simplicial set <code>S</code>, tensor <code>H₀</code> is the coproduct of
 <code>ModuleCat.of ℤ (ULift.{max w p} A)</code> over <code>SSet.π₀ S</code>, naturally in simplicial
 and additive coefficient maps, with independent <code>a</code>, <code>w</code>, <code>p</code> and no finiteness,
 flatness, field, basis or nonemptiness hypotheses. For singular simplices of any
 topological space this gives the coproduct over <code>ZerothHomotopy X</code>, naturally in
 continuous and coefficient maps, without local path connectedness. The direct
-<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/PathComponents.lean">path-component functor</a> agrees naturally
+<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/PathComponents.lean">path-component functor</a> agrees naturally
 with singular components via Mathlib's equivalence.</li><li><strong>Degree-zero normalized homology of binary products</strong>
-(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/TensorHomologyZeroProducts.lean"><code>tensorNormalizedHomologyZeroProductIso</code></a>).
+(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/TensorHomologyZeroProducts.lean"><code>tensorNormalizedHomologyZeroProductIso</code></a>).
 For arbitrary abelian groups <code>A</code>, <code>B</code> and simplicial sets <code>K</code>, <code>L</code>,
 <code>H₀ᴺ(K; A) ⊗ℤ H₀ᴺ(L; B) ≅ H₀ᴺ(K × L; A ⊗ℤ B)</code>, using canonical
 universe lifts with independent coefficient, simplex and padding universes.
 Pure tensors of vertex classes map to the paired vertex class with pure tensor
 coefficient; inverse formulas, extensionality and uniqueness characterize the maps.
-<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/TensorHomologyZeroProductNaturality.lean">Forward and inverse naturality</a>
+<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/TensorHomologyZeroProductNaturality.lean">Forward and inverse naturality</a>
 hold for simplicial maps in both factors and arbitrary additive maps in both
 coefficient groups, with balanced padding for coefficient change. No finiteness,
 flatness, connectedness or nonemptiness is assumed. A
-<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjectsTest/TensorHomologyZeroProducts.lean">discrete two-by-two example</a>
+<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjectsTest/TensorHomologyZeroProducts.lean">discrete two-by-two example</a>
 distinguishes the four nonzero vertex tensors and their four product classes,
 and evaluates simplicial and coefficient maps on them.</li><li><strong>Component folds, terminal sets and dimension vanishing</strong>
-(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/TensorHomologyZeroConnected.lean"><code>TensorHomologyZeroConnected</code></a>,
-<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/TensorHomologyZeroEmpty.lean"><code>TensorHomologyZeroEmpty</code></a>,
-<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/PointHomology.lean"><code>PointHomology</code></a>).
+(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/TensorHomologyZeroConnected.lean"><code>TensorHomologyZeroConnected</code></a>,
+<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/TensorHomologyZeroEmpty.lean"><code>TensorHomologyZeroEmpty</code></a>,
+<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/PointHomology.lean"><code>PointHomology</code></a>).
 The fold agrees with collapse and terminal coefficient evaluation for every
 source, including the empty one. Connectedness makes the fold an isomorphism.
 Terminal sets have the lifted coefficient object in degree zero and zero
 positive homology. More generally <code>S.HasDimensionLT d</code> gives vanishing in
 degrees <code>n ≥ d</code>; <code>H₀(∂Δ[0])</code> is zero. Arbitrary abelian coefficients and independent
 coefficient/simplex/padding universes are retained.</li><li><strong>Coefficient naturality of ordinary simplicial <code>H₀</code></strong>
-(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e85333e5a0b0bbd255cfb7ec93ff94db77c48a98/SimplicialObjects/HomologyZero.lean"><code>HomologyZero</code></a>).
+(<a href="https://github.com/FormalFrontier/simplicial-objects/blob/e210890fdc170ec8425587eea91c11d4c60c3b87/SimplicialObjects/HomologyZero.lean"><code>HomologyZero</code></a>).
 Mathlib's <code>SSet.homology₀Iso</code> and its inverse commute with every coefficient
 morphism in any preadditive category with <code>HasCoproducts.{w}</code> and homology,
 with independent object, morphism and simplex universes. The all-degree

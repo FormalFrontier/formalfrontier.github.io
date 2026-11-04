@@ -1,48 +1,48 @@
 <ul><li><strong>Finite etale subalgebras, composites and idempotents.</strong> Over a field <code>k</code>,
-<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/MaximalSubalgebra.lean#L44">surjective images</a> of finite
+<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/MaximalSubalgebra.lean#L44">surjective images</a> of finite
 etale algebras are finite etale, and
-<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/MaximalSubalgebra.lean#L129">binary suprema</a> of finite
+<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/MaximalSubalgebra.lean#L129">binary suprema</a> of finite
 etale subalgebras of a commutative <code>k</code>-algebra <code>R</code> remain finite etale. A
 <em>supplied</em> uniform natural-number bound on their dimensions yields a
-<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/MaximalSubalgebra.lean#L146">greatest such subalgebra</a>;
+<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/MaximalSubalgebra.lean#L146">greatest such subalgebra</a>;
 this library does not prove the existence of that bound. Every idempotent
-<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/MaximalSubalgebra.lean#L86">lies in a finite etale subalgebra</a>,
+<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/MaximalSubalgebra.lean#L86">lies in a finite etale subalgebra</a>,
 constructed from <code>Fin 2 → k</code> using <code>e</code> and <code>1 - e</code>.</li><li><strong>Spectrum component counts.</strong> For a finite etale algebra <code>S</code> over a
 separably closed field <code>k</code>, the
-<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/SpectrumComponents.lean#L38">component-count theorem</a>
+<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/SpectrumComponents.lean#L38">component-count theorem</a>
 identifies <code>Nat.card (ConnectedComponents (PrimeSpectrum S))</code> with
 <code>Module.finrank k S</code>. A continuous surjection <code>X → PrimeSpectrum S</code>
-<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/SpectrumComponents.lean#L68">bounds the dimension</a>
+<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/SpectrumComponents.lean#L68">bounds the dimension</a>
 by the component count of <code>X</code> <strong>when <code>[Finite (ConnectedComponents X)]</code></strong>.
 Independent universes, zero algebras and empty-space cases are retained.</li><li><strong>Finite-Galois and separable-closure embedded descent.</strong> For a finite
 Galois extension <code>L/k</code>, a subalgebra <code>P</code> of <code>L ⊗[k] R</code> stable under every
-<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/SemilinearDescent.lean">coefficientwise automorphism</a>
+<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/SemilinearDescent.lean">coefficientwise automorphism</a>
 is reconstructed from its honest preimage under <code>r ↦ 1 ⊗ r</code>. The
-<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/SemilinearDescent.lean#L420">reconstruction equivalence</a>
-and <a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/SemilinearDescent.lean#L439">range equality</a>
+<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/SemilinearDescent.lean#L420">reconstruction equivalence</a>
+and <a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/SemilinearDescent.lean#L439">range equality</a>
 identify the <em>literal ambient</em> scalar extension with <code>P</code>; finite etaleness
-<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/SemilinearDescent.lean#L446">descends</a> if <code>P</code> is finite
+<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/SemilinearDescent.lean#L446">descends</a> if <code>P</code> is finite
 etale. For a separable closure <code>K/k</code>, the
-<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/SeparableClosureDescent.lean">finite-data layer</a>
+<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/SeparableClosureDescent.lean">finite-data layer</a>
 captures an embedded finite-dimensional algebra over a finite Galois
 intermediate field and is coherent under enlargement. Its
-<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/SeparableClosureDescent.lean#L479">descent package</a>
+<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/SeparableClosureDescent.lean#L479">descent package</a>
 reconstructs a finite etale <code>P</code> stable under <em>every</em> coefficientwise
 <code>k</code>-automorphism of <code>K</code>, including preimage membership and literal ambient
 range equality.</li><li><strong>Purely inseparable idempotents and reconstruction.</strong> For a purely
 inseparable field extension <code>K/k</code>, every idempotent of <code>K ⊗[k] R</code> belongs to
-the <a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/PurelyInseparableDescent.lean#L45">range of the right-factor inclusion</a>
-from <code>R</code>; <a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/PurelyInseparableDescent.lean#L35">the reversed tensor orientation</a>
+the <a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/PurelyInseparableDescent.lean#L45">range of the right-factor inclusion</a>
+from <code>R</code>; <a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/PurelyInseparableDescent.lean#L35">the reversed tensor orientation</a>
 is also available. If <code>K</code> is additionally separably closed, the
-<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/PurelyInseparableDescent.lean#L79">reconstruction package</a>
+<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/PurelyInseparableDescent.lean#L79">reconstruction package</a>
 recovers each embedded finite etale <code>K</code>-subalgebra from a finite etale
 <code>k</code>-subalgebra of <code>R</code>, with equivalence and
-<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/PurelyInseparableDescent.lean#L237">range equality</a>
+<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/PurelyInseparableDescent.lean#L237">range equality</a>
 agreeing with the literal ambient scalar-extension map. No
 finite-dimensionality assumption on <code>K/k</code> is imposed.</li><li><strong>Conditional point lifting.</strong> Let <code>R → U → B</code> be compatible algebra maps
 of commutative rings, with <code>U</code> finite as an <code>R</code>-module and <code>B = S⁻¹U</code>
 flat over <code>R</code>. For <code>I ⊆ Jac(R)</code>, the
-<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/FiniteEtaleAlgebras/PointLifting.lean#L278">point-lifting theorem</a> lifts the
+<a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/FiniteEtaleAlgebras/PointLifting.lean#L278">point-lifting theorem</a> lifts the
 specified <code>R</code>-algebra map <code>z : B → R/I</code> to <code>s : B → R</code> with
 <code>(R → R/I) ∘ s = z</code>, provided a supplied <code>ebar ∈ U/IU</code> has an
 idempotent lift <code>ε ∈ U</code> satisfying <code>z(β(ε)) = 1</code> and the following
@@ -63,6 +63,6 @@ for extracting descended algebras or lifted points. This library's
 spectrum and commutative-algebra infrastructure. This repository develops
 the subalgebra, component-count, literal reconstruction and conditional
 point-lifting interfaces described here. See the linked modules for full
-signatures and the <a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/d2668784f98584bd4fe20dc2c8889f295ad3e1d2/docs/API.md">API reference</a> for the finite-etale and descent
+signatures and the <a href="https://github.com/FormalFrontier/finite-etale-algebras/blob/4627c3ab2479e331c889a374309e62ee1b64a8af/docs/API.md">API reference</a> for the finite-etale and descent
 interfaces it covers; source-specific correspondence and coverage belong in
 the respective source repositories, not this reusable library.</p>

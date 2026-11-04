@@ -1,5 +1,5 @@
 <ul><li><strong>H-space fundamental groups commute.</strong>
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/HSpaceFundamentalGroup.lean"><code>FundamentalGroup.mul_comm</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/HSpaceFundamentalGroup.lean"><code>FundamentalGroup.mul_comm</code></a>
 applies at the unit of any H-space, using only its two relative unit
 homotopies. No associativity, commutativity or strict unit laws for the
 multiplication are assumed. Continuous multiplication with a strict unit
@@ -8,7 +8,7 @@ also gives <code>Path.mul_homotopic_trans</code>, without associativity or inver
 is supplied by Fundamental Groupoids and identifies <code>π₁(AddCircle T, 0)</code>
 with <code>Multiplicative ℤ</code>, including signed periods, lifted endpoints and
 agreement with the complex unit circle.
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/CircleDegree.lean"><code>Circle.degree</code></a> classifies free
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/CircleDegree.lean"><code>Circle.degree</code></a> classifies free
 homotopy of arbitrary continuous circle self-maps. Composition multiplies
 degree, while pointwise multiplication adds it, including multiset products
 with repeated factors. The map <code>z ↦ z^n</code> has degree <code>n : ℤ</code>, and degree different
@@ -16,11 +16,11 @@ from <code>1</code> is a sufficient, not necessary, fixed-point condition. No ba
 premise is needed.</li><li><strong>Disk boundary degree and non-retraction.</strong> Every continuous map
 <code>G : C(Metric.closedBall (0 : ℂ) 1, Circle)</code> has boundary restriction of
 degree zero, so that restriction is not the identity on <code>Circle</code>
-(<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/Disk.lean"><code>Disk</code></a>). The boundary map is the
+(<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/Disk.lean"><code>Disk</code></a>). The boundary map is the
 coordinate-preserving inclusion of the complex unit circle into the closed
 unit disk; no basedness premise is imposed. This is not a theorem about
 arbitrary-dimensional disks or an extension converse.</li><li><strong>Forward intersections with spheres.</strong> In a real inner-product affine space,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Geometry/ForwardRay.lean"><code>Sphere.rayInter</code></a> continues from
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Geometry/ForwardRay.lean"><code>Sphere.rayInter</code></a> continues from
 <code>q</code> through a distinct closed-ball point <code>x</code> to the sphere, with parameter
 at least one even when <code>q</code> is outside the ball. For a closed-ball start,
 positive sphere-intersection parameters are characterized by the upper root,
@@ -30,7 +30,7 @@ boundary starts agree with Mathlib's <code>Sphere.secondInter</code> when <code>
 closed ball. No finite-dimensionality, completeness or global radius-sign
 assumption is needed.</li><li><strong>Continuous ray maps and boundary-only strict retractions.</strong> In a real
 inner-product affine torsor,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Geometry/ForwardRayMap.lean"><code>Sphere.rayInterMap</code></a> turns an
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Geometry/ForwardRayMap.lean"><code>Sphere.rayInterMap</code></a> turns an
 ambient-valued continuous map <code>f</code> on a closed ball, with <code>f x ≠ x</code> at every
 point, into a continuous map to its sphere. If boundary points have images
 in the closed ball, composition with the boundary inclusion is exactly the
@@ -44,28 +44,28 @@ argument (Chapter 1, §6), not a fixed-point theorem in this generality.</li><li
 let <code>S := Metric.sphere (0 : E) 1</code> be the canonical sphere subtype,
 <code>p q : S</code>, <code>H := (ℝ ∙ (p : E))ᗮ</code> and
 <code>σ := stereographic (norm_eq_of_mem_sphere p)</code>.
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Geometry/Stereographic.lean"><code>stereographicHomeomorph p</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Geometry/Stereographic.lean"><code>stereographicHomeomorph p</code></a>
 identifies <code>({p}ᶜ : Set S)</code> with <code>H</code>; for <code>hpq : p ≠ q</code>,
 <code>stereographicOverlapHomeomorph p q hpq</code> identifies
 <code>({p}ᶜ ∩ {q}ᶜ : Set S)</code> with <code>H \ {σ q}</code>.
 These retain Mathlib's factor-2 stereographic map: the excluded pole is
 <code>+p</code>, and the one-pole inverse sends <code>0</code> to <code>-p</code>. The overlap target deletes
 zero exactly when <code>q = -p</code>.</li><li><strong>Last-axis one-point compactification coordinates.</strong>
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Geometry/OnePointSphere.lean"><code>EuclideanSpace.onePointHomeomorphSphere</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Geometry/OnePointSphere.lean"><code>EuclideanSpace.onePointHomeomorphSphere</code></a>
 identifies <code>OnePoint (EuclideanSpace ℝ (Fin n))</code> with the unit sphere in
 <code>EuclideanSpace ℝ (Fin (n+1))</code>, for every <code>n</code>, including zero. Infinity maps
 to the last unit vector and finite zero to its antipode. Finite coordinates
 have denominator <code>‖x‖²+4</code>, and the off-pole inverse has coordinates
 <code>2*p_i/(1-p_last)</code>. The underlying append-zero-last linear isometry also
 applies over <code>RCLike</code> scalars; only the sphere homeomorphism is real.</li><li><p><strong>Finite generalized loops and based sphere-map classes.</strong> For every <code>n : ℕ</code>,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/HomotopyGroup/Sphere.lean"><code>GenLoop.sphereHomeomorph</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/HomotopyGroup/Sphere.lean"><code>GenLoop.sphereHomeomorph</code></a>
 gives a homeomorphism from <code>GenLoop (Fin n) X x</code> to
 <code>{F : C(Sⁿ, X) // F (EuclideanSpace.northPoint n) = x}</code>, where <code>Sⁿ</code> is the
 unit sphere in <code>EuclideanSpace ℝ (Fin (n+1))</code>.
 <code>HomotopyGroup.equivSphereClasses</code> gives a natural set equivalence from
 <code>HomotopyGroup (Fin n) X x</code> to the existing <code>ZerothHomotopy</code> of this subtype.
 Inverse representatives precompose with
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Geometry/CubeSphere.lean"><code>Cube.collapseToSphere</code></a>.
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Geometry/CubeSphere.lean"><code>Cube.collapseToSphere</code></a>.
 Constants and based postcomposition are preserved, including between targets
 in independent universes. Equality of sphere-map components is exactly
 homotopy relative to the singleton last-axis north pole. In dimension one,
@@ -74,7 +74,7 @@ associated with a based path to that path's fundamental-group class. Targets
 require only a topology and a chosen point, with no separation, local compactness
 or well-pointedness hypothesis.</p>
 <p>For every <code>n : ℕ</code> and arbitrary <code>X : BasedTopCat.{u}</code>,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/HomotopyGroup/SphereHom.lean"><code>HomotopyGroup.equivSphereHom</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/HomotopyGroup/SphereHom.lean"><code>HomotopyGroup.equivSphereHom</code></a>
 is an ordinary set equivalence from <code>HomotopyGroup (Fin n) X.right (BasedTopCat.point X)</code>
 to morphisms from the north-based <code>ULift.{u} Sⁿ</code> to <code>X</code> in the based-homotopy
 category. Targets may be any objects of the under category, not only ones
@@ -85,7 +85,7 @@ inverse representatives have values
 Here <code>n = 0</code> means <code>S⁰</code> and <code>n = 1</code> means <code>S¹</code>. This set comparison alone
 specifies no multiplication on the hom-set or group in dimension zero; the
 positive-dimensional group comparison below uses a multiplicative opposite.</p></li><li><strong>Positive-dimensional sphere pinch and folding.</strong> For <code>d = n + 1 &gt; 0</code>,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Geometry/SpherePinch.lean"><code>Metric.Sphere.pinch n</code></a> maps the
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Geometry/SpherePinch.lean"><code>Metric.Sphere.pinch n</code></a> maps the
 existing last-axis unit sphere <code>Sᵈ</code> to its two-factor point-wide-pushout.
 Its cube pullback traverses the left factor before the right factor in
 coordinate zero; the two closed-half formulas agree at the separating slice,
@@ -95,12 +95,12 @@ quotient map for the topology of that categorical target. <code>pinch_eq_head_if
 identifies its head fiber with the equator where ambient coordinate zero
 vanishes; <code>pinch_eq_pinch_iff</code> says that two points have the same image exactly
 when they are equal or both lie on that equator.
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/HomotopyGroup/SpherePinchFold.lean"><code>Metric.Sphere.pinchFold</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/HomotopyGroup/SpherePinchFold.lean"><code>Metric.Sphere.pinchFold</code></a>
 is jointly continuous on the ordinary compact-open based-map subtype and
 preserves simultaneous paths of its factors, for arbitrary topological targets.
 Its identity/constant folds in opposite orders differ at the left quarter-point,
 including for the circle.
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/HomotopyGroup/SpherePinch.lean"><code>pinch_fold_class</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/HomotopyGroup/SpherePinch.lean"><code>pinch_fold_class</code></a>
 compares folding based maps <code>F, G</code> with the existing homotopy-group
 multiplication: writing <code>J</code> for the inverse sphere-class comparison, the
 result is <code>J(G) * J(F)</code>, including in dimension one. Each original factor
@@ -120,18 +120,18 @@ based postcomposition allow independently universed targets with only a
 topology. No dimension-one cocommutativity, zero-sphere pinch or choice of
 sphere orientation is asserted by these geometric comparisons.</li><li><strong>Based coordinate reflections and coinverses.</strong> For every positive sphere
 dimension <code>d = n + 1</code>, including S¹, and every pre-last axis <code>i : Fin (n + 1)</code>,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Geometry/SphereCoordinateReflection.lean"><code>coordinateReflection</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Geometry/SphereCoordinateReflection.lean"><code>coordinateReflection</code></a>
 negates exactly ambient coordinate <code>i.castSucc</code> and fixes the last-axis north
 pole. It is involutive, differs from the identity, and is uniquely determined
 by its cube pullback: reversing axis <code>i</code> of the original collapse. For an
 arbitrary based map to a topological space,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/HomotopyGroup/SphereCoordinateReflection.lean"><code>coordinateReflection_precomp_class</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/HomotopyGroup/SphereCoordinateReflection.lean"><code>coordinateReflection_precomp_class</code></a>
 identifies precomposition by this reflection with the existing homotopy-group
 inverse. Folding the pinch with reflection and identity in either order is
 homotopic to the north constant relative to the north pole, for every such
 axis; neither folded map is equal to that constant. These results do not
 require commutativity and do not assert S¹ cocommutativity.</li><li><strong>Positive-dimensional spheres as cogroups.</strong>
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/SphereCogroup.lean"><code>Metric.Sphere.cogroup</code></a> bundles
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/SphereCogroup.lean"><code>Metric.Sphere.cogroup</code></a> bundles
 the lifted original sphere of dimension <code>n + 1</code>, based at the last-axis north
 pole, as a stock group object in the ordinary opposite based-homotopy category.
 Multiplication, unit and inversion are opposite to the quotient classes of,
@@ -146,7 +146,7 @@ identification with an existing homotopy group; the separate comparison below
 uses a multiplicative opposite. No dimension-one cocommutativity, zero-sphere
 cogroup or orientation choice is asserted.</li><li><strong>Homotopy groups and the sphere-map group.</strong> For <code>n : ℕ</code> and any
 <code>X : BasedTopCat.{u}</code>,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/HomotopyGroup/SphereCogroup.lean"><code>HomotopyGroup.mulOppositeEquivSphereHom</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/HomotopyGroup/SphereCogroup.lean"><code>HomotopyGroup.mulOppositeEquivSphereHom</code></a>
 gives a multiplicative equivalence from
 <code>(HomotopyGroup (Fin (n + 1)) X.right (BasedTopCat.point X))ᵐᵒᵖ</code>
 to the canonical <code>CategoryTheory.yonedaGrp</code> evaluation of <code>Metric.Sphere.cogroup n</code>
@@ -164,7 +164,7 @@ Since folding <code>F, G</code> represents <code>J(G) * J(F)</code>, the source 
 even for <code>n = 0</code>, which is <code>S¹</code>. No direct group comparison by the same class
 map without that opposite, S¹ commutativity or group on S⁰ is asserted.
 Targets require only their topology and chosen point.</li><li><strong>Sharp cocommutativity of sphere cogroups.</strong> For every <code>n : ℕ</code> in any universe,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/SphereCocommutativity.lean"><code>Metric.Sphere.cogroup_isCommMonObj_iff</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/SphereCocommutativity.lean"><code>Metric.Sphere.cogroup_isCommMonObj_iff</code></a>
 proves <code>IsCommMonObj (Metric.Sphere.cogroupCarrier n) ↔ 0 &lt; n</code>: the specified
 sphere cogroup of dimension <code>n + 1</code> is commutative exactly in dimensions at least
 two. <code>cogroup_isCommMonObj</code> gives the positive case using the sphere-map group
@@ -175,7 +175,7 @@ comparison, Mathlib's first-homotopy-group equivalence and its stock
 commutativity lemmas. Multiplication remains the original ordered-pinch class.
 These are named properties, not global commutativity instances; no group on
 S⁰ is asserted.</li><li><strong>Nontrivial second homotopy group of S².</strong>
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/HomotopyGroup/SphereNontrivial.lean"><code>Metric.Sphere.id_not_nullhomotopic_two</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/HomotopyGroup/SphereNontrivial.lean"><code>Metric.Sphere.id_not_nullhomotopic_two</code></a>
 shows that the identity of the unit two-sphere in <code>EuclideanSpace ℝ (Fin 3)</code>,
 lifted to any universe, is not homotopic to any constant map.
 <code>Metric.Sphere.homotopyQuotient_id_ne_const_two</code> distinguishes its identity
@@ -183,7 +183,7 @@ class from the constant class at the last-axis north pole in the based-homotopy
 category. <code>HomotopyGroup.nontrivial_sphere_two</code> proves that the corresponding
 <code>π₂</code> is nontrivial. The sphere is <code>Metric.Sphere.basedSpace 1</code>; no computation
 of the second homotopy group is asserted.</li><li><strong>Topology of real normed unit spheres.</strong> The topology-only APIs in
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/Sphere.lean"><code>Homotopy.Sphere</code></a> are stated for
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/Sphere.lean"><code>Homotopy.Sphere</code></a> are stated for
 <code>E : Type u</code> with <code>[NormedAddCommGroup E] [NormedSpace ℝ E]</code>, using its
 original norm and <code>S := Metric.sphere (0 : E) 1</code>.
 <code>contractibleSpace_sphere_compl_singleton p</code> gives
@@ -199,7 +199,7 @@ sphere, ambient connectivity or overlap-nonemptiness assumption is needed.
 These statements generalize May's finite Euclidean sphere setting; the
 orthogonal-coordinate charts above still require an inner product.</li><li><strong>Canonical antipodal quotient covering.</strong> For <code>E : Type w</code> with
 <code>[NormedAddCommGroup E] [NormedSpace ℝ E]</code>,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Geometry/Projectivization.lean"><code>Metric.Sphere.isQuotientCoveringMap_toProjectivization</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Geometry/Projectivization.lean"><code>Metric.Sphere.isQuotientCoveringMap_toProjectivization</code></a>
 makes the canonical continuous map
 <code>Metric.Sphere.toProjectivization : C(Metric.sphere (0 : E) 1, Projectivization ℝ E)</code>
 a quotient covering for the scalar action of <code>Metric.sphere (0 : ℝ) 1</code>,
@@ -209,7 +209,7 @@ dimension, completeness, local compactness, nonemptiness, nontriviality or
 freeness hypothesis is required. This includes the zero space's empty-to-empty
 map and the two-point-to-one-point map for <code>E = ℝ</code>.</li><li><strong>Real projective fundamental groups and lifted endpoints.</strong> For a real
 normed space <code>E</code> with <code>2 &lt; Module.rank ℝ E</code>,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/Projectivization.lean"><code>Projectivization.fundamentalGroupEquivZModTwo</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/Projectivization.lean"><code>Projectivization.fundamentalGroupEquivZModTwo</code></a>
 identifies <code>π₁(Projectivization ℝ E, b)</code> with <code>Multiplicative (ZMod 2)</code>.
 A chosen unit lift over the supplied basepoint fixes the lift description,
 but not the resulting coordinate. The identity means returning to that lift;
@@ -218,10 +218,10 @@ uses the given norm, with no inner-product, finite-dimensionality or
 completeness assumption, including infinite cardinal rank.</li><li><strong>Boundary-only fixed points on complex closed balls.</strong> A continuous map
 <code>F : C(Metric.closedBall c r, ℂ)</code>, with <code>c : ℂ</code> and <code>0 ≤ r</code>, has a fixed
 point if its sphere-boundary images lie in that ball
-(<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/Disk.lean"><code>Complex.exists_fixedPoint_closedBall_of_boundary_mapsTo</code></a>).
+(<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/Disk.lean"><code>Complex.exists_fixedPoint_closedBall_of_boundary_mapsTo</code></a>).
 No image bound is imposed on interior points, and no ambient extension is
 assumed. The continuous self-map case retains the API
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/Disk.lean"><code>Complex.exists_fixedPoint_closedBall</code></a>.
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/Disk.lean"><code>Complex.exists_fixedPoint_closedBall</code></a>.
 This includes the radius-zero singleton and generalizes May's closed unit
 disk self-map theorem (Chapter 1, §6, p. 10); it is not a higher-dimensional
 fixed-point theorem.</li><li><strong>Quotient presentations of topological wide pushouts (Fundamental Groupoids).</strong>
@@ -231,20 +231,20 @@ categorical wide pushout of arbitrary continuous maps <code>f i : B ⟶ X i</cod
 preserving the head and every factor. Continuity and descent have an
 independent target universe; empty and singleton families need no separation,
 compactness or homotopy assumptions.</li><li><strong>Embeddings, closed maps and neighborhoods of point-wide-pushouts.</strong>
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Topology/WidePushout/OpenEmbedding.lean"><code>TopCat.isEmbedding_widePushoutDesc_point</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Topology/WidePushout/OpenEmbedding.lean"><code>TopCat.isEmbedding_widePushoutDesc_point</code></a>
 promotes point-preserving component embeddings to an embedding of the
 canonical wide pushouts; open or closed component embeddings give an open or
 closed embedding, respectively. Point reflection and component open or closed
 maps also suffice for the corresponding map property. The index may be
 arbitrary or empty, and source and target universes are independent, with no
-separation assumptions. The <a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Topology/WidePushout/PointLift.lean">ULift caller</a>
+separation assumptions. The <a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Topology/WidePushout/PointLift.lean">ULift caller</a>
 accommodates smaller original factors. For a given function relabeling factors
-with finite label fibers, the <a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Topology/WidePushout/ClosedMap.lean">closed-map criterion</a>
+with finite label fibers, the <a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Topology/WidePushout/ClosedMap.lean">closed-map criterion</a>
 assumes closed component maps, point reflection, and the head and factor equations.
 The function is closed exactly when each omitted target factor has a closed chosen-point
 singleton, with no continuity or separation assumption. Closed rays based at zero give a proper
 closed embedding that is not open. For open neighborhoods of the attaching points,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Topology/WidePushout/OpenNeighborhood.lean"><code>TopCat.widePushoutPointNeighborhoodHomeomorph</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Topology/WidePushout/OpenNeighborhood.lean"><code>TopCat.widePushoutPointNeighborhoodHomeomorph</code></a>
 identifies their wide pushout with its open range in the ordinary subtype topology.</li><li><strong>Parametrized continuity and homotopy gluing (Fundamental Groupoids).</strong>
 <a href="https://github.com/FormalFrontier/fundamental-groupoids/blob/main/FundamentalGroupoids/Topology/Category/TopCat/Limits/Products.lean"><code>TopCat.continuous_prod_iff_of_isColimit</code></a>
 checks joint continuity on the legs of any supplied topological colimit under
@@ -256,37 +256,37 @@ and reparametrization laws. Compatible interval homotopies glue at all times,
 without requiring the common point to stay fixed. Point-relative descent is
 supplied by
 <a href="https://github.com/FormalFrontier/fundamental-groupoids/blob/main/FundamentalGroupoids/Topology/Homotopy/WidePushout.lean"><code>TopCat.widePushoutPointHomotopyRel</code></a>.</li><li><strong>Point-relative equivalences and contractions.</strong>
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Topology/WidePushout/PointHomotopyEquiv.lean"><code>TopCat.widePushoutPointHomotopyEquiv</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Topology/WidePushout/PointHomotopyEquiv.lean"><code>TopCat.widePushoutPointHomotopyEquiv</code></a>
 descends point-preserving factor maps and supplied relative inverse homotopies.
 Inverse point preservation follows from the forward maps and left relative
 homotopies. The chosen relative witnesses compute on the head and every factor.
 Supplied contractions fixing the attaching points contract the wide pushout,
 including an empty index family. This is stronger data than ordinary factor
 contractibility; countably many endpoint-zero intervals give a nontrivial client.</li><li><strong>Factor retractions and separation of point-wide-pushouts.</strong>
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Topology/WidePushoutRetraction.lean"><code>TopCat.widePushoutPointRetraction</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Topology/WidePushoutRetraction.lean"><code>TopCat.widePushoutPointRetraction</code></a>
 retracts the categorical wide pushout of arbitrary chosen-point spaces onto
 any selected factor, and each factor inclusion is an embedding. The
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Topology/WidePushout/Separation.lean">retractions jointly distinguish points</a>,
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Topology/WidePushout/Separation.lean">retractions jointly distinguish points</a>,
 without separation or finiteness assumptions, even for the empty index family.
 The pushout is T₀, T₁ or Hausdorff exactly when every factor has that property;
 factorwise inheritance is available by instance inference. Index and space
 universes are independent. No embedding into the product is asserted.
 The circle-bouquet retractions specialize this construction.</li><li><strong>Compact subsets meet finitely many pointed factors.</strong>
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Topology/WidePushout/Compactness.lean"><code>finite_widePushoutPointSupport</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Topology/WidePushout/Compactness.lean"><code>finite_widePushoutPointSupport</code></a>
 applies to arbitrary indexed T₁ spaces attached at chosen points. A compact
 subset of their categorical wide pushout meets only finitely many factors
 away from the common point. The support API characterizes coverings by the
 common point plus factor ranges; every continuous map from a compact domain,
 including a path, has such a finite-factor covering. There is no Hausdorff,
 compact-factor, countability or finite-index assumption.</li><li><strong>Charts around a common subset.</strong>
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Topology/WidePushout/Chart.lean"><code>TopCat.widePushoutPointChart</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Topology/WidePushout/Chart.lean"><code>TopCat.widePushoutPointChart</code></a>
 adjoins one factor to a subset containing the common point. Distinct charts
 intersect in that subset, and the subset together with the charts covers the
 pushout, including an empty family. Factorwise path connectedness of its
 inverse images makes the common subset path connected; a chart then needs
 path connectedness only of its own whole factor. An open common subset gives
 open charts, with no separation assumptions.</li><li><strong>Fundamental groups of factor-plus-core charts.</strong>
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Topology/WidePushout/FundamentalGroup.lean"><code>TopCat.widePushoutPointChartFundamentalGroupDesc</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Topology/WidePushout/FundamentalGroup.lean"><code>TopCat.widePushoutPointChartFundamentalGroupDesc</code></a>
 glues homomorphisms on an arbitrary path-connected open neighborhood of the
 common point and its charts, assuming path connectedness of each whole
 factor. Only agreement on the core is required. The inclusion-induced
@@ -298,12 +298,12 @@ injective. The specified splitting extends factor homomorphisms to arbitrary
 independently universed monoid targets. These hypotheses alone do not imply
 surjectivity of <code>q</code> or uniqueness of these extensions. Under just the path-connected
 core and whole-factor hypotheses,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Topology/WidePushout/FundamentalGroupColimit.lean"><code>TopCat.widePushoutPointChartFundamentalGroupColimitEquiv</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Topology/WidePushout/FundamentalGroupColimit.lean"><code>TopCat.widePushoutPointChartFundamentalGroupColimitEquiv</code></a>
 identifies the raw group colimit of the core-to-chart star with the ambient
 fundamental group. Both directions preserve every core and chart inclusion
 map, including for an empty index family; no core-preimage nullity is needed.
 With the split-injectivity hypotheses above,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Topology/WidePushout/FundamentalGroupKernel.lean"><code>FundamentalGroupKernel</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Topology/WidePushout/FundamentalGroupKernel.lean"><code>FundamentalGroupKernel</code></a>
 identifies the kernel of the ambient-to-original-factor-coproduct retraction
 <code>ρ</code> with the ambient algebraic normal closure of <code>⋃ i, γᵢ(ker pᵢ)</code>.
 Here <code>γᵢ</code> is induced by chart inclusion; <code>pᵢ</code> comes from restricting the
@@ -319,7 +319,7 @@ or chart–factor homotopy equivalences are required.
 Index and space universes are independent, and an empty family retains its point
 head. No vanishing of these chart defects or free-product computation from
 ordinary contractibility of chosen factor neighborhoods is asserted.</li><li><strong>Subfamily retractions and continuous factorization.</strong>
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Topology/WidePushout/Subfamily.lean"><code>TopCat.widePushoutPointSubfamilyRetraction</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Topology/WidePushout/Subfamily.lean"><code>TopCat.widePushoutPointSubfamilyRetraction</code></a>
 retracts onto any subfamily, with an embedding inclusion whose range includes
 the common point. This inclusion is closed exactly when the chosen-point
 singleton in every omitted factor is closed; retained factors need no separation
@@ -328,22 +328,22 @@ when its support lies in the subfamily, without separation or compactness
 assumptions. For T₁ factors, every compact-domain map factors through a finite
 subfamily. The circle-bouquet application retains the endpoints of based loops,
 including included positive original-circle loops.</li><li><strong>Strict finite-stage factorization of compact homotopies.</strong>
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Topology/WidePushout/SubfamilyHomotopy.lean"><code>TopCat.exists_finite_widePushout_point_subfamily_homotopyRel</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Topology/WidePushout/SubfamilyHomotopy.lean"><code>TopCat.exists_finite_widePushout_point_subfamily_homotopyRel</code></a>
 factors a prescribed compact-image relative homotopy in a point-wide-pushout
 of T₁ factors through a finite subfamily containing any prescribed finite
 set. Recovery holds at every pair of parameters, including both endpoint
 maps and arbitrary relative subsets. Compact domains suffice, without source
 separation, factor compactness or countability. At a fixed subfamily,
 existence of a relative or path homotopy is reflected without T₁ or compactness.
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/CircleBouquet.lean"><code>CircleBouquet.loop_homotopic_iff_exists_finite_subfamily</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/CircleBouquet.lean"><code>CircleBouquet.loop_homotopic_iff_exists_finite_subfamily</code></a>
 gives finite-stage detection for based loops in arbitrary circle bouquets;
 the stronger homotopy theorem recovers a supplied based homotopy itself.</li><li><strong>Arbitrary-index circle bouquets.</strong>
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/CircleBouquet.lean"><code>CircleBouquet.space</code></a> is the wide
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/CircleBouquet.lean"><code>CircleBouquet.space</code></a> is the wide
 pushout of based complex circles, with a common point even for the empty
 family and independent index/ambient universes. Inclusions, descent and
 extensionality give its universal property; retractions detect the positive
 generators as nonidentity.
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/CircleBouquet/FundamentalGroup.lean"><code>CircleBouquet.generatorEquiv</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/CircleBouquet/FundamentalGroup.lean"><code>CircleBouquet.generatorEquiv</code></a>
 identifies its fundamental group with <code>FreeGroup I</code>, sending each free generator
 to the included counterclockwise circle class. <code>CircleBouquet.lift</code> gives the
 unique extension of arbitrary generator values to a homomorphism into any
@@ -355,42 +355,42 @@ preserving the original positive generators and commuting with <code>FreeGroup.m
 Source and target ambient and label universes are independent, including empty
 or infinite families and noninjective label maps. The universal property is
 natural under precomposition by this map through <code>CircleBouquet.lift_comp_relabel</code>.
-Its <a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/CircleBouquet/Topology.lean">topological criteria</a>
+Its <a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/CircleBouquet/Topology.lean">topological criteria</a>
 characterize closed embeddings exactly by injective label maps and quotient
 maps exactly by surjective label maps. Relabeling is a
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/CircleBouquet/ClosedMap.lean">closed map exactly when every label fiber is finite</a>;
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/CircleBouquet/ClosedMap.lean">closed map exactly when every label fiber is finite</a>;
 the bouquet has the weak/final topology, not the Hawaiian-earring subspace topology.
 The induced fundamental-group homomorphism is injective or surjective exactly
 when the label map has the corresponding property. Its kernel is the normal
 closure of the differences <code>positiveGenerator i * (positiveGenerator k)⁻¹</code>
 for equal labels <code>σ i = σ k</code>, by <code>CircleBouquet.ker_mapOfEq_relabel</code>; no
 surjectivity assumption is needed.</li><li><strong>Diagonal equivalence for non-antipodal pairs.</strong> In any real normed vector
-space, <a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/Sphere.lean"><code>Metric.Sphere.diagonalHomotopyEquiv</code></a>
+space, <a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/Sphere.lean"><code>Metric.Sphere.diagonalHomotopyEquiv</code></a>
 has the diagonal as its forward map and first projection as its inverse.
 Normalized affine interpolation stays in the non-antipodal-pair subspace and
 fixes the diagonal. No finite-dimensionality or nonemptiness hypothesis is needed.</li><li><strong>Continuous hairy-ball theorem for S².</strong>
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/HairyBallSphere2.lean"><code>sphere2_exists_zero_of_orthogonal_field</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/HairyBallSphere2.lean"><code>sphere2_exists_zero_of_orthogonal_field</code></a>
 says every <code>V : C(sphere2, E3)</code> pointwise orthogonal to the radius has a zero.
 In any real inner-product space, a nowhere-zero continuous orthogonal field
 on the metric unit sphere gives an explicit identity-to-antipodal homotopy
-(<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homotopy/TangentField.lean"><code>TangentField</code></a>), without finite
+(<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homotopy/TangentField.lean"><code>TangentField</code></a>), without finite
 dimensionality. Only the zero theorem specializes to Euclidean three-space.</li><li><strong>Circle/S² homology and antipodal sign.</strong> Ordered punctures give
 <code>H̃₁(S¹; ℤ) ≅ ℤ</code> and <code>H̃₂(S²; ℤ) ≅ ℤ</code>, in the unit-sphere models in
 <code>EuclideanSpace ℝ (Fin 2)</code> and <code>EuclideanSpace ℝ (Fin 3)</code>
-(<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homology/Singular/Circle.lean"><code>Circle</code></a>,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homology/Singular/Sphere.lean"><code>Sphere</code></a>). The circle basis is
+(<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homology/Singular/Circle.lean"><code>Circle</code></a>,
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homology/Singular/Sphere.lean"><code>Sphere</code></a>). The circle basis is
 upper minus lower; the equator coordinate is ordered <code>(x,y)</code>.
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homology/Singular/SphereAntipodal.lean"><code>SphereAntipodal</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homology/Singular/SphereAntipodal.lean"><code>SphereAntipodal</code></a>
 computes <code>-id</code> on ordinary and reduced integral <code>H₂</code>, hence multiplication
 by <code>-1</code> in the fixed integer coordinate and nonhomotopy to identity.</li><li><strong>Covering-space lifts of simplices.</strong> For a covering <code>p : Y ⟶ X</code>,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Topology/SingularLifts.lean"><code>IsCoveringMap.singularLiftEquiv</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Topology/SingularLifts.lean"><code>IsCoveringMap.singularLiftEquiv</code></a>
 identifies the lift fiber of a singular simplex with a point fiber by
 evaluation at any point. Restriction is bijective for every simplex
 operator, including degeneracies and faces omitting vertex zero. There are
 no nonemptiness, connectedness, local connectedness, surjectivity or finite-
 sheet assumptions on the base or total space. The singular map is equifibered.</li><li><strong>Finite-fiber covering transfer.</strong> For <code>p : Y ⟶ X</code>, <code>IsCoveringMap p</code> and
 finite point fibers,
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homology/Singular/Transfer.lean"><code>singularChainComplexTransfer</code></a>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homology/Singular/Transfer.lean"><code>singularChainComplexTransfer</code></a>
 uses coefficient objects in any preadditive category with coproducts indexed
 in the space universe; object and morphism universes are independent.
 Ordinary homology adds only <code>CategoryWithHomology</code> and uses <code>q : ℕ</code>.
@@ -399,32 +399,32 @@ A simplex maps to the sum of its lifts. Transfer then pushforward is
 premise. No constant degree, nonemptiness, surjectivity or connectedness is
 needed for the construction.</li><li><strong>Subdivision and cover-small chains.</strong> Integral signed subdivision <code>Sd</code>
 and its support-preserving prism <code>H</code> satisfy <code>∂H + H∂ = id − Sd</code>
-(<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homology/Singular/Subdivision.lean"><code>Subdivision</code></a>). For an
+(<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homology/Singular/Subdivision.lean"><code>Subdivision</code></a>). For an
 open cover, inclusion of finite-support chains small in a cover member is a
 quasi-isomorphism
-(<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homology/Singular/SmallChains.lean"><code>SmallChains</code></a>). Space
+(<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homology/Singular/SmallChains.lean"><code>SmallChains</code></a>). Space
 and cover-index universes may differ; no global nonemptiness is assumed.
 Cover-respecting continuous maps and refinements induce compatible chain maps.</li><li><strong>Ordered ordinary and reduced Mayer–Vietoris.</strong> Two opens covering a space
 give difference <code>(c,−c)</code> followed by sum, all three successive ordinary
 exactness positions, ordered-cover naturality and cover-swap minus sign
-(<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homology/Singular/MayerVietoris.lean"><code>MayerVietoris</code></a>).
+(<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homology/Singular/MayerVietoris.lean"><code>MayerVietoris</code></a>).
 The reduced low-degree boundary uses open-intersection homology and is an
 isomorphism when both <code>H̃₀</code> and <code>H̃₁</code> vanish on each open. The reduced
 degree-zero sequence is exact at the biproduct for every two-open cover;
 its final map is epic when the intersection is nonempty, not unconditionally
-(<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homology/Singular/ReducedMayerVietoris.lean"><code>ReducedMayerVietoris</code></a>).</li><li><strong>Components and path connectedness.</strong>
-<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homology/Singular/Components.lean"><code>Components</code></a> presents the
+(<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homology/Singular/ReducedMayerVietoris.lean"><code>ReducedMayerVietoris</code></a>).</li><li><strong>Components and path connectedness.</strong>
+<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homology/Singular/Components.lean"><code>Components</code></a> presents the
 augmentation kernel by nonbasepoint path components, with categorical
 coefficients. In a preadditive category with the requisite coproducts and
 homology, <code>H₀(X; R) ⟶ R</code> is invertible exactly when <code>X</code> is path connected
 if <code>R</code> is nonzero; nonemptiness is a conclusion
-(<a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/SphereTopology/Homology/Singular/Connectedness.lean"><code>Connectedness</code></a>).
+(<a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/SphereTopology/Homology/Singular/Connectedness.lean"><code>Connectedness</code></a>).
 For nonempty <code>X</code>, integral <code>H̃₀(X)=0</code> is equivalent to path connectedness.
 Reduced homology is nonnegative, with augmentation kernel in degree zero,
 ordinary homology in positive degrees and <code>H̃₀(∅)=0</code>; no degree-minus-one
 convention is asserted. Contractible-space premises include nonemptiness.</li><li><strong>Covering foundations from Fundamental Groupoids.</strong> The dependency supplies
 based unique lifting, monodromy, maps of covers, deck actions and based
 equal-image equivalences; Sphere re-exports the five deprecated covering
-module paths below. The <a href="https://github.com/FormalFrontier/sphere-topology/blob/3350e8102d8bd681f6d587e9215b5e344a12efed/docs/guide.md#headline-results">guide</a> gives the
+module paths below. The <a href="https://github.com/FormalFrontier/sphere-topology/blob/672d46f90cf51cdf3f933248b85c842990ead729/docs/guide.md#headline-results">guide</a> gives the
 distinct connectedness and local path connectedness hypotheses for each
 result. These are not a general classification of coverings.</li></ul>

@@ -5,45 +5,45 @@ sheafification, concrete-category and universe assumptions. For abelian
 sheaves on a <em>compact</em> such space, quasi-flasqueness implies vanishing of
 positive-degree sheaf cohomology, using an injective-envelope dimension
 shift. See
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/CompactOpenSections.lean#L784"><code>preservesColimit_sections</code></a>,
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/QuasiFlasqueAcyclicity.lean#L259"><code>subsingleton_H_succ</code></a>,
-and the <a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/docs/Guide.md">mathematical guide</a>.</li><li><strong>Higher direct images.</strong> For a spectral map from a prespectral,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/CompactOpenSections.lean#L784"><code>preservesColimit_sections</code></a>,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/QuasiFlasqueAcyclicity.lean#L259"><code>subsingleton_H_succ</code></a>,
+and the <a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/docs/Guide.md">mathematical guide</a>.</li><li><strong>Higher direct images.</strong> For a spectral map from a prespectral,
 quasi-separated source to a prespectral target, right-derived pushforward
 of abelian sheaves preserves filtered colimits in every natural degree. The
 theorem identifies the <em>canonical</em> <code>colimit.post</code> comparison for a small,
 nonempty directed-preorder diagram, not an arbitrary isomorphism; this API
 has universe-zero spaces, coefficients and Ext groups and requires its
 stated sheafification/Ext instances. See
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/HigherDirectImageFilteredColimit.lean#L332"><code>rightDerivedPushforward_colimitPost_isIso</code></a>
-and the <a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/docs/Guide.md">mathematical guide</a>.</li><li><strong>Native sheafed-space limits.</strong> For an actual cone, a limiting underlying
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/HigherDirectImageFilteredColimit.lean#L332"><code>rightDerivedPushforward_colimitPost_isIso</code></a>
+and the <a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/docs/Guide.md">mathematical guide</a>.</li><li><strong>Native sheafed-space limits.</strong> For an actual cone, a limiting underlying
 space cone and a colimiting cocone of its projection-pullback sheaves imply
 that the native cone is limiting; over that same limiting base, the converse
 recovers the sheaf colimit. A separate construction builds such a native
 limit when the required coefficient colimits and local weak sheafification
 exist. These are conditional results under the concrete-coefficient
 hypotheses, not a global limits instance. See the
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/ConePullbackLimit.lean#L222">limit criterion</a>,
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/ConePullbackLimitConverse.lean#L170">fixed-base converse</a>,
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/LimitConstruction.lean#L62">construction</a>, and
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/docs/ConePullbackLimit.md">limit guide</a>.</li><li><strong>Forgetting coefficients.</strong> The native additive-to-Type and
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/ConePullbackLimit.lean#L222">limit criterion</a>,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/ConePullbackLimitConverse.lean#L170">fixed-base converse</a>,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/LimitConstruction.lean#L62">construction</a>, and
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/docs/ConePullbackLimit.md">limit guide</a>.</li><li><strong>Forgetting coefficients.</strong> The native additive-to-Type and
 commutative-ring-to-Type functors preserve same-universe cofiltered limits
 of sheafed spaces, using canonical pullback mates and filtered sheaf-colimit
 comparisons. The ring pullback <code>canonicalComparison</code> is a <em>different</em> map
 from the filtered-diagram <code>colimit.post</code> comparison; neither preservation
 theorem covers arbitrary diagram shapes. See the
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/AbelianForget/LimitPreservation.lean#L103">additive theorem</a>,
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/CommRingForget/LimitPreservation.lean#L112">ring theorem</a>,
-and <a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/docs/CommRingForget.md">ring guide</a>.</li><li><strong>Global sections of spectral inverse limits.</strong> Filtered colimits of
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/AbelianForget/LimitPreservation.lean#L103">additive theorem</a>,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/CommRingForget/LimitPreservation.lean#L112">ring theorem</a>,
+and <a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/docs/CommRingForget.md">ring guide</a>.</li><li><strong>Global sections of spectral inverse limits.</strong> Filtered colimits of
 native stage sections recover the global sections of the constructed
 Type-valued native limit, and of the <em>original actual limiting cone</em> for
 additive or commutative-ring coefficients. All three isomorphisms require
 small filtered indexing, spectral original stages and spectral original
 transition maps. In the ring case each limit section comes from
 <em>some</em> stage, not from every fixed stage. See the
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/NativeLimitGlobalSections.lean#L181">Type comparison</a>,
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/NativeAdditiveGlobalSections.lean#L99">additive comparison</a>,
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/NativeCommRingGlobalSections.lean#L105">ring comparison and stage theorem</a>,
-and <a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/docs/NativeCommRingGlobalSections.md">ring sections guide</a>.</li><li><strong>Compact-open cylinders.</strong> For a directed preorder and a selected index,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/NativeLimitGlobalSections.lean#L181">Type comparison</a>,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/NativeAdditiveGlobalSections.lean#L99">additive comparison</a>,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/NativeCommRingGlobalSections.lean#L105">ring comparison and stage theorem</a>,
+and <a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/docs/NativeCommRingGlobalSections.md">ring sections guide</a>.</li><li><strong>Compact-open cylinders.</strong> For a directed preorder and a selected index,
 restricting an actual native limit to the inverse image of a compact stage
 open gives filtered-colimit descriptions of sections over that open for
 Type-valued, additive and commutative-ring sheafed spaces. For an arbitrary
@@ -67,13 +67,13 @@ limiting cone, spectral original stages and transition maps, and a compact
 possibly-empty stage open, this comparison is an isomorphism, and each
 section comes from <em>some</em> tail stage, not every fixed stage. No nonempty-open,
 nontrivial-ring or transition-surjectivity premise is needed. See the
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/NativeSpectralCylinderSections.lean#L45">Type theorem</a>,
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/NativeAdditiveCylinderSections.lean#L101">additive theorem</a>,
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/NativeCommRingCylinderSections.lean">ring IsIso and some-stage declarations</a>,
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/docs/NativeAdditiveCylinderSections.md">additive cylinder guide</a>,
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/docs/NativeCylinderOpenNaturality.md">generic open-naturality guide</a>,
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/docs/NativeCylinderTailChange.md">generic tail-change guide</a>,
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/NativeCylinderTailChange.lean"><code>betweenTailInclusion_final</code></a>,
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/NativeCylinderTailChange.lean"><code>cylinderSectionsTailColimitIso</code></a>,
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/SheafCohomology/NativeCylinderTailChange.lean"><code>cylinderSectionsComparison_betweenTail</code></a>, and
-<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/66b27c46e97d5086b55abb582010413bc9ad9366/docs/NativeCommRingCylinderSections.md">ring-cylinder guide</a>.</li></ul>
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/NativeSpectralCylinderSections.lean#L45">Type theorem</a>,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/NativeAdditiveCylinderSections.lean#L101">additive theorem</a>,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/NativeCommRingCylinderSections.lean">ring IsIso and some-stage declarations</a>,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/docs/NativeAdditiveCylinderSections.md">additive cylinder guide</a>,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/docs/NativeCylinderOpenNaturality.md">generic open-naturality guide</a>,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/docs/NativeCylinderTailChange.md">generic tail-change guide</a>,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/NativeCylinderTailChange.lean"><code>betweenTailInclusion_final</code></a>,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/NativeCylinderTailChange.lean"><code>cylinderSectionsTailColimitIso</code></a>,
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/SheafCohomology/NativeCylinderTailChange.lean"><code>cylinderSectionsComparison_betweenTail</code></a>, and
+<a href="https://github.com/FormalFrontier/sheaf-cohomology/blob/85cf087ff3e2311834bc8c16cb347f1a513d18e4/docs/NativeCommRingCylinderSections.md">ring-cylinder guide</a>.</li></ul>
