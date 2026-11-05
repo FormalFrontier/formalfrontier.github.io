@@ -1,23 +1,26 @@
-<ul><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/GenericFiniteness.lean">Finiteness near a given generic point</a>:
-a locally finite type, quasi-compact morphism <code>f : X ⟶ S</code> whose ordinary
-point-fibre <code>f ⁻¹&#x27; {η}</code> is finite over a given generic point <code>η</code> of the whole
-target becomes finite on the whole preimage of a dense open neighbourhood
-of that same point. No separatedness, quasi-separatedness, reducedness or
-Noetherian hypothesis is required; empty fibres are allowed. The accompanying
-<a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/GenericFiniteness/Openness.lean">openness theorem</a> makes a
+<ul><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/GenericFiniteness/Components.lean">Finiteness near all component generic points</a>:
+a locally finite type, quasi-compact morphism with finite ordinary point-fibres
+over every component generic point becomes finite on the whole preimage of a
+dense open containing all those points, provided their canonical inherited
+subspace topology is discrete. In particular, this holds when the target has
+finitely many irreducible components. No separatedness, quasi-separatedness,
+reducedness or Noetherian hypothesis is required; empty fibres are allowed.
+The <a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/GenericFiniteness.lean">single-point criterion</a> treats a
+given generic point of the whole target directly. The accompanying
+<a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/GenericFiniteness/Openness.lean">openness theorem</a> makes a
 finite morphism an open map after restricting around a given generic point,
-without assuming the target reduced or the fibre nonempty.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/Algebra/Category/FGAlgCat/Range.lean">Ranges of finitely generated algebras</a>:
+without assuming the target reduced or the fibre nonempty.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/Algebra/Category/FGAlgCat/Range.lean">Ranges of finitely generated algebras</a>:
 over any commutative ring, taking the range of an algebra map with finitely
 generated domain is left adjoint to the inclusion of finitely generated
 subalgebra stages. The stage functor is therefore final. The ambient algebra
 need not be finitely generated, the base and carrier universes are independent,
-and neither the given map nor the scalar map need be injective.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/FiniteType/PointFactorization.lean">Factorization on finite-type points</a>:
+and neither the given map nor the scalar map need be injective.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/FiniteType/PointFactorization.lean">Factorization on finite-type points</a>:
 over any commutative ring <code>K</code>, a morphism <code>f : X ⟶ Y</code> with <code>X</code> locally of
 finite type over <code>Spec K</code> factors through a monomorphism <code>i : N ⟶ Y</code> if and
 only if every point of <code>X</code> over a finitely generated <code>K</code>-algebra lifts through
 <code>i</code> after composition with <code>f</code>. The factorization is in schemes over the
 same <code>Spec K</code>. No finiteness, affineness or separatedness condition is
-imposed on <code>N</code> or <code>Y</code>; the source's local finite-type hypothesis is needed.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/FinitePresentation/PointDescent.lean">Points over finitely generated subalgebras</a>:
+imposed on <code>N</code> or <code>Y</code>; the source's local finite-type hypothesis is needed.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/FinitePresentation/PointDescent.lean">Points over finitely generated subalgebras</a>:
 for any given tower of commutative rings <code>K → R → S</code>, every <code>S</code>-point of a
 scheme locally of finite type over <code>Spec K</code> factors through a finitely
 generated <code>R</code>-subalgebra <code>A ⊆ S</code>. The forward map is the algebra-spectrum
@@ -26,7 +29,7 @@ original <code>Spec K</code>. Two stage points agreeing over <code>S</code> agre
 finitely generated subalgebra. No affineness, quasi-compactness or separatedness
 of the tested scheme, injectivity of either tower map, or finite generation
 of <code>R</code> over <code>K</code> is required. These statements concern subalgebra inclusions,
-not arbitrary filtered algebra colimits.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/AffinePoints.lean">Morphisms from dense affine-point subfunctors</a>:
+not arbitrary filtered algebra colimits.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/AffinePoints.lean">Morphisms from dense affine-point subfunctors</a>:
 for arbitrary schemes <code>X</code> and <code>Y</code> over any base scheme <code>B</code>, let <code>N_B</code> be
 the full affine-point functor over <code>B</code>. If <code>D ⊆ N_B(X)</code> is one-cover-dense
 for flat, surjective morphisms of affine <code>B</code>-schemes, every natural
@@ -34,54 +37,54 @@ transformation <code>α : D ⟶ N_B(Y)</code> is induced by a unique morphism
 <code>f : X ⟶ Y</code> over the same base, with <code>D.ι ≫ N_B.map f = α</code>
 (<code>Scheme.existsUnique_hom_of_isOneCoverDense</code>). No sheaf condition on <code>X</code>
 or <code>D</code>, finite-product condition on <code>D</code>, or finiteness or separatedness
-hypothesis is required.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/RingTheory/FaithfullyFlatPi.lean">Faithful flatness of finite families</a>:
+hypothesis is required.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/RingTheory/FaithfullyFlatPi.lean">Faithful flatness of finite families</a>:
 a finite family of flat commutative-ring maps that is jointly surjective on
 prime spectra induces a faithfully flat map to the product. The spectrum
 implication also holds for arbitrary families of commutative semirings,
-without flatness. Empty index types and zero rings are included.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/FlatSourceCancellation.lean">Flatness under source precomposition</a>:
+without flatness. Empty index types and zero rings are included.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/FlatSourceCancellation.lean">Flatness under source precomposition</a>:
 for arbitrary scheme morphisms <code>p : X ⟶ Y</code> and <code>f : Y ⟶ Z</code>, flatness and
 point-surjectivity of <code>p</code>, together with flatness of <code>p ≫ f</code>, imply flatness
 of <code>f</code>, without quasi-compactness or finiteness assumptions. The
-<a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/RingTheory/FlatSourceCancellation.lean">ring-tower theorem</a>
+<a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/RingTheory/FlatSourceCancellation.lean">ring-tower theorem</a>
 cancels a faithfully flat second map from a flat composite of commutative
-ring maps in independent universes; the composite need not be faithfully flat.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/ClosedPointProducts.lean">Closed points of scheme pullbacks</a>:
+ring maps in independent universes; the composite need not be faithfully flat.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/ClosedPointProducts.lean">Closed points of scheme pullbacks</a>:
 for specified locally finite-type arrows to the spectrum of any field, the
 original projections of any specified pullback give a surjection onto pairs
 of closed points. Over a separably closed field this is a canonical set
 equivalence, with pairing, projection, uniqueness, eta, diagonal and
 fixed-base naturality laws. No global finite-type, quasi-compactness,
 separation or reducedness assumption is imposed. This does not identify the
-Zariski closed-point topology with the ordinary product topology.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/LocallyConstructiblePreimage.lean">Locally closed points in continuous preimages</a>:
+Zariski closed-point topology with the ordinary product topology.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/LocallyConstructiblePreimage.lean">Locally closed points in continuous preimages</a>:
 for arbitrary topological spaces and a continuous map, every nonempty preimage
 of a locally constructible set has a member at which that same preimage is
 locally closed. No separation, compactness or Noetherian hypothesis is needed;
 the result does not assert preservation of constructibility by continuous maps.
-A <a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemePropertiesExamples/LocallyConstructiblePreimage.lean">dense-preimage application</a>
-shows that a dense such preimage in a nonempty source has nonempty interior.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/JacobsonClosedPoints.lean">Closedness through closed points</a>:
+A <a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemePropertiesExamples/LocallyConstructiblePreimage.lean">dense-preimage application</a>
+shows that a dense such preimage in a nonempty source has nonempty interior.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/JacobsonClosedPoints.lean">Closedness through closed points</a>:
 in any Jacobson topological space, a locally closed subset is closed if and only
 if its trace in the closed-point subspace is closed. Local closedness is required
 for the full subset, not just its trace; no separation or finiteness hypothesis
-is imposed.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/Topology/ClosedPointCofinite.lean">Cofinite closed-point topology</a>:
+is imposed.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/Topology/ClosedPointCofinite.lean">Cofinite closed-point topology</a>:
 in any preirreducible Noetherian topological space of Krull dimension at most
 one, a subset of the closed-point subspace is closed exactly when it is the
 whole space or finite. Its given topology is therefore cofinite, without
 separation, sobriety or Jacobson hypotheses. The Zariski closed-point topology
 of <code>Spec K[X]</code> and the Zariski topology of <code>MaximalSpectrum K[X]</code> are cofinite
 over every field <code>K</code>. For any algebraic closure <code>L</code> of <code>K</code>, the
-<a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/Topology/PolynomialClosedPointOrbits.lean">automorphism-orbit homeomorphism</a>
+<a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/Topology/PolynomialClosedPointOrbits.lean">automorphism-orbit homeomorphism</a>
 identifies the existing <code>(L ≃ₐ[K] L)</code>-orbit quotient of cofinite <code>L</code> with this
 Zariski maximal spectrum, retaining Multivariate Polynomials' underlying
 equivalence. The evaluation-kernel classifier from <code>L</code> is a quotient map.
 The fields may have independent universes, using the given <code>K</code>-algebra
 structure on <code>L</code>; no perfection, separability or infinitude assumption on
-<code>K</code> is required.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/RingTheory/Spectrum/Prime/Polynomial.lean">Fibres of polynomial spectra under field extension</a>:
+<code>K</code> is required.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/RingTheory/Spectrum/Prime/Polynomial.lean">Fibres of polynomial spectra under field extension</a>:
 for independently universed fields <code>K</code> and <code>L</code> with their given <code>K</code>-algebra,
 the coefficient-extension spectrum map has finite fibre over a prime <code>p</code>
 exactly when <code>p</code> is nonzero or <code>L</code> is algebraic over <code>K</code>. All ordinary point
 fibres are finite exactly for algebraic extensions, and then the generic
 fibre consists precisely of the zero prime of <code>L[X]</code>. Infinite algebraic
 extensions and inseparable extensions are included; these are not geometric
-field-valued lift fibres or a quasi-finiteness assertion.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/JacobsonClosedPoints.lean">Locally constructible closed-point traces</a>:
+field-valued lift fibres or a quasi-finiteness assertion.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/JacobsonClosedPoints.lean">Locally constructible closed-point traces</a>:
 in any Jacobson topological space, a subset satisfying Mathlib's
 <code>Topology.IsLocallyConstructible</code> has a dense closed-point trace, and is closed
 exactly when that trace is closed in the original closed-point subspace.
@@ -91,21 +94,21 @@ intersection with arbitrary locally closed subsets, without assuming those
 subsets are locally constructible. A common density theorem for arbitrary
 unions of locally closed sets recovers Mathlib's locally closed density theorem
 by a singleton-index specialization; this union theorem does not assert trace
-conservativity.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/MaximalPointSpace.lean">Maximal-point locally ringed spaces</a>:
+conservativity.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/MaximalPointSpace.lean">Maximal-point locally ringed spaces</a>:
 for any commutative Jacobson ring <code>R</code>, construct a locally ringed space on the
 closed-point subspace of <code>Spec R</code>. Its inclusion induces an isomorphism of
 full sheaves after pushforward, principal-open rings are <code>R_f</code>, stalks are
 <code>R_m</code>, and global sections recover <code>R</code>, with nilpotents and supplied scalars.
-<a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/MaximalPointSheaf.lean">Localization-basis recognition</a>
+<a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/MaximalPointSheaf.lean">Localization-basis recognition</a>
 identifies any full sheaf with compatible coordinate actions and the same
-localization property. <a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/MaximalPointMorphisms.lean">Morphisms</a>
+localization property. <a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/MaximalPointMorphisms.lean">Morphisms</a>
 are contravariant for homomorphisms whose contractions preserve maximal
 ideals; this preservation is derived for finite-type homomorphisms from a
-Jacobson ring. <a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/MaximalPointSheafMaps.lean">Full component uniqueness</a>
+Jacobson ring. <a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/MaximalPointSheafMaps.lean">Full component uniqueness</a>
 identifies a supplied sheaf component from its global coordinates, without
 assuming that component is already local. The inclusion need not be an
 isomorphism of spaces, and no general Scheme structure is asserted for the
-maximal-point space.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/ClosedPointLifts.lean">Lifts to closed-point targets</a>:
+maximal-point space.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/ClosedPointLifts.lean">Lifts to closed-point targets</a>:
 for a Jacobson locally ringed target <code>Y</code> and an arbitrary locally ringed source
 <code>X</code>, <code>closedPointInclusionHomEquiv</code> identifies maps <code>X ⟶ C(Y)</code> with original
 morphisms <code>X ⟶ Y</code> whose every image point is closed. The inverse is the unique
@@ -113,11 +116,11 @@ full locally ringed-space lift through the given inclusion. Its section,
 stalk and global-section maps read back the original maps through the given
 comparisons. It is natural in every source morphism and in closed-point-preserving
 morphisms between Jacobson targets, and retains supplied structure-map triangles.
-Its <a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/MaximalPointLifts.lean">affine specialization</a>
+Its <a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/MaximalPointLifts.lean">affine specialization</a>
 identifies maps <code>X ⟶ C(R)</code> with original maps <code>X ⟶ Spec R</code> whose image ideals
 are all maximal, for any commutative Jacobson ring <code>R</code>, and reads back the
 original homomorphism <code>R → Γ(X)</code>. No Jacobson hypothesis is imposed on <code>X</code>
-or its global-section ring.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/MaximalPointHom.lean">Hom recovery for maximal-point spaces</a>:
+or its global-section ring.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/MaximalPointHom.lean">Hom recovery for maximal-point spaces</a>:
 for commutative Jacobson rings <code>R</code> and <code>S</code>, <code>maximalPointHomEquiv</code> identifies
 ring homomorphisms <code>R →+* S</code> preserving maximal ideals under contraction with
 all locally ringed space morphisms <code>C(S) ⟶ C(R)</code>, where
@@ -127,7 +130,7 @@ morphism is recovered from its global-section map. This equivalence restricts
 to supplied scalar maps. For given <code>K</code>-algebra actions in a common universe,
 it identifies maximal-contraction-preserving algebra homomorphisms with
 morphisms over <code>Spec K</code>; if <code>S</code> is finite type over <code>K</code>, every algebra
-homomorphism corresponds, with no finite-type assumption on <code>R</code>.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/MaximalPointRingedHom.lean">Locality of full ringed morphisms</a>:
+homomorphism corresponds, with no finite-type assumption on <code>R</code>.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/MaximalPointRingedHom.lean">Locality of full ringed morphisms</a>:
 for commutative Jacobson rings <code>R,S</code>, a ringed morphism <code>g : C(S) ⟶ C(R)</code>
 is local if and only if its original global-coordinate homomorphism
 preserves maximal ideals under contraction. Under this condition the entire
@@ -136,25 +139,25 @@ ringed lift retains all supplied components and respects composition.
 For given <code>K</code>-algebra structures over any commutative ring <code>K</code>, scalar
 compatibility and finite type of <code>S</code> over <code>K</code> imply locality, with no
 finite-type hypothesis on <code>R</code>. The full sheaves retain nilpotents and the
-zero ring is included.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/RingTheory/Jacobson/Int.lean">The integers are Jacobson</a>:
+zero ring is included.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/RingTheory/Jacobson/Int.lean">The integers are Jacobson</a>:
 the canonical integer ring is a Jacobson ring. A
-<a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemePropertiesExamples/IntegerMaximalPointEvaluation.lean">polynomial evaluation example</a>
+<a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemePropertiesExamples/IntegerMaximalPointEvaluation.lean">polynomial evaluation example</a>
 identifies the maximal-point morphism over <code>Spec ℤ</code> induced by evaluation at
-zero, <code>ℤ[X] →ₐ[ℤ] ℤ</code>, together with its recovered ring map and the value <code>X ↦ 0</code>.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/ProjReduced.lean">Reduced projective spectra</a>: for any
+zero, <code>ℤ[X] →ₐ[ℤ] ℤ</code>, together with its recovered ring map and the value <code>X ↦ 0</code>.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/ProjReduced.lean">Reduced projective spectra</a>: for any
 <code>ℕ</code>-graded commutative ring <code>A</code> with grading <code>𝒜</code>, <code>Proj 𝒜</code> is reduced whenever
-<code>A</code> is reduced, with no nonemptiness or finiteness assumption.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/PolynomialProjGeometry.lean">Polynomial projective coordinate separation</a>:
+<code>A</code> is reduced, with no nonemptiness or finiteness assumption.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/PolynomialProjGeometry.lean">Polynomial projective coordinate separation</a>:
 over any nontrivial commutative ring and any nontrivial variable type, the
 total-degree polynomial projective spectrum has at least two underlying points.
 Coordinate points over the same coefficient prime are distinct for distinct
 indices; each lies in exactly its own coordinate basic open. This includes the
-projective line over the two-element field, without a domain or field-size bound.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/NormalPolynomial.lean">Local normality of polynomial rings</a>:
+projective line over the two-element field, without a domain or field-size bound.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/NormalPolynomial.lean">Local normality of polynomial rings</a>:
 over any commutative locally normal base ring, multivariate polynomial rings
-with arbitrary variable types are locally normal.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/GlobalSectionsBaseChange.lean">Global sections under flat scalar extension</a>:
+with arbitrary variable types are locally normal.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/GlobalSectionsBaseChange.lean">Global sections under flat scalar extension</a>:
 for a quasicompact quasiseparated scheme over a commutative ring <code>k</code> and a flat
 commutative <code>k</code>-algebra <code>K</code>, the canonical equivalence identifies the global
 sections of the base change with <code>K ⊗[k] Γ(X, ⊤)</code>. Its scalar, section and pure
 tensor formulas retain the two pullback projections. Identity and tower
-coherence are also available for field extensions.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/GlobalSections.lean">Global sections and affine targets</a>: if
+coherence are also available for field extensions.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/GlobalSections.lean">Global sections and affine targets</a>: if
 <code>p : X ⟶ S</code> induces an isomorphism on global sections and <code>T</code> is affine,
 precomposition is a bijection <code>(S ⟶ T) → (X ⟶ T)</code>, for arbitrary <code>X</code> and
 <code>S</code>. A reduced connected scheme universally closed over a field has a
@@ -162,14 +165,14 @@ field of global sections. For a reduced preconnected scheme universally
 closed over a field, a rational section identifies its global sections
 with the base field, so every morphism to an affine scheme is constant at
 that rational point. Direct import for the field criterion and the
-canonical global-sections isomorphism: <code>SchemeProperties.GlobalSections.Field</code>.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/ProperAffineField.lean">Proper affine point criterion</a>: for any
+canonical global-sections isomorphism: <code>SchemeProperties.GlobalSections.Field</code>.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/ProperAffineField.lean">Proper affine point criterion</a>: for any
 field <code>K : Type u</code> and <code>X : Scheme.{u}</code>, a morphism
 <code>f : X ⟶ Spec (CommRingCat.of K)</code> with
 <code>[IsProper f] [IsAffine X] [PreconnectedSpace X]</code> gives <code>Subsingleton X</code>
 (<code>AlgebraicGeometry.Scheme.Hom.subsingleton_of_isProper_of_isAffine</code>).
 The underlying point set has at most one point; <code>X</code> may be empty or nonreduced.
 This does not assert a scheme isomorphism or uniqueness of scheme morphisms.
-Direct import: <code>SchemeProperties.ProperAffineField</code>.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/PolynomialProjProper.lean">Finite-variable polynomial Proj</a> is proper over the original <code>Spec R</code> for every commutative ring <code>R : Type (max u v)</code> and finite <code>σ : Type v</code>, including zero rings and empty <code>σ</code>; see the <a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/docs/SpectraAndGlobalGeometry.md#polynomial-proj-properness">guide</a>.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/Rigidity.lean">Rigidity from a collapsed fibre</a>: for a
+Direct import: <code>SchemeProperties.ProperAffineField</code>.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/PolynomialProjProper.lean">Finite-variable polynomial Proj</a> is proper over the original <code>Spec R</code> for every commutative ring <code>R : Type (max u v)</code> and finite <code>σ : Type v</code>, including zero rings and empty <code>σ</code>; see the <a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/docs/SpectraAndGlobalGeometry.md#polynomial-proj-properness">guide</a>.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/Rigidity.lean">Rigidity from a collapsed fibre</a>: for a
 field <code>K</code>, a proper integral <code>K</code>-scheme <code>X</code> whose structure map has a
 <code>K</code>-rational section, a preconnected <code>K</code>-scheme <code>Y</code> with an arbitrary chosen
 point <code>y₀</code>, and a <code>K</code>-scheme <code>Z</code> separated over <code>K</code>, a compatible <code>K</code>-morphism
@@ -177,7 +180,7 @@ point <code>y₀</code>, and a <code>K</code>-scheme <code>Z</code> separated ov
 <code>g : Y ⟶ Z</code> if the topological image under <code>h</code> of the projection fibre over
 <code>y₀</code> is subsingleton. The factorization is equality of scheme morphisms.
 The parameter need not be reduced, and <code>y₀</code> need not be rational or closed.
-Direct import: <code>SchemeProperties.Rigidity</code>.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/488ab0aa5f566c8c40dc917eeb9b27544a5ed592/SchemeProperties/RealComplexSpectrum.lean">Real–complex residue degrees</a>:
+Direct import: <code>SchemeProperties.Rigidity</code>.</li><li><a href="https://github.com/FormalFrontier/scheme-properties/blob/09db7d881a2fab0967f5785b06c52aad22b45b39/SchemeProperties/RealComplexSpectrum.lean">Real–complex residue degrees</a>:
 the coproduct <code>Spec ℝ ⨿ Spec ℂ</code>, over <code>Spec ℝ</code> by the identity and the
 standard real-algebra map to <code>ℂ</code>, has two distinct closed points. Their
 original residue real algebras are canonically equivalent to <code>ℝ</code> and <code>ℂ</code>
