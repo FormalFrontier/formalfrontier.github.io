@@ -4,27 +4,27 @@ interfaces; this library does not redefine them.</p>
 commutative Dedekind domain with finite quotients, <code>I &lt; J</code> and <code>I ≠ ⊥</code>
 imply <code>J.absNorm &lt; I.absNorm</code>. If <code>I ≤ J</code> and their absolute norms agree,
 then <code>I = J</code>, even for the zero ideal. Neither result requires a finite-free
-presentation over <code>ℤ</code>. See <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/311fdd13441a8f0f9c40bf43385a7485ba5eb204/DedekindIdealArithmetic/Ideal/AbsNorm.lean#L29">strict norm comparison</a>
-and <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/311fdd13441a8f0f9c40bf43385a7485ba5eb204/DedekindIdealArithmetic/Ideal/AbsNorm.lean#L42">equality</a>.</li><li><strong>A supplied prime-norm element yields a principal prime.</strong> In an infinite
+presentation over <code>ℤ</code>. See <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/6ed94171021f6bd985fc103d7e9d904d1236728e/DedekindIdealArithmetic/Ideal/AbsNorm.lean#L29">strict norm comparison</a>
+and <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/6ed94171021f6bd985fc103d7e9d904d1236728e/DedekindIdealArithmetic/Ideal/AbsNorm.lean#L42">equality</a>.</li><li><strong>A supplied prime-norm element yields a principal prime.</strong> In an infinite
 Dedekind domain finite free over <code>ℤ</code>, a natural prime <code>p</code> and a supplied
 <code>α</code> with <code>(Algebra.norm ℤ α).natAbs = p</code> give a principal prime above
 <code>(p)</code>. This is conditional existence, not a search for <code>α</code>, a class-number
 computation or a claim that every prime has a witness. See
-<a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/311fdd13441a8f0f9c40bf43385a7485ba5eb204/DedekindIdealArithmetic/Ideal/PrincipalPrime.lean#L27">principal-prime extraction</a>.</li><li><strong>Localization can kill the class group and give a PID/UFD.</strong> For Dedekind
+<a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/6ed94171021f6bd985fc103d7e9d904d1236728e/DedekindIdealArithmetic/Ideal/PrincipalPrime.lean#L27">principal-prime extraction</a>.</li><li><strong>Localization can kill the class group and give a PID/UFD.</strong> For Dedekind
 domains <code>A</code> and <code>B</code> (possibly in different universes), an <code>A</code>-algebra <code>B</code>
 torsion-free over <code>A</code>, and an actual <code>IsLocalization M B</code>, extension
-<code>Cl(A) → Cl(B)</code> is <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/311fdd13441a8f0f9c40bf43385a7485ba5eb204/DedekindIdealArithmetic/ClassGroup/Localization.lean#L37">surjective</a>
+<code>Cl(A) → Cl(B)</code> is <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/6ed94171021f6bd985fc103d7e9d904d1236728e/DedekindIdealArithmetic/ClassGroup/Localization.lean#L37">surjective</a>
 without a generator hypothesis. If every source class is an integral power
 of a supplied <code>g</code> and <code>g</code> extends to one, the library supplies the
-<a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/311fdd13441a8f0f9c40bf43385a7485ba5eb204/DedekindIdealArithmetic/ClassGroup/Localization.lean#L59">PID criterion</a>
-and <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/311fdd13441a8f0f9c40bf43385a7485ba5eb204/DedekindIdealArithmetic/ClassGroup/Localization.lean#L81">UFD consequence</a>.
+<a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/6ed94171021f6bd985fc103d7e9d904d1236728e/DedekindIdealArithmetic/ClassGroup/Localization.lean#L59">PID criterion</a>
+and <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/6ed94171021f6bd985fc103d7e9d904d1236728e/DedekindIdealArithmetic/ClassGroup/Localization.lean#L81">UFD consequence</a>.
 No class-group computation, injectivity or basic-open cover is asserted.</li><li><strong>Section indices, finite quotients and common multiples.</strong> Over a domain,
 scaling a nonzero section of a torsion-free module multiplies its quotient
 index by the principal left-ideal index, including zero scalars and infinite
 quotients. Over a commutative domain with finite quotients, an invertible
 module has finite quotient by every nonzero section. Any two nonzero sections
 of an invertible module over a commutative domain admit a common nonzero scalar
-multiple. See <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/311fdd13441a8f0f9c40bf43385a7485ba5eb204/DedekindIdealArithmetic/Module/Index.lean">module indices</a>.</li><li><strong>Intrinsic heights of normed invertible modules.</strong> For a number field <code>K</code>,
+multiple. See <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/6ed94171021f6bd985fc103d7e9d904d1236728e/DedekindIdealArithmetic/Module/Index.lean">module indices</a>.</li><li><strong>Intrinsic heights of normed invertible modules.</strong> For a number field <code>K</code>,
 an invertible <code>𝓞 K</code>-module with definite seminorms on its archimedean fibres
 has a positive multiplicative height: the quotient index divided by the
 weighted norm product, evaluated at <strong>every</strong> nonzero integral section.
@@ -34,5 +34,5 @@ sum from the logarithmic index and divides by <code>[K : ℚ]</code>; it can be 
 Tensor products multiply heights and add logarithmic heights; positive
 placewise rescaling divides by the weighted factor and subtracts its
 degree-normalized logarithm. Pullback along an integral module equivalence
-preserves both heights. See <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/311fdd13441a8f0f9c40bf43385a7485ba5eb204/DedekindIdealArithmetic/NumberField/ModuleHeight.lean">module heights</a>
+preserves both heights. See <a href="https://github.com/FormalFrontier/dedekind-ideal-arithmetic/blob/6ed94171021f6bd985fc103d7e9d904d1236728e/DedekindIdealArithmetic/NumberField/ModuleHeight.lean">module heights</a>
 and the metric modules below.</li></ul>

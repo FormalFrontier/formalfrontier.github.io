@@ -3,7 +3,7 @@ monoids <code>M</code>, <code>N</code>, and coefficient representations <code>σ
 <code>τ : S →+* AddMonoid.End N</code>, an additive map <code>h : M →+ N</code> that intertwines
 every <code>σ s</code> with <code>τ s</code> and the selected endomorphisms <code>f</code> with <code>g</code> also
 intertwines their plain polynomial evaluations. The
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/LinearMap/Evaluation.lean">semilinear version</a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/LinearMap/Evaluation.lean">semilinear version</a>
 uses the given module structures over independent semirings <code>R</code>, <code>R₂</code>, any
 scalar homomorphism <code>η : R →+* R₂</code>, an <code>η</code>-semilinear map <code>h</code>, and representations
 into the respective linear endomorphism semirings. The hypotheses
@@ -19,17 +19,17 @@ are independent of the stable bound and natural for arbitrary linear
 intertwiners. Noetherianity and Artinianity of the module give a common bound;
 the separate Noetherian-surjective and Artinian-injective automorphism
 criteria retain their asymmetric hypotheses. See
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/End/StableKernelRange.lean"><code>StableKernelRange</code></a>.
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/End/StableKernelRange.lean"><code>StableKernelRange</code></a>.
 Over arbitrary ring scalars, a finite-length module that is categorically
 indecomposable has a local endomorphism ring, and each endomorphism is
 nilpotent or a unit. The indecomposable predicate already excludes the zero
-module; see <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/End/Local.lean"><code>Local</code></a>.
+module; see <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/End/Local.lean"><code>Local</code></a>.
 The classical ring-module antecedents are Fitting's lemma and its
 indecomposable finite-length local-endomorphism consequence, as presented in
 Wisbauer, <em>Foundations of Module and Ring Theory</em>, §§31.13 and 32.4(3)(iii).
 The explicit-one-step semiring/additive-group decomposition above generalizes
 the cited ring-module setting; the local-endomorphism theorem retains ring
-scalars. See <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/README.md#references-and-credit">references and credit</a>.</li><li><strong>Internal Krull–Schmidt decompositions and cancellation.</strong> Over any ring, a
+scalars. See <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/README.md#references-and-credit">references and credit</a>.</li><li><strong>Internal Krull–Schmidt decompositions and cancellation.</strong> Over any ring, a
 Noetherian module or an Artinian module is a finite internal direct sum of
 nonzero indecomposable submodules; the two chain conditions are separate
 existence hypotheses. Each existence witness includes <code>A i ≠ ⊥</code> alongside
@@ -45,7 +45,7 @@ existential, not required to preserve the given coordinates. A common
 finite-length module <code>P</code> cancels from <code>P × M ≃ₗ[R] P × N</code>, with no chain
 condition on <code>M</code> or <code>N</code>; <code>P</code> may be zero. Zero modules, including those over
 a zero ring, have the empty decomposition. See
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/KrullSchmidt.lean"><code>KrullSchmidt</code></a>, which realizes
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/KrullSchmidt.lean"><code>KrullSchmidt</code></a>, which realizes
 the categorical theorems of Homological Algebra through <code>ModuleCat</code>.</li><li><strong>Additive intertwining by ranges.</strong> An additive map between commutative monoids
 intertwines a finite family of source endomorphisms summing to the identity with
 an orthogonal idempotent target family if and only if it maps each source range
@@ -54,8 +54,8 @@ subtraction or cancellation is required, and the monoid and index universes are
 independent. The arbitrary-index range-action lemma also supplies the coordinate
 calculation for the existing linear product-of-ranges equivalence through
 Mathlib's canonical endomorphism action. See
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Idempotents.lean"><code>OrthogonalIdempotents.semiconj_iff_mapsTo_range</code></a>
-and <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/DirectSum/Idempotents.lean"><code>linearEquivPiRange</code></a>.</li><li><strong>Fibrewise additive intertwining.</strong> For additive commutative monoids <code>M</code>, <code>N</code>,
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Idempotents.lean"><code>OrthogonalIdempotents.semiconj_iff_mapsTo_range</code></a>
+and <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/DirectSum/Idempotents.lean"><code>linearEquivPiRange</code></a>.</li><li><strong>Fibrewise additive intertwining.</strong> For additive commutative monoids <code>M</code>, <code>N</code>,
 let <code>P : I → AddMonoid.End M</code> have finite index set and sum to the identity, and
 let <code>Q : J → AddMonoid.End N</code> be an orthogonal idempotent family, with
 decidable equality on <code>J</code>. For any <code>q : I → J</code> and additive <code>h : M →+ N</code>,
@@ -67,33 +67,33 @@ The target label set may be infinite, and <code>Q</code> need not be complete; l
 be merged or omitted. An unused <code>Q j</code> need only kill <code>h(M)</code>, not vanish on all
 of <code>N</code>. No subtraction, cancellation or scalar compatibility is required, and
 the two monoid and two index universes are independent. See
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Idempotents.lean"><code>OrthogonalIdempotents.semiconj_sum_fiberwise_of_mapsTo_range</code></a>
-and <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Idempotents.lean"><code>CompleteOrthogonalIdempotents.semiconj_sum_fiberwise_iff_mapsTo_range</code></a>.</li><li><strong>Finite coarsening of complete orthogonal idempotents.</strong> Over any possibly
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Idempotents.lean"><code>OrthogonalIdempotents.semiconj_sum_fiberwise_of_mapsTo_range</code></a>
+and <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Idempotents.lean"><code>CompleteOrthogonalIdempotents.semiconj_sum_fiberwise_iff_mapsTo_range</code></a>.</li><li><strong>Finite coarsening of complete orthogonal idempotents.</strong> Over any possibly
 noncommutative <code>Semiring A</code>, summing a finite complete orthogonal family over
 the fibres of an arbitrary map <code>q : I → J</code> gives a complete orthogonal family
 indexed by <code>J</code>. Both index types have <code>Fintype</code> instances, with decidable equality
 needed only on <code>J</code>; the three universes are independent. The map need not be
 surjective: unused labels have value zero. Empty index types and zero semirings
 are allowed; no additive inverses, cancellation or centrality is required. See
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Idempotents.lean"><code>CompleteOrthogonalIdempotents.sum_fiberwise</code></a>.</li><li><strong>Dual endomorphisms.</strong> Over a commutative semiring <code>R</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/Dual/End.lean"><code>Module.End.dualMapAlgHom</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Idempotents.lean"><code>CompleteOrthogonalIdempotents.sum_fiberwise</code></a>.</li><li><strong>Dual endomorphisms.</strong> Over a commutative semiring <code>R</code>,
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/Dual/End.lean"><code>Module.End.dualMapAlgHom</code></a>
 bundles dualization as an algebra homomorphism from the opposite endomorphism
 algebra of any <code>R</code>-semimodule. For a possibly noncommutative <code>R</code>-algebra <code>A</code>,
 <code>Module.Dual.rightRegularAlgHom</code> gives named operators
 <code>F_a(φ)(x) = φ(a * x)</code>, with <code>F_a.comp F_b = F_(b * a)</code> and the original
 pointwise <code>R</code>-scalar structure on the dual. No finiteness or freeness is required.
 Over a commutative ring <code>R</code> and a possibly noncommutative ring algebra <code>A</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/Dual/Coextension.lean"><code>Module.Dual.coextensionEquiv</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/Dual/Coextension.lean"><code>Module.Dual.coextensionEquiv</code></a>
 identifies opposite-algebra coextension of <code>R</code>, restricted to <code>R</code>, with the
 original dual, intertwining coextension translation with these named operators.
-Its generic <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/Category/ModuleCat/ChangeOfRings.lean">pointwise Hom comparison</a>
+Its generic <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/Category/ModuleCat/ChangeOfRings.lean">pointwise Hom comparison</a>
 retains the given algebra action and allows independent scalar and module universes.
 For self-pairings,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/Dual/Nondegenerate.lean"><code>LinearMap.nondegenerate_of_surjective_of_separatingLeft</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/Dual/Nondegenerate.lean"><code>LinearMap.nondegenerate_of_surjective_of_separatingLeft</code></a>
 proves both separating directions from surjectivity and left separation;
 a bijective map to the dual is consequently nondegenerate, even for semimodules.</li><li><strong>Tensor–dual Frobenius criterion.</strong> For a finite-dimensional, possibly
 noncommutative or zero algebra <code>A</code> over a field <code>K</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/Dual/TensorProduct.lean"><code>Module.Dual.exists_nondegenerate_mul_of_tensorProduct_equiv</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/Dual/TensorProduct.lean"><code>Module.Dual.exists_nondegenerate_mul_of_tensorProduct_equiv</code></a>
 produces a functional <code>λ</code> with both-sided nondegenerate pairing <code>λ(a * x)</code>
 from a subspace <code>C</code> of the original dual and an equivalence
 <code>e : C ⊗[K] A ≃ₗ[K] Module.Dual K A</code> satisfying
@@ -103,11 +103,11 @@ semiring <code>C</code> act on the same additive commutative monoid <code>M</cod
 given actions. If <code>M</code> is finitely generated over <code>C</code> and Noetherian over <code>A</code>,
 then <code>A</code> modulo the annihilator of its original action is left Noetherian;
 see
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Noetherian.lean"><code>isNoetherianRing_quotient_annihilator_of_finite</code></a>.
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Noetherian.lean"><code>isNoetherianRing_quotient_annihilator_of_finite</code></a>.
 If <code>M</code> is an additive commutative group, finite generation over <code>C</code> and
 coherence over <code>A</code> instead give a coherent annihilator quotient, as a
 regular left module over the quotient ring; see
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Quotient.lean"><code>isCoherentRing_quotient_annihilator_of_finite</code></a>.
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Quotient.lean"><code>isCoherentRing_quotient_annihilator_of_finite</code></a>.
 The three universes are independent. Neither scalar type needs to be
 Noetherian, and the <code>A</code>-action need not commute with itself.
 Taking <code>C = A</code> in the Noetherian result recovers the self-commuting criterion:
@@ -119,7 +119,7 @@ commutative monoid with its given module structure, without a commutation
 hypothesis.</li><li><strong>Noetherian semilinear Hom.</strong> For semirings <code>R</code>, <code>R₂</code>, a ring <code>S</code>, a finitely
 generated <code>R</code>-semimodule <code>M</code>, and a Noetherian <code>S</code>-module <code>N</code> with a commuting
 <code>R₂</code>-action,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Noetherian.lean"><code>isNoetherian_semilinearMap</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Noetherian.lean"><code>isNoetherian_semilinearMap</code></a>
 makes <code>M →ₛₗ[σ] N</code> Noetherian for the canonical pointwise <code>S</code>-action, for every
 <code>σ : R →+* R₂</code>. The five universes are independent; no surjectivity of <code>σ</code>,
 scalar commutativity or ambient Noetherianity is required.
@@ -128,7 +128,7 @@ recovers Mathlib's <code>isNoetherian_linearMap</code> proposition in its commut
 case, with the same pointwise action.</li><li><strong>Hom and End of matrix columns.</strong> Over an arbitrary possibly noncommutative
 semiring <code>R</code>, finite-sum matrix actions retain the given coefficient-module
 structures. For a finite nonempty index <code>I</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/Matrix/ColumnHom.lean"><code>LinearMap.matrixModuleHomAddEquiv</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/Matrix/ColumnHom.lean"><code>LinearMap.matrixModuleHomAddEquiv</code></a>
 identifies coefficient-linear maps additively with matrix-linear maps of columns;
 its inverse is characterized at every coordinate.
 <code>Module.matrixModuleEndRingEquiv</code> preserves the usual order of composition.
@@ -138,25 +138,25 @@ injective. Zero semirings are allowed, and no scalar-module structure on a
 general Hom is used.</li><li><strong>Projective matrix-column semimodules.</strong> For a semiring <code>R</code>, an additive
 commutative monoid <code>M</code> with its given <code>R</code>-module structure, and a finite type <code>I</code>
 with decidable equality,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/Matrix/Projective.lean"><code>Matrix.Module.projective_iff</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/Matrix/Projective.lean"><code>Matrix.Module.projective_iff</code></a>
 characterizes projectivity of the canonical <code>Matrix I I R</code>-module on <code>I → M</code> by
 <code>IsEmpty I ∨ Module.Projective R M</code>. In particular, for inhabited <code>I</code>, projectivity
 is equivalent to that of <code>M</code> over <code>R</code>. No coefficient commutativity or additive
 inverses are required, and the carrier universes are independent.</li><li><strong>Left ideals of finite matrix semirings.</strong> For <code>[Semiring R]</code>, <code>[Fintype I]</code>
 and <code>[DecidableEq I]</code>, including empty <code>I</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/Matrix/RowIdeal.lean"><code>Submodule.matrixRowsOrderIso</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/Matrix/RowIdeal.lean"><code>Submodule.matrixRowsOrderIso</code></a>
 identifies left ideals of <code>Matrix I I R</code> with <code>R</code>-submodules of the row module
 <code>I → R</code>. Left Artinianity and left Noetherianity of the matrix semiring are
 equivalent to the corresponding conditions on this row module, not to
 unrestricted conditions on the coefficient semiring.</li><li><strong>Coherence of finite matrix rings.</strong> For an arbitrary, possibly noncommutative
 or zero <code>Ring R</code>, a finite type <code>I</code> with its given decidable equality, and the
 canonical regular left modules,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/Matrix/CoherentRing.lean"><code>Matrix.instIsCoherentRing</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/Matrix/CoherentRing.lean"><code>Matrix.instIsCoherentRing</code></a>
 gives coherence of <code>Matrix I I R</code> from coherence of <code>R</code>, including empty <code>I</code>.
 For nonempty <code>I</code>, <code>IsCoherentRing.of_matrix</code> reflects coherence and
 <code>Matrix.isCoherentRing_iff</code> gives the equivalence. The ring and index universes
 are independent. The supporting
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/Matrix/Entrywise.lean"><code>Matrix.entrywiseLinearMap</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/Matrix/Entrywise.lean"><code>Matrix.entrywiseLinearMap</code></a>
 applies a coefficient-linear map <code>(κ → R) →ₗ[R] R</code> entrywise to a family of
 matrices, linearly for regular left matrix multiplication, over any semiring
 and arbitrary family index <code>κ</code>. Its scalar-restricted kernel has a split
@@ -164,7 +164,7 @@ entry projection onto the coefficient kernel. Reflection needs nonempty <code>I<
 the empty matrix ring has one element and is coherent for every <code>R</code>.
 More generally, for any additive commutative monoid <code>M</code> with its given
 <code>R</code>-module structure,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/Matrix/CoherentModule.lean"><code>Matrix.Module.instIsCoherent</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/Matrix/CoherentModule.lean"><code>Matrix.Module.instIsCoherent</code></a>
 preserves coherence under the canonical finite-sum action of <code>Matrix I I R</code>
 on <code>I → M</code>, including empty <code>I</code>. For nonempty <code>I</code>,
 <code>Module.IsCoherent.of_matrixModule</code> reflects coherence and
@@ -174,41 +174,41 @@ required. The index, coefficient and module universes are independent, and
 <code>R</code> may be zero. With empty <code>I</code>, every column module is a subsingleton and
 hence coherent, so nonemptiness is essential for reflection.</li><li><strong>Left-regular elements in left Artinian rings.</strong> For an arbitrary unital
 <code>Ring A</code> with <code>[IsArtinianRing A]</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Artinian/Regular.lean"><code>IsLeftRegular.isUnit_of_isArtinianRing</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Artinian/Regular.lean"><code>IsLeftRegular.isUnit_of_isArtinianRing</code></a>
 makes every left-regular element a unit. Artinianity concerns the original
 left regular module; no opposite-Artinian, commutativity or nontriviality
 hypothesis is required, and the carrier universe is arbitrary. The reverse
 implication is already available through Mathlib's <code>IsUnit.isRegular</code>.</li><li><strong>Closed semimodule categories.</strong> For a <code>CommSemiring R</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/Category/ModuleCat/Monoidal/Closed.lean"><code>SemimoduleCat.tensorLeftHomAdjunction</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/Category/ModuleCat/Monoidal/Closed.lean"><code>SemimoduleCat.tensorLeftHomAdjunction</code></a>
 makes tensoring with <code>M</code> left adjoint to its wrapped-morphism Hom functor.
 The Hom functor allows an independent carrier universe; the monoidal closed
 structure uses the common scalar and carrier universe of the tensor category.
 Currying, uncurrying, evaluation and coevaluation have pure-tensor formulas.
 Over a commutative ring, <code>ModuleCat.ihomSemimoduleIso</code> compares the chosen
 internal Homs and their unit, counit and precomposition maps.
-The <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModulesTest/Algebra/Category/ModuleCat/Monoidal/Closed.lean">finite-basis client</a>
+The <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/Algebra/Category/ModuleCat/Monoidal/Closed.lean">finite-basis client</a>
 uses a specified basis with finite index type to show that tensoring preserves
 existing limits at two independent diagram sizes; the index universe is
 independent as well.</li><li><strong>Kernels over semirings.</strong> For an arbitrary <code>Semiring R</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/Category/ModuleCat/Kernels.lean"><code>SemimoduleCat.kernelIsLimit</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/Category/ModuleCat/Kernels.lean"><code>SemimoduleCat.kernelIsLimit</code></a>
 makes the existing kernel submodule, with its subtype inclusion, a categorical
 kernel. <code>SemimoduleCat.hasKernels_semimoduleCat</code> gives kernels in
 <code>SemimoduleCat.{v} R</code>, with independent coefficient and carrier universes.
 Over a ring, <code>ModuleCat.kernelCone_semimodule_hom_apply</code> shows that the
 comparison with Mathlib's module kernel preserves underlying elements.</li><li><strong>Sums of nilpotent left ideals.</strong> For arbitrary left ideals <code>I</code>, <code>J</code> of a
 possibly noncommutative <code>Semiring R</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/Operations.lean"><code>Ideal.sup_pow_add_sub_one_le</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/Operations.lean"><code>Ideal.sup_pow_add_sub_one_le</code></a>
 gives <code>(I ⊔ J) ^ (m + n - 1) ≤ I ^ m * ⊤ ⊔ J ^ n * ⊤</code> for all natural
 <code>m</code>, <code>n</code>. Global witnesses <code>I ^ m = 0</code> and <code>J ^ n = 0</code> therefore give
 <code>(I ⊔ J) ^ (m + n - 1) = 0</code>; <code>Ideal.isNilpotent_sup</code> makes the sum of two
 globally nilpotent left ideals nilpotent. No commutativity, two-sidedness or
 positivity of the exponents is required. The
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModulesTest/RingTheory/Ideal/Operations.lean">relative-generation client</a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/RingTheory/Ideal/Operations.lean">relative-generation client</a>
 combines this with nilpotent-ideal elimination to deduce <code>P ≤ N</code> from
 <code>P ≤ N ⊔ (I ⊔ J) • P</code> in any additive commutative <code>R</code>-semimodule, with an
 independent carrier universe.</li><li><strong>Inverse images with nilpotent kernel.</strong> For a unital semiring homomorphism <code>f</code>
 and a target left ideal <code>J</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/Comap.lean"><code>Ideal.pow_comap_eq_zero_of_ker_pow_eq_zero</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/Comap.lean"><code>Ideal.pow_comap_eq_zero_of_ker_pow_eq_zero</code></a>
 gives <code>J.comap f ^ (m * n) = 0</code> from the global witnesses <code>J ^ m = 0</code> and
 <code>(RingHom.ker f) ^ n = 0</code>. The companion <code>Ideal.isNilpotent_comap</code> gives global
 nilpotence of the inverse image. Both semirings may be noncommutative, all natural
@@ -217,21 +217,21 @@ exponents including zero are allowed, and the source, target and generic
 gives product and power inclusions for inverse images without nilpotence hypotheses.</li><li><strong>Relative generation by nilpotent ideals.</strong> For a left ideal <code>I</code> of a
 possibly noncommutative semiring <code>R</code> and submodules <code>N</code>, <code>P</code> of an additive
 commutative <code>R</code>-semimodule,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/Operations.lean"><code>Submodule.le_sup_pow_smul_of_le_sup_smul</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/Operations.lean"><code>Submodule.le_sup_pow_smul_of_le_sup_smul</code></a>
 propagates <code>P ≤ N ⊔ I • P</code> to <code>P ≤ N ⊔ (I ^ n) • P</code> for every natural <code>n</code>.
 Under global nilpotence <code>IsNilpotent I</code>, the companion
 <code>Submodule.le_of_le_sup_smul_of_isNilpotent</code> gives <code>P ≤ N</code>.
 The carrier universes are independent, and no finite generation, additive
 inverses, cancellation or nontriviality is required.</li><li><strong>Extension of products and powers of left ideals.</strong> For any unital homomorphism
 <code>f : A →+* B</code> between semirings in independent universes,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/Maps.lean"><code>Ideal.map_mul_of_isTwoSided</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/Maps.lean"><code>Ideal.map_mul_of_isTwoSided</code></a>
 gives <code>(I * J).map f = I.map f * J.map f</code> whenever <code>I.map f</code> is two-sided.
 The companion <code>Ideal.map_pow_of_isTwoSided</code> gives
 <code>(I ^ n).map f = (I.map f) ^ n</code> for every natural exponent, including zero.
 Neither semiring must be commutative, and <code>f</code> need not be surjective.</li><li><p><strong>Annihilators after localization.</strong> For commutative semirings <code>R</code>, <code>A</code>,
 a submonoid <code>T : Submonoid R</code>, an <code>R</code>-algebra <code>A</code> realizing localization at
 <code>T</code>, and a standard localized-module map <code>f : M →ₗ[R] N</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/Module/LocalizedModule.lean"><code>IsLocalizedModule.map_annihilator</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/Module/LocalizedModule.lean"><code>IsLocalizedModule.map_annihilator</code></a>
 gives</p>
 <pre><code class="language-lean">Ideal.map (algebraMap R A) (Module.annihilator R M) =
   Module.annihilator A N</code></pre>
@@ -240,26 +240,26 @@ commutative monoids, <code>N</code> has its compatible <code>A</code>-action, an
 universes are independent. Zero semirings, zero modules and <code>0 ∈ T</code> are
 allowed; no finite presentation, flatness or faithful-action assumption is
 added. The supporting
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/Module/LocalizedModule/Finite.lean"><code>IsLocalizedModule.comp_eq_iff_exists_smul_eq</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/Module/LocalizedModule/Finite.lean"><code>IsLocalizedModule.comp_eq_iff_exists_smul_eq</code></a>
 characterizes equality after localization for two maps from a finitely
 generated semimodule by a single submonoid multiplier making them equal.</p></li><li><strong>Coatomicity of two-sided ideals.</strong> For any unital, possibly nonassociative ring <code>R</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/TwoSidedIdeal/Atoms.lean"><code>TwoSidedIdeal.isCoatomic</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/TwoSidedIdeal/Atoms.lean"><code>TwoSidedIdeal.isCoatomic</code></a>
 proves <code>IsCoatomic (TwoSidedIdeal R)</code>: every proper two-sided ideal lies below a
 maximal proper two-sided ideal. No nontriviality, commutativity or finiteness
 assumption is needed. Use this theorem as a local instance with Mathlib's
 coatom consumers. The
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModulesTest/RingTheory/TwoSidedIdeal.lean">simple-quotient example</a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/RingTheory/TwoSidedIdeal.lean">simple-quotient example</a>
 combines it with the congruence correspondence to obtain a nontrivial simple
 quotient of an arbitrary nontrivial ring, with its surjective unital quotient map.</li><li><strong>Radical colons and pointwise annihilators.</strong> For a radical ideal <code>I</code> in a
 commutative semiring <code>R</code> and an arbitrary subset <code>s : Set R</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/Annihilator.lean"><code>Ideal.IsRadical.colon</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/Annihilator.lean"><code>Ideal.IsRadical.colon</code></a>
 proves <code>(I.colon s).IsRadical</code>; use it as <code>hI.colon s</code>.
 Taking <code>I = ⊥</code> in a reduced commutative semiring shows that the ideal of
 scalars <code>a</code> with <code>a * b = 0</code> for every <code>b ∈ s</code> is radical. No finiteness,
 nonemptiness or nontriviality assumption is needed.</li><li><p><strong>Finitely generated ideal colons and localization.</strong> For commutative
 semirings <code>R</code>, <code>S</code>, a submonoid <code>T : Submonoid R</code> and an <code>R</code>-algebra <code>S</code>
 satisfying <code>[IsLocalization T S]</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/Localization.lean"><code>IsLocalization.comap_map_colon</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/Localization.lean"><code>IsLocalization.comap_map_colon</code></a>
 gives</p>
 <pre><code class="language-lean">Ideal.comap (algebraMap R S)
     ((I.colon (J : Set R)).map (algebraMap R S)) =
@@ -271,12 +271,12 @@ Finite generation concerns the ideal, not its underlying set. The two
 universes are independent; zero semirings, <code>0 ∈ T</code>, <code>J = ⊥</code> and top ideals
 are allowed. No finiteness or radicality of <code>I</code> is required.</p></li><li><strong>Unit-ideal scalar families.</strong> For an arbitrary family of scalars generating
 the unit ideal in a semiring <code>S</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/Module/Coprime.lean"><code>Ideal.existsUnique_smul_eq_of_span_range_eq_top</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/Module/Coprime.lean"><code>Ideal.existsUnique_smul_eq_of_span_range_eq_top</code></a>
 gives a unique common parameter for compatible elements of an <code>S</code>-semimodule
 whose scalar actions commute. The index type need not be finite or nonempty,
 and no subtraction or additive cancellation is needed.</li><li><strong>Coprime scalar rows.</strong> For a commutative semiring <code>S</code>, an additive
 commutative <code>S</code>-semimodule <code>M</code>, and Bézout-coprime scalars <code>a</code>, <code>b</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/Module/Coprime.lean"><code>IsCoprime.existsUnique_smul_eq_pair</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/Module/Coprime.lean"><code>IsCoprime.existsUnique_smul_eq_pair</code></a>
 gives a unique <code>k</code> with <code>a • k = x</code> and <code>b • k = y</code> whenever
 <code>b • x = a • y</code>. The companion <code>smul_mem_range_smul_iff</code> reflects
 membership in the range of multiplication by <code>a</code> after multiplying by <code>b</code>.
@@ -285,7 +285,7 @@ nontriviality or finiteness is assumed.</li><li><strong>Finite coprime-kernel de
 a representation <code>τ : A →+* Module.End R M</code>, where <code>R</code> is any semiring and <code>M</code> is
 an additive commutative <code>R</code>-semimodule. For a finite labelled pairwise Bézout-coprime
 family <code>a</code>, the sole annihilation premise <code>τ (∏ i, a i) = 0</code> gives
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/Module/Coprime/Kernel.lean"><code>RingHom.linearEquivPiKer</code></a>,
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/Module/Coprime/Kernel.lean"><code>RingHom.linearEquivPiKer</code></a>,
 an explicit equivalence with the product of the labelled kernels. Its inverse sums
 the kernel inclusions, and its projectors are independent of the whole Bézout
 partition used to compute them. Empty families, zero semirings and noncommutative
@@ -301,7 +301,7 @@ coefficient and scalar semirings may differ; neither scalar-linearity nor
 compatibility with other represented elements is required. Same-label
 naturality is the specialization <code>q = id</code>.
 The exact projector criterion is
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/Module/Coprime/Kernel.lean"><code>RingHom.semiconj_sum_kerProjector_iff_mapsTo_ker</code></a>:
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/Module/Coprime/Kernel.lean"><code>RingHom.semiconj_sum_kerProjector_iff_mapsTo_ker</code></a>:
 <code>h</code> intertwines all fibre-sums of fine projectors with the target projectors if
 and only if it maps <code>ker (τ (a i))</code> into <code>ker (υ (b (q i)))</code> for every <code>i</code>.
 This criterion requires no scalar-linearity or intertwining of represented
@@ -311,7 +311,7 @@ independent. Both label sets are finite here because the canonical families
 are finite.</li><li><strong>Finite generation under pointwise unimodular clearing.</strong> For arbitrary,
 possibly noncommutative semirings <code>R</code>, <code>S</code> and <code>f : M →ₛₗ[φ] N</code> between
 additive commutative left semimodules,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/Module/SpanRank.lean"><code>Submodule.fg_of_fg_comap_of_one_mem_span_smul_mem_range</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/Module/SpanRank.lean"><code>Submodule.fg_of_fg_comap_of_one_mem_span_smul_mem_range</code></a>
 proves an <code>S</code>-submodule <code>P</code> finitely generated if <code>P.comap f</code> is finitely
 generated over <code>R</code> and, for every <code>n ∈ P</code>, the clearers
 <code>{a : S | ∃ m : M, f m = a • n}</code> generate the unit <strong>left</strong> ideal.
@@ -321,7 +321,7 @@ premise. The existing single-left-inverse and unit-clearing criteria remain
 specializations. The four universes are independent; neither Noetherianity
 nor surjectivity of <code>φ</code> or <code>f</code> is required.</li><li><strong>Semilinear Noetherian ascent.</strong> For arbitrary semirings <code>R</code>, <code>S</code>, additive
 commutative semimodules <code>M</code>, <code>N</code> and <code>f : M →ₛₗ[φ] N</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Noetherian.lean"><code>isNoetherian_of_left_inv_smul_mem_range</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Noetherian.lean"><code>isNoetherian_of_left_inv_smul_mem_range</code></a>
 transfers <code>IsNoetherian R M</code> to <code>IsNoetherian S N</code> if each <code>n</code> admits
 <code>m, a, b</code> with <code>b * a = 1</code> and <code>f m = a • n</code>. The four universes are
 independent; neither <code>φ</code> nor <code>f</code> must be surjective. The
@@ -329,16 +329,16 @@ independent; neither <code>φ</code> nor <code>f</code> must be surjective. The
 unit-clearing hypothesis, while <code>isNoetherian_of_surjective_semilinear</code>
 requires only function-surjectivity of <code>f</code>.</li><li><strong>Artin–Rees for Noetherian modules.</strong> For an arbitrary commutative ring <code>R</code>,
 ideal <code>I</code> and submodule <code>K</code> of a Noetherian <code>R</code>-module <code>M</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Filtration.lean"><code>Ideal.exists_pow_inf_eq_pow_smul_of_isNoetherian</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Filtration.lean"><code>Ideal.exists_pow_inf_eq_pow_smul_of_isNoetherian</code></a>
 gives a constant <code>c</code> such that
 <code>(I ^ n • ⊤) ⊓ K = I ^ (n - c) • ((I ^ c • ⊤) ⊓ K)</code> for every <code>n ≥ c</code>.
 Neither Noetherianity of <code>R</code> nor finite generation of <code>I</code> is assumed.
 The ring and module universes are independent. The proof uses Mathlib's full
 Artin–Rees theorem over the quotient by the module's annihilator. The
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModulesTest/RingTheory/Filtration.lean">shifted-cofinality client</a> uses
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/RingTheory/Filtration.lean">shifted-cofinality client</a> uses
 the full equality at Mathlib's Noetherian-ring and finite-module hypotheses.</li><li><strong>Submodule adic cofinality.</strong> For an arbitrary ideal <code>I</code> of a commutative
 ring <code>R</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/AdicCompatibility.lean"><code>Ideal.HasSubmoduleAdicCofinality</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/AdicCompatibility.lean"><code>Ideal.HasSubmoduleAdicCofinality</code></a>
 expresses <code>∀ n, ∃ m, N ⊓ (I ^ m • ⊤) ≤ I ^ n • N</code> for every submodule
 <code>N</code> of every finite <code>R</code>-module. This is Fujiwara--Kato's (AP); restricting to
 finitely generated submodules gives the existing
@@ -346,12 +346,12 @@ finitely generated submodules gives the existing
 eliminators allow an independent module universe. Nilpotent ideals satisfy
 (AP) without Noetherianity or finite generation of the ideal or submodule;
 every ideal of a Noetherian ring satisfies it by
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Filtration.lean">Artin–Rees</a>. The ambient module
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Filtration.lean">Artin–Rees</a>. The ambient module
 need not be finitely presented. Cofinality is pointwise, not a full shifted
 Artin–Rees equality. The APf providers follow from (AP), and the
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModulesTest/RingTheory/Filtration.lean">range client</a> applies the APf
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/RingTheory/Filtration.lean">range client</a> applies the APf
 API to maps between finite modules in independent universes.</li><li><strong>Power-killed submodule criteria.</strong> For an ideal <code>I</code> of a commutative ring <code>R</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/AdicCompatibility.lean"><code>Ideal.hasSubmoduleAdicCofinality_iff_forall_exists_inf_pow_smul_eq_bot</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/AdicCompatibility.lean"><code>Ideal.hasSubmoduleAdicCofinality_iff_forall_exists_inf_pow_smul_eq_bot</code></a>
 characterizes (AP) by <code>∃ m, N ⊓ (I ^ m • ⊤) = ⊥</code> whenever
 <code>∃ k, I ^ k • N = ⊥</code>, for every submodule <code>N</code> of every finite <code>R</code>-module.
 The corresponding (APf) criterion tests only finitely generated <code>N</code>.
@@ -359,10 +359,10 @@ Both <code>.exists_inf_pow_smul_eq_bot</code> consumers allow an independent mod
 universe. A single common exponent kills the whole submodule; <code>I</code> need not
 be finitely generated or nilpotent. The converse uses images in canonical
 module quotients over the original coefficient ring <code>R</code>.</li><li><strong>Descent of adic cofinality.</strong> For commutative rings <code>R</code>, <code>A</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/AdicBaseChange.lean"><code>Ideal.HasSubmoduleAdicCofinality.of_map_of_faithfullyFlat</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/AdicBaseChange.lean"><code>Ideal.HasSubmoduleAdicCofinality.of_map_of_faithfullyFlat</code></a>
 descends (AP) from <code>I.map (algebraMap R A)</code> to <code>I</code> along a faithfully flat
 algebra. Alternatively,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/AdicBaseChange.lean"><code>Ideal.HasSubmoduleAdicCofinality.of_map_of_linearRetraction</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/AdicBaseChange.lean"><code>Ideal.HasSubmoduleAdicCofinality.of_map_of_linearRetraction</code></a>
 uses an <code>R</code>-linear map <code>p : A →ₗ[R] R</code> with <code>p 1 = 1</code>, without a flatness
 hypothesis; <code>p</code> need not preserve multiplication. Both have corresponding
 <code>HasFiniteSubmoduleAdicCofinality</code> methods for (APf). The algebra need not be
@@ -372,11 +372,11 @@ linear-retraction theorem works over commutative semirings and arbitrary
 semimodules; its tensor membership and inclusion-reflection lemmas even
 allow noncommutative scalar algebras. All carrier universes are independent.</li><li><strong>Adic cofinality on finite products.</strong> For an arbitrary ideal <code>I</code> of
 <code>Π i, R i</code>, with <code>[Finite ι]</code> and commutative rings <code>R i</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/AdicProducts.lean"><code>Ideal.hasSubmoduleAdicCofinality_iff_forall_map_evalRingHom</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/AdicProducts.lean"><code>Ideal.hasSubmoduleAdicCofinality_iff_forall_map_evalRingHom</code></a>
 gives (AP) for <code>I</code> iff each projection image <code>I.map (Pi.evalRingHom R i)</code>
 has (AP). The companion
 <code>hasFiniteSubmoduleAdicCofinality_iff_forall_map_evalRingHom</code> does the same
-for (APf). The <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/AdicProducts.lean">characteristic criteria</a>
+for (APf). The <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/AdicProducts.lean">characteristic criteria</a>
 also cover unary <code>Ideal.pi</code> and binary <code>Ideal.prod</code>, with independent binary
 ring universes. Empty products and zero factors are allowed. Full (AP)
 covers every submodule of every finite module; (APf) requires only the
@@ -384,7 +384,7 @@ submodule to be finitely generated. No ideal-FG, Noetherian or ambient
 finite-presentation hypothesis is added. Infinite products are not covered
 by these equivalences.</li><li><strong>Cofinal ideal powers.</strong> For ideals <code>I, J</code> of a commutative ring with
 <code>I ^ a ≤ J</code> and <code>J ^ b ≤ I</code> for some natural numbers <code>a, b</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/AdicCompatibility.lean"><code>Ideal.hasSubmoduleAdicCofinality_iff_of_pow_le</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/AdicCompatibility.lean"><code>Ideal.hasSubmoduleAdicCofinality_iff_of_pow_le</code></a>
 makes (AP) equivalent for <code>I</code> and <code>J</code>; the companion
 <code>hasFiniteSubmoduleAdicCofinality_iff_of_pow_le</code> does the same for (APf).
 The witnesses may be zero. In particular, replacing an ideal by any positive
@@ -396,7 +396,7 @@ This comparison needs no finiteness or additive-inverse hypothesis.</li><li><str
 coefficient equivalence <code>σ : R ≃+* S</code> and a compatible semilinear
 equivalence <code>e : M ≃ₛₗ[(σ : R →+* S)] P</code> between additive commutative
 semimodules with their given actions,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/AdicCompatibility.lean"><code>Submodule.adic_cofinality_iff_of_semilinearEquiv</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/AdicCompatibility.lean"><code>Submodule.adic_cofinality_iff_of_semilinearEquiv</code></a>
 transports <code>∀ n, ∃ m, N ⊓ (I ^ m • ⊤) ≤ I ^ n • N</code> to the condition for
 <code>I.map σ.toRingHom</code> and <code>N.map e.toLinearMap</code>. It allows arbitrary left
 ideals and submodules in four independent universes, without finiteness
@@ -411,14 +411,14 @@ rings, both (AP) and (APf) pass from an ideal <code>I</code> to its extension
 along an arbitrary localization algebra. The localization algebra need not
 be finite over <code>R</code>. The respective <code>.map</code> and <code>.map_of_isLocalization</code>
 interfaces are in
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/AdicCompatibility.lean"><code>AdicCompatibility</code></a>.
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/AdicCompatibility.lean"><code>AdicCompatibility</code></a>.
 Neither ideal finite generation nor finite presentation or Noetherianity
 is required; the original target action and independent carrier universes
 are retained.</li><li><strong>Adic cofinality near a closed locus.</strong> For an ideal <code>I</code> of a commutative
 ring <code>R</code> and any set <code>s : Set R</code> with <code>I ⊔ Ideal.span s = ⊤</code>, (AP) holds
 for <code>I</code> if and only if it holds for every extension to <code>Localization.Away f</code>,
 <code>f ∈ s</code>; the same equivalence holds for (APf). The
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/AdicLocality.lean"><code>hasSubmoduleAdicCofinality_iff_forall_map_away</code> and finite-submodule counterpart</a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/AdicLocality.lean"><code>hasSubmoduleAdicCofinality_iff_forall_map_away</code> and finite-submodule counterpart</a>
 need only a distinguished-open cover of <code>V(I)</code>, not of the whole spectrum.
 The set need not be finite. The ambient modules remain finite, with arbitrary
 submodules for (AP) and finitely generated submodules for (APf); no ideal-FG,
@@ -426,7 +426,7 @@ ambient finite-presentation or Noetherian hypothesis is added. Cutoffs are
 pointwise, not a uniform shift or denominator bound, and this is not a
 stalkwise criterion.</li><li><strong>Krull intersection from adic cofinality.</strong> For a finite module <code>M</code> and an
 ideal <code>I</code> satisfying finite-submodule adic cofinality,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/AdicKrull.lean"><code>Ideal.HasFiniteSubmoduleAdicCofinality.mem_iInf_pow_smul_top_iff</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/AdicKrull.lean"><code>Ideal.HasFiniteSubmoduleAdicCofinality.mem_iInf_pow_smul_top_iff</code></a>
 characterizes membership in <code>⨅ n, I ^ n • ⊤</code> by a scalar <code>a ∈ I</code> fixing
 the element. The relative bound <code>I ≤ (Module.annihilator R M).jacobson</code>
 makes this intersection zero. For any submodule <code>N</code> with finite quotient,
@@ -438,14 +438,14 @@ No ideal-FG, finite-presentation or Noetherian hypothesis is added, and the
 ring and module universes are independent. These are algebraic intersection
 results, not assertions of topological closedness or completeness.</li><li><strong>Finite generation from the first adic quotient.</strong> For an arbitrary submodule
 <code>N</code> of a finite original <code>R</code>-module <code>M</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/AdicKrull.lean"><code>Submodule.fg_iff_finite_quotient_smul</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/AdicKrull.lean"><code>Submodule.fg_iff_finite_quotient_smul</code></a>
 detects <code>N.FG</code> on the intrinsic quotient <code>N / I N</code> over <code>R</code>, assuming APf and
 <code>I ≤ (Module.annihilator R M).jacobson</code>. This is not the quotient by
 <code>N ∩ I M</code>, and neither ideal-FG nor a Noetherian, finite-presentation,
 flatness or completeness hypothesis is required.</li><li><strong>Finite presentation from cofinal ideal quotients.</strong> For a finite module <code>M</code>
 over a commutative ring <code>R</code> and an ideal <code>I</code> satisfying full submodule adic
 cofinality and <code>I ≤ Ideal.jacobson ⊥</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/AdicFinitePresentation.lean"><code>Ideal.finitePresentation_iff_forall_quotient_smul</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/AdicFinitePresentation.lean"><code>Ideal.finitePresentation_iff_forall_quotient_smul</code></a>
 detects finite presentation over <code>R</code> on all reductions <code>M / J j M</code> over
 <code>R / J j</code>, for any family <code>J : ι → Ideal R</code> with
 <code>∀ n : ℕ, ∃ j, J j ≤ I ^ n</code>. The positive-powers criterion
@@ -454,15 +454,15 @@ The ring, module and index universes are independent; no ideal finite
 generation or ordering condition on the family is required.</li><li><strong>Essentially finite-type scalar extension.</strong> For commutative rings <code>R</code>, <code>S</code>,
 an essentially finite-type <code>R</code>-algebra structure on <code>S</code>, and a Noetherian
 <code>R</code>-module <code>M</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/TensorProduct/Noetherian.lean"><code>Algebra.EssFiniteType.isNoetherian_tensorProduct</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/TensorProduct/Noetherian.lean"><code>Algebra.EssFiniteType.isNoetherian_tensorProduct</code></a>
 makes <code>S ⊗[R] M</code> Noetherian over <code>S</code> with its canonical left-factor action.
 The three universes are independent, and <code>M</code> need only be an additive
 commutative monoid with its given module structure. Neither ambient ring
 must be Noetherian; no flatness, faithfulness or finite presentation is
 assumed. This includes finite-type algebras and arbitrary localizations.</li><li><strong>Coherent modules and kernels.</strong> For a ring and an additive commutative monoid
-with its given module structure, <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Basic.lean"><code>Module.IsCoherent</code></a>
+with its given module structure, <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Basic.lean"><code>Module.IsCoherent</code></a>
 means finite generation together with finite presentation of every finitely
-generated submodule. <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Basic.lean"><code>Module.IsCoherent.iff_finite_and_fg_ker</code></a>
+generated submodule. <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Basic.lean"><code>Module.IsCoherent.iff_finite_and_fg_ker</code></a>
 characterizes this by finitely generated kernels of <em>all</em> linear maps from
 finite-rank free modules, including rank zero. The same leaf proves closure
 under finitely generated submodules, finite products, kernels and cokernels,
@@ -475,7 +475,7 @@ No coherence of <code>S</code> over <code>R</code> is required, and the three un
 complex <code>S : CategoryTheory.ShortComplex (ModuleCat.{v} R)</code> with finite left
 term <code>S.X₁</code> and coherent middle and right terms <code>S.X₂</code>, <code>S.X₃</code> has coherent
 homology, by
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/ModuleCat.lean"><code>CategoryTheory.ShortComplex.isCoherent_homology</code></a>.
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/ModuleCat.lean"><code>CategoryTheory.ShortComplex.isCoherent_homology</code></a>.
 The conclusion concerns the chosen categorical <code>S.homology</code> with its given
 <code>R</code>-action. Neither the left term nor <code>R</code> is assumed coherent, and no exactness
 hypothesis is imposed. The ring universe is independent of the common object
@@ -483,7 +483,7 @@ universe <code>v</code>.</li><li><strong>Coherence along semilinear retractions.
 additive commutative monoids <code>N</code>, <code>M</code> with their given <code>R</code>- and <code>S</code>-module
 structures, let <code>σ : R →+* S</code>, <code>τ : S →+* R</code>, <code>f : N →ₛₗ[σ] M</code> and
 <code>g : M →ₛₗ[τ] N</code> satisfy <code>τ ∘ σ = id</code> and <code>g ∘ f = id</code>. Then
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Retraction.lean"><code>Module.IsCoherent.of_semilinear_retract</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Retraction.lean"><code>Module.IsCoherent.of_semilinear_retract</code></a>
 descends coherence of <code>M</code> over <code>S</code> to coherence of <code>N</code> over <code>R</code>. The four
 carrier universes are independent; no additional scalar action, finiteness,
 flatness, Noetherianity, faithfulness or nontriviality assumption is required.
@@ -491,7 +491,7 @@ The regular-module corollary <code>IsCoherentRing.of_retract</code> says that a 
 retract of a coherent ring is coherent, including noncommutative rings.</li><li><p><strong>Coherent dependent direct sums.</strong> For an arbitrary index type, a possibly
 noncommutative ring <code>R</code>, and additive commutative monoids <code>M i</code> with their
 given <code>R</code>-module structures,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/DirectSum.lean"><code>Module.IsCoherent.directSum_iff</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/DirectSum.lean"><code>Module.IsCoherent.directSum_iff</code></a>
 gives</p>
 <pre><code class="language-lean">Module.IsCoherent R (DirectSum ι M) ↔
   (∀ i, Module.IsCoherent R (M i)) ∧ Set.Finite {i | ¬ Subsingleton (M i)}</code></pre>
@@ -502,12 +502,12 @@ rings are allowed; no base-ring coherence, Noetherianity, faithfulness or
 commutativity assumption is added. The index, ring and summand universes
 are independent. <code>Module.IsCoherent.of_directSum</code> reflects coherence to
 each original coordinate without a finite-index assumption. The supporting
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/DirectSum.lean"><code>Module.Finite.finite_nontrivial_summands</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/DirectSum.lean"><code>Module.Finite.finite_nontrivial_summands</code></a>
 already obtains finiteness of the nontrivial summands from finite generation
 over a semiring.</p></li><li><p><strong>Coherence over product coefficient rings.</strong> For any dependent family of
 possibly noncommutative rings <code>R i</code> and additive commutative monoids <code>M i</code> with
 their given <code>R i</code>-module structures,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Pi.lean"><code>Module.IsCoherent.of_piRing</code></a> reflects
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Pi.lean"><code>Module.IsCoherent.of_piRing</code></a> reflects
 coherence of the product to each coordinate. For <code>[Finite ι]</code>,
 <code>Module.IsCoherent.piRing_iff</code> gives the converse as well:</p>
 <pre><code class="language-lean">Module.IsCoherent (∀ i, R i) (∀ i, M i) ↔
@@ -521,14 +521,14 @@ finite-generation hypothesis is assumed.
 The regular-module specialization <code>isCoherentRing_pi_iff</code> characterizes
 coherence of the product ring by coherence of every factor. Coherence of an
 arbitrary coordinate module does not assert coherence of its coefficient ring.
-The supporting <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/Pi.lean"><code>Module.Finite.piRing_iff</code></a>
+The supporting <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/Pi.lean"><code>Module.Finite.piRing_iff</code></a>
 proves the corresponding finite-generation equivalence already for semirings
 and additive commutative monoids. These equivalences concern finite products;
 coordinatewise coherence does not in general imply coherence of an infinite
 product module over its product coefficient ring.</p></li><li><p><strong>Finite presentation over product coefficient rings.</strong> For any dependent family
 of possibly noncommutative rings <code>R i</code> and additive commutative monoids <code>M i</code>
 with their given <code>R i</code>-module structures,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Pi.lean"><code>Module.FinitePresentation.of_piRing</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Pi.lean"><code>Module.FinitePresentation.of_piRing</code></a>
 reflects finite presentation of <code>Π i, M i</code> over <code>Π i, R i</code> to each coordinate.
 This direction allows an arbitrary index type. For <code>[Finite ι]</code>,
 <code>Module.FinitePresentation.piRing_iff</code> gives the converse as well:</p>
@@ -538,11 +538,11 @@ This direction allows an arbitrary index type. For <code>[Finite ι]</code>,
 universes are independent. No supplied additive group structure, coherence,
 Noetherianity, commutativity or nontriviality is required. Empty products and
 zero factors are allowed. The
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModulesTest/FinitePresentationPi.lean">varying-rank client</a> combines
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/FinitePresentationPi.lean">varying-rank client</a> combines
 free modules over the integers and a noncommutative integer matrix ring.</p></li><li><strong>Finite presentation along scalar towers.</strong> For possibly noncommutative rings
 <code>R</code>, <code>S</code> and an additive commutative monoid <code>N</code> with its given <code>R</code>- and
 <code>S</code>-module structures and towers <code>R → S → S</code> and <code>R → S → N</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/FinitePresentation.lean"><code>Module.FinitePresentation.trans_of_tower</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/FinitePresentation.lean"><code>Module.FinitePresentation.trans_of_tower</code></a>
 gives finite presentation of <code>N</code> over <code>R</code> from finite presentation of <code>S</code>
 over <code>R</code> and of <code>N</code> over <code>S</code>. Conversely, <code>of_restrictScalars</code> gives finite
 presentation over <code>S</code> from finite presentation over <code>R</code> assuming only that
@@ -555,7 +555,7 @@ commutative-algebra <code>Module.FinitePresentation.trans</code> as a corollary 
 scalar-tower theorem.</li><li><strong>Coherence along quotient coefficients.</strong> For possibly noncommutative rings
 <code>R</code>, <code>S</code> and additive commutative monoids <code>N</code>, <code>M</code> with their given <code>R</code>- and
 <code>S</code>-module structures,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/FinitePresentation.lean"><code>Module.isCoherent_iff_of_bijective_of_fg_ker</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/FinitePresentation.lean"><code>Module.isCoherent_iff_of_bijective_of_fg_ker</code></a>
 gives <code>Module.IsCoherent R N ↔ Module.IsCoherent S M</code> along a bijective
 semilinear map <code>f : N →ₛₗ[σ] M</code>, provided <code>σ : R →+* S</code> is surjective and
 <code>(RingHom.ker σ).FG</code>. Kernel finite generation is as a <strong>left</strong> ideal, not
@@ -563,25 +563,25 @@ merely as a two-sided ideal. The four carrier universes are independent;
 <code>σ</code> need not be injective. No extra action, scalar inverse, coherence of an
 ambient ring, Noetherianity, flatness or nontriviality hypothesis is required.</li><li><strong>Coherence under scalar restriction.</strong> For possibly noncommutative rings <code>R</code>
 and <code>S</code>, if <code>S</code> is coherent as an <code>R</code>-module, then
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/FinitePresentation.lean"><code>Module.FinitePresentation.isCoherent_restrictScalars</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/FinitePresentation.lean"><code>Module.FinitePresentation.isCoherent_restrictScalars</code></a>
 makes every finitely presented <code>S</code>-module <code>N</code> coherent for its given <code>R</code>-action.
 The additive commutative group <code>N</code> has its given module structures and scalar
 towers <code>R → S → S</code> and <code>R → S → N</code>; the three universes are independent.
 Under these hypotheses, coherence over <code>R</code>, coherence over <code>S</code>, and finite
 presentation over <code>S</code> are equivalent. No coherence assumption on <code>R</code>,
 Noetherianity, centrality or faithfulness is required. The identity-scalar
-specialization <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/FinitePresentation.lean"><code>Module.isCoherent_iff_finitePresentation</code></a>
+specialization <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/FinitePresentation.lean"><code>Module.isCoherent_iff_finitePresentation</code></a>
 identifies the two properties over an <code>IsCoherentRing R</code>, yielding finite
 presentation of kernels between finitely presented modules. The
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/FinitePresentation.lean"><code>of_exact_five</code> criterion</a> gives finite
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/FinitePresentation.lean"><code>of_exact_five</code> criterion</a> gives finite
 presentation of <code>M₃</code> in <code>M₁ → M₂ → M₃ → M₄ → M₅</code> when the sequence is exact
 at <code>M₂</code>, <code>M₃</code>, <code>M₄</code>, <code>M₁</code> is finite, and <code>M₂</code>, <code>M₄</code>, <code>M₅</code> are finitely
-presented. It requires neither endpoint injectivity nor surjectivity.</li><li><strong>Localization and descent.</strong> <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Localization.lean"><code>of_isLocalizedModule</code></a>
+presented. It requires neither endpoint injectivity nor surjectivity.</li><li><strong>Localization and descent.</strong> <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Localization.lean"><code>of_isLocalizedModule</code></a>
 transports coherence along an arbitrary commutative-ring/module localization
 realized by its universal property, not a surjective map. The
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Localization.lean"><code>of_localizationSpan&#x27;</code> theorem</a> descends
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Localization.lean"><code>of_localizationSpan&#x27;</code> theorem</a> descends
 coherence from localizations away from a family whose ideal span is <code>⊤</code>.</li><li><strong>Hom, tensor, and categories.</strong> For semirings <code>R</code>, <code>R₂</code>, a ring <code>S</code>, and any
-<code>σ : R →+* R₂</code>, <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Hom.lean"><code>Module.IsCoherent.semilinearMap</code></a>
+<code>σ : R →+* R₂</code>, <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Hom.lean"><code>Module.IsCoherent.semilinearMap</code></a>
 makes <code>M →ₛₗ[σ] N</code> coherent over <code>S</code> when the additive commutative group <code>M</code>
 is finitely presented over <code>R</code> and the additive commutative group <code>N</code> is
 coherent over <code>S</code>, with commuting given <code>R₂</code>- and <code>S</code>-actions on <code>N</code>.
@@ -590,44 +590,44 @@ The five universes are independent and the Hom action is pointwise. No
 of <code>σ</code> is required. The existing <code>linearMap</code> theorem is its same-base
 commutative-ring specialization. For a commutative base ring <code>R</code> and an
 independent, possibly noncommutative ring <code>S</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/TensorProduct.lean"><code>tensorProduct_left</code></a> makes <code>M ⊗[R] N</code>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/TensorProduct.lean"><code>tensorProduct_left</code></a> makes <code>M ⊗[R] N</code>
 coherent over <code>S</code> when <code>M</code> is coherent over <code>S</code>, <code>N</code> is finitely presented
 over <code>R</code>, and the given <code>R</code>- and <code>S</code>-actions on <code>M</code> commute. No <code>R</code>-module
 structure on <code>S</code> or <code>S</code>-action on <code>N</code> is required. The existing <code>tensorProduct</code>
 theorem retains the same-base, finitely-presented-first specialization.
 These are theorems, not global instances, and assume neither
 coherence nor Noetherianity of an ambient scalar ring.
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/ModuleCat.lean"><code>CoherentModuleCat</code></a> is a transparent full
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/ModuleCat.lean"><code>CoherentModuleCat</code></a> is a transparent full
 subcategory with abelian structure obtained through generic category constructions.</li><li><strong>Coherent right duals.</strong> For a possibly noncommutative <code>Ring R</code> and a finitely
 presented left <code>R</code>-module <code>M</code> with its given <code>AddCommMonoid</code> and module structure,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Hom.lean"><code>Module.FinitePresentation.isCoherent_dual</code></a> gives
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Hom.lean"><code>Module.FinitePresentation.isCoherent_dual</code></a> gives
 <code>Module.IsCoherent Rᵐᵒᵖ (Module.Dual R M)</code> assuming only right coherence
 <code>[IsCoherentRing Rᵐᵒᵖ]</code> of the ring. The dual uses the canonical right action
 <code>(q • f) x = f x * MulOpposite.unop q</code> for <code>q : Rᵐᵒᵖ</code>, induced by right
 multiplication on the codomain <code>R</code>. The ring and module universes are independent;
 neither left coherence nor a supplied additive group structure on <code>M</code> is required.</li><li><strong>Finite-module tensor zero detection.</strong> For an arbitrary additive commutative
 <code>R</code>-module <code>P</code> over a <code>CommRing R</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/TensorProduct/FiniteDetection.lean"><code>Module.forall_maximal_smul_top_ne_top_iff_forall_finite_tensorProduct</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/TensorProduct/FiniteDetection.lean"><code>Module.forall_maximal_smul_top_ne_top_iff_forall_finite_tensorProduct</code></a>
 characterizes zero-object detection on all finite modules by
 <code>m • (⊤ : Submodule R P) ≠ ⊤</code> for every maximal ideal <code>m</code>.
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/TensorProduct/FiniteDetection.lean"><code>Module.subsingleton_tensorProduct_iff_of_finite</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/TensorProduct/FiniteDetection.lean"><code>Module.subsingleton_tensorProduct_iff_of_finite</code></a>
 gives <code>Subsingleton (P ⊗[R] M) ↔ Subsingleton M</code> for a single finite module
 in an independent universe. No flatness, faithfulness or finiteness of <code>P</code>
 is required. This detects zero objects, not zero maps or isomorphisms. The
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModulesTest/LinearAlgebra/TensorProduct/FiniteDetection.lean">clients</a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/LinearAlgebra/TensorProduct/FiniteDetection.lean">clients</a>
 recover the finite faithfully-flat and local residue-field criteria and use
 a countable direct sum of residue fields.</li><li><strong>Ideal action on finite coefficients.</strong> For an FG submodule <code>N</code> of an arbitrary
 additive commutative module over a <code>CommRing R</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Nakayama.lean"><code>Submodule.FG.ideal_smul_eq_self_iff_sup_annihilator_eq_top</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Nakayama.lean"><code>Submodule.FG.ideal_smul_eq_self_iff_sup_annihilator_eq_top</code></a>
 says <code>I • N = N ↔ I ⊔ N.annihilator = ⊤</code> for every ideal <code>I</code>. For finite <code>P</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Nakayama.lean"><code>Module.forall_maximal_smul_top_ne_top_iff_annihilator_le_jacobson</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Nakayama.lean"><code>Module.forall_maximal_smul_top_ne_top_iff_annihilator_le_jacobson</code></a>
 characterizes proper image under every maximal ideal by
 <code>Module.annihilator R P ≤ Ideal.jacobson ⊥</code>, with no flatness or faithful-action
-assumption. The <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModulesTest/RingTheory/Nakayama.lean">clients</a> recover
+assumption. The <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/RingTheory/Nakayama.lean">clients</a> recover
 relative Jacobson properness and supply the finite tensor-detection input.</li><li><strong>Semilinear invariance of flatness.</strong> For equivalent commutative semirings
 <code>e : R ≃+* S</code> and a compatible semilinear equivalence from an additive
 commutative <code>R</code>-module <code>M</code> to an additive commutative <code>S</code>-module <code>N</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/Equiv.lean"><code>Module.Flat.semilinearEquiv_iff</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/Equiv.lean"><code>Module.Flat.semilinearEquiv_iff</code></a>
 gives <code>Module.Flat R M ↔ Module.Flat S N</code> for both given scalar actions.
 <code>Module.Flat.of_semilinearEquiv e E</code> takes flatness of <code>N</code> to flatness of <code>M</code>.
 The four carrier universes are independent. Over semirings, this is Mathlib's
@@ -639,31 +639,31 @@ be a commutative ring, <code>S</code> an <code>R</code>-algebra and <code>M : Ty
 commutative monoid with its given <code>R</code>-module structure. Suppose the canonical
 map <code>N → S ⊗[R] N</code>, <code>n ↦ 1 ⊗ n</code>, is injective for every additive commutative
 <code>R</code>-semimodule <code>N : Type (max uR uM)</code>. Then
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Finiteness/Pure.lean"><code>Module.Finite.iff_finite_tensorProduct_of_injective</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Finiteness/Pure.lean"><code>Module.Finite.iff_finite_tensorProduct_of_injective</code></a>
 gives <code>Module.Finite S (S ⊗[R] M) ↔ Module.Finite R M</code> for any <code>Semiring S</code>,
 and
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Finiteness/Pure.lean"><code>Module.FinitePresentation.iff_finitePresentation_tensorProduct_of_injective</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Finiteness/Pure.lean"><code>Module.FinitePresentation.iff_finitePresentation_tensorProduct_of_injective</code></a>
 gives the corresponding finite-presentation equivalence for any <code>Ring S</code>.
 These scalar algebras need not be commutative. The
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/TensorProduct/Submodule.lean">submodule comparisons</a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/TensorProduct/Submodule.lean">submodule comparisons</a>
 reflect membership and inclusions and characterize finite generation of
 scalar-extension images, without assuming tensoring preserves submodule
 injections. If <code>S</code> is commutative,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/Pure.lean"><code>Module.Flat.iff_flat_tensorProduct_of_injective</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/Pure.lean"><code>Module.Flat.iff_flat_tensorProduct_of_injective</code></a>
 also gives <code>Module.Flat S (S ⊗[R] M) ↔ Module.Flat R M</code>.
 The tensor has its canonical left-factor <code>S</code>-action; <code>M</code> needs no <code>S</code>-action
 or supplied additive group structure. All three carrier universes are
 independent. No flatness of <code>S</code> over <code>R</code> is assumed.
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/Projective/Pure.lean"><code>Module.finite_projective_of_tensorProduct_of_injective</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/Projective/Pure.lean"><code>Module.finite_projective_of_tensorProduct_of_injective</code></a>
 descends finite projectivity for any possibly noncommutative <code>Semiring S</code>:
 if <code>S ⊗[R] M</code> is finite and projective over <code>S</code>, then <code>M</code> is finite and
 projective over <code>R</code>. Finite presentation of <code>M</code> is derived, not assumed.
-The <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModulesTest/RingTheory/Finiteness/Pure.lean">clients</a> also
+The <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/RingTheory/Finiteness/Pure.lean">clients</a> also
 retain the commutative-target proof using finitely presented flat modules
 and apply the noncommutative result using a linear scalar retraction.</li><li><p><strong>Annihilators under finite-limit-preserving scalar extension.</strong> For a
 <code>CommSemiring R</code>, a possibly noncommutative <code>Semiring S</code> with <code>Algebra R S</code>,
 and a finitely generated semimodule <code>M</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/BaseChange.lean"><code>Module.annihilator_tensorProduct_eq_map_of_finite_of_preservesFiniteLimits</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/BaseChange.lean"><code>Module.annihilator_tensorProduct_eq_map_of_finite_of_preservesFiniteLimits</code></a>
 gives</p>
 <pre><code class="language-lean">Module.annihilator S (S ⊗[R] M) =
   Ideal.map (algebraMap R S) (Module.annihilator R M)</code></pre>
@@ -677,50 +677,50 @@ required. This condition is not identified with mono-flatness over semirings.
 Over commutative rings, flatness supplies this condition through the existing
 module–semimodule equivalence. For any module <code>M</code> over a commutative ring <code>R</code>
 and a flat, possibly noncommutative <code>R</code>-algebra <code>S</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/BaseChange.lean"><code>Module.annihilator_tensorProduct_eq_iInf_map_of_flat</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/BaseChange.lean"><code>Module.annihilator_tensorProduct_eq_iInf_map_of_flat</code></a>
 identifies the annihilator of <code>S ⊗[R] M</code> with the intersection of the ideals
 generated by the images of <code>Module.annihilator R N</code>, over all finitely
 generated original submodules <code>N ≤ M</code>. This is not a claim that ideal
 extension commutes with arbitrary intersections. For finite <code>M</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/BaseChange.lean"><code>Module.annihilator_tensorProduct_eq_map_of_finite_of_flat</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/BaseChange.lean"><code>Module.annihilator_tensorProduct_eq_map_of_finite_of_flat</code></a>
 identifies it with the ideal generated by <code>Module.annihilator R M</code> itself.
 The tensor has its canonical left-factor action; <code>M</code> needs no <code>S</code>-action.
 <code>S</code> need only be a semiring and <code>M</code> an additive commutative monoid with the
 given structures. The three universes are independent. No Noetherianity,
 finite presentation, flatness or faithfulness of <code>M</code>, or faithful flatness
-of <code>S</code> is required. The <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModulesTest/RingTheory/Flat/BaseChange.lean">clients</a>
+of <code>S</code> is required. The <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/RingTheory/Flat/BaseChange.lean">clients</a>
 evaluate the intersection for the nonfinite free abelian group <code>ℕ →₀ ℤ</code>
 after rational scalar extension and recover finite faithful-action
 preservation over ring coefficients. The existing
 <code>FaithfulSMul.baseChange_of_finite_of_flat</code> additionally allows commutative
 semiring coefficients.</p></li><li><strong>Annihilator contraction under faithfully flat extension.</strong> Over a <code>CommRing R</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/TensorProduct.lean"><code>Module.FaithfullyFlat.annihilator_tensorProduct_eq</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/TensorProduct.lean"><code>Module.FaithfullyFlat.annihilator_tensorProduct_eq</code></a>
 says tensoring an arbitrary <code>R</code>-module <code>M</code> with a faithfully flat module <code>P</code>
 preserves its annihilator over <code>R</code>. Here <code>P</code> is only a module group, while <code>M</code>
 needs only an additive commutative monoid structure. For a faithfully flat,
 possibly noncommutative ring algebra <code>S</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/BaseChange.lean"><code>Module.comap_annihilator_tensorProduct_of_faithfullyFlat</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/BaseChange.lean"><code>Module.comap_annihilator_tensorProduct_of_faithfullyFlat</code></a>
 identifies contraction of the annihilator of <code>S ⊗[R] M</code> with the original
 annihilator. The tensor has its canonical left-factor action and <code>M</code> needs no
 <code>S</code>-action. All three carrier universes are independent, with no finiteness,
 flatness or faithfulness assumption on <code>M</code>. The
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModulesTest/RingTheory/Flat/TensorProduct.lean">module client</a> derives
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/RingTheory/Flat/TensorProduct.lean">module client</a> derives
 preservation and reflection of faithful action over the coefficient ring;
 this does not assert faithful action over a larger scalar algebra.</li><li><strong>Faithfully flat tensor products.</strong> Over a <code>CommRing R</code>, for additive
 commutative groups <code>C</code> and <code>D</code> with <code>R</code>-module structures,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/TensorProduct.lean"><code>Module.FaithfullyFlat.tensorProduct_iff</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/TensorProduct.lean"><code>Module.FaithfullyFlat.tensorProduct_iff</code></a>
 says that <code>C ⊗[R] D</code> is faithfully flat over <code>R</code> if and only if both <code>C</code> and
 <code>D</code> are faithfully flat over <code>R</code>. The ring and the two module universes are
 independent; no finiteness, projectivity or nontriviality assumption is needed.</li><li><strong>Faithfully flat dependent direct sums.</strong> For arbitrary families of additive
 commutative groups with module structures over a <code>CommRing R</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/DirectSum.lean"><code>Module.FaithfullyFlat.directSum_iff</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/DirectSum.lean"><code>Module.FaithfullyFlat.directSum_iff</code></a>
 characterizes faithful flatness of the direct sum by flatness of every
 component and a nontrivial quotient-tensor fiber in some component for each
 proper ideal of <code>R</code>. The detecting component may depend on the ideal; the
 components need not individually be faithfully flat. The ring, index and
 carrier universes are independent, and empty indexing types are allowed.
 One faithfully flat component is sufficient when every component is flat.</li><li><strong>Finitely generated ideals and dependent products.</strong> Over a <code>CommSemiring R</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/LinearAlgebra/Pi.lean"><code>Submodule.smul_pi_of_fg</code></a> says that
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/LinearAlgebra/Pi.lean"><code>Submodule.smul_pi_of_fg</code></a> says that
 multiplication by a finitely generated ideal commutes with the full dependent
 product of submodules of additive commutative <code>R</code>-modules. The index type is
 arbitrary, including empty, and the semiring, index and carrier universes are
@@ -728,37 +728,37 @@ independent.</li><li><strong>Faithful flatness after base change covering maxima
 rings <code>R</code> and <code>S</code> with an <code>R</code>-algebra structure on <code>S</code>, suppose every maximal
 ideal <code>m</code> of <code>R</code> satisfies <code>m.map (algebraMap R S) ≠ ⊤</code>. For any additive
 commutative group <code>M</code> with an <code>R</code>-module structure,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/FaithfullyFlat.lean"><code>Module.FaithfullyFlat.iff_flat_and_baseChange_of_map_maximal_ne_top</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/FaithfullyFlat.lean"><code>Module.FaithfullyFlat.iff_flat_and_baseChange_of_map_maximal_ne_top</code></a>
 characterizes faithful flatness over <code>R</code> by <strong>original</strong> flatness <code>Module.Flat R M</code>
 and faithful flatness over <code>S</code> of <code>S ⊗[R] M</code>, with the canonical left tensor-factor
 action. The three universes are independent. No flatness of <code>S</code> over <code>R</code>,
 surjectivity, algebra structure on <code>M</code>, finiteness, Noetherianity, localness,
 topology or completion is assumed. For <code>I ≤ Ideal.jacobson (⊥ : Ideal R)</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/FaithfullyFlat.lean"><code>Module.FaithfullyFlat.iff_flat_and_baseChange_of_le_jacobson</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/FaithfullyFlat.lean"><code>Module.FaithfullyFlat.iff_flat_and_baseChange_of_le_jacobson</code></a>
 specializes this to the canonical quotient <code>R ⧸ I</code>. For commutative
 <code>R</code>-algebras <code>S</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/FaithfullyFlat.lean"><code>Module.FaithfullyFlat.iff_flat_and_quotient_of_le_jacobson</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/FaithfullyFlat.lean"><code>Module.FaithfullyFlat.iff_flat_and_quotient_of_le_jacobson</code></a>
 gives the equivalent formulation using the canonical quotient algebra
 <code>R ⧸ I → S ⧸ I.map (algebraMap R S)</code>. Conversely,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/BaseChange.lean"><code>Algebra.map_maximal_ne_top_iff_forall_faithfullyFlat_baseChange</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/BaseChange.lean"><code>Algebra.map_maximal_ne_top_iff_forall_faithfullyFlat_baseChange</code></a>
 characterizes the maximal-ideal hypothesis itself: it holds <strong>if and only if</strong>
 scalar extension preserves and reflects faithful flatness for every originally
 flat <code>R</code>-module in <code>Type (max u w)</code>, where <code>R : Type u</code> and <code>w</code> is arbitrary.
 The universe of <code>S</code> remains independent. The converse uses the direct sum of
 principal localizations indexed by all elements of a maximal ideal, without
 assuming that ideal is finitely generated. The
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModulesTest/RingTheory/Flat/FaithfullyFlat.lean">quotient client</a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/RingTheory/Flat/FaithfullyFlat.lean">quotient client</a>
 applies this corollary to the nonsurjective rank-two diagonal over <code>ZMod 4</code>
 with the proper nonzero square-zero ideal <code>(2)</code>. Its inputs are obtained
 independently from basis-derived faithful flatness.</li><li><strong>Faithful flatness of unital algebras.</strong> For a <code>CommRing R</code> and a unital
 <code>R</code>-algebra <code>A</code> whose underlying ring may be noncommutative,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/FaithfullyFlat.lean"><code>Module.FaithfullyFlat.algebra_iff_flat_and_fg_proper_ideal</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/FaithfullyFlat.lean"><code>Module.FaithfullyFlat.algebra_iff_flat_and_fg_proper_ideal</code></a>
 characterizes faithful flatness by flatness and
 <code>I • (⊤ : Submodule R A) ≠ ⊤</code> for every finitely generated proper ideal <code>I</code>.
 The algebra structure is material; this finitely generated ideal criterion
 is not asserted for arbitrary modules.</li><li><strong>Faithfully flat products of algebras.</strong> Over a <code>CommRing R</code>, for an arbitrary
 dependent family of unital, possibly noncommutative <code>R</code>-algebras <code>A i</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/Pi.lean"><code>Module.FaithfullyFlat.pi_algebra_iff</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/Pi.lean"><code>Module.FaithfullyFlat.pi_algebra_iff</code></a>
 characterizes faithful flatness of <code>Π i, A i</code> by flatness of the <strong>whole
 product</strong> and a nontrivial fiber <code>(R ⧸ I) ⊗[R] A i</code> in some component for
 every finitely generated proper ideal <code>I</code>. The detecting component may depend
@@ -767,32 +767,32 @@ and the components need not individually be faithfully flat. The ring, index
 and carrier universes are independent, and empty products are allowed.</li><li><strong>Products of localizations at submonoids.</strong> For a <code>CommRing R</code>, arbitrary
 submonoids <code>S i</code> and commutative <code>R</code>-algebras <code>A i</code> realizing the localizations
 at <code>S i</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/Localization.lean"><code>Module.FaithfullyFlat.pi_localization_iff</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/Localization.lean"><code>Module.FaithfullyFlat.pi_localization_iff</code></a>
 characterizes faithful flatness of <code>Π i, A i</code> by flatness of the <strong>whole
 product</strong> and, for every finitely generated proper ideal <code>I</code>, disjointness
 of <code>I</code> from some <code>S i</code>. These are products with the common diagonal <code>R</code>-action;
 neither finite nor nonempty indexing is required, and zero rings are allowed.</li><li><strong>Families of principal localizations.</strong> For a <code>CommRing R</code> and any family
 <code>s : ι → R</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/Localization.lean"><code>Module.FaithfullyFlat.directSum_away_iff</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/Localization.lean"><code>Module.FaithfullyFlat.directSum_away_iff</code></a>
 characterizes faithful flatness of <code>⨁ i, Localization.Away (s i)</code> by
 <code>Ideal.span (Set.range s) = ⊤</code>, without finite or nonempty indexing.
 For <strong>finite</strong> index types,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Flat/Localization.lean"><code>Module.FaithfullyFlat.pi_away_iff</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Flat/Localization.lean"><code>Module.FaithfullyFlat.pi_away_iff</code></a>
 gives the same unit-span criterion for <code>Π i, Localization.Away (s i)</code>.
 The localizations need not individually be faithfully flat; zero rings and
 independent ring and index universes are allowed. The finite-index hypothesis
 for the product unit-span criterion is essential: the
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModulesTest/RingTheory/Flat/LocalizationProductInfinite.lean">coordinate-idempotent product</a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/RingTheory/Flat/LocalizationProductInfinite.lean">coordinate-idempotent product</a>
 is faithfully flat although its generators span a proper ideal. The
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModulesTest/RingTheory/Flat/LocalizationProductCriteria.lean">ideal-detection consequences</a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/RingTheory/Flat/LocalizationProductCriteria.lean">ideal-detection consequences</a>
 show that this ideal is not finitely generated.</li><li><strong>Faithfully flat coherence descent.</strong>
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/FaithfullyFlatDescent.lean"><code>Module.IsCoherent.of_isCoherent_tensorProduct_of_faithfullyFlat</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/FaithfullyFlatDescent.lean"><code>Module.IsCoherent.of_isCoherent_tensorProduct_of_faithfullyFlat</code></a>
 descends coherence of the canonical scalar extension <code>S ⊗[R] M</code> to the original
 module <code>M</code>. The scalar algebra <code>S</code> may be noncommutative; no finiteness hypothesis
 on <code>M</code> or module-finiteness of <code>S</code> is needed. The regular-module consequence
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/FaithfullyFlatDescent.lean"><code>IsCoherentRing.of_faithfullyFlat</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/FaithfullyFlatDescent.lean"><code>IsCoherentRing.of_faithfullyFlat</code></a>
 descends ring coherence. The original module's additive monoid and action are
-retained, with independent ring, algebra and module universes.</li><li><strong>Universal coherence.</strong> <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/UniversallyCoherent.lean"><code>IsUniversallyCoherent</code></a>
+retained, with independent ring, algebra and module universes.</li><li><strong>Universal coherence.</strong> <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/UniversallyCoherent.lean"><code>IsUniversallyCoherent</code></a>
 asserts coherence for finitely presented commutative algebras in an independently
 chosen target universe; the library derives base coherence at <code>v = u</code> and
 supplies the Noetherian case. Finitely presented algebra extensions preserve universal
@@ -807,21 +807,58 @@ base-universe universally coherent ring are universally coherent, with independe
 variable and target universes; neither finitely many variables nor a Noetherian base is
 required. Arbitrary localizations of base-universe universally coherent rings are
 universally coherent, with independent localization and target universes. No finite
-denominator family or algebra finite-presentation hypothesis on the localization is needed.</li><li><strong>Square-zero kernels and projection base change.</strong> For a commutative semiring
+denominator family or algebra finite-presentation hypothesis on the localization is needed.</li><li><strong>Commutativity of square-zero extensions.</strong> For <code>Mul R</code>, <code>AddZeroClass M</code>,
+<code>IsAddCommutative M</code>, and two given zero-preserving scalar actions
+<code>[SMulZeroClass R M]</code> and <code>[SMulZeroClass Rᵐᵒᵖ M]</code>,
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/TrivSqZeroExt/Commutativity.lean"><code>TrivSqZeroExt.isMulCommutative_iff</code></a>
+characterizes <code>IsMulCommutative (TrivSqZeroExt R M)</code> by
+<code>IsMulCommutative R ∧ IsCentralScalar R M</code>. It retains the original
+multiplication, addition, zero and both actions, with independent carrier
+universes. No additive associativity, coefficient zero or one, module structure,
+action compatibility or finiteness is required. This is a criterion for the
+multiplication alone, not an assertion of a unit or a square-zero ideal at
+these hypotheses.</li><li><strong>Square-zero kernels and projection base change.</strong> For a commutative semiring
 <code>R</code> and an additive commutative <code>R</code>-module <code>M</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/TrivSqZeroExt/Finite.lean"><code>TrivSqZeroExt.kerIdealLinearEquiv</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/TrivSqZeroExt/Finite.lean"><code>TrivSqZeroExt.kerIdealLinearEquiv</code></a>
 identifies the projection kernel with <code>M</code>. If <code>M</code> is finite over <code>R</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/TrivSqZeroExt/Finite.lean"><code>kerIdeal_finite</code></a> makes the
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/TrivSqZeroExt/Finite.lean"><code>kerIdeal_finite</code></a> makes the
 kernel finite over the <strong>whole extension</strong>.
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/TrivSqZeroExt/Finite.lean"><code>kerIdealBaseChange</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/TrivSqZeroExt/Finite.lean"><code>kerIdealBaseChange</code></a>
 identifies the projection-base-changed kernel with <code>M</code> <strong>without</strong> a finiteness
-assumption; its pure-tensor and inverse formulas are simp lemmas.</li><li><strong>Coherent square-zero extensions.</strong> Over an arbitrary division ring <code>D</code>,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/TrivSqZeroExt/Coherent.lean"><code>TrivSqZeroExt.isCoherentRing_iff_finite_of_divisionRing</code></a>
+assumption; its pure-tensor and inverse formulas are simp lemmas.</li><li><strong>Full left-ideal lattice of square-zero extensions.</strong> For a possibly
+noncommutative division semiring <code>D : Type u</code> and an additive commutative group
+<code>M : Type v</code> with its given actions <code>[Module D M]</code>, <code>[Module Dᵐᵒᵖ M]</code> and
+<code>[SMulCommClass D Dᵐᵒᵖ M]</code>,
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/TrivSqZeroExt/Ideal.lean"><code>TrivSqZeroExt.idealOrderIsoWithTop</code></a>
+identifies <code>Ideal (TrivSqZeroExt D M)</code> with <code>WithTop (Submodule D M)</code> as ordered
+lattices. The two carrier universes are independent. A coefficient submodule
+<code>N</code> corresponds to <code>0 × N</code>, using the original left action. The adjoined top
+is the whole extension, whereas the coerced internal top is the proper
+projection kernel
+<code>K = RingHom.ker (TrivSqZeroExt.fstHom ℕ D M : TrivSqZeroExt D M →+* D)</code>,
+even when <code>M</code> is zero. The
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/Algebra/TrivSqZeroExt/Ideal.lean">coatom client</a> derives
+maximality of this kernel through the order isomorphism. No ring structure on
+<code>D</code>, centrality or finiteness assumption is required. Coefficient submodules
+can be cones rather than additive subgroups and need not be stable under the
+right action; this classifies <strong>left</strong> ideals, not only two-sided ideals.</li><li><strong>Module length and square-zero extensions.</strong> For modules over arbitrary rings,
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Length.lean"><code>LinearMap.length_eq_of_bijective</code></a>
+preserves length under a bijective semilinear map whose scalar homomorphism is
+surjective, without requiring that scalar homomorphism to be injective. The
+rings and modules have four independent universes, and infinite lengths are
+included. Its <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModulesTest/RingTheory/Length.lean">algebra-map specialization</a>
+recovers Mathlib's surjective-algebra comparison under the same hypotheses.
+For a division ring <code>D</code> and the original compatible left/right actions on <code>M</code>,
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/TrivSqZeroExt/Length.lean"><code>TrivSqZeroExt.length</code></a>
+computes the regular left-module length as <code>Module.length D M + 1</code>, directly
+from the ideal-lattice classification. Only the finrank corollary adds
+<code>[Module.Finite D M]</code>; neither centrality nor right-finiteness is assumed.</li><li><strong>Coherent square-zero extensions.</strong> Over an arbitrary division ring <code>D</code>,
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/TrivSqZeroExt/Coherent.lean"><code>TrivSqZeroExt.isCoherentRing_iff_finite_of_divisionRing</code></a>
 characterizes left coherence of <code>TrivSqZeroExt D M</code> by <code>Module.Finite D M</code>,
 retaining both given compatible bimodule actions without centrality. The module
 may be zero, and the two carrier universes are independent. The canonical-field
 specialization
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/TrivSqZeroExt/Coherent.lean"><code>TrivSqZeroExt.isCoherentRing_iff_finite</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/TrivSqZeroExt/Coherent.lean"><code>TrivSqZeroExt.isCoherentRing_iff_finite</code></a>
 retains its given left action and canonical opposite action; finite generation
 is equivalently finite dimension, not a finite underlying set. More generally,
 <code>TrivSqZeroExt.finite_of_isCoherentRing_of_injective_smul</code> deduces left finite
@@ -829,15 +866,27 @@ generation from left coherence of an extension with its given compatible
 bimodule actions and a vector <code>v</code> such that <code>r ↦ r • v</code> is injective.
 The base ring may be noncommutative and the right action need not be central.
 The existing <code>TrivSqZeroExt.isCoherentRing</code> gives sufficiency for a left
-coherent base and a coefficient bimodule finitely presented on the left.</li><li><strong>Left Noetherian square-zero extensions.</strong> For a possibly noncommutative
+coherent base and a coefficient bimodule finitely presented on the left.</li><li><strong>Opposites of square-zero extensions.</strong>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/TrivSqZeroExt/Opposite.lean"><code>TrivSqZeroExt.opEquiv</code></a>
+identifies <code>(TrivSqZeroExt R M)ᵐᵒᵖ</code> with <code>TrivSqZeroExt Rᵐᵒᵖ M</code> by
+<code>op (r, m) ↦ (op r, m)</code>. The target uses the original right action on the
+left and the original left action pulled back by double <code>unop</code> on the right.
+The equivalence needs only <code>Add R</code>, <code>Mul R</code>, <code>AddCommMagma M</code>, and the two
+given scalar actions. For a division ring <code>D</code> and an <code>AddCommGroup M</code> with
+commuting bimodule actions, the double-opposite module is
+<code>Module.compHom M (RingEquiv.opOp D).symm.toRingHom</code>. The preceding left
+criterion and coherence transport then give the right-coherence criterion
+<code>IsCoherentRing ((TrivSqZeroExt D M)ᵐᵒᵖ) ↔ Module.Finite Dᵐᵒᵖ M</code>,
+with finiteness measured using the original right action, without centrality
+or a comparison of left and right dimensions.</li><li><strong>Left Noetherian square-zero extensions.</strong> For a possibly noncommutative
 <code>Ring R</code> and an <code>AddCommMonoid M</code> with commuting left and right <code>R</code>-module
-actions, <a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/Algebra/TrivSqZeroExt/Noetherian.lean"><code>TrivSqZeroExt.isNoetherianRing_iff</code></a>
+actions, <a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/Algebra/TrivSqZeroExt/Noetherian.lean"><code>TrivSqZeroExt.isNoetherianRing_iff</code></a>
 characterizes <code>IsNoetherianRing (TrivSqZeroExt R M)</code> by
 <code>IsNoetherianRing R ∧ Module.Finite R M</code>. Finiteness here is as a <strong>left</strong>
 <code>R</code>-module. The companion <code>TrivSqZeroExt.isNoetherianRing_iff_isNoetherian</code>
 replaces <code>Module.Finite R M</code> by <code>IsNoetherian R M</code>. Centrality is not required,
 and the two carrier universes are independent.</li><li><strong>Finite-type ideal/module transfer.</strong> Over a commutative base ring,
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/CoherentModules/RingTheory/Ideal/FiniteModuleTransfer.lean"><code>Ideal.ideal_property_iff_module_property</code></a>
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/CoherentModules/RingTheory/Ideal/FiniteModuleTransfer.lean"><code>Ideal.ideal_property_iff_module_property</code></a>
 equates a property on all finitely generated ideals with one on all finite
 modules over finite-type algebras. The property must be invariant under
 compatible algebra/module isomorphisms and descend along <strong>every</strong> compatible
@@ -851,11 +900,14 @@ scalar <code>Semiring</code>s with a commuting <code>Ring</code> action on the t
 of coherent modules and universal coherence use <code>CommRing</code>. Coherent tensor closure
 uses a <code>CommRing</code> base but allows an independent, possibly noncommutative <code>Ring</code>
 acting on the coherent factor.
-The square-zero
+The square-zero commutativity criterion uses only <code>Mul</code>, <code>AddZeroClass</code>,
+<code>IsAddCommutative</code> and the two given <code>SMulZeroClass</code> actions. The square-zero
 kernel and base-change results use <code>CommSemiring</code> and <code>AddCommMonoid</code>; the
-square-zero Noetherian criterion allows <code>Ring</code> and <code>AddCommMonoid</code> with commuting
-bimodule actions. The coherent-extension sufficiency and injective-vector necessity
-use <code>Ring</code> and <code>AddCommGroup</code>, without centrality. The finite-generation
+full left-ideal classification uses <code>DivisionSemiring</code> and <code>AddCommGroup</code> with
+both given commuting module actions. The square-zero Noetherian criterion allows
+<code>Ring</code> and <code>AddCommMonoid</code> with commuting bimodule actions. The coherent-extension
+sufficiency and injective-vector necessity use <code>Ring</code> and <code>AddCommGroup</code>, without
+centrality. The finite-generation
 biconditional uses an arbitrary division ring and the given compatible bimodule
 with <code>AddCommGroup</code>; its canonical-field specialization gives finite dimensionality.
 The predicate transfer uses <code>CommRing</code> and <code>AddCommGroup</code>.
@@ -864,5 +916,5 @@ The ideal/product identity and semilinear mono-flatness invariance use
 and require no coherence or projectivity assumption. Module carrier universes are independent where stated.
 Zero rings/modules, empty indexing sets and rank-zero finite free
 modules are not excluded. Consult the linked source statements and
-<a href="https://github.com/FormalFrontier/coherent-modules/blob/5b4d1c08736725b9a1f9fa6fe83fb4bc8d59a19d/docs/Guide.md">guide</a> for exact hypotheses. This is not a coherent-sheaf theory
+<a href="https://github.com/FormalFrontier/coherent-modules/blob/d01f5e7e1d0c22e0ac92f1831e546844971f46ee/docs/Guide.md">guide</a> for exact hypotheses. This is not a coherent-sheaf theory
 or a claim to formalize an entire source.</p>
