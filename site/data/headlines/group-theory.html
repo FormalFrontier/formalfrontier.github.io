@@ -1,6 +1,6 @@
 <h4>Circle-valued characters</h4>
 <p>Every abelian group has enough homomorphisms into the standard complex unit circle to separate distinct elements. A circle-valued homomorphism on any subgroup extends to the whole group. For a group with its given discrete topology, the same algebraic characters are continuous, and evaluation into the product indexed by all continuous circle characters is injective. This is a separation result, not surjectivity or a topological embedding into the compact-open bidual.</p>
-<p>See <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Character/Extension.lean">subgroup extension</a>, <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Character/Cyclic.lean">cyclic characters</a>, and <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Character/Separation.lean">separation and evaluation</a>.</p>
+<p>See <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Character/Extension.lean">subgroup extension</a>, <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Character/Cyclic.lean">cyclic characters</a>, and <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Character/Separation.lean">separation and evaluation</a>.</p>
 <ul><li><strong>Compact homomorphism loci for unital magmas.</strong> For a discrete unital magma
 <code>M</code> and a compact Hausdorff unital magma <code>D</code> with continuous multiplication,
 <code>ContinuousMap.isCompact_mulOneHomLocus</code> proves compactness of the full locus
@@ -9,27 +9,27 @@ topology. No associativity or finite generation is needed. For monoids,
 <code>ContinuousMonoidHom.homeoMulOneHomLocus</code> identifies its canonical subspace
 with <code>M →ₜ* D</code>, preserving the continuous-map data in both directions; this
 identification needs only monoids with their given topologies. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/ContinuousMonoidHom/Compact.lean"><code>ContinuousMonoidHom.Compact</code></a>.</li><li><strong>Finite-support product homomorphisms.</strong> For arbitrary topologized groups <code>G i</code> and
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/ContinuousMonoidHom/Compact.lean"><code>ContinuousMonoidHom.Compact</code></a>.</li><li><strong>Finite-support product homomorphisms.</strong> For arbitrary topologized groups <code>G i</code> and
 a commutative group <code>D</code> with continuous multiplication and no small subgroups,
 continuous homomorphisms <code>(∀ i, G i) →ₜ* D</code> are canonically equivalent as commutative
 monoids to finitely supported families of continuous coordinate homomorphisms.
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/ContinuousMonoidHom/ProductDecomposition.lean">Module</a>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/ContinuousMonoidHom/ProductDecomposition.lean">Module</a>
 (<code>ContinuousMonoidHom.productDecomposition</code>).</li><li>Groups with a given uniformity and no small subgroups pass this property to
 their full uniform function spaces, without continuous group operations.
 An arbitrary family of ordinary homomorphisms from a product of groups into
 such a group, equicontinuous at the identity, kills one common
 finite-coordinate subgroup, including all infinite off-coordinate tails.
-See <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups/UniformFun.lean"><code>UniformFun</code></a>
-and <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/ContinuousMonoidHom/EquicontinuousFiniteCoordinates.lean"><code>EquicontinuousFiniteCoordinates</code></a>.</li><li><strong>Finite-coordinate factorization.</strong> A homomorphism from an arbitrary product of
+See <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups/UniformFun.lean"><code>UniformFun</code></a>
+and <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/ContinuousMonoidHom/EquicontinuousFiniteCoordinates.lean"><code>EquicontinuousFiniteCoordinates</code></a>.</li><li><strong>Finite-coordinate factorization.</strong> A homomorphism from an arbitrary product of
 groups, continuous at the identity, into a group with no small subgroups kills
 every element equal to the identity on a suitable finite set of coordinates.
 Globally continuous homomorphisms factor continuously through that finite product,
 uniquely for the chosen finite set. No continuity of group operations is required.
-See <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/ContinuousMonoidHom/FiniteCoordinates.lean"><code>FiniteCoordinates</code></a>.</li><li><strong>Real seminormed spaces and no small subgroups.</strong> A real seminormed space's
+See <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/ContinuousMonoidHom/FiniteCoordinates.lean"><code>FiniteCoordinates</code></a>.</li><li><strong>Real seminormed spaces and no small subgroups.</strong> A real seminormed space's
 additive group has no small subgroups if and only if its seminorm topology is
 Hausdorff. In particular, every real normed space has no small subgroups, without
 completeness or finite-dimensionality hypotheses. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups/NormedSpace.lean"><code>NormedSpace.lean</code></a>.</li><li><strong>No small subgroups and compact-source hom spaces.</strong>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups/NormedSpace.lean"><code>NormedSpace.lean</code></a>.</li><li><strong>No small subgroups and compact-source hom spaces.</strong>
 <code>NoSmallSubgroups G</code> means that some identity neighborhood contains no
 nontrivial subgroup. Its neighborhood and positive-powers APIs include an
 open inversion-symmetric identity neighborhood when inversion is continuous.
@@ -39,9 +39,9 @@ For a compact monoid <code>M</code> with a topology and a commutative topologica
 <code>DiscreteTopology (M →ₜ* G)</code> for the compact-open topology.
 <code>Circle.noSmallSubgroups</code> gives the canonical instance using Mathlib's arc
 <code>Circle.centeredArc (Real.pi / 2)</code> and its existing powers criterion. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups.lean"><code>Group.NoSmallSubgroups</code></a>,
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/ContinuousMonoidHom/NoSmallSubgroups.lean"><code>ContinuousMonoidHom.NoSmallSubgroups</code></a>
-and <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups/Circle.lean"><code>Group.NoSmallSubgroups.Circle</code></a>.</li><li><strong>No small subgroups is local under open embeddings.</strong>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups.lean"><code>Group.NoSmallSubgroups</code></a>,
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/ContinuousMonoidHom/NoSmallSubgroups.lean"><code>ContinuousMonoidHom.NoSmallSubgroups</code></a>
+and <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups/Circle.lean"><code>Group.NoSmallSubgroups.Circle</code></a>.</li><li><strong>No small subgroups is local under open embeddings.</strong>
 For groups <code>G</code>, <code>H</code> with their original arbitrary topologies, an injective
 open homomorphism <code>f : G →* H</code> sends <code>NoSmallSubgroups G</code> to
 <code>NoSmallSubgroups H</code>; neither operation continuity nor continuity of <code>f</code>
@@ -50,14 +50,14 @@ In particular they are equivalent under open embeddings and between an
 open subgroup and its ambient group. The API uses this library's existing
 definition and reverse transport together with Mathlib's subgroup and
 topological embedding APIs. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups/OpenMap.lean"><code>Group.NoSmallSubgroups.OpenMap</code></a>.</li><li><strong>No small subgroups under open homomorphisms.</strong> Let <code>G</code> be a topological
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups/OpenMap.lean"><code>Group.NoSmallSubgroups.OpenMap</code></a>.</li><li><strong>No small subgroups under open homomorphisms.</strong> Let <code>G</code> be a topological
 group, <code>H</code> a group with a topology, and <code>f : G →* H</code> an open homomorphism
 whose kernel has the discrete topology induced from <code>G</code>. If <code>G</code> has no small
 subgroups, then so does <code>H</code>; neither continuity of <code>f</code>, continuous operations
 on <code>H</code>, nor surjectivity is required. If <code>f</code> is also continuous at the identity,
 <code>G</code> has no small subgroups if and only if <code>H</code> does. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups/OpenMap.lean"><code>NoSmallSubgroups.of_isOpenMap</code></a>
-and <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups/OpenMap.lean"><code>MonoidHom.noSmallSubgroups_iff_of_isOpenMap</code></a>.</li><li><strong>No small subgroups in totally disconnected groups.</strong> For a totally
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups/OpenMap.lean"><code>NoSmallSubgroups.of_isOpenMap</code></a>
+and <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups/OpenMap.lean"><code>MonoidHom.noSmallSubgroups_iff_of_isOpenMap</code></a>.</li><li><strong>No small subgroups in totally disconnected groups.</strong> For a totally
 disconnected topological group <code>G</code> in which each point admits a compact
 neighborhood (<code>WeaklyLocallyCompactSpace G</code>),
 <code>noSmallSubgroups_iff_discreteTopology</code> states
@@ -66,8 +66,8 @@ topological group, <code>noSmallSubgroups_iff_finite</code> states
 <code>NoSmallSubgroups G ↔ Finite G</code>. These criteria concern the given topology;
 no commutativity, nontriviality or separate Hausdorff hypothesis is required.
 The open-subgroup argument is classical van Dantzig theory. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups/TotallyDisconnected.lean"><code>Group.NoSmallSubgroups.TotallyDisconnected</code></a>
-and the <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/NoSmallSubgroups.md">NSS and discreteness guide</a> for the statements,
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/Group/NoSmallSubgroups/TotallyDisconnected.lean"><code>Group.NoSmallSubgroups.TotallyDisconnected</code></a>
+and the <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/NoSmallSubgroups.md">NSS and discreteness guide</a> for the statements,
 proof ideas and formalization credits.</li><li><strong>Locally compact homomorphism spaces.</strong> Let <code>G</code> be a finitely generated
 discrete group and <code>D</code> a locally compact monoid with a topology and jointly
 continuous multiplication. If <code>IsClosed ({1} : Set D)</code>, then
@@ -76,8 +76,8 @@ continuous multiplication. If <code>IsClosed ({1} : Set D)</code>, then
 No group structure, commutativity, continuous inversion or separation axiom
 is assumed on <code>D</code>. The proof uses the canonical units lift and this library's
 existing group-target local-compactness theorem. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/ContinuousMonoidHom/LocallyCompact.lean"><code>ContinuousMonoidHom.LocallyCompact</code></a>
-and <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/ContinuousMonoidHom/Units.lean"><code>ContinuousMonoidHom.Units</code></a>.</li><li><strong>Pointwise products of dependent finitely supported functions.</strong>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/ContinuousMonoidHom/LocallyCompact.lean"><code>ContinuousMonoidHom.LocallyCompact</code></a>
+and <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/ContinuousMonoidHom/Units.lean"><code>ContinuousMonoidHom.Units</code></a>.</li><li><strong>Pointwise products of dependent finitely supported functions.</strong>
 <code>DFinsupp.pointwiseMul</code> gives a non-instance <code>Mul (Π₀ i, β i)</code> whenever
 each fibre is a <code>MulZeroClass</code>; evaluation multiplies the two coefficients.
 Singles at distinct indices have zero product, and product support is contained
@@ -87,14 +87,14 @@ without decidability assumptions. Independently,
 <code>Finsupp.toDFinsupp_pointwise_smul</code> compares function-valued scalar actions
 using only a zero-preserving coefficient action. These data are selected
 explicitly, without changing the graded multiplication on <code>DirectSum</code>.
-See <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/DFinsupp/Pointwise.lean"><code>DFinsupp.Pointwise</code></a>,
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Finsupp/Pointwise.lean"><code>Finsupp.Pointwise</code></a> and
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Finsupp/PointwiseScalar.lean"><code>Finsupp.PointwiseScalar</code></a>.</li><li><strong>Surjectivity of bidual evaluation for discrete groups.</strong> For every discrete
+See <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/DFinsupp/Pointwise.lean"><code>DFinsupp.Pointwise</code></a>,
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Finsupp/Pointwise.lean"><code>Finsupp.Pointwise</code></a> and
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Finsupp/PointwiseScalar.lean"><code>Finsupp.PointwiseScalar</code></a>.</li><li><strong>Surjectivity of bidual evaluation for discrete groups.</strong> For every discrete
 group <code>A</code>, not necessarily commutative,
 <code>PontryaginDual.eval_surjective_of_discrete A</code> makes the canonical map
 <code>PontryaginDual.eval A : A →ₜ* PontryaginDual (PontryaginDual A)</code> surjective.
 This does not assert injectivity or reflexivity for noncommutative groups. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/PontryaginDual/Discrete/Surjective.lean"><code>PontryaginDual.Discrete.Surjective</code></a>.</li><li><strong>Canonical biduality for discrete abelian groups.</strong> For every <code>A : Type u</code>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/PontryaginDual/Discrete/Surjective.lean"><code>PontryaginDual.Discrete.Surjective</code></a>.</li><li><strong>Canonical biduality for discrete abelian groups.</strong> For every <code>A : Type u</code>
 with <code>[CommGroup A] [TopologicalSpace A] [DiscreteTopology A]</code>,
 <code>PontryaginDual.evalEquivOfDiscrete A</code> is a continuous multiplicative
 equivalence <code>A ≃ₜ* PontryaginDual (PontryaginDual A)</code> with the original
@@ -104,9 +104,9 @@ The inverse obeys both inverse laws and is characterized by
 Both directions are natural for continuous homomorphisms between discrete
 abelian groups in independent universes. No finiteness or countability
 assumption is needed, and the trivial group is included. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/PontryaginDual/Discrete/Equivalence.lean"><code>PontryaginDual.Discrete.Equivalence</code></a>.</li></ul>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/PontryaginDual/Discrete/Equivalence.lean"><code>PontryaginDual.Discrete.Equivalence</code></a>.</li></ul>
 <p>For a finite index type <code>I</code> and a commutative topological group <code>E</code>,
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/ContinuousMonoidHom/Int/Pi.lean"><code>ContinuousMonoidHom.intPiEvalEquiv I E</code></a>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/ContinuousMonoidHom/Int/Pi.lean"><code>ContinuousMonoidHom.intPiEvalEquiv I E</code></a>
 identifies the compact-open space <code>Multiplicative (I → ℤ) →ₜ* E</code> with <code>I → E</code>
 by evaluation on the standard integer generators. Its inverse sends <code>c</code> to
 <code>ofAdd n ↦ ∏ i, c i ^ n i</code> and retains the existing finite coproduct of
@@ -123,8 +123,8 @@ generally, the compact-open coproduct equivalence for continuous
 homomorphisms has a commutative topological-group target; its algebraic
 restriction universal property needs only a commutative-monoid target with
 continuous multiplication. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/ContinuousMonoidHom.lean"><code>ContinuousMonoidHom</code></a>
-and <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/PontryaginDual/Prod.lean"><code>PontryaginDual.Prod</code></a>.
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/ContinuousMonoidHom.lean"><code>ContinuousMonoidHom</code></a>
+and <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/PontryaginDual/Prod.lean"><code>PontryaginDual.Prod</code></a>.
 This binary result asserts neither infinite-product duality nor bidual reflexivity.</li><li><strong>Canonical biduality of binary products and the real plane.</strong>
 <code>PontryaginDual.evalHom A : A →* PontryaginDual (PontryaginDual A)</code> bundles
 fixed evaluation for any monoid with a topology. Given factor equivalences
@@ -139,9 +139,9 @@ tag-of-product equivalence under addition and topologies alone.
 two real factors and this tag equivalence, on <code>Multiplicative (ℝ × ℝ)</code> with
 its original topology. The binary construction allows one-point factors;
 no positive-dimension or nontriviality assumption is imposed.
-See <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/PontryaginDual/Prod.lean"><code>PontryaginDual.Prod</code></a>,
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/TypeTags.lean"><code>TypeTags</code></a> and
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/PontryaginDual/Real.lean"><code>PontryaginDual.Real</code></a>.
+See <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/PontryaginDual/Prod.lean"><code>PontryaginDual.Prod</code></a>,
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/TypeTags.lean"><code>TypeTags</code></a> and
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/PontryaginDual/Real.lean"><code>PontryaginDual.Real</code></a>.
 This is not an assertion of infinite-product or
 general locally compact abelian biduality.</li><li><strong>Finite dependent products and finite real function spaces.</strong> For a finite index
 <code>I</code> and monoids <code>A i</code> with topologies, <code>PontryaginDual.piEquiv A</code> identifies
@@ -160,9 +160,9 @@ equivalence for any index under addition and topologies alone.
 hence dimension zero. This real-case consequence is auxiliary to the duality
 setting of Neukirch–Schmidt–Wingberg. No infinite-product or general locally
 compact abelian duality theorem is asserted. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/ContinuousMonoidHom/Pi.lean"><code>ContinuousMonoidHom.Pi</code></a>,
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/PontryaginDual/Pi.lean"><code>PontryaginDual.Pi</code></a> and
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/PontryaginDual/Real.lean"><code>PontryaginDual.Real</code></a>.
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/ContinuousMonoidHom/Pi.lean"><code>ContinuousMonoidHom.Pi</code></a>,
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/PontryaginDual/Pi.lean"><code>PontryaginDual.Pi</code></a> and
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/PontryaginDual/Real.lean"><code>PontryaginDual.Real</code></a>.
 The finite algebraic universal property reuses Mathlib's work of Joachim
 Breitner and Yakov Pechersky; the coordinate and tag equivalences reuse the
 Mathlib formalizations credited in those modules.</li><li><strong>Integer characters by generator evaluation.</strong> For any topological group
@@ -175,38 +175,38 @@ is a continuous multiplicative equivalence with the same homeomorphism.
 No local compactness or Hausdorff hypothesis is needed. Specializing to
 <code>Circle</code> identifies the whole <code>PontryaginDual (Multiplicative ℤ)</code> with
 <code>Circle</code>. The characteristic laws and target naturality are in
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/ContinuousMonoidHom/Int.lean"><code>ContinuousMonoidHom.Int</code></a>,
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/ContinuousMonoidHom/Int.lean"><code>ContinuousMonoidHom.Int</code></a>,
 which reuses Mathlib's integer universal property and compact-open continuity
 results, with the formalization credits listed in its references.</li></ul>
-<p><strong><a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/HeadlineResults.md">Complete headline catalogue: statements, hypotheses and module links</a>.</strong>
+<p><strong><a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/HeadlineResults.md">Complete headline catalogue: statements, hypotheses and module links</a>.</strong>
 The families below give an overview; the catalogue retains the full statements
 and qualifications. For API details and examples, see the
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/Results.md">result guide</a>; for imports and applications, see the
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/Usage.md">usage guide</a>.</p>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/Results.md">result guide</a>; for imports and applications, see the
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/Usage.md">usage guide</a>.</p>
 <h4>Zero-sum pairs and multiplicative images</h4>
 <p>In a nonunital, nonassociative semiring, <code>a + b = 0</code> implies <code>a * a = b * b</code>.
 A multiplication-preserving function into any monoid sends <code>a</code> and <code>b</code> to
 units simultaneously, without preserving addition, zero or one or requiring
 commutativity of the target. See the
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Algebra/IsAddUnit.lean">zero-sum API</a>.</p>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Algebra/IsAddUnit.lean">zero-sum API</a>.</p>
 <h4>Reduced powers and nilpotence</h4>
 <ul><li>Cyclic products in a monoid with zero satisfy
 <code>nilpotencyClass (a * b) ≤ nilpotencyClass (b * a) + 1</code>, and symmetrically; see
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Algebra/GroupWithZero/Nilpotent.lean">nilpotency classes</a>.</li></ul>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Algebra/GroupWithZero/Nilpotent.lean">nilpotency classes</a>.</li></ul>
 <p>In a reduced ring, not necessarily commutative, equality at two coprime natural
 powers determines an element; equality at two exponents is equivalent to equality
 at their gcd. In a reduced monoid with zero, positive powers preserve left and
 right annihilators. Aligned lists of positive powers preserve product-zero, not
-product values. See the <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/HeadlineResults.md#further-algebraic-and-character-results">complete statements</a>
-and the <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Ring/Power.lean">reduced-ring power API</a>.
+product values. See the <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/HeadlineResults.md#further-algebraic-and-character-results">complete statements</a>
+and the <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Ring/Power.lean">reduced-ring power API</a>.
 Over a commutative ring, equality of two powers modulo a radical ideal is
 equivalent to equality at their gcd, including zero exponents; see the
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Ring/Ideal/Power.lean">radical-ideal API</a>.</p>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Ring/Ideal/Power.lean">radical-ideal API</a>.</p>
 <p>In any monoid with zero, <code>nilpotencyClass_pow</code> gives
 <code>nilpotencyClass (a ^ n) = (nilpotencyClass a + n - 1) / n</code> for every natural
 exponent, using total natural-number division at zero. Unital monoid maps preserving and
 reflecting zero preserve the class; injectivity is not required. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Algebra/GroupWithZero/Nilpotent.lean"><code>Algebra.GroupWithZero.Nilpotent</code></a>.
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Algebra/GroupWithZero/Nilpotent.lean"><code>Algebra.GroupWithZero.Nilpotent</code></a>.
 Separately, <code>SemiconjBy a x a</code> and nilpotence of <code>x</code> bound the
 nilpotency class of <code>a</code> by that of <code>x</code> plus one. Finite pairwise orthogonal sums
 over any semiring are nilpotent exactly when every supported summand is nilpotent,
@@ -214,22 +214,22 @@ with an explicit class bound. For finite pairwise commuting families with
 <code>f i ^ n i = 0</code>, the sum vanishes to the power <code>1 + ∑ i ∈ s, (n i - 1)</code>.
 No commutativity or nontriviality of the semiring, positivity of the individual
 exponents, or finite index type is assumed. The
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/HeadlineResults.md#further-algebraic-and-character-results">catalogue</a> records
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/HeadlineResults.md#further-algebraic-and-character-results">catalogue</a> records
 empty-support cases and the class-zero convention for nonnilpotent elements;
-these results use <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Ring/Nilpotent/Finset.lean"><code>Ring.Nilpotent.Finset</code></a>.</p>
+these results use <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Ring/Nilpotent/Finset.lean"><code>Ring.Nilpotent.Finset</code></a>.</p>
 <p>For a semiring algebra over a commutative semiring, a finite sum of pairwise
 commuting submodules has total nilpotency class at most one plus the sum of the
 predecessors of the summands' total classes. A finite span satisfies the corresponding
 generator-class bound when the generators' principal submodules pairwise commute;
 the generators themselves need not commute. Neither bound assumes summand or
 generator nilpotence, and both include empty support and trivial carriers. See the
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Ring/Nilpotent/Submodule.lean">finite-submodule bounds</a>.</p>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Ring/Nilpotent/Submodule.lean">finite-submodule bounds</a>.</p>
 <p>Over a commutative semiring <code>R</code>, the finitely generated ideal criterion
 <code>Ideal.FG.isNilpotent_iff_le_nilradical</code> characterizes nilpotence by containment
 in the nilradical. The finite-span bound specializes to
 <code>nilpotencyClass (Ideal.span (↑s : Set R)) ≤ 1 + ∑ x ∈ s, (nilpotencyClass x - 1)</code>.
 Nonnilpotent ideals have total class zero, so this upper bound alone is not a
-nilpotence criterion. See the <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Ring/Nilpotent/Ideal.lean">finite-ideal API</a>.</p>
+nilpotence criterion. See the <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Ring/Nilpotent/Ideal.lean">finite-ideal API</a>.</p>
 <p>For commuting elements <code>a, c</code> in any monoid, <code>a ∣ c</code> implies
 <code>a ^ n ∣ c ^ n</code> for every natural <code>n</code>, including zero. In a monoid with zero,
 if <code>a</code> is nilpotent, the commuting multiple has nilpotency class at most that of
@@ -238,15 +238,15 @@ and a list product when the nilpotent <code>a</code> occurs in the list and comm
 every entry. Other entries need not be nilpotent or commute with one another.
 These bounds retain the nilpotence premise: the total class is zero for
 nonnilpotent elements, so a class inequality alone is not a nilpotence criterion.
-See the <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Algebra/Divisibility/Basic.lean">commuting-divisor API</a>,
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Algebra/BigOperators/GroupWithZero/List.lean">list-product API</a> and
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/HeadlineResults.md#further-algebraic-and-character-results">full statements</a>.</p>
+See the <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Algebra/Divisibility/Basic.lean">commuting-divisor API</a>,
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Algebra/BigOperators/GroupWithZero/List.lean">list-product API</a> and
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/HeadlineResults.md#further-algebraic-and-character-results">full statements</a>.</p>
 <h4>Finite sums and product homomorphisms</h4>
 <p>For submodules of a semiring equipped with a module structure over another
 semiring, <code>Submodule.sum_eq_sup</code> identifies finite sums with finite suprema,
 complementing the zero/bottom and addition/supremum identities.
 No scalar-tower, commutativity, or algebra hypothesis is required. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Algebra/Algebra/Operations.lean"><code>Algebra.Algebra.Operations</code></a>.</p>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Algebra/Algebra/Operations.lean"><code>Algebra.Algebra.Operations</code></a>.</p>
 <p>Finite families of nonunital ring homomorphisms whose distinct images annihilate
 each other in both orders have a sum homomorphism, even for nonunital,
 nonassociative source and target semirings. For a finite dependent product of
@@ -255,8 +255,8 @@ homomorphism into an associative semiring from nonunital component maps: their
 unit images must be pairwise orthogonal and sum to one. No commutativity, global
 centrality or nontriviality is assumed. The empty-index case is included; its
 cover-one premise forces the target to satisfy <code>0 = 1</code>. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Ring/Hom/FiniteSum.lean"><code>Ring.Hom.FiniteSum</code></a> and the
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/HeadlineResults.md#further-algebraic-and-character-results">catalogue</a> for
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Ring/Hom/FiniteSum.lean"><code>Ring.Hom.FiniteSum</code></a> and the
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/HeadlineResults.md#further-algebraic-and-character-results">catalogue</a> for
 application, zero-off extension and uniqueness laws, with their hypotheses.</p>
 <h4>Power restrictions and order</h4>
 <p>In any group, membership of every power in a finite family in a subgroup-like
@@ -265,18 +265,18 @@ The subgroup generated by the selected powers is the cyclic subgroup generated
 by that gcd power. Additive groups have the corresponding natural-multiple
 formulas. No commutativity or normality is needed; empty and all-zero families
 generate the trivial subgroup. See the
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Algebra/Group/Subgroup/Power.lean">subgroup-power API</a>.</p>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Algebra/Group/Subgroup/Power.lean">subgroup-power API</a>.</p>
 <p>For any group element <code>a</code> and natural exponents <code>m n</code>, the intersection of
 <code>Subgroup.zpowers (a ^ m)</code> and <code>Subgroup.zpowers (a ^ n)</code> is
 <code>Subgroup.zpowers (a ^ (Nat.lcm m n))</code>. The additive version uses the
 integer-multiple subgroups of <code>m • a</code> and <code>n • a</code>. Zero exponents are included;
 no commutativity or order assumption is needed. See the same
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Algebra/Group/Subgroup/Power.lean">subgroup-power API</a>.</p>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Algebra/Group/Subgroup/Power.lean">subgroup-power API</a>.</p>
 <p>For a finite family of natural exponents, intersecting the cyclic power subgroups
 with <code>Subgroup.zpowers a</code> gives the subgroup generated by the lcm power.
 Nonempty families need no initial cyclic factor; for an empty family the plain
 intersection is top. Additive groups have the corresponding natural-multiple
-formula. See the <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/HeadlineResults.md#power-restrictions-and-order">catalogue</a>.</p>
+formula. See the <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/HeadlineResults.md#power-restrictions-and-order">catalogue</a>.</p>
 <p>In a monoid, let <code>a</code> have injective left multiplication (left regularity).
 Equality of its powers and those of arbitrary <code>b</code> at a finite family of natural
 exponents is equivalent to equality at their gcd;
@@ -284,7 +284,7 @@ a family with gcd one determines <code>a = b</code>. The same finite-family crit
 holds separately when <code>a</code> has injective right multiplication (right regularity).
 No regularity of <code>b</code> or global cancellation is needed; additive versions hold in
 additive monoids. Empty families and zero exponents are included. See the
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/MonoidHom/PositivePower.lean">power-kernel API</a>.</p>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/MonoidHom/PositivePower.lean">power-kernel API</a>.</p>
 <p>Let <code>f : M →* N</code>, where <code>N</code> is a monoid and <code>M</code> has only multiplication and a
 chosen one (<code>MulOne</code>). If the range of <code>f</code> contains a positive power of every
 element of <code>N</code>, it detects equality of homomorphisms from <code>N</code> into any monoid
@@ -303,20 +303,20 @@ repeated exponents are allowed; empty or all-zero families cannot have gcd one.
 The natural-set left interface is the <code>ι = ℕ</code>, <code>e = id</code> specialization;
 coprime and consecutive-power adapters remain available. Consecutive-power
 images give precomposition injectivity into left-cancellative targets.
-The <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/HeadlineResults.md#power-restrictions-and-order">catalogue</a> distinguishes
+The <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/HeadlineResults.md#power-restrictions-and-order">catalogue</a> distinguishes
 these fixed-pair image criteria from elementwise power kernels and injectivity
 on all homomorphisms into an arbitrary monoid.</p>
 <p>More generally, a set of a monoid that contains, for each element, a finite
 family of its powers with gcd-one exponents detects equality of fixed
 multiplication-preserving maps into a monoid whenever the first map has
 left-regular values. Unit preservation and regularity of the second map are not
-required. The <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/HeadlineResults.md#further-algebraic-and-character-results">set criterion and additive form</a>
+required. The <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/HeadlineResults.md#further-algebraic-and-character-results">set criterion and additive form</a>
 allow independent universes, element-dependent families and zero or repeated exponents.</p>
 <p>For a multiplicatively Archimedean commutative monoid with a linear order,
 chosen <code>0</code>, <code>0 ≤ 1</code> and strictly monotone multiplication by positive elements,
 a multiplication-closed set is bounded above exactly when all its members are
 at most <code>1</code>, even for empty sets. See the
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/HeadlineResults.md#power-restrictions-and-order">power and order catalogue</a>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/HeadlineResults.md#power-restrictions-and-order">power and order catalogue</a>
 for additive restriction, pointwise comparison and multiplicative-map versions.</p>
 <h4>Group actions and presentations</h4>
 <p>For a commutative ring <code>R</code>, a commutative domain <code>A</code> with an <code>R</code>-algebra
@@ -326,8 +326,8 @@ finite orbit, provided <code>[SMulCommClass M R A]</code>. The three types may l
 independent universes. Scalar commutation fixes the image of <code>R</code>; no action
 on <code>R</code>, injective scalar map, faithful action, integrality of all of <code>A</code>,
 or group or finiteness assumption on <code>M</code> is required. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/GroupAction/Integral.lean"><code>GroupAction.Integral</code></a> and the
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/Results.md#finite-orbits-of-integral-elements">finite-orbit API</a>.</p>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/GroupAction/Integral.lean"><code>GroupAction.Integral</code></a> and the
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/Results.md#finite-orbits-of-integral-elements">finite-orbit API</a>.</p>
 <p>For arbitrary subgroups <code>H, K</code> of a group <code>G</code>, equivariant maps <code>G/H → G/K</code>
 exist exactly when <code>H ≤ gKg⁻¹</code> for some <code>g</code>; the coset actions are isomorphic
 exactly when the subgroups are conjugate, not merely when maps exist both ways.
@@ -338,7 +338,7 @@ Objectwise-surjective compatible homomorphisms between two diagrams over the sam
 arbitrary indexing category induce a surjection of colimits; its kernel is the
 normal closure of the component kernels' images. The object groups may have
 independent universes.
-The <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/HeadlineResults.md#group-actions-and-presentations">actions and presentations catalogue</a>
+The <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/HeadlineResults.md#group-actions-and-presentations">actions and presentations catalogue</a>
 also gives coefficient-sum relations over semirings and the precise universal
 properties, including their universe qualifications.</p>
 <h4>Fixed vectors and averaging</h4>
@@ -346,22 +346,22 @@ properties, including their universe qualifications.</p>
 semiring, intertwiners <code>f, g</code> with injective <code>f</code> and <code>Function.Exact f g</code> remain
 exact on fixed submodules. Fixed vectors commute with arbitrary products and
 algebraic direct sums, but do not in general preserve surjectivity.</p>
-<p><strong><a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Cohomology/Noetherian.lean">Noetherian monoid cohomology</a>.</strong>
+<p><strong><a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Cohomology/Noetherian.lean">Noetherian monoid cohomology</a>.</strong>
 For <code>A : Rep R G</code> over any ring <code>R</code> and monoid <code>G</code>,
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Cohomology/Basic.lean">inhomogeneous cochains</a> have degree <code>n</code>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Cohomology/Basic.lean">inhomogeneous cochains</a> have degree <code>n</code>
 term <code>(Fin n → G) → A</code> and differential using the given linear action.
 Degree zero is canonically <code>R</code>-linearly equivalent to <code>A.ρ.fixedSubmodule</code>.
 If <code>IsNoetherian R A</code>, degree-zero cohomology is Noetherian for arbitrary <code>G</code>;
 if also <code>Finite G</code>, cohomology is Noetherian in every natural degree.
 Neither commutativity nor Noetherianity of <code>R</code>, finiteness of the underlying
-<code>A</code>, nor a trivial action is required. The <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/HeadlineResults.md#fixed-vectors-and-averaging">catalogue</a>
+<code>A</code>, nor a trivial action is required. The <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/HeadlineResults.md#fixed-vectors-and-averaging">catalogue</a>
 gives the independent universes and the narrower Mathlib group-cohomology comparison.</p>
 <p>For a finite group whose order is a unit in a possibly noncommutative semiring,
 a given linear lift between intertwining maps can be replaced by an
 intertwining lift; no surjectivity of the map lifted through is required.
 Separately, for a finite group acting by additive automorphisms on an additive
 commutative group, bijective multiplication by the group order makes every
-crossed map principal. The <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/HeadlineResults.md#fixed-vectors-and-averaging">fixed-vector and averaging catalogue</a>
+crossed map principal. The <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/HeadlineResults.md#fixed-vectors-and-averaging">fixed-vector and averaging catalogue</a>
 keeps the representation and additive-action hypotheses distinct and gives the
 explicit averaging formula and its naturality.</p>
 <p>A pretransitive group action on a finite nonempty set has permutation-fixed
@@ -373,13 +373,13 @@ whose order is a unit in a possibly noncommutative semiring, the normalized norm
 is a natural idempotent self-intertwiner with range the fixed submodule, on
 additive commutative monoid modules. Its narrower commutative-ring comparison
 with Mathlib's <code>averageMap</code> is in the
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/HeadlineResults.md#further-algebraic-and-character-results">catalogue</a>.</p>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/HeadlineResults.md#further-algebraic-and-character-results">catalogue</a>.</p>
 <h4>Free groups, arithmetic and Grothendieck completions</h4>
 <p>For any generator relabeling <code>σ : I → J</code>, the kernel of <code>FreeGroup.map σ</code> is
 the <strong>normal closure</strong> of all <code>of i * (of k)⁻¹</code> with <code>σ i = σ k</code>. The label
 types may be empty and lie in independent universes; no injectivity, surjectivity
 or finiteness is needed. The induced homomorphism is injective or surjective
-exactly when <code>σ</code> is. See the <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/FreeGroup/Map.lean">free-group map API</a>.</p>
+exactly when <code>σ</code> is. See the <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/FreeGroup/Map.lean">free-group map API</a>.</p>
 <p>For a finite-index subgroup <code>H</code> of a finitely generated free group <code>G</code>,
 <code>rank H + [G:H] = rank G * [G:H] + 1</code>, including ambient rank zero.
 Mathlib supplies subgroup freeness and finite generation. Biadditive maps from
@@ -388,7 +388,7 @@ to both Grothendieck completions; a semiring's additive completion has a canonic
 ring structure and universal ring lifts, without cancellation.</p>
 <p>For a finitely generated additive commutative group <code>M</code>, a subgroup has finite
 index exactly when its canonical integer-module finrank equals <code>Module.finrank ℤ M</code>.
-The <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/FiniteIndex.lean">finite-index criterion</a> requires
+The <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/FiniteIndex.lean">finite-index criterion</a> requires
 <code>[Module.Finite ℤ M]</code>, not freeness or torsion-freeness, and includes rank zero.
 The span of a linearly independent family of <code>Module.finrank ℤ M</code> elements has
 finite quotient and positive subgroup index.</p>
@@ -396,9 +396,16 @@ finite quotient and positive subgroup index.</p>
 multiplication by <code>n</code> on <code>V</code> gives <code>(V/L)[n] ≃+ L/nL</code>. If <code>L</code> is finitely generated,
 this torsion subgroup is finite of cardinality <code>n ^ Module.finrank ℤ L</code>, without
 freeness of <code>L</code> or ambient finite generation. The
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/HeadlineResults.md#free-groups-arithmetic-and-grothendieck-completions">free-group, arithmetic and completion catalogue</a>
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/HeadlineResults.md#free-groups-arithmetic-and-grothendieck-completions">free-group, arithmetic and completion catalogue</a>
 also links the explicit index-two generators and nilpotence reflection on additive units.</p>
 <h4>Topology and abstract homomorphisms</h4>
+<p><strong>Continuous endomorphisms of additive circles.</strong> For every nonzero real <code>T</code>,
+<code>AddCircle.continuousAddMonoidHomEquivInt</code> is an additive equivalence from
+continuous additive endomorphisms of <code>AddCircle T</code>, with pointwise addition,
+to <code>ℤ</code>. Its inverse sends <code>n</code> to <code>n • id</code>, pointwise <code>x ↦ n • x</code>;
+equivalently, every such <code>F</code> satisfies <code>F x = n • x</code> for all <code>x</code>, for a
+unique integer <code>n</code>. See the
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/AddCircle/Endomorphisms.lean">endomorphism module</a>.</p>
 <p><strong>Compact subsemigroups and submonoids.</strong> In a group with a given topology
 and continuous fixed left translations, a closed compact subsemigroup <code>S</code>
 satisfies <code>x ∈ S → x⁻¹ ∈ S</code>. Every element of a closed compact submonoid is
@@ -407,14 +414,14 @@ topological group has the same carrier as a subgroup, since compact subsets
 are closed. The closed compact results require neither continuous right
 translations nor continuous inversion. The versions for closed subsemigroups
 and submonoids with Noetherian induced topology follow from compactness. See
-the <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/Group/Subsemigroup.lean">subsemigroup module</a>.</p>
+the <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/Group/Subsemigroup.lean">subsemigroup module</a>.</p>
 <p>For a subsemigroup <code>S</code> of a group with continuous fixed left translations,
 its topological closure is stable under inverses if that closure's induced
 topology is Noetherian and each right translation by a member of <code>S</code> is
 continuous on the closure. No ambient Noetherianity or continuous inversion is
 assumed. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/Algebra/Group/Subsemigroup/Closure.lean"><code>Subsemigroup.inv_mem_closure_of_noetherianSpace</code></a>
-and the <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/Usage.md#inverses-in-a-subsemigroups-closure">precise inputs</a>.
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/Algebra/Group/Subsemigroup/Closure.lean"><code>Subsemigroup.inv_mem_closure_of_noetherianSpace</code></a>
+and the <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/Usage.md#inverses-in-a-subsemigroups-closure">precise inputs</a>.
 Alternatively, with the same local right continuity, inverse stability follows
 if <code>S</code> is preirreducible and strict inclusion of nonempty irreducible closed
 subsets of the ambient group is well-founded (<code>WellFoundedLT</code>). This applies to
@@ -422,12 +429,12 @@ every element of the closure, not just members of <code>S</code>.</p>
 <p>More generally, a closed self-embedding of any topological space is surjective
 if the space has finitely many irreducible components and well-founded strict
 inclusion of nonempty irreducible closed subsets. No Noetherianity or separation is assumed;
-see the <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/ClosedEmbedding.lean">closed-embedding theorem</a>.</p>
+see the <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/ClosedEmbedding.lean">closed-embedding theorem</a>.</p>
 <p>In a compact Hausdorff commutative topological group with a dense algebraically
 finitely generated subgroup, every abstract finite-index subgroup is open.
 Every abstract homomorphism from such a source to a compact nonarchimedean group
 is continuous, even with an infinite image; this does not assert local constancy.
-The <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/docs/HeadlineResults.md#topology-and-abstract-homomorphisms">topology catalogue</a>
+The <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/docs/HeadlineResults.md#topology-and-abstract-homomorphisms">topology catalogue</a>
 also covers ultrafilter-limit counterexamples to continuity, cofinite groups and
 actions, locally constructible subgroups, identity components, compact open
 subgroups and finite-coordinate factorizations.</p>
@@ -446,24 +453,24 @@ characters from a set <code>S</code> is uniformly dense in <code>C(K, ℂ)</code
 entire Pontryagin dual. In particular, every point-separating subgroup of
 characters is the whole dual. The measure need not be a probability measure;
 no group, Hausdorffness or countability assumption on <code>K</code> is required. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/PontryaginDual/Saturation.lean"><code>PontryaginDual.Saturation</code></a>.</li><li><strong>Uniform density of scalar characters.</strong> Let <code>K</code> be a compact monoid with a
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/PontryaginDual/Saturation.lean"><code>PontryaginDual.Saturation</code></a>.</li><li><strong>Uniform density of scalar characters.</strong> Let <code>K</code> be a compact monoid with a
 topology, and let <code>S</code> be a subgroup of its continuous <code>Circle</code>-valued
 characters that separates points of <code>K</code>. The complex linear span of
 <code>x ↦ (χ x : ℂ)</code>, for <code>χ ∈ S</code>, is dense in <code>C(K, ℂ)</code> for the uniform topology.
 No measure, continuity of the monoid operations, or separation or countability
 typeclass on <code>K</code> is required. This uses Mathlib's scalar Stone–Weierstrass theorem;
-see <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/PontryaginDual/StoneWeierstrass.lean"><code>GroupTheory.Topology.PontryaginDual.StoneWeierstrass</code></a>.</li><li><strong>Real characters and canonical biduality.</strong> Every continuous circle-valued
+see <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/PontryaginDual/StoneWeierstrass.lean"><code>GroupTheory.Topology.PontryaginDual.StoneWeierstrass</code></a>.</li><li><strong>Real characters and canonical biduality.</strong> Every continuous circle-valued
 character of the additive real line has a unique period-one Fourier frequency.
 <code>PontryaginDual.realEquiv</code> identifies the original real topology with the
 compact-open topology on the entire real character space. The forward map of
 <code>PontryaginDual.realEvalEquiv</code> is canonical bidual evaluation, not a separately
 chosen algebraic identification. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/PontryaginDual/Real.lean"><code>PontryaginDual.Real</code></a>.</li><li><strong>Transport of the whole Pontryagin dual.</strong> A continuous multiplicative
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/PontryaginDual/Real.lean"><code>PontryaginDual.Real</code></a>.</li><li><strong>Transport of the whole Pontryagin dual.</strong> A continuous multiplicative
 equivalence <code>A ≃ₜ* B</code> induces <code>PontryaginDual B ≃ₜ* PontryaginDual A</code> by
 precomposition, with the original compact-open topologies. Only monoids with
 topologies are needed: no local compactness, Hausdorffness or continuity of
 their operations is assumed. See <code>PontryaginDual.mapEquiv</code> in
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/PontryaginDual.lean"><code>PontryaginDual</code></a>.</li><li><strong>Canonical Pontryagin bidual evaluation.</strong> For a monoid <code>A</code> equipped with a
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/PontryaginDual.lean"><code>PontryaginDual</code></a>.</li><li><strong>Canonical Pontryagin bidual evaluation.</strong> For a monoid <code>A</code> equipped with a
 topology and <code>[LocallyCompactPair A Circle]</code>, <code>PontryaginDual.eval A</code> is the
 continuous homomorphism <code>a ↦ (χ ↦ χ a)</code> into the existing compact-open bidual.
 It is natural under arbitrary continuous monoid homomorphisms. If the dual
@@ -472,15 +479,15 @@ a section of the dual of evaluation. No group, commutativity, continuity of
 the monoid operations or Hausdorff hypothesis on <code>A</code> is required. These
 general monoid results alone do not assert injectivity, surjectivity or full Pontryagin reflexivity
 of the original evaluation. See
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/PontryaginDual.lean"><code>GroupTheory.Topology.PontryaginDual</code></a>.</li><li><strong>Bidual evaluation separates discrete abelian groups.</strong> For a commutative
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/PontryaginDual.lean"><code>GroupTheory.Topology.PontryaginDual</code></a>.</li><li><strong>Bidual evaluation separates discrete abelian groups.</strong> For a commutative
 group with its discrete topology, <code>PontryaginDual.eval_injective_of_discrete</code>
 proves that the canonical continuous bidual evaluation is injective. No
 finiteness, finite generation or countability is required. The injectivity
 theorem is available in
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/PontryaginDual/Discrete.lean"><code>PontryaginDual.Discrete</code></a>.
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/PontryaginDual/Discrete.lean"><code>PontryaginDual.Discrete</code></a>.
 For full canonical continuous reflexivity, including the inverse, use
 <code>PontryaginDual.evalEquivOfDiscrete</code> in
-<a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/PontryaginDual/Discrete/Equivalence.lean"><code>PontryaginDual.Discrete.Equivalence</code></a>.</li><li><strong>Integrals and orthogonality of characters.</strong> For a monoid <code>K</code> with its original
+<a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/PontryaginDual/Discrete/Equivalence.lean"><code>PontryaginDual.Discrete.Equivalence</code></a>.</li><li><strong>Integrals and orthogonality of characters.</strong> For a monoid <code>K</code> with its original
 topology and measurable space, measurable opens and <code>[MeasurableMul K]</code>,
 a nontrivial continuous circle-valued character has complex Bochner integral zero
 against any left-invariant measure. Distinct characters have zero off-diagonal
@@ -488,4 +495,4 @@ integral <code>∫ x, χ x * conj (ψ x) ∂μ</code>.
 No group, compactness, finiteness or normalization of the measure is assumed;
 for a nonintegrable function the Bochner integral is zero by definition.
 See <code>PontryaginDual.integral_eq_zero_of_ne_one</code> and <code>integral_mul_conj_eq_zero</code>
-in <a href="https://github.com/FormalFrontier/group-theory/blob/15148458bb7394beeadc40236d4cf886c23e663b/GroupTheory/Topology/PontryaginDual/Integral.lean"><code>PontryaginDual.Integral</code></a>.</li></ul>
+in <a href="https://github.com/FormalFrontier/group-theory/blob/cad97f1a1920e3c68d41ec2d689cde51231b5a31/GroupTheory/Topology/PontryaginDual/Integral.lean"><code>PontryaginDual.Integral</code></a>.</li></ul>

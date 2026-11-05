@@ -10,21 +10,21 @@ group <code>E</code> with a topological additive-group structure, and an additiv
 monoid <code>F</code> with a topology, a continuous <code>R</code>-linear map <code>f : E →L[R] F</code> with a given
 continuous linear right inverse <code>s</code> gives <code>E ≃L[R] F × f.ker</code>, with coordinates
 <code>(f x, x - s (f x))</code> and inverse <code>(y, k) ↦ s y + k</code>
-(<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Algebra/Module/Splitting.lean">module</a>). When <code>R</code> is a ring
+(<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Algebra/Module/Splitting.lean">module</a>). When <code>R</code> is a ring
 and <code>F</code> an additive group, both bundled constructions agree with Mathlib's on the
 same data. No scalar topology, separation or completeness is assumed.</li><li>In a normed ring finite dimensional over an arbitrary field, every element <code>a</code>
 with <code>‖1 - a‖ &lt; 1</code> is a unit, and the unit locus is open. No scalar norm or
 completeness is required. The same conclusions hold in left-Artinian normed
-rings (<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/Normed/Algebra/Units.lean">module</a>). A
+rings (<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/Normed/Algebra/Units.lean">module</a>). A
 pointwise-continuous family of continuous endomorphisms of a finite-dimensional
 normed space consequently has an open invertible locus, even over an incomplete
 nontrivially normed field
-(<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/Normed/Algebra/OperatorFamilies.lean">module</a>).</li><li>Over a possibly incomplete nontrivially normed field, a family of existing continuous linear
+(<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/Normed/Algebra/OperatorFamilies.lean">module</a>).</li><li>Over a possibly incomplete nontrivially normed field, a family of existing continuous linear
 maps between given seminormed norm-compatible vector spaces, with finite-dimensional original
 domain, is continuous in the original operator-norm topology exactly when every original
 fixed-vector evaluation is continuous
 (<code>ContinuousLinearMap.continuous_iff_apply_of_finiteDimensional</code> in
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Module/FiniteCoordinates/FiniteDimensional.lean">module</a>). The canonical
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Module/FiniteCoordinates/FiniteDimensional.lean">module</a>). The canonical
 identity to the pointwise-convergence copy of the same continuous linear maps is a continuous
 linear equivalence (<code>ContinuousLinearEquiv.toPointwiseConvergenceCLMOfFiniteDimensional</code>);
 convergence along any filter is therefore equivalent to convergence at every fixed vector
@@ -39,7 +39,7 @@ domain need not be finite-dimensional: evaluations on a set <code>D</code> suffi
 For any family of bounded sets, the canonical identity to uniform convergence on that
 family is a continuous <code>L</code>-linear equivalence if <code>D</code> lies in the <code>K</code>-span of its union
 (<code>ContinuousLinearEquiv.toUniformConvergenceCLMOfDenseTestSpan</code> in
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Module/FiniteCoordinates/FiniteDimensional/Basic.lean">module</a>).
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Module/FiniteCoordinates/FiniteDimensional/Basic.lean">module</a>).
 Only the dense controlling span of <code>D</code> must be finite-dimensional, so further bounded
 sets may be added even when they make the whole union span infinite-dimensional.
 The union-based construction (<code>ContinuousLinearEquiv.toUniformConvergenceCLMOfDenseSpan</code>)
@@ -63,12 +63,12 @@ For proper <code>G</code>, the evaluation images need only be metrically bounded
 (<code>ContinuousLinearMap.isCompact_iff_forall_isBounded_image_apply_of_isClosed_of_dense</code>),
 and the full map space is proper for its canonical operator seminorm
 (<code>ContinuousLinearMap.properSpace_of_dense_finiteDimensionalₛₗ</code> in
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Module/FiniteCoordinates/FiniteDimensional/Compactness.lean">module</a>).
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Module/FiniteCoordinates/FiniteDimensional/Compactness.lean">module</a>).
 The ambient domain need not be finite-dimensional. No completeness of either field
 or of <code>A</code>, separation, or surjectivity of <code>σ</code> is required.</li><li><strong>Projective isometry sections.</strong> A surjective linear isometry onto a projective
 module over a semiring has a chosen linear-isometric right inverse
 (<code>LinearIsometry.sectionOfSurjective</code> in
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/Normed/Operator/Projective.lean">module</a>). It is a uniform
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/Normed/Operator/Projective.lean">module</a>). It is a uniform
 embedding even for nonseparated seminormed modules; no scalar topology or completeness
 is required. For an originally normed source it agrees with the inverse of Mathlib's
 surjective-isometry equivalence. The separation quotient therefore has a linear-isometric
@@ -76,19 +76,19 @@ section when its module is projective, using the given continuous constant scala
 <code>f : E →ₗᵢ[R] F</code> of seminormed additive groups with a linear right inverse <code>s</code>
 gives <code>E ≃ₗᵢ[R] (F × f.toLinearMap.ker)</code>
 (<code>LinearIsometry.equivProdKerOfRightInverse</code> in
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/Normed/Operator/Splitting.lean">module</a>). The kernel keeps
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/Normed/Operator/Splitting.lean">module</a>). The kernel keeps
 its original module and inherited geometry; the product uses the maximum norm.
 The kernel may be nonzero. No separation, scalar norm or topology, or continuity
 assumption on <code>s</code> is required. The whole underlying linear and continuous
 equivalences agree with the canonical continuous splitting, including its ring form.</li></ul>
 <p>These families are proved here, with the original fiber and total-space topologies.
-The <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/docs/HeadlineResults.md">catalogue</a> gives the individual statements and variants;
-the <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/docs/Results.md">detailed guide</a> adds examples and distinguishes Mathlib constructions.</p>
+The <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/docs/HeadlineResults.md">catalogue</a> gives the individual statements and variants;
+the <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/docs/Results.md">detailed guide</a> adds examples and distinguishes Mathlib constructions.</p>
 <ul><li><strong>Nearby noncommuting idempotents.</strong> For bounded idempotents <code>P</code> and <code>Q</code> on a
 normed space over a nontrivially normed field, finite-dimensional range of <code>P</code>
 and <code>‖Q - P‖ &lt; 1</code> give continuous linear equivalences between their ranges and
 between their kernels. The
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/Normed/Operator/NearbyIdempotent.lean">compression and kernel-coordinate constructions</a>
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/Normed/Operator/NearbyIdempotent.lean">compression and kernel-coordinate constructions</a>
 use the original subspace norms; neither the field nor the ambient space needs
 to be complete. Finite dimension of the range of <code>Q</code> is a consequence, not an
 extra hypothesis. For a continuous family of idempotents over an arbitrary
@@ -96,7 +96,7 @@ topological base, the kernel graph on the norm neighborhood has product
 coordinates preserving the base point. A kernel section is continuous exactly
 when its fixed-kernel coordinate is continuous.</li><li><strong>Supported weighted coordinates.</strong> Given module families over a commutative semiring
 and linear chart equivalences on arbitrary subsets, the
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/LinearAlgebra/WeightedCoordinates.lean">weighted coordinate map</a>
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/LinearAlgebra/WeightedCoordinates.lean">weighted coordinate map</a>
 takes values in the full dependent product of model modules. Its membership,
 nonmembership, zero-weight and chart-evaluation rules are explicit. At each point,
 generating the unit ideal by the valid chart weights suffices for fibrewise
@@ -104,14 +104,14 @@ injectivity. In particular, one valid unit weight suffices; no individual
 weight need be a unit in the general criterion.
 On the original equality fibres of a topological projection, with given module
 operations and inherited topology, the
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Maps/WeightedCoordinates.lean">total coordinate map</a>
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Maps/WeightedCoordinates.lean">total coordinate map</a>
 is continuous when the projection, weights and exact inverse coordinates are
 continuous, scalar multiplication on each model is continuous, and the closure
 of each weight's cozero set lies in its domain. No openness, finite-index,
 finite-dimensionality, norm or continuity of fibre operations is required.</li><li><strong>Additive sum–kernel coordinates.</strong> For a projection <code>p : T → B</code> with given
 additive monoid structures on its equality fibres, additive maps <code>β b</code> into a
 topological abelian group <code>A</code> and retractions <code>ρ b</code> give a
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Maps/FiberwiseSplitting.lean">homeomorphism</a>
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Maps/FiberwiseSplitting.lean">homeomorphism</a>
 from <code>{z : T × A // ρ (p z.1) z.2 = 0}</code> to <code>B × A</code> when their two total maps
 are continuous. Its coordinates are <code>(p t, β (p t) ⟨t,rfl⟩ + v)</code>; its inverse
 uses the given retraction and residual <code>a - β b (ρ b a)</code>. Continuity into the
@@ -120,7 +120,7 @@ No continuity of fibre operations or scalar topology is required. Given
 semiring-linear maps specialize this scalar-free construction by forgetting
 linearity, retaining their original scalar actions.
 For semiring-linear split maps on a given family <code>E b</code>, the
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/FiberBundle/SumRange.lean">complementary-range sum coordinates</a>
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/FiberBundle/SumRange.lean">complementary-range sum coordinates</a>
 identify the fiberwise product of <code>E b</code> and <code>range (id - β.comp ρ)</code> with <code>B × A</code>,
 under the same two total continuity hypotheses. The source has the canonical
 product-total topology from the given first total space and the range graph topology.
@@ -130,7 +130,7 @@ field <code>K</code>, let the original finite-dimensional normed ambient <code>A
 module topology (<code>[IsModuleTopology K A]</code>). Linear encoders and retractions
 between the equality fibres of <code>p : T → B</code> and <code>A</code>, with <code>ρ b (β b u) = u</code>,
 yield an
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Maps/FiberwiseProjection.lean">operator-norm-continuous family of idempotents</a>
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Maps/FiberwiseProjection.lean">operator-norm-continuous family of idempotents</a>
 acting by <code>β b (ρ b a)</code> when the two exact total maps are continuous.
 The complete-field frontend obtains this module topology locally from finite
 dimensionality; the core construction needs no scalar completeness.
@@ -153,7 +153,7 @@ at every fixed vector. For continuous linear maps from a finite-dimensional semi
 domain to a seminormed target, joint continuity is equivalent to continuity in the given
 operator-norm topology even over an incomplete field; neither space needs to be separated
 or complete. See
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/Normed/Module/JointEvaluation.lean">JointEvaluation</a>.</li><li><strong>Total-space continuity of semilinear maps from finite local bases.</strong>
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/Normed/Module/JointEvaluation.lean">JointEvaluation</a>.</li><li><strong>Total-space continuity of semilinear maps from finite local bases.</strong>
 Let <code>p : T → X</code> be continuous, with given <code>R</code>-module structures and subspace
 topologies on its equality-subtype fibres, and let <code>σ : R →+* S</code> be a homomorphism
 of semirings, with a topology on <code>S</code>. Coordinate models with finite bases may vary
@@ -164,14 +164,14 @@ into any <code>S</code>-module with continuous addition and scalar multiplicatio
 on <code>R</code>, continuity of <code>σ</code>, continuous operations on the models or fibres,
 injectivity, forward-realization continuity, norm, completeness or separation is
 required. See
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Module/LocalCoordinates.lean"><code>LinearMap.continuous_total_of_local_coordinates_of_basis_semilinear</code></a>.
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Module/LocalCoordinates.lean"><code>LinearMap.continuous_total_of_local_coordinates_of_basis_semilinear</code></a>.
 The linear criterion
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Module/LocalCoordinates.lean"><code>LinearMap.continuous_total_of_local_coordinates_of_basis</code></a>
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Module/LocalCoordinates.lean"><code>LinearMap.continuous_total_of_local_coordinates_of_basis</code></a>
 is the identity-hom specialization.
 Over a complete nontrivially normed field, finite-dimensional Hausdorff
 topological coordinate models supply the bases and scalar-coordinate continuity;
 fixed-vector frame continuity gives the corollary
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Module/LocalCoordinates.lean"><code>LinearMap.continuous_total_of_local_coordinates</code></a>.</li><li><strong>Module topologies on retracts and finite-basis coordinates.</strong> Over a semiring with
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Module/LocalCoordinates.lean"><code>LinearMap.continuous_total_of_local_coordinates</code></a>.</li><li><strong>Module topologies on retracts and finite-basis coordinates.</strong> Over a semiring with
 a given scalar topology, a continuous linear retract of a module with the module
 topology inherits that topology, even when the continuous section is nonlinear.
 In particular, the range of an algebraic idempotent of such a module has its
@@ -179,18 +179,18 @@ module topology as the inherited subspace topology. Over a topological semiring,
 a supplied finite basis of a module with the module topology gives a continuous
 linear equivalence with the standard finite scalar product;
 neither a field, a norm, completeness nor separation is required. See
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Module/ModuleTopology.lean">module-topology descent</a> and
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Module/Basis.lean">finite-basis coordinates</a>.
-The <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Module/Basis/FiniteDimensional.lean">complete-field comparison</a>
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Module/ModuleTopology.lean">module-topology descent</a> and
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Module/Basis.lean">finite-basis coordinates</a>.
+The <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Module/Basis/FiniteDimensional.lean">complete-field comparison</a>
 agrees exactly with Mathlib's <code>Module.Basis.equivFunL</code> without assuming a source norm.</li><li><strong>Local constancy of fibre finrank.</strong> Over a division ring, given pointwise
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Module/Finrank.lean">linear equivalences to fixed models</a>
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Module/Finrank.lean">linear equivalences to fixed models</a>
 on sets whose interiors cover the base make natural-number fibre finrank locally
 constant. Neither finite-dimensionality nor topology on the modules is assumed.
 Infinite-dimensional modules have finrank zero; this is not a claim about their
 cardinal dimension.</li><li><strong>Closed fiber embeddings.</strong> For continuous <code>p : T → X</code>, give its equality-subtype fibers
 their subspace topologies and <code>RCLike</code> module structures. An arbitrary open cover with
 finite-dimensional normed linear coordinates, jointly continuous realizations and continuous
-exact inverse-coordinate maps on the total-space restrictions gives a <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/InnerProductSpace/FiberEmbedding.lean">closed embedding into <code>X × A</code></a>
+exact inverse-coordinate maps on the total-space restrictions gives a <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/InnerProductSpace/FiberEmbedding.lean">closed embedding into <code>X × A</code></a>
 from supplied injective algebraic fiber maps whose local frames are parameter-continuous at
 each fixed vector. The normed inner-product target need not be complete; local ranks may vary.
 The inverse extends to a jointly continuous fiberwise linear retraction on the product.</li><li><strong>Finite Euclidean embeddings from weighted local coordinates.</strong>
@@ -207,97 +207,97 @@ supremum norm; no isometry is asserted. The inverse on the image extends to a
 jointly continuous fibrewise linear retraction on all of <code>X × E</code>, preserving
 the given fibre operations and inherited topologies. No positivity,
 normalization, or separation of <code>X</code> is required. See
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/InnerProductSpace/WeightedFiberEmbedding.lean"><code>exists_retraction_isClosedEmbedding_of_weighted_local_coordinates</code></a>.</li><li><strong>Retractions and projection continuity.</strong> Over real or complex scalars, original fibers
-with <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/InnerProductSpace/InducingRetraction.lean">inducing realizations</a>,
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/InnerProductSpace/WeightedFiberEmbedding.lean"><code>exists_retraction_isClosedEmbedding_of_weighted_local_coordinates</code></a>.</li><li><strong>Retractions and projection continuity.</strong> Over real or complex scalars, original fibers
+with <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/InnerProductSpace/InducingRetraction.lean">inducing realizations</a>,
 jointly continuous local realizations on an open cover, finite-dimensional seminormed coordinate models
 and injective algebraic fiber maps into a normed inner-product space with fixed-vector-continuous local frames admit continuous-linear
 retractions, jointly continuous realizations and operator-norm-continuous orthogonal projections.
 No fiber norms or ambient completeness are needed. Separately, a given self-adjoint idempotent
-family is <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/InnerProductSpace/ProjectionContinuity.lean">continuous</a> if its
+family is <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/InnerProductSpace/ProjectionContinuity.lean">continuous</a> if its
 images have local injective finite-dimensional algebraic frames with fixed-vector continuity;
 those frame domains need no topology.</li><li><strong>Metrics and finite complements.</strong> A finite-dimensional real or complex bundle over a
-paracompact Hausdorff base admits a continuous positive-definite <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/VectorBundle/MetricExistence.lean">Hermitian metric</a>
+paracompact Hausdorff base admits a continuous positive-definite <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/VectorBundle/MetricExistence.lean">Hermitian metric</a>
 inducing its original fiber topologies. Over a compact normal base, a finite-dimensional
-<code>RCLike</code> bundle has a <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/VectorBundle/FiniteComplement.lean">finite-dimensional complement</a>
+<code>RCLike</code> bundle has a <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/VectorBundle/FiniteComplement.lean">finite-dimensional complement</a>
 whose product is linearly trivial, not necessarily a complement to a prescribed embedding.</li><li><strong>Orthogonal splitting.</strong> For a supplied continuous Hermitian metric, an intrinsic submodule
 bundle with embedded total-space inclusion and a finite-dimensional <code>RCLike</code> ambient model,
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/VectorBundle/OrthogonalAddition.lean">orthogonal addition</a> is a homeomorphism
-with continuous projections, over any base. <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/VectorBundle/OrthogonalComparison.lean">Comparison</a>
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/VectorBundle/OrthogonalAddition.lean">orthogonal addition</a> is a homeomorphism
+with continuous projections, over any base. <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/VectorBundle/OrthogonalComparison.lean">Comparison</a>
 identifies complements for two supplied metrics with their induced topologies; no metric is constructed.</li></ul>
 <ul><li><strong>Given adjoint partners.</strong> For <code>RCLike</code> inner products, a supplied partner <code>S : A → H</code>
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/InnerProductSpace/AdjointPair.lean">bundles linearly</a> when <code>H</code> is normed and
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/InnerProductSpace/AdjointPair.lean">bundles linearly</a> when <code>H</code> is normed and
 <code>A</code> seminormed; a pointwise norm bound on the first map makes it continuous-linear. A continuous-linear
 first map supplies the bound, without completeness. The catalogue also gives the algebraic
 semiring-valued pairing result; the partner is supplied, not constructed.</li></ul>
 <ul><li><strong>Adjoints and Gram families.</strong> A continuous linear map from a complete normed <code>RCLike</code>
-inner-product space to a seminormed one has an <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/InnerProductSpace/Adjoint.lean">adjoint</a>.
+inner-product space to a seminormed one has an <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/InnerProductSpace/Adjoint.lean">adjoint</a>.
 For given raw adjoint partners between seminormed spaces, operator-norm continuity of the forward
-family gives <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/InnerProductSpace/AdjointPairFamily.lean">joint continuity</a> of the partners.
+family gives <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/InnerProductSpace/AdjointPairFamily.lean">joint continuity</a> of the partners.
 On a finite-dimensional normed domain with normed ambient space, injective forward operators and
-given continuous-linear adjoint partners have <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/InnerProductSpace/GramRetraction.lean">continuous inverse Gram composites</a>
+given continuous-linear adjoint partners have <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/InnerProductSpace/GramRetraction.lean">continuous inverse Gram composites</a>
 when the forward family is operator-norm continuous. On a complete finite-dimensional normed
-inner-product domain, a jointly continuous injective family instead <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/InnerProductSpace/GramFamily.lean">constructs canonical adjoints,
+inner-product domain, a jointly continuous injective family instead <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/InnerProductSpace/GramFamily.lean">constructs canonical adjoints,
 left inverses and projections</a> continuously.
 None of these results requires completeness of the ambient space.</li></ul>
 <ul><li><strong>Algebraic orthogonal retractions and distance.</strong> An injective linear map from a plain module into
-a normed <code>RCLike</code> inner-product space has an <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/InnerProductSpace/Projection/LinearMap.lean">algebraic retraction</a>
+a normed <code>RCLike</code> inner-product space has an <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/InnerProductSpace/Projection/LinearMap.lean">algebraic retraction</a>
 when its range has orthogonal projection; finite dimension of the module suffices. Given the
-orthogonal-retraction laws, <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/InnerProductSpace/Projection/Distance.lean">best-approximation and squared-error formulas</a>
+orthogonal-retraction laws, <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/InnerProductSpace/Projection/Distance.lean">best-approximation and squared-error formulas</a>
 hold without completeness or a topology on the coefficient module. In a seminormed ambient space,
 zero residual norm detects range closure; in a normed one, <code>β.range = r.kerᗮ</code> and minimizers are unique.
-The catalogue also gives the <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/Normed/Ring/Idempotent.lean">nonzero-idempotent norm bound</a>.</li><li><strong>Finite orthogonal idempotent families.</strong> Over any semiring and finite index type, the
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Algebra/Ring/OrthogonalIdempotents.lean">matched-product sum</a> intertwines two orthogonal
+The catalogue also gives the <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/Normed/Ring/Idempotent.lean">nonzero-idempotent norm bound</a>.</li><li><strong>Finite orthogonal idempotent families.</strong> Over any semiring and finite index type, the
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Algebra/Ring/OrthogonalIdempotents.lean">matched-product sum</a> intertwines two orthogonal
 idempotent families. If it is a unit, that same unit simultaneously conjugates them and forces both
 families to sum to one; completeness of the families is a conclusion, not a hypothesis.</li><li><strong>Close idempotents and rank stability.</strong> On a normed space over a nontrivially normed field,
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/Normed/Operator/Idempotent.lean">idempotents at operator-norm distance less than one</a>
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/Normed/Operator/Idempotent.lean">idempotents at operator-norm distance less than one</a>
 have equal cardinal ranks of ranges and kernels; these ranks are locally constant in continuous
 families, without completeness. When geometric series are summable in the endomorphism ring
 (in particular for a complete space), one normalized unit gives continuous-linear equivalences of both.</li><li><strong>Fixed-kernel coordinates.</strong> For seminormed spaces over a nontrivially normed field, a family
-<code>Γ d : H →L[K] A</code> with supplied algebraic retractions <code>r d</code> has <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Analysis/Normed/Operator/KernelFamilyCoordinates.lean">product coordinates for its total kernel</a>
+<code>Γ d : H →L[K] A</code> with supplied algebraic retractions <code>r d</code> has <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Analysis/Normed/Operator/KernelFamilyCoordinates.lean">product coordinates for its total kernel</a>
 on any topological parameter domain where <code>q₀ ∘ Γ d</code> is a unit. Here <code>q₀</code> is fixed and continuous-linear;
 joint continuity of the difference between the original and normalized ambient projections suffices.
-No separate continuity of <code>r</code> or completeness is needed. The <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/docs/HeadlineResults.md#fixed-kernel-coordinates-on-unit-domains">catalogue</a>
+No separate continuity of <code>r</code> or completeness is needed. The <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/docs/HeadlineResults.md#fixed-kernel-coordinates-on-unit-domains">catalogue</a>
 gives the formulas, unit-subtype version and distinction between a unit comparison and a retraction.</li><li><strong>Linear families and bundle inverses.</strong> Over a field with a T₁ topology making it a topological
-ring, pointwise-continuous algebraic linear families have an <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Algebra/Module/OpenMap.lean">open surjectivity locus</a>
+ring, pointwise-continuous algebraic linear families have an <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Algebra/Module/OpenMap.lean">open surjectivity locus</a>
 for a finite-dimensional target with its module topology; the source needs no topology. Over a
-nontrivially normed field, continuous-forward fiberwise linear equivalences give <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/VectorBundle/Isomorphism.lean">bundle homeomorphisms</a>
+nontrivially normed field, continuous-forward fiberwise linear equivalences give <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/VectorBundle/Isomorphism.lean">bundle homeomorphisms</a>
 when the source normed model is finite-dimensional and the target normed model has its module topology.</li></ul>
 <ul><li><strong>Compact refinements and partitions of unity.</strong> An ambient open cover of two compact subsets'
-product admits <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/Compactness/Product.lean">finite ambient open grids</a> with each
-full rectangle in a chosen cover member, without separation assumptions. <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/UnitInterval.lean">Closed-interval subdivisions</a>
-allow repeated cuts and singleton intervals. A finite open cover of a normal space admits <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/ContinuousMap/FiniteWeights.lean">continuous
+product admits <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/Compactness/Product.lean">finite ambient open grids</a> with each
+full rectangle in a chosen cover member, without separation assumptions. <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/UnitInterval.lean">Closed-interval subdivisions</a>
+allow repeated cuts and singleton intervals. A finite open cover of a normal space admits <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/ContinuousMap/FiniteWeights.lean">continuous
 weights</a> in <code>[0,1]</code> summing to one, with closed
 cozero supports subordinate to the cover; no T₁ hypothesis is needed.
-On a <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/FiniteNormalWeights.lean">closed subset of a normal space</a>,
+On a <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/FiniteNormalWeights.lean">closed subset of a normal space</a>,
 a finite open cover similarly admits nonnegative continuous weights with closed
 supports in its members, sum at most one everywhere and exactly one on that subset.</li></ul>
 <ul><li><strong>Finite selection from supplied product charts.</strong> For compact <code>X</code>, arbitrary topological <code>Y</code>
 and chosen <code>y₀</code>, supplied whole-product charts with both base laws and agreement in both directions
-with specified original charts at <code>y₀</code> admit a <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/FiberBundle/FiniteCylinderCover.lean">finite ordered open cover</a>.
+with specified original charts at <code>y₀</code> admit a <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/FiberBundle/FiniteCylinderCover.lean">finite ordered open cover</a>.
 This retains varying models and, when provided, matching linear coordinates over any semiring. It selects supplied
 charts, not charts from an arbitrary atlas over <code>Y</code>, and needs neither compactness of <code>Y</code> nor projection continuity.</li><li><strong>Heterogeneous cylinder gluing.</strong> For a continuous projection over <code>X × T</code>, with <code>T</code> linearly
 ordered and topological with closed upper and lower rays, supplied base-preserving charts on the
-closed half-cylinders may have different models. The <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/FiberBundle/ClosedCylinder.lean">gluer</a>
+closed half-cylinders may have different models. The <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/FiberBundle/ClosedCylinder.lean">gluer</a>
 gives a whole-cylinder homeomorphism into the left model, retaining its entire left chart.</li><li><strong>Whole-cylinder charts and transport.</strong> An open base-preserving atlas for a continuous projection
-over <code>X × unitInterval</code> gives <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/FiberBundle/ClosedCylinderSubdivisionData.lean">local whole-interval charts</a>,
+over <code>X × unitInterval</code> gives <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/FiberBundle/ClosedCylinderSubdivisionData.lean">local whole-interval charts</a>,
 with linear coordinates when the input coordinates are linear, over any semiring. Separately, finite ordered whole-cylinder charts with continuous
-weights in <code>[0,1]</code> summing to one and closed cozero supports inside the chart base sets give <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/FiberBundle/FiniteTransport/Projection.lean">base-preserving,
+weights in <code>[0,1]</code> summing to one and closed cozero supports inside the chart base sets give <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/FiberBundle/FiniteTransport/Projection.lean">base-preserving,
 bottom-fixing transport</a> from the standard pullback
-of the entire zero slice. A <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/FiberBundle/FiniteTransport/Existence.lean">finite open cylinder cover on a normal base</a>
-supplies the weights. Models may vary; full homotopy invariance is not asserted.</li><li><strong>Varying-rank atlases.</strong> Over a field with a given topology, a supplied <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/VectorBundle/FiniteRank.lean">finite-rank linear atlas</a>
+of the entire zero slice. A <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/FiberBundle/FiniteTransport/Existence.lean">finite open cylinder cover on a normal base</a>
+supplies the weights. Models may vary; full homotopy invariance is not asserted.</li><li><strong>Varying-rank atlases.</strong> Over a field with a given topology, a supplied <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/VectorBundle/FiniteRank.lean">finite-rank linear atlas</a>
 allows unbounded, locally varying ranks, including zero, on the original fibers and total space. Its
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/VectorBundle/FiniteRank/Projection.lean">projection is continuous, open and quotient</a>,
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/VectorBundle/FiniteRank/Projection.lean">projection is continuous, open and quotient</a>,
 and its zero section is an embedding. Further separation and countability results use the corresponding
 base and exact chart-coordinate hypotheses, not continuous scalar operations or a global fixed model.</li><li><strong>Stable complements.</strong> Over a compact normal base, a finite-rank atlas over real or complex scalars has a
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/VectorBundle/FiniteRank/StableComplement.lean">defined stable complement</a>
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/VectorBundle/FiniteRank/StableComplement.lean">defined stable complement</a>
 in the finite coordinate space of its specified trivial embedding. The complement has its range-graph
 finite-rank atlas, and its sum with the original family has a full-base trivialization in that coordinate
 space. The ranks may vary; their pointwise sum is the ambient dimension. The original total-space topology
 is unchanged. Separately, algebraic split families in a finite-dimensional normed space over a complete
 nontrivially normed field, with continuous original-total embedding and retraction, have a
-<a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/VectorBundle/ProjectorAtlas/SplitFamilySum.lean">fixed-model sum chart</a>
-over an arbitrary topological base, without topologies on the original fibres or their common model.</li><li><strong>Sharp projection criteria.</strong> A fiber-bundle projection is an <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/FiberBundle/Projection.lean">open embedding</a>
-exactly when every original fiber is subsingleton, and <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/FiberBundle/Proper.lean">proper</a>
-exactly when each fiber is compact. Its total space is <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/VectorBundles/Topology/FiberBundle/Countability.lean">second-countable</a>
+<a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/VectorBundle/ProjectorAtlas/SplitFamilySum.lean">fixed-model sum chart</a>
+over an arbitrary topological base, without topologies on the original fibres or their common model.</li><li><strong>Sharp projection criteria.</strong> A fiber-bundle projection is an <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/FiberBundle/Projection.lean">open embedding</a>
+exactly when every original fiber is subsingleton, and <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/FiberBundle/Proper.lean">proper</a>
+exactly when each fiber is compact. Its total space is <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/VectorBundles/Topology/FiberBundle/Countability.lean">second-countable</a>
 exactly when the base or model is empty, or both are second-countable, without separation hypotheses.
-Further compactness, separability and Lindelöf criteria are in the <a href="https://github.com/FormalFrontier/vector-bundles/blob/30a24a74420a6ea401f31c568afb20414130d189/docs/Results.md#topological-properties-of-bundle-total-spaces">detailed guide</a>.</li></ul>
+Further compactness, separability and Lindelöf criteria are in the <a href="https://github.com/FormalFrontier/vector-bundles/blob/e3fb9de334c8b60bdb707b3e48b2094b2202c725/docs/Results.md#topological-properties-of-bundle-total-spaces">detailed guide</a>.</li></ul>
